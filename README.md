@@ -1,23 +1,18 @@
-title: quilt about(readme)
-
-{{title}}
+Quilt
 =============
-***********************************************************************************************************************
+
 A `python` based static site `html` _stitcher_.
-****************************************************************************************************************
-[TOC]
 
 
 Description
 -----------
-***********************************************************************************************************************
+
 Generate a static site via `python` from content-only `.html` and `.md` pages that are _stitched_ together along with patch (e.g. `nav.html`, `footer.html`) files onto a main site `quilt.html` file.
-{: .lead}
 
 
 Code Examples
 -------------
-***********************************************************************************************************************
+
 Assuming the [directory structure](#exampledir) is set up correctly, quilting is quite easy. Quilt a site located at `path/to/site/source/files` from inside python.
 ```python
 from quilt.QuiltingRoom import QuiltingRoom
@@ -31,17 +26,17 @@ The project also includes a `__main__.py` to execute from command-line.
 machine:~ user$ python quilt path/to/site/source/files
 ```
 
+
 Installation
 ------------
-***********************************************************************************************************************
+
 TBD, just run from a directory at the moment.
-{: .lead}
 
 
 How it works
 -------------
-***********************************************************************************************************************
-### QuiltingRoom class ---(site\-level)--- {: #QuiltingRoom}
+
+### QuiltingRoom class *(site-level)*
 Used to _*quilt*_ a whole site together.
 {: .lead}
 
@@ -68,156 +63,76 @@ Used to _*quilt*_ a whole site together.
 13. generate `search.json`, a word to url index for `typeahead`
 14. generate `sitemap.xml`
 
-#### Example directory structure {: #exampledir }
-********************************
+#### Example directory structure
 
-<div class="row" markdown="1">
-<div class="col-xs-6" markdown="2"><div class="panel panel-warning" markdown="3"><div class="panel-heading" markdown="4">
-
-#### Source {: .text-center .panel-title}
-
-</div>
-<div class="panel-body" markdown="4">
+#### Source
 
 - `site_files/`
-{: .dir}
     - `config.json`
-    {: .file}
     - `quilt.html`
-    {: .file}
     - `assets/`
-    {: .dir}
         - `css/`
-        {: .dir}
             - `site.css`
-            {: .file}
             - `bootstrap.css`
-            {: .file}
             - ...
-            {: .file}
         - `js/`
-        {: .dir}
             - `site.js`
-            {: .file}
             - `jquery.js`
-            {: .file}
             - ...
-            {: .file}
         - `imgs/`
-        {: .dir}
             - `favicon.png`
-            {: .file}
             - `icon.png`
-            {: .file}
         - `fonts/`
-        {: .dir}
             - ...
-            {: .file}
     - `pages/`
-    {: .dir}
         - `index.html`
-        {: .file}
         - `about.html`
-        {: .file}
         - `blog/`
-        {: .dir}
             - `post1.md`
-            {: .file}
             - `post2.html`
-            {: .file}
             - ...
-            {: .file}
         - ...
-        {: .file}
     - `patches/`
-    {: .dir}
         - `head.html`
-        {: .file}
         - `nav.html`
-        {: .file}
         - `footer.html`
-        {: .file}
         - `scripts.html`
-        {: .file}
         - `markdown.html` (html wrapper) [^1]
-        {: .file}
         - `index.html` (no index dir/) [^2]
-        {: .file}
         - `page.html` (default blank page)
-        {: .file}
 
-</div>
-</div>
-</div><div class="col-xs-6" markdown="2"><div class="panel panel-warning" markdown="3"><div class="panel-heading" markdown="4">
-
-#### Output {: .text-center .panel-title}
-
-</div><div class="panel-body" markdown="4">
+#### Output
 
 - `quilted_site_files/`
-{: .dir} 
     - `index.html` 
-    {: .file}    
     - `about.html`
-    {: .file}    
     - `blog/`
-    {: .dir}    
         - `post1.html` 
-        {: .file}        
-        - `post2.html` 
-        {: .file}        
+        - `post2.html`    
         - ...    
-        {: .file}    
     - `sitemap.xml` 
-    {: .file}    
     - `sitemapindex.xml` 
-    {: .file}    
     - ...  
-    {: .file}  
     - `css/` 
-    {: .dir}        
-        - `site.css` 
-        {: .file}        
-        - `bootstrap.css` 
-        {: .file}        
+        - `site.css`     
+        - `bootstrap.css`    
         - ...    
-        {: .file}
-    - `js/` 
-    {: .dir}        
-        - `site.js` 
-        {: .file}        
-        - `jquery.js` 
-        {: .file}        
+    - `js/`  
+        - `site.js`       
+        - `jquery.js`    
         - ...   
-        {: .file}  
     - `imgs/`
-    {: .dir}         
         - `favicon.png` 
-        {: .file}        
         - `icon.png` 
-        {: .file}    
     - `fonts/` 
-    {: .dir}        
         - ...
-        {: .file}
-
-</div>
-</div>
-</div>
-</div>
 
 [^1]: special case patch, not used in `quilt.html`, used to wrap all `markdown` content.
 [^2]: special case patch, not used in `quilt.html`, used for directories without an `index.html` file.
 
 ///footnotes///
-%%
-%%
 
-<div class="panel panel-primary readme-panel" markdown="1">
-<div class="panel-heading" markdown="2">
-#### Default Quilting Configuration: {: #configuration .panel-title}
-
-</div>
+#### Default Quilting Configuration:
 
 ```python
 # default config, overridden by config.json in source directory
@@ -280,11 +195,8 @@ DEFAULT_CONFIG = {
 }
 ```
 
-</div>
-
-###Quilter class ---(page\-level)--- {: #Quilter}
+###Quilter class *(page-level)*
 Used to _*stitch*_ one page together with a quilt file, patch files, and a page file.
-{: .lead}
 
 1. use [quilt file](#quiltfile) to create quilt
 2. replace all [patch files](#patchfile) by matching `patch#id` tags in quilt with a `patch/id.html` file
@@ -301,12 +213,7 @@ Used to _*stitch*_ one page together with a quilt file, patch files, and a page 
 8. if page is under `posts/` directory, `tags` and `categories` variables are linked and appended to page content
 9. fill in blank `alt` attributes for `<a>` and `<img>` tags
 
-<div class="panel panel-primary readme-panel" markdown="1">
-<div class="panel-heading" markdown="2">
-
-#### Page Variables: {: #pagevars .panel-title}
-
-</div>
+#### Page Variables:
 
 ```python
 # set quilting page defaults
@@ -345,14 +252,7 @@ page_defaults = {
 }
 ```
 
-</div>
-
-<div class="panel panel-success readme-panel" markdown="1">
-<div class="panel-heading" markdown="2">
-
-##### Example quilt file (`quilt.html`): {: #quiltfile .panel-title}
-
-</div>
+##### Example quilt file (`quilt.html`):
 
 ```html
 <!doctype html>
@@ -367,14 +267,8 @@ page_defaults = {
     </body>
 </html>
 ```
-</div>
 
-<div class="panel panel-success readme-panel" markdown="1">
-<div class="panel-heading" markdown="2">
-
-##### Example patch file (`head.html`):  {: #patchfile .panel-title}
-
-</div>
+##### Example patch file (`head.html`):
 
 ```html
 <head>
@@ -398,16 +292,8 @@ page_defaults = {
 </head>
 ```
 
-</div>
+##### Example page file (`index.html`):
 
-<div class="panel panel-success readme-panel" markdown="1">
-<div class="panel-heading" markdown="2">
-
-##### Example page file (`index.html`): {: #pagefile .panel-title}
-
-</div>
-
-<div markdown="2" class="single-file">
 ```shell
 title: quilt project example index.html
 description: an example page file with pagevar header, page html, & page script
@@ -433,17 +319,9 @@ uniquepagevar: make a page variable
 alert('page script');
 </script>
 ```
-</div>
-</div>
 
-<div class="panel panel-success readme-panel" markdown="1">
-<div class="panel-heading" markdown="2">
+##### Example page file (`index.md`):
 
-##### Example page file (`index.md`): {: #pagefilemd .panel-title}
-
-</div>
-
-<div markdown="2" class="single-file">
 ```
 :::shell
 title: quilt project example index.html
@@ -454,7 +332,7 @@ uniquepagevar: make a page variable
 
 ```
 ```markdown
-{ {name}}
+{{name}}
 =========
 
 A `python` based static site `html` _stitcher_.
@@ -466,10 +344,8 @@ A `python` based static site `html` _stitcher_.
 alert('page script');
 </script>
 ```
-</div>
-</div>
 
-###Blog class ---(blog\-level)--- {: #Blog}
+###Blog class *(blog-level)*
 Used to add dynamic *blog* abilities to `posts/` directory under `pages/`
 {: .lead}
 
@@ -482,9 +358,9 @@ Used to add dynamic *blog* abilities to `posts/` directory under `pages/`
 5. generate `atom` feed and/or `rss` feed
 
 
-TODO
+Todo
 ----
-***********************************************************************************************************************
+
 - [x] mostly finished ;)
 - [ ] always improvable :)
 
@@ -493,7 +369,7 @@ See [feature+todo]({{relativepath}}features_todo.html).
 
 History
 -------
-***********************************************************************************************************************
+
 version | date       | note
 :------:|:----------:|:-------
 0.1.0   | 03/01/2013 | initial release
@@ -505,15 +381,5 @@ See [news]({{relativepath}}news/index.html).
 
 License
 -------
-***********************************************************************************************************************
 
 ### MIT
-
-Copyright (c) 2015 Timothy Davenport
-{: .lead}
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
