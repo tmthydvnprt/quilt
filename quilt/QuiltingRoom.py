@@ -147,7 +147,8 @@ class QuiltingRoom(object):
             "tags"          : self.config["tags"],           # page tags (for pages in posts/)
             "keywords"      : self.config["keywords"],       # page keywords = tags + categories
             "date"          : self.config["now"]["fulldate"],# created date (useful for posts/)
-            "copydate"      : '%s&ndash;%s' % (self.config["copydate"], self.config["now"]["yearlong"]) # copyright dates (auto extend to now)
+            # copyright dates (auto extend to now)
+            "copydate"      : '&ndash;'.join([self.config["copydate"], self.config["now"]["yearlong"]]) if self.config["copydate"] else self.config["now"]["yearlong"]
         }
 
         # start blog

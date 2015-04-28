@@ -47,6 +47,7 @@ DEFAULT_CONFIG = {
     "blogname"    : "quilt news",           # atom id
     "atomid"      : "randomid",             # atom id
     "rssid"       : "randomid",             # rss id
+    "copydate"    : False,                  # copywrite date (auto extended to current year)
     # configuration
     # -----------------------------------------------------------------------------------
     "local"       : False,                  # use local disk paths as urls (dev)
