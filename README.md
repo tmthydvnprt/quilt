@@ -370,4 +370,4 @@ History
 License
 -------
 
-### MIT
+[MIT](https://github.com/tmthydvnprt/quilt/blob/master/LICENSE)
