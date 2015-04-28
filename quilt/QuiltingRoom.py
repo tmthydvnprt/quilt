@@ -253,7 +253,7 @@ class QuiltingRoom(object):
             combined_source.append(source)
 
         # dump it to disk
-        combined_src = '\n'.join(combined_source).strip()        
+        combined_src = '\n'.join(combined_source).strip()
         write_file(os.path.join(self.output, source_name), combined_src.encode('utf-8'))
 
         return self
@@ -293,7 +293,7 @@ class QuiltingRoom(object):
             js_files = find_hrefsrc(head_soup, "script", ROOT_LEVEL_JS_EXT_RE)
             js_files += find_hrefsrc(script_soup, "script", ROOT_LEVEL_JS_EXT_RE)
             # make sure asset is local
-            js_files = filter_external_url(js_files, self.config["domain"])       
+            js_files = filter_external_url(js_files, self.config["domain"])
             # build combined name
             js_name = 'js/%s.js' % ('_'.join([os.path.splitext(os.path.basename(js))[0] for js in js_files]))
             # replace combined asset name

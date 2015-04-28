@@ -5,7 +5,7 @@
     <link href="some_name.com/feed/" rel="self"/>
     <link href="some_name.com"/>
     <id>randomid</id>
-    <updated>2015-04-28T06:53:49-7:00</updated>
+    <updated>2015-04-28T07:20:24-7:00</updated>
         <entry>
         <title>HTML Entities<title>
         <link href="/Users/timothydavenport/GitHub/quilt/tests/output/news/html_entities.html"/>
