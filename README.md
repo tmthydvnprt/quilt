@@ -38,7 +38,6 @@ How it works
 
 ### QuiltingRoom class *(site-level)*
 Used to _*quilt*_ a whole site together.
-{: .lead}
 
 1. set `source` to users directory containing the [appropriate files](#exampledir) (default output is `quilted_` + `source`)
 2. read `config.json` and override [default configuration](#configuration)
@@ -347,7 +346,6 @@ alert('page script');
 
 ###Blog class *(blog-level)*
 Used to add dynamic *blog* abilities to `posts/` directory under `pages/`
-{: .lead}
 
 1. set `source` to `posts/` along with unique or default quilt and patches
 2. as [`QuiltingRoom`](#QuiltingRoom) loops over pages append page data from [`Quilter`](#Quilter) to `Blog`
@@ -374,7 +372,6 @@ version | date       | note
 :------:|:----------:|:-------
 0.1.0   | 03/01/2013 | initial release
 0.1.1   | 03/09/2013 | change page variable header from json to `key: value` plaintext pair
-{: .table-striped .table-hover .table-condensed}
 
 See [news]({{relativepath}}news/index.html).
 
