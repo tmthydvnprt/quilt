@@ -129,8 +129,6 @@ Used to _*quilt*_ a whole site together.
 [^1]: special case patch, not used in `quilt.html`, used to wrap all `markdown` content.
 [^2]: special case patch, not used in `quilt.html`, used for directories without an `index.html` file.
 
-///footnotes///
-
 #### Default Quilting Configuration:
 
 ```python
@@ -367,14 +365,7 @@ See [feature+todo]({{relativepath}}features_todo.html).
 
 History
 -------
-
-version | date       | note
-:------:|:----------:|:-------
-0.1.0   | 03/01/2013 | initial release
-0.1.1   | 03/09/2013 | change page variable header from json to `key: value` plaintext pair
-
-See [news]({{relativepath}}news/index.html).
-
+...
 
 License
 -------
