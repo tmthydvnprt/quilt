@@ -31,7 +31,7 @@ import shutil
 from collections import defaultdict
 
 from quilt.Constants import JS_HTML_PATTERN_RE, FIRST_KEY_RE, FIRST_EMPTY_LINE_RE, KEY_VALUE_RE, VALUE_RE
-from quilt.Constants import PAGEVAR_RE, ESCAPED_PAGEVAR_RE
+from quilt.Constants import PAGEVAR_RE, ESCAPED_PAGEVAR_RE, PAGEVAR_SEARCH_RE
 from quilt.Constants import PATCHCOMMENT, QUILTCOMMENT, PAGEOBJ, DOTSTAR_RE
 from quilt.Util import write_file, relative_path, group_links, minimize_js, NO_EMPTY_TAGS
 from quilt.Util import  HEAD_STRAINER, BODY_STRAINER#, a_strainer, link_strainer, script_strainer, table_strainer, img_strainer
@@ -47,6 +47,7 @@ def add_suffix(filepath='', suffix=''):
     print 'debuging:', new_name
     return new_name
 
+@profile
 def parse_pagevars(var_str=''):
     """parse page var string"""
 
@@ -66,10 +67,17 @@ def parse_pagevars(var_str=''):
                 if another_value and key:
                     page_vars[key].append(another_value.group('value').strip())
 
+#    70                                               # reduce singleton arrays to string
+#    71       117          108      0.9      8.9      for key, value in page_vars.items():
+#    72        94           70      0.7      5.8          if len(value) == 1:
+#    73        86           65      0.8      5.4              page_vars[key] = value[0]
+# 243
+#    # reduce singleton arrays to string
+#    for key, value in page_vars.items():
+#        if len(value) == 1:
+#            page_vars[key] = value[0]
     # reduce singleton arrays to string
-    for key, value in page_vars.items():
-        if len(value) == 1:
-            page_vars[key] = value[0]
+    page_vars = {key: value[0] for key, value in page_vars.items() if len(value) == 1}
 
     return page_vars
 
@@ -160,13 +168,13 @@ class Quilter(object):
 
         # append page script to quilt
         if page_js:
-            self.patches["scripts"] = '%s\n%s' % (self.patches["scripts"], page_js)
+            self.patches["scripts"] = '\n'.join((self.patches["scripts"], page_js))
         # add page variables to object
         if self.config["pageobject"]:
             page_obj = json.dumps(self.pagevars, indent=4, separators=(',', ': '), sort_keys=True)
             if self.config["minimizejs"]:
                 page_obj = minimize_js(page_obj)
-            self.patches["scripts"] = '%s\n%s' % (PAGEOBJ % (page_obj), self.patches["scripts"])
+            self.patches["scripts"] = '\n'.join((PAGEOBJ % (page_obj), self.patches["scripts"]))
 
         if self.__do_debug:
             write_file(add_suffix(DEBUG_FILE, '_markdown-wrapped'), page_html.encode('utf-8'))
@@ -232,7 +240,7 @@ class Quilter(object):
 
     #@profile
     def replace_variables(self):
-        """replace {{}} page variables (re based replacement)"""
+        """replace {{}} page variables (re based replacement) 3.93589"""
 
         html = self.soup.encode('utf-8', formatter='html')
         page_vars = list(set(PAGEVAR_RE.findall(html)))
@@ -244,10 +252,10 @@ class Quilter(object):
             self.pagevars["tag_list"] = group_links(self.pagevars, "tags")
             self.pagevars["category_list"] = group_links(self.pagevars, "categories")
 
-        # replace all page_vars, recursively
+        # replace all page_vars, recursivley
         while len(page_vars) > 0:
             for page_var in page_vars:
-                pagevar_brace = "{{%s}}" % (page_var)
+                pagevar_brace = "{{" + page_var + "}}"
                 if page_var in self.pagevars:
                     variable = self.pagevars[page_var]
                     if type(variable) is list:
@@ -260,7 +268,7 @@ class Quilter(object):
 
             escaped_page_vars = list(set(ESCAPED_PAGEVAR_RE.findall(html)))
             for escaped_page_var in escaped_page_vars:
-                html = html.replace("{ {%s}}" % (escaped_page_var), "{{%s}}" % (escaped_page_var))
+                html = html.replace("{ {" + escaped_page_var + "}}", "{{" + escaped_page_var + "}}")
 
         if self.__do_debug:
             write_file(add_suffix(DEBUG_FILE, 'replaced_vars'), html)
@@ -272,6 +280,62 @@ class Quilter(object):
 
         return self
 
+#    @profile
+#    def replace_vars_in_string(self, html=''):
+#
+#        page_vars = list(set(PAGEVAR_RE.findall(html)))
+#
+#        while len(page_vars) > 0:
+#            for page_var in page_vars:
+#                pagevar_brace = "{{" + page_var + "}}"
+#                if page_var in self.pagevars:
+#                    variable = self.pagevars[page_var]
+#                    if type(variable) is list:
+#                        variable = ','.join(variable)
+#                    html = html.replace(pagevar_brace, str(variable))
+#                else:
+#                    html = html.replace(pagevar_brace, "not found")
+#            # check for new page variables (see if variable had nested variable)
+#            page_vars = list(set(PAGEVAR_RE.findall(html)))
+#
+#            for escaped_page_var in list(set(ESCAPED_PAGEVAR_RE.findall(html))):
+#                html = html.replace("{ {" + escaped_page_var + "}}", "{{" + escaped_page_var + "}}")
+#
+#        return html
+#
+#    @profile
+#    def replace_variables(self):
+#        """replace {{}} page variables (re based replacement) 3.93589"""
+#
+#        if self.post:
+#            self.pagevars["tag_list"] = group_links(self.pagevars, "tags")
+#            self.pagevars["category_list"] = group_links(self.pagevars, "categories")
+#
+#        for tag in self.soup.find_all(href=PAGEVAR_SEARCH_RE):
+#            tag.attrs["href"] = self.replace_vars_in_string(tag["href"])
+#
+#        for tag in self.soup.find_all(content=PAGEVAR_SEARCH_RE):
+#            tag.attrs["content"] = self.replace_vars_in_string(tag["content"])
+#
+#        for tag in self.soup.find_all(src=PAGEVAR_SEARCH_RE):
+#            tag.attrs["src"] = self.replace_vars_in_string(tag["src"])
+#
+#        for tag in [x.find_parent() for x in self.soup.find_all(text=PAGEVAR_SEARCH_RE)]:
+#            html = tag.encode('utf-8', formatter='html')
+#            html = self.replace_vars_in_string(html)
+#            new_tag = bs4.BeautifulSoup(html, "lxml", parse_only=bs4.SoupStrainer(tag.name)).contents[0]
+#
+#            if tag.parent is not None:
+#                tag.replace_with(new_tag)
+#            else:
+#                tag.append(new_tag)
+#            
+#
+#        if self.__do_debug:
+#            write_file(add_suffix(DEBUG_FILE, 'replaced_vars_soup'), self.soup.encode('utf-8', formatter='html'))
+#
+#        return self
+
     #@profile
     def add_page_comments(self):
         """create a page key value pair"""
@@ -282,7 +346,7 @@ class Quilter(object):
             max_key_len = str(max([len(x) for x in self.pagevars.keys()])+1)
             keyval_line = '{{:>{}}} : {{}}'.format(max_key_len)
             keyvalpair = [keyval_line.format(k, v) for k, v in sorted(self.pagevars.items())]
-            pagevar_comment = '    -- quilt pagevars :\n    --     %s' % ('\n    --    '.join(keyvalpair))
+            pagevar_comment = '    -- quilt pagevars :\n    --     ' + '\n    --    '.join(keyvalpair)
         else:
             pagevar_comment = ''
 
@@ -315,10 +379,10 @@ class Quilter(object):
     def remove_empty(self):
         """remove empty tags"""
 
-        for tag_name in NO_EMPTY_TAGS:
-            for tag in self.soup.body.findAll(tag_name):
-                if not tag.contents:
-                    tag.decompose()
+#        for tag_name in NO_EMPTY_TAGS:
+        for tag in self.soup.body.find_all(NO_EMPTY_TAGS):
+            if not tag.contents:
+                tag.decompose()
         return self
 
 #        for a_tag in self.soup.find_all("a"):
@@ -346,7 +410,7 @@ class Quilter(object):
             self.soup.html["lang"] = "en"
 
         # make sure certain metas are set
-        viewport_meta = self.soup.head.find("meta", attrs={"viewport": DOTSTAR_RE})
+        viewport_meta = self.soup.head.find("meta", viewport=True)#attrs={"viewport": DOTSTAR_RE})
         if not viewport_meta:
             viewport_meta_tag = self.soup.new_tag('meta')
             viewport_meta_tag["name"] = "viewport"
@@ -390,7 +454,7 @@ class Quilter(object):
         for link_tag in self.soup.find_all("link"):
             if "href" not in link_tag.attrs:
                 link_tag.decompose()
-            elif link_tag.attrs["href"].endswith('.css'):
+            elif len(link_tag.attrs["href"]) > 4 and link_tag.attrs["href"][-4:] == '.css':
                 link_tag.attrs["rel"] = "stylesheet"
                 link_tag.attrs["type"] = "text/css"
 

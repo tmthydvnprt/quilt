@@ -206,7 +206,7 @@ class QuiltingRoom(object):
         """replace assets with combined assets and minimize inline assets"""
 
         # determine tags and attributes to replace
-        asset_tag = "link" if source_name.endswith(".css") else "script"
+        asset_tag = "link" if len(source_name) > 4 and source_name[-4:] == ".css" else "script"
         asset_attr = "href" if asset_tag == "link" else "src"
         asset_found = False
         # search soup for asset
@@ -221,7 +221,7 @@ class QuiltingRoom(object):
         # if any asset was found, add the combined source
         if asset_found:
             combined_asset = soup.new_tag(asset_tag)
-            combined_asset.attrs[asset_attr] = '{{relativepath}}%s' % (source_name)
+            combined_asset.attrs[asset_attr] = '{{relativepath}}' + (source_name)
             if asset_tag == "link":
                 soup.head.append(combined_asset)
             else:
@@ -279,14 +279,14 @@ class QuiltingRoom(object):
             # make sure asset is local
             css_files = filter_external_url(css_files, self.config["domain"])
             # build combined name
-            css_name = 'css/%s.css' % ('_'.join([os.path.splitext(os.path.basename(css))[0] for css in css_files]))
+            css_name = 'css/' + ('_'.join([os.path.splitext(os.path.basename(css))[0] for css in css_files])) + '.css'
             # replace combined asset name
             if css_files:
                 self.replace_or_minimize_assets(head_soup, css_files, css_name)
             # combine asset sources (+ minimize)
             self.combine_source(css_files, css_name)
-            print 'combined css files:\t', ' '.join([os.path.basename(x) for x in css_files])
-            print 'into one css file :\t', css_name, '\n'
+            print 'combined css files:\t%s\ninto one css file :\t%s\n' % \
+                (' '.join([os.path.basename(x) for x in css_files]), css_name)
 
         if self.config["combinejs"]:
             # find assets
@@ -295,15 +295,15 @@ class QuiltingRoom(object):
             # make sure asset is local
             js_files = filter_external_url(js_files, self.config["domain"])
             # build combined name
-            js_name = 'js/%s.js' % ('_'.join([os.path.splitext(os.path.basename(js))[0] for js in js_files]))
+            js_name = 'js/' + ('_'.join([os.path.splitext(os.path.basename(js))[0] for js in js_files])) + '.js'
             # replace combined asset name
             if js_files:
                 self.replace_or_minimize_assets(head_soup, js_files, js_name)
                 self.replace_or_minimize_assets(script_soup, js_files, js_name)
             # combine asset sources (+ minimize)
             self.combine_source(js_files, js_name)
-            print 'combined js files:\t', ' '.join([os.path.basename(x) for x in js_files])
-            print 'into one js file :\t', js_name, '\n'
+            print 'combined js files:\t%s\ninto one js file :\t%s\n' % \
+                (' '.join([os.path.basename(x) for x in js_files]), js_name)
 
         # put head and script soups back into patches
         self.patches["head"] = unicode(head_soup.head)
@@ -325,9 +325,9 @@ class QuiltingRoom(object):
 
             # process page
             overrides = {
-                "title" : "%s directory index" % (os.path.basename(no_index_dir)),
+                "title" : (os.path.basename(no_index_dir)) + "directory index",
                 "directory" : os.path.basename(no_index_dir),
-                "description" : "blank index page of %s directory" % (os.path.basename(no_index_dir)),
+                "description" : "blank index page of " + (os.path.basename(no_index_dir)) + " directory",
                 "keywords" : "index"
             }
 
@@ -362,10 +362,7 @@ class QuiltingRoom(object):
 
         # output sitemap & sitemap index
         sitemap = SITEMAP % ("".join(sitemapurls))
-        sitemapindex = SITEMAPINDEX % (
-            os.path.join(self.config["domain"], "sitemap.xml"),
-            self.config["now"]["iso"]
-        )
+        sitemapindex = SITEMAPINDEX % (os.path.join(self.config["domain"], "sitemap.xml"), self.config["now"]["iso"])
         write_file(os.path.join(self.output, "sitemap.xml"), sitemap)
         write_file(os.path.join(self.output, "sitemapindex.xml"), sitemapindex)
 
@@ -375,7 +372,7 @@ class QuiltingRoom(object):
     def generate_robot(self):
         """generate robot.txt in root"""
 
-        robot = ROBOTTXT % ('http://' + self.config["domain"])
+        robot = ROBOTTXT % (self.config["url"])
         write_file(os.path.join(self.output, 'robots.txt'), robot)
 
         return self
@@ -468,9 +465,9 @@ class QuiltingRoom(object):
                 spelling_errors.append(error_text)
 
         if spelling_errors:
-            print '\n\nPossible spelling Errors:\n\n', '\n'.join(spelling_errors)
+            print '\n\nPossible spelling Errors:\n\n' + '\n'.join(spelling_errors)
         else:
-            print '\n\n', 'No errors found!'
+            print '\n\nNo errors found!'
 
         return self
 
@@ -479,9 +476,9 @@ class QuiltingRoom(object):
         """loop through pages and quilt them"""
 
         if post_data:
-            print '\n', 'building posts:'
+            print '\nbuilding posts:'
         else:
-            print '\n', 'quilting pages:'
+            print '\nquilting pages:'
         progbar = ProgressBar(len(pages))
 
         # quilt all the pages
@@ -491,7 +488,6 @@ class QuiltingRoom(object):
 
             # read page
             page_text = read_file(page)
-
 
             # check for directory quilt and directory patches?
             quilt, patches = check_local_quilt(page, self.quilt_pattern, self.patches, self.config)
@@ -548,8 +544,7 @@ class QuiltingRoom(object):
 
         __t0 = time.time()
 
-        print QUILTHEADER % (self.source, self.config["date"]), '\n', \
-        'loaded patches:', '\t' + '  '.join(self.patches.keys()), '\n'
+        print QUILTHEADER % (self.source, self.config["date"]) + '\nloaded patches:\t' + '  '.join(self.patches.keys()) + '\n'
 
         # destroy last version
         if os.path.isdir(self.output):
@@ -564,67 +559,67 @@ class QuiltingRoom(object):
 
         # quilt all the assets
         self.build_assets()
-        print 'quilting time: %s' % ((time.time() - __t0))
+        print 'quilting time: ' + str(time.time() - __t0)
 
         # analyze all the posts
         if self.config["buildblog"]:
             self.analyze_posts()
-            print 'quilting time: %s' % ((time.time() - __t0))
+            print 'quilting time: ' + str(time.time() - __t0)
 
         # quilt all the pages
         self.quilt_pages(self.files["pages"])
-        print 'quilting time: %s' % ((time.time() - __t0))
+        print 'quilting time: ' + str(time.time() - __t0)
 
         # quilt all the post pages
         if self.config["buildblog"]:
             posts = reverse_chronological_order(self.blog.posts)
             self.quilt_pages([post["source"] for post in posts], posts)
-            print 'quilting time: %s' % ((time.time() - __t0))
+            print 'quilting time: ' + str(time.time() - __t0)
 
         # build the posts and blog
         adds = []
         if self.config["buildblog"]:
             self.blog.generate_blog_home()
             adds.append('blog')
-            print 'quilting time: %s' % ((time.time() - __t0))
+            print 'quilting time: ' + str(time.time() - __t0)
             self.blog.generate_group_pages("tags")
             adds.append('tags')
-            print 'quilting time: %s' % ((time.time() - __t0))
+            print 'quilting time: ' + str(time.time() - __t0)
             self.blog.generate_group_pages("categories")
             adds.append('categories')
-            print 'quilting time: %s' % ((time.time() - __t0))
+            print 'quilting time: ' + str(time.time() - __t0)
 
         # add site files
         if self.config["buildblog"] and self.config["buildatom"]:
             adds.append('atom')
             self.blog.generate_atom()
-            print 'quilting time: %s' % ((time.time() - __t0))
+            print 'quilting time: ' + str(time.time() - __t0)
         if self.config["buildblog"] and self.config["buildrss"]:
             adds.append('rss')
             self.blog.generate_rss()
-            print 'rss quilting time: %s' % ((time.time() - __t0))
+            print 'rss quilting time: ' + str(time.time() - __t0)
         if self.config["buildindex"]:
             adds.append('indexes')
             self.generate_index()
-            print 'index quilting time: %s' % ((time.time() - __t0))
+            print 'index quilting time: ' + str(time.time() - __t0)
         if self.config["buildrobot"]:
             adds.append('robot.txt')
             self.generate_robot()
-            print 'quilting time: %s' % ((time.time() - __t0))
+            print 'quilting time: ' + str(time.time() - __t0)
         if self.config["buildsearch"]:
             adds.append('search.json')
             self.generate_search()
-            print 'search quilting time: %s' % ((time.time() - __t0))
+            print 'search quilting time: ' + str(time.time() - __t0)
         if self.config["buildsitemap"]:
             adds.append('sitemap')
             self.generate_sitemap()
-            print 'quilting time: %s' % ((time.time() - __t0))
+            print 'quilting time: ' + str(time.time() - __t0)
 
-        print '\n\nadding:\t', ' '.join(adds)
-        print '\n', 'quilting is finished!', '\n'
+        print '\n\nadding:\t' + ' '.join(adds)
+        print '\nquilting is finished!\n'
 
         if self.config["spellcheck"]:
             self.spellcheck()
-        print 'quilting time: %s' % ((time.time() - __t0))
+        print 'quilting time: ' + str(time.time() - __t0)
 
         return self

@@ -13,6 +13,7 @@ import sys
 import bs4
 import copy
 import nltk
+import numpy as np
 import string
 import random
 import codecs
@@ -81,7 +82,7 @@ DEFAULT_CONFIG = {
     "templates"   : "templates",            # templates directory
     "assets"      : "assets",               # assets directory
     "posts"       : "posts",                # post directory in `pages/` directory
-    "images"      : "imgs",                 # image directory in `assets` directory
+    "images"      : "imgs",                 # image directory in `assets/` directory
     "iconfile"    : "icon.png",             # image for favicon
     "correctwords": "correct_words.txt",    # correctly spelled unique user words
     # file types
@@ -106,10 +107,12 @@ NO_EMPTY_TAGS = [
 HEAD_STRAINER = bs4.SoupStrainer("head")
 BODY_STRAINER = bs4.SoupStrainer("body")
 
+A_LINK_SET = {'a', 'link'}
+STRING_POPULATION = np.array(list(string.uppercase + string.lowercase + string.digits))
+    
 #@profile
 def read_file(file_path='', encoding='utf-8'):
     """read a file into a string. assumes utf-8 encoding."""
-
     if os.path.exists(file_path):
         fid = codecs.open(file_path, mode='r', encoding=encoding)
         source = fid.read()
@@ -121,22 +124,26 @@ def read_file(file_path='', encoding='utf-8'):
 #@profile
 def write_file(file_path='', data=''):
     """write a file from a string. ~~string is utf encoded before~~"""
-
     fid = codecs.open(file_path, 'w')
     fid.write(data)
     fid.close()
 
+##@profile
+#def load_files(source='', extensions=''):
+#    """load all files matching 0.002274 """
+#    loaded_files = {}
+#    for dirpath, _, files in os.walk(source):
+#        for ext in extensions:
+#            for f in fnmatch.filter(files, ext):
+#                loaded_files[os.path.splitext(f)[0]] = read_file(os.path.join(dirpath, f))
+#    return loaded_files
 #@profile
 def load_files(source='', extensions=''):
-    """load all files matching"""
-
-    loaded_files = {}
-    for dirpath, _, files in os.walk(source):
-        for ext in extensions:
-            for f in fnmatch.filter(files, ext):
-                loaded_files[os.path.splitext(f)[0]] = read_file(os.path.join(dirpath, f))
-
-    return loaded_files
+    """load all files matching 0.002274 """
+    return {os.path.splitext(f)[0]: read_file(os.path.join(dirpath, f)) \
+            for dirpath, _, files in os.walk(source) \
+                for ext in extensions \
+                    for f in fnmatch.filter(files, ext)}
 
 #@profile
 def check_local_quilt(page='', quilt_pattern=None, default_patches=None, config=None):
@@ -151,27 +158,35 @@ def check_local_quilt(page='', quilt_pattern=None, default_patches=None, config=
         quilt = quilt_pattern
 
     # check for directory patches?
-    dir_patch = os.path.join(os.path.dirname(page), os.path.basename(config['patches']))
-    dir_patches = load_files(dir_patch, config['patch_ext'])
     patches = copy.deepcopy(default_patches)
-    if dir_patches:
+    dir_patch = os.path.join(os.path.dirname(page), os.path.basename(config['patches']))
+    if os.path.exists(dir_patch):
+        dir_patches = load_files(dir_patch, config['patch_ext'])
         patches.update(dir_patches)
 
     return (quilt, patches)
 
+##@profile
+#def get_file_names(source='', extensions=''):
+#    """get all file names matching"""
+#
+#    file_names = set()
+#    for dirpath, _, files in os.walk(source):
+#        if os.path.basename(dirpath) != 'patches':
+#            for ext in extensions:
+#                for f in fnmatch.filter(files, ext):
+#                    if f != 'quilt.html':
+#                        file_names.update([os.path.join(dirpath, f)])
+#
+#    return file_names
+
 #@profile
 def get_file_names(source='', extensions=''):
-    """get all file names matching"""
-
-    file_names = set()
-    for dirpath, _, files in os.walk(source):
-        if os.path.basename(dirpath) != 'patches':
-            for ext in extensions:
-                for f in fnmatch.filter(files, ext):
-                    if f != 'quilt.html':
-                        file_names.update([os.path.join(dirpath, f)])
-
-    return file_names
+    """get all file names matching 0.008896 """
+    return {os.path.join(dirpath, f) \
+            for dirpath, _, files in os.walk(source) if os.path.basename(dirpath) != 'patches' \
+                for ext in extensions \
+                    for f in fnmatch.filter(files, ext) if f != 'quilt.html'}
 
 #@profile
 def relative_path(filepath='', rootpath=''):
@@ -185,7 +200,7 @@ def relative_path(filepath='', rootpath=''):
 def find_hrefsrc(soup, tag_name='', re_pattern=None):
     """search a soup for pattern in href or src of tag"""
 
-    attr = "href" if tag_name in ["a", "link"] else "src"
+    attr = 'href' if tag_name in A_LINK_SET else 'src'
     tags = soup.find_all(tag_name)
     url = [tag.attrs[attr] for tag in tags if attr in tag.attrs and re_pattern.findall(tag.attrs[attr])]
 
@@ -199,9 +214,9 @@ def path_link_list(path_string='', file_name=''):
     path_list = []
     for j, post_path in enumerate(post_paths):
         if j == len(post_paths)-1:
-            path_list.append('<li class="active">%s</li>' % (file_name))
+            path_list.append('<li class="active">' + file_name + '</li>')
         else:
-            url = '%sindex.html' % '../' * (len(post_paths)-2-j)
+            url = '../' * (len(post_paths)-2-j) + 'index.html'
             path_list.append('<li><a href="%s">%s</a></li>' % (url, post_path))
 
     return '\n'.join(path_list)
@@ -209,17 +224,13 @@ def path_link_list(path_string='', file_name=''):
 #@profile
 def filter_external_url(urls=None, domain=''):
     """filter file list for external assets"""
-
     return [url for url in urls if domain in urlparse.urlparse(url).netloc or urlparse.urlparse(url).netloc == '']
 
 #@profile
 def random_placeholder(size=PLACEHOLDER_SIZE):
-    """return a random string of numbers and digits"""
-
-    string_population = string.uppercase + string.lowercase + string.digits
-    random_string = ''.join(random.SystemRandom().choice(string_population) for _ in xrange(size))
-
-    return random_string
+    """return a random string of numbers and digits 0.00515 """
+    return ''.join(np.random.choice(STRING_POPULATION, size=PLACEHOLDER_SIZE))
+#    return ''.join(random.SystemRandom().choice(STRING_POPULATION) for _ in xrange(size))
 
 #@profile
 def minimize_js(js=''):
@@ -351,33 +362,62 @@ def minimize_css(css=''):
 
     return css
 
+#Total time: 0.017315 s
+#Function: parse_css_blocks at line 352
+#
+#Line #      Hits         Time  Per Hit   % Time  Line Contents
+#==============================================================
+#   352                                           #@profile
+#   353                                           def parse_css_blocks(css=''):
+#   354                                               """parse css string into css blocks {...}"""
+#   355                                           
+#   356         2            1      0.5      0.0      temp = ''
+#   357         2            0      0.0      0.0      block = []
+#   358         2            0      0.0      0.0      stack = []
+#   359      8576         3690      0.4     21.3      for c in css:
+#   360      8574         4439      0.5     25.6          if c == '{':
+#   361       106          125      1.2      0.7              stack.append([temp, []])
+#   362       106           45      0.4      0.3              temp = ''
+#   363      8468         4303      0.5     24.9          elif c == '}':
+#   364       106           48      0.5      0.3              if not stack[-1][-1]:
+#   365       106           55      0.5      0.3                  stack[-1][-1] = temp
+#   366       106           32      0.3      0.2                  temp = ''
+#   367       106           55      0.5      0.3              if len(stack) > 1:
+#   368                                                           t = stack.pop()
+#   369                                                           stack[-1][-1].append(t)
+#   370                                                       else:
+#   371       106          136      1.3      0.8                  block.append(stack.pop())
+#   372                                                   else:
+#   373      8362         4385      0.5     25.3              temp += c
+#   374         2            1      0.5      0.0      return block
+
 #@profile
 def parse_css_blocks(css=''):
-    """parse css string into css blocks {...}"""
+    """parse css string into css blocks {...} 0.017315 """
 
-    temp = ''
+    temp = []
     block = []
     stack = []
     for c in css:
         if c == '{':
-            stack.append([temp, []])
-            temp = ''
+            stack.append([''.join(temp), []])
+            temp = []
         elif c == '}':
             if not stack[-1][-1]:
-                stack[-1][-1] = temp
-                temp = ''
+                stack[-1][-1] = ''.join(temp)
+                temp = []
             if len(stack) > 1:
                 t = stack.pop()
                 stack[-1][-1].append(t)
             else:
                 block.append(stack.pop())
         else:
-            temp += c
+            temp.append(c)
     return block
 
 #@profile
 def vendorfy_at_prefix(blck=None, at_prefix=None):
-    """handle at prefix rules"""
+    """handle @prefix rules"""
 
     b0vender = []
     b1vender = []
@@ -445,20 +485,35 @@ def vendorfy_css(block=None):
             block[i][1] = vendorfy_block(blck)
     return block
 
+##@profile
+#def unparse_css_blocks(blocks=None):
+#    """unparse css blocks back into a css string"""
+#
+#    css = []
+#    for block in blocks:
+#        if all([type(blck) == list for blck in block]):
+#            for blck in block:
+#                css.append('%s {%s}' % (blck[0], unparse_css_blocks(blck[1])))
+#        elif any([type(blck) == list for blck in block]):
+#            css.append('%s {%s}' % (block[0], unparse_css_blocks(block[1])))
+#        else:
+#            css.append('%s {%s}' % (block[0], block[1]))
+#    return ''.join(css)
+
 #@profile
 def unparse_css_blocks(blocks=None):
     """unparse css blocks back into a css string"""
 
-    css = ''
+    css = []
     for block in blocks:
         if all([type(blck) == list for blck in block]):
             for blck in block:
-                css += ('%s {%s}' % (blck[0], unparse_css_blocks(blck[1])))
+                css.append(blck[0] + ' {' + unparse_css_blocks(blck[1]) +'}')
         elif any([type(blck) == list for blck in block]):
-            css += ('%s {%s}' % (block[0], unparse_css_blocks(block[1])))
+            css.append(block[0] + ' {' + unparse_css_blocks(block[1]) +'}')
         else:
-            css += ('%s {%s}' % (block[0], block[1]))
-    return css
+            css.append(block[0] + ' {' + block[1] +'}')
+    return ''.join(css)
 
 #@profile
 def prefix_vendor_css(css=''):
@@ -475,7 +530,7 @@ def group_links(pagevars=None, name=''):
     if pagevars[name]:
         groups = pagevars[name] if type(pagevars[name]) is list else [pagevars[name]]
         dirname = os.path.join(os.path.dirname(pagevars["url"]), name)
-        linklist = '\n'.join([GROUPLINK % (name, os.path.join(dirname, "%s.html" % (x)), x) for x in groups])
+        linklist = '\n'.join([GROUPLINK % (name, os.path.join(dirname, x + '.html'), x) for x in groups])
     return linklist
 
 #@profile
@@ -485,6 +540,7 @@ def top_sentences(text='', sentence_number=4, max_chars=200):
     sents = nltk.sent_tokenize(text[:max_chars])
     top_sents = ' '.join(sents[:sentence_number])
     return top_sents
+#    return ''.join(text.split()[:max_chars])
 
 #@profile
 def summarize_text(text='', sentence_number=4):
@@ -513,36 +569,34 @@ def summarize_text(text='', sentence_number=4):
 #@profile
 def reverse_chronological_order(posts=None):
     """sort posts in reverse chronological order"""
-
     return sorted(posts, key=lambda x: datetime.datetime.strptime(x['date'], '%m/%d/%Y %I:%M %p'), reverse=True)
 
 #@profile
 def chronological_order(posts=None):
     """sort posts in reverse chronological order"""
-
     return sorted(posts, key=lambda x: datetime.datetime.strptime(x['date'], '%m/%d/%Y %I:%M %p'), reverse=False)
 
 #@profile
 def get_just_words(text=''):
     """tokenize text, punctuation remove and lowercased"""
-
-    return {w.lower() for w in set(nltk.wordpunct_tokenize(text)) if w.isalpha()}
+    return {w.encode('ascii', 'ignore').lower() for w in set(nltk.wordpunct_tokenize(text)) if w.isalpha()}
 
 #@profile
 def get_keywords(text=''):
     """find keywords"""
-
     return get_just_words(text).difference(STOPWORDS)
 
+##@profile
+#def spell_check(text='', correct_words=None):
+#    """spell checking, ignores non-ascii words, and numbers 0.015568 """
+#
+#    lower_words = get_just_words(text)
+#    check_words = {x.encode('ascii', 'ignore') for x in lower_words}
+#    word_errors = check_words.difference(correct_words)
 #@profile
 def spell_check(text='', correct_words=None):
-    """spell checking, ignores non-ascii words, and numbers"""
-
-    lower_words = get_just_words(text)
-    check_words = {x.encode('ascii', 'ignore') for x in lower_words}
-    word_errors = check_words.difference(correct_words)
-
-    return word_errors
+    """spell checking, ignores non-ascii words, and numbers 0.015568 0.01145 """
+    return get_just_words(text).difference(correct_words)
 
 class ProgressBar(object):
     """implements a comand-line progress bar"""
@@ -557,7 +611,7 @@ class ProgressBar(object):
 
     def animate(self, iterate):
         """animate progress"""
-        print '\r', self,
+        print '\r' + str(self),
         sys.stdout.flush()
         self.update_iteration(iterate + 1)
         return self
@@ -565,7 +619,7 @@ class ProgressBar(object):
     def update_iteration(self, elapsed_iter):
         """increment progress"""
         self.__update_amount((elapsed_iter / float(self.iterations)) * 100.0)
-        self.prog_bar = '%s  %s of %s complete' % (self.prog_bar, elapsed_iter, self.iterations)
+        self.prog_bar = '%s %s of %s complete' % (self.prog_bar, elapsed_iter, self.iterations)
         return self
 
     def __update_amount(self, new_amount):
@@ -573,10 +627,10 @@ class ProgressBar(object):
         percent_done = int(round((new_amount / 100.0) * 100.0))
         all_full = self.width - 2
         num_hashes = int(round((percent_done / 100.0) * all_full))
-        self.prog_bar = '[%s%s]' % ((self.fill_char * num_hashes), ' ' * (all_full - num_hashes))
+        self.prog_bar = '[' + self.fill_char * num_hashes + ' ' * (all_full - num_hashes) + ']'
         pct_place = (len(self.prog_bar) // 2) - len(str(percent_done))
-        pct_string = '%s%%' % (percent_done)
-        self.prog_bar = '%s%s%s' % (self.prog_bar[0:pct_place], pct_string, self.prog_bar[pct_place + len(pct_string):])
+        pct_string = str(percent_done) + '%'
+        self.prog_bar = ''.join((self.prog_bar[0:pct_place], pct_string, self.prog_bar[pct_place + len(pct_string):]))
         return self
 
     def __str__(self):

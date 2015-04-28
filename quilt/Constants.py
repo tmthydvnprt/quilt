@@ -32,6 +32,7 @@ VALUE_RE = re.compile(r'^[ ]{4,}(?P<value>.*)')
 # compiled "handlebar" pagevars
 PAGEVAR_RE = re.compile(r'{{(.*?)}}')
 ESCAPED_PAGEVAR_RE = re.compile(r'{ {(.*?)}}')
+PAGEVAR_SEARCH_RE = re.compile(r'(.*?){ ?{(.*?)}}(.*?)')
 
 # compiled regex for assets
 CSS_EXT_RE = re.compile(r"\.css$")

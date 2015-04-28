@@ -117,10 +117,10 @@ class Blog(object):
 
         # create page for each group
         for group, posts in groups.items():
-            page_html = create_post_list('%s Posts' % (group.title()), reverse_chronological_order(posts), '../')
+            page_html = create_post_list(group.title()+' Posts', reverse_chronological_order(posts), '../')
 
             # stitch blog home page
-            page = os.path.join(self.config["posts"], name, "%s.html" % group)
+            page = os.path.join(self.config["posts"], name, group + '.html')
 
             # check for directory quilt and directory patches?
             quilt, patches = check_local_quilt(page, self.quilt_pattern, self.patches, self.config)
@@ -134,7 +134,7 @@ class Blog(object):
             del qultr
 
         # create index of groups
-        grouplist = ''.join([GROUP % (name, "%s.html" % (group), group, len(posts)) for group, posts in groups.items()])
+        grouplist = ''.join([GROUP % (name, group + '.html', group, len(posts)) for group, posts in groups.items()])
         page_html = GROUPLIST % (name.title(), name, grouplist)
 
         # stitch blog home page
