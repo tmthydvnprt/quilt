@@ -47,7 +47,7 @@ def add_suffix(filepath='', suffix=''):
     print 'debuging:', new_name
     return new_name
 
-@profile
+#@profile
 def parse_pagevars(var_str=''):
     """parse page var string"""
 
@@ -329,7 +329,7 @@ class Quilter(object):
 #                tag.replace_with(new_tag)
 #            else:
 #                tag.append(new_tag)
-#            
+#
 #
 #        if self.__do_debug:
 #            write_file(add_suffix(DEBUG_FILE, 'replaced_vars_soup'), self.soup.encode('utf-8', formatter='html'))

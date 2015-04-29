@@ -10,7 +10,7 @@
     -- Page stitched together with quilt.py
     -- url            : /Users/timothydavenport/GitHub/quilt/tests/output/readme.html
     -- quilted on     : 04/28/15
-    -- stitching took : 0.149 s
+    -- stitching took : 0.119 s
     -- quilt pagevars :
     --            author : tmthydvnprt
     --       categories : []
@@ -161,13 +161,13 @@
 <h2 id="code-examples">Code Examples<a alt="&sect;" class="headerlink" href="#code-examples" title="Permanent link">&sect;</a></h2>
 <hr/>
 <p>Assuming the <a alt="directory structure" href="#exampledir" title="directory structure">directory structure</a> is set up correctly, quilting is quite easy. Quilt a site located at <code>path/to/site/source/files</code> from inside python.</p>
-<div class="codehilite"><pre><span class="kn">from</span> <span class="nn">quilt.QuiltingRoom</span> <span class="kn">import</span> <span class="n">QuiltingRoom</span>
+<div class="codehilite python Python"><pre><span class="kn">from</span> <span class="nn">quilt.QuiltingRoom</span> <span class="kn">import</span> <span class="n">QuiltingRoom</span>
 
 <span class="n">q</span> <span class="o">=</span> <span class="n">QuiltingRoom</span><span class="p">(</span><span class="s">'path/to/site/source/files'</span><span class="p">)</span>
 <span class="n">q</span><span class="o">.</span><span class="n">quilt</span><span class="p">()</span>
 </pre></div>
 <p>The project also includes a <code>__main__.py</code> to execute from command-line.</p>
-<div class="codehilite"><pre>machine:~ user<span class="nv">$ </span>python quilt path/to/site/source/files
+<div class="codehilite shell Bash"><pre>machine:~ user<span class="nv">$ </span>python quilt path/to/site/source/files
 </pre></div>
 <h2 id="installation">Installation<a alt="&sect;" class="headerlink" href="#installation" title="Permanent link">&sect;</a></h2>
 <hr/>
@@ -329,7 +329,7 @@
 <div class="panel-heading" markdown="2">
 <h4 class="panel-title" id="configuration">Default Quilting Configuration:<a alt="&sect;" class="headerlink" href="#configuration" title="Permanent link">&sect;</a></h4>
 </div>
-<div class="codehilite"><pre><span class="c"># default config, overridden by config.json in source directory</span>
+<div class="codehilite python Python"><pre><span class="c"># default config, overridden by config.json in source directory</span>
 <span class="n">DEFAULT_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
     <span class="c"># project variables</span>
     <span class="c"># -----------------------------------------------------------------------------------</span>
@@ -415,7 +415,7 @@
 <div class="panel-heading" markdown="2">
 <h4 class="panel-title" id="pagevars">Page Variables:<a alt="&sect;" class="headerlink" href="#pagevars" title="Permanent link">&sect;</a></h4>
 </div>
-<div class="codehilite"><pre><span class="c"># set quilting page defaults</span>
+<div class="codehilite python Python"><pre><span class="c"># set quilting page defaults</span>
 <span class="n">page_defaults</span> <span class="o">=</span> <span class="p">{</span>
     <span class="c"># internal variables used by quilt (auto-generated, but may be used in content)</span>
     <span class="c"># -----------------------------------------------------------------------------------</span>
@@ -455,7 +455,7 @@
 <div class="panel-heading" markdown="2">
 <h5 class="panel-title" id="quiltfile">Example quilt file (<code>quilt.html</code>):<a alt="&sect;" class="headerlink" href="#quiltfile" title="Permanent link">&sect;</a></h5>
 </div>
-<div class="codehilite"><pre><span class="cp">&lt;!doctype html&gt;</span>
+<div class="codehilite html HTML"><pre><span class="cp">&lt;!doctype html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
     <span class="nt">&lt;head&gt;&lt;/head&gt;</span>
     <span class="nt">&lt;body&gt;</span>
@@ -472,7 +472,7 @@
 <div class="panel-heading" markdown="2">
 <h5 class="panel-title" id="patchfile">Example patch file (<code>head.html</code>):<a alt="&sect;" class="headerlink" href="#patchfile" title="Permanent link">&sect;</a></h5>
 </div>
-<div class="codehilite"><pre><span class="nt">&lt;head&gt;</span>
+<div class="codehilite html HTML"><pre><span class="nt">&lt;head&gt;</span>
     <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge"</span><span class="nt">&gt;</span>
 
@@ -498,13 +498,13 @@
 <h5 class="panel-title" id="pagefile">Example page file (<code>index.html</code>):<a alt="&sect;" class="headerlink" href="#pagefile" title="Permanent link">&sect;</a></h5>
 </div>
 <div class="single-file">
-<div class="codehilite"><pre>title: quilt project example index.html
+<div class="codehilite shell Bash"><pre>title: quilt project example index.html
 description: an example page file with pagevar header, page html, <span class="p">&amp;</span> page script
 author: haha
 name: this is already defined in a sites variables, this will override it...
 uniquepagevar: make a page variable
 </pre></div>
-<div class="codehilite"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"page"</span> <span class="na">class=</span><span class="s">"container-fluid"</span><span class="nt">&gt;</span>
+<div class="codehilite html HTML"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"page"</span> <span class="na">class=</span><span class="s">"container-fluid"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"jumbotron text-center"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;h1&gt;</span>{{name}}<span class="nt">&lt;/h1&gt;</span>
         <span class="nt">&lt;p&gt;</span>
@@ -514,7 +514,7 @@ uniquepagevar: make a page variable
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </pre></div>
-<div class="codehilite"><pre><span class="nt">&lt;script&gt;</span>
+<div class="codehilite html HTML"><pre><span class="nt">&lt;script&gt;</span>
 <span class="cm">/* unique to this page, NOT inserted with patch#page but appended after global scripts */</span>
 <span class="nx">alert</span><span class="p">(</span><span class="s1">'page script'</span><span class="p">);</span>
 <span class="nt">&lt;/script&gt;</span>
@@ -526,19 +526,19 @@ uniquepagevar: make a page variable
 <h5 class="panel-title" id="pagefilemd">Example page file (<code>index.md</code>):<a alt="&sect;" class="headerlink" href="#pagefilemd" title="Permanent link">&sect;</a></h5>
 </div>
 <div class="single-file">
-<div class="codehilite"><pre>title: quilt project example index.html
+<div class="codehilite shell Bash"><pre>title: quilt project example index.html
 description: an example page file with pagevar header, page html, <span class="p">&amp;</span> page script
 author: haha
 name: this is already defined in a sites variables, this will override it...
 uniquepagevar: make a page variable
 </pre></div>
-<div class="codehilite"><pre><span class="gh">{{name}}</span>
+<div class="codehilite markdown reStructuredText"><pre><span class="gh">{{name}}</span>
 <span class="gh">=========</span>
 
 <span class="gh">A `python` based static site `html` _stitcher_.</span>
 <span class="gh">--------------------------------------------------</span>
 </pre></div>
-<div class="codehilite"><pre><span class="nt">&lt;script&gt;</span>
+<div class="codehilite html HTML"><pre><span class="nt">&lt;script&gt;</span>
 <span class="cm">/* unique to this page, NOT inserted with patch#page but appended after global scripts */</span>
 <span class="nx">alert</span><span class="p">(</span><span class="s1">'page script'</span><span class="p">);</span>
 <span class="nt">&lt;/script&gt;</span>

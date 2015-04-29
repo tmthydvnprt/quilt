@@ -10,7 +10,7 @@
     -- Page stitched together with quilt.py
     -- url            : /Users/timothydavenport/GitHub/quilt/tests/output/feed/index.html
     -- quilted on     : 04/28/15
-    -- stitching took : 0.019 s
+    -- stitching took : 0.013 s
     -- quilt pagevars :
     --            author : tmthydvnprt
     --       categories : []

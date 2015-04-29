@@ -109,7 +109,7 @@ BODY_STRAINER = bs4.SoupStrainer("body")
 
 A_LINK_SET = {'a', 'link'}
 STRING_POPULATION = np.array(list(string.uppercase + string.lowercase + string.digits))
-    
+
 #@profile
 def read_file(file_path='', encoding='utf-8'):
     """read a file into a string. assumes utf-8 encoding."""
@@ -370,7 +370,7 @@ def minimize_css(css=''):
 #   352                                           #@profile
 #   353                                           def parse_css_blocks(css=''):
 #   354                                               """parse css string into css blocks {...}"""
-#   355                                           
+#   355
 #   356         2            1      0.5      0.0      temp = ''
 #   357         2            0      0.0      0.0      block = []
 #   358         2            0      0.0      0.0      stack = []
