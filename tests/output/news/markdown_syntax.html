@@ -10,7 +10,7 @@
     -- Page stitched together with quilt.py
     -- url            : /Users/timothydavenport/GitHub/quilt/tests/output/news/markdown_syntax.html
     -- quilted on     : 03/08/2015 1:32 pm
-    -- stitching took : 0.218 s
+    -- stitching took : 0.188 s
     -- quilt pagevars :
     --             author : tim
     --        categories : example
@@ -602,8 +602,8 @@ Content Cell  | Content Cell
 </thead>
 <tbody>
 <tr>
-<td align="center">plain \</td>
-<td align="center">pipe</td>
+<td align="center">plain | pipe</td>
+<td align="center"><code>this | that</code></td>
 </tr>
 <tr>
 <td align="center">Content Cell</td>
@@ -635,7 +635,17 @@ Content Cell  | Content Cell
 
 ///footnotes///
 </pre></div>
-<p>///footnotes///</p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn-1">
+<p>these are kind of like reference style links&nbsp;<a alt="↩" class="footnote-backref" href="#fnref-1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn-2">
+<p>otherwise it will be appended to the end of the document.&nbsp;<a alt="↩" class="footnote-backref" href="#fnref-2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+</ol>
+</div>
 <h3 id="html-capabilities">HTML Capabilities<a alt="&sect;" class="headerlink" href="#html-capabilities" title="Permanent link">&sect;</a></h3>
 <hr/>
 <p>Span-level inline HTML <span style="font-size:32px;"><em>can</em></span> be inserted at any point. <br/>
@@ -983,17 +993,6 @@ $$</span></p>
 <li><code>markdown.extensions.tables</code> was edited to allow attribute lists to be defined on first line after table.</li>
 </ol>
 </div>
-</div>
-<div class="footnote">
-<hr/>
-<ol>
-<li id="fn-1">
-<p>these are kind of like reference style links&nbsp;<a alt="↩" class="footnote-backref" href="#fnref-1" title="Jump back to footnote 1 in the text">↩</a></p>
-</li>
-<li id="fn-2">
-<p>otherwise it will be appended to the end of the document.&nbsp;<a alt="↩" class="footnote-backref" href="#fnref-2" title="Jump back to footnote 2 in the text">↩</a></p>
-</li>
-</ol>
 </div>
 </article>
 </div>

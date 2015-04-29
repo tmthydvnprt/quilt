@@ -2,499 +2,499 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>some_name.com/features_todo.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/features_todo.md</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/glossary.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/glossary.md</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/index.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/index.md</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/readme.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/readme.md</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/robots.txt</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/search.json</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/css/bootstrap.css</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/css/bootstrap_colorful_quilt.css</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/css/colorful.css</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/css/index.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/css/index.md</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/css/quilt.css</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/docs/__init__.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/docs/__init__.md</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/docs/Blog.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/docs/Blog.md</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/docs/Constants.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/docs/Constants.md</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/docs/index.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/docs/index.md</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/docs/Markdown.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/docs/Markdown.md</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/docs/Quilter.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/docs/Quilter.md</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/docs/QuiltingRoom.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/docs/QuiltingRoom.md</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/docs/Util.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/docs/Util.md</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/feed/atom.xml</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/feed/feed.atom</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/feed/feed.rss</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/feed/index.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/feed/index.md</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/feed/rss.xml</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/imgs/.DS_Store</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/imgs/favicon.ico</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/imgs/file.svg</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/imgs/folder.svg</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/imgs/icon.png</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/imgs/icon_120x120.png</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/imgs/icon_152x152.png</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/imgs/icon_60x60.png</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/imgs/icon_64x64.png</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/imgs/icon_76x76.png</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/imgs/index.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/imgs/index.md</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/js/.DS_Store</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/js/bootstrap.min.js</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/js/index.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/js/index.md</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/js/jquery-1.11.2.min.js</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/js/jquery-1.11.2.min_bootstrap.min_typeahead.bundle.min_quilt.js</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/js/quilt.js</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/js/typeahead.bundle.min.js</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/news/html_entities.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/news/html_entities.md</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/news/index.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/news/latex_support.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/news/latex_support.md</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/news/markdown_syntax.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/news/markdown_syntax.md</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/news/quilt-0.1.0.py.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/news/quilt-0.1.0.py.md</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/news/quilt-0.1.1.py.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/news/quilt-0.1.1.py.md</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/news/categories/example.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/news/categories/index.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/news/categories/release.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/news/tags/BeautifulSoup.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/news/tags/entities.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/news/tags/github-flavored-markdown.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/news/tags/html.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/news/tags/index.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/news/tags/LaTeX.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/news/tags/markdown.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/news/tags/python.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/news/tags/quilt.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/news/tags/release.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>some_name.com/news/tags/syntax.html</loc>
-        <lastmod>2015-04-28T07:20:24-7:00</lastmod>
+        <lastmod>2015-04-28T22:05:12-7:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>

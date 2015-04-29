@@ -29,6 +29,7 @@ Adds both included and custom extensions to `Python-Markdown` :
 import re
 import sys
 
+sys.path.insert(1, '/Users/timothydavenport/GitHub/Python-Markdown/')
 import markdown
 from markdown.util import AMP_SUBSTITUTE, etree, AtomicString
 from markdown.extensions import Extension

@@ -10,7 +10,7 @@
     -- Page stitched together with quilt.py
     -- url            : /Users/timothydavenport/GitHub/quilt/tests/output/news/latex_support.html
     -- quilted on     : 3/20/2015 10:49 pm
-    -- stitching took : 0.648 s
+    -- stitching took : 0.541 s
     -- quilt pagevars :
     --             author : tim
     --        categories : example
@@ -451,44 +451,44 @@
 <td><span class="maths">$$\left\{\frac ab,c\right\}$$</span></td>
 </tr>
 <tr>
-<td>`\</td>
-<td>`</td>
-<td>`$$\</td>
+<td><code>\|</code></td>
+<td><code>$$|x|$$</code></td>
+<td><span class="maths">$$|x|$$</span></td>
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>`$$\</td>
-<td>\frac ab\</td>
+<td><code>$$|\frac ab|$$</code></td>
+<td><span class="maths">$$|\frac ab|$$</span></td>
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>`$$\left\</td>
-<td>\frac ab\right\</td>
+<td><code>$$\left|\frac ab\right|$$</code></td>
+<td><span class="maths">$$\left|\frac ab\right|$$</span></td>
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>`$${x \</td>
-<td>x\in\Bbb Z}$$`</td>
+<td><code>$$\{x | x\in\Bbb Z\}$$</code></td>
+<td><span class="maths">$$\{x | x\in\Bbb Z\}$$</span></td>
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>`$${x\,\</td>
-<td>\,x\in\Bbb Z}$$`</td>
+<td><code>$$\{x\,|\,x\in\Bbb Z\}$$</code></td>
+<td><span class="maths">$$\{x\,|\,x\in\Bbb Z\}$$</span></td>
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>`$$\</td>
-<td>x\</td>
+<td><code>$$\|x\|$$</code></td>
+<td><span class="maths">$$\|x\|$$</span></td>
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>`$$\</td>
-<td>\frac ab\</td>
+<td><code>$$\|\frac ab\|$$</code></td>
+<td><span class="maths">$$\|\frac ab\|$$</span></td>
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>`$$\left\</td>
-<td>\frac ab\right\</td>
+<td><code>$$\left\|\frac ab\right\|$$</code></td>
+<td><span class="maths">$$\left\|\frac ab\right\|$$</span></td>
 </tr>
 <tr>
 <td><code>( )</code></td>
@@ -599,8 +599,8 @@
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>`$${a \abovewithdelims . \</td>
-<td a="3">1.5pt b+2}_</td>
+<td><code>$${a \abovewithdelims . | 1.5pt b+2}_{a=3}$$</code></td>
+<td><span class="maths">$${a \abovewithdelims . | 1.5pt b+2}_{a=3}$$</span></td>
 </tr>
 <tr>
 <td>&nbsp;</td>
@@ -729,8 +729,8 @@
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>`$$a+1 \atopwithdelims . \</td>
-<td>b+2$$`</td>
+<td><code>$$a+1 \atopwithdelims . | b+2$$</code></td>
+<td><span class="maths">$$a+1 \atopwithdelims . | b+2$$</span></td>
 </tr>
 <tr>
 <td>&nbsp;</td>
@@ -881,13 +881,13 @@
 </tr>
 <tr>
 <td><code>\big</code></td>
-<td>`$$x\big\</td>
-<td>y$$`</td>
+<td><code>$$x\big| y$$</code></td>
+<td><span class="maths">$$x\big| y$$</span></td>
 </tr>
 <tr>
 <td><code>\bigm</code></td>
-<td>`$$x\bigm\</td>
-<td>y$$`</td>
+<td><code>$$x\bigm| y$$</code></td>
+<td><span class="maths">$$x\bigm| y$$</span></td>
 </tr>
 <tr>
 <td><code>\bigcap</code></td>
@@ -1228,8 +1228,8 @@
 </tr>
 <tr>
 <td><code>\cases</code></td>
-<td>`$$\</td>
-<td>x\</td>
+<td><code>$$|x| = \cases{x  &amp; \text{if} x\ge 0\cr -x &amp; \text{if} x\lt 0}$$</code></td>
+<td><span class="maths">$$|x| = \cases{x  &amp; \text{if } x\ge 0\cr -x &amp; \text{if } x\lt 0}$$</span></td>
 </tr>
 <tr>
 <td><code>\cfrac</code></td>
@@ -2220,8 +2220,8 @@
 </tr>
 <tr>
 <td><code>\kern</code></td>
-<td>`$$\</td>
-<td>\kern 2ex\</td>
+<td><code>$$|\kern 2ex|\kern 2em|\kern 2pt|$$</code></td>
+<td><span class="maths">$$|\kern 2ex|\kern 2em|\kern 2pt|$$</span></td>
 </tr>
 <tr>
 <td>&nbsp;</td>
@@ -3372,8 +3372,8 @@
 <tbody>
 <tr>
 <td><code>\quad</code></td>
-<td>`$$\</td>
-<td>\quad\</td>
+<td><code>$$|\quad|\quad|$$</code></td>
+<td><span class="maths">$$|\quad|\quad|$$</span></td>
 </tr>
 </tbody>
 </table>
