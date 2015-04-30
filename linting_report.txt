@@ -12,11 +12,11 @@ R:  1, 0: Similar lines in 3 files
 ==quilt.Blog:144
 ==quilt.Blog:88
 ==quilt.QuiltingRoom:336
-            qultr.stitch()
-            qultr.clean_html()
-            qultr.remove_empty()
-            qultr.write()
-            del qultr
+        qultr.stitch()
+        qultr.clean_html()
+        qultr.remove_empty()
+        qultr.write()
+        del qultr
 
         return self
 
