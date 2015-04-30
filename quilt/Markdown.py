@@ -56,7 +56,7 @@ class ChecklistPostprocessor(Postprocessor):
 
 class MultiPattern(Pattern):
     """match multiple patterns"""
-    def handle_match(self, m):
+    def handleMatch(self, m):
         """handle matched inline pattern"""
         # find which match
         tag = MD_INLINE_TAGS[m.group(2)]
@@ -67,7 +67,7 @@ class MultiPattern(Pattern):
 
 class ReplacePattern(Pattern):
     """match multiple patterns"""
-    def handle_match(self, m):
+    def handleMatch(self, m):
         """handle matched inline pattern"""
         # find which match
         tag = REPLACE_TAGS[m.group(2)]
@@ -77,7 +77,7 @@ class ReplacePattern(Pattern):
 
 class CustomSpanPattern(Pattern):
     """custom span pattern"""
-    def handle_match(self, matched):
+    def handleMatch(self, matched):
         """handle matched inline pattern"""
         elem = etree.Element("span")
         elem.set("class", matched.group("class"))
@@ -86,7 +86,7 @@ class CustomSpanPattern(Pattern):
 
 class SymbolPattern(Pattern):
     """match symbols and replace html entities"""
-    def handle_match(self, m):
+    def handleMatch(self, m):
         """replace match with span.symbol"""
         node = etree.Element('span')
         node.set('class', 'symbol')
@@ -95,7 +95,7 @@ class SymbolPattern(Pattern):
 
 class MathsPattern(SimpleTagPattern):
     """match LaTeX math patterns"""
-    def handle_match(self, m):
+    def handleMatch(self, m):
         """replace match with span.maths """
         node = etree.Element(self.tag)
         node.set('class', 'maths')

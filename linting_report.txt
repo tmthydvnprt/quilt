@@ -1,9 +1,4 @@
 quilt
-************* Module quilt.Markdown
-R: 59, 4: Method could be a function (no-self-use)
-R: 70, 4: Method could be a function (no-self-use)
-R: 80, 4: Method could be a function (no-self-use)
-R: 89, 4: Method could be a function (no-self-use)
 ************* Module quilt.Quilter
 R: 84, 0: Too many instance attributes (9/8) (too-many-instance-attributes)
 R:414, 4: Too many branches (22/16) (too-many-branches)
@@ -12,11 +7,11 @@ R:  1, 0: Similar lines in 3 files
 ==quilt.Blog:144
 ==quilt.Blog:88
 ==quilt.QuiltingRoom:336
-        qultr.stitch()
-        qultr.clean_html()
-        qultr.remove_empty()
-        qultr.write()
-        del qultr
+            qultr.stitch()
+            qultr.clean_html()
+            qultr.remove_empty()
+            qultr.write()
+            del qultr
 
         return self
 
@@ -134,7 +129,7 @@ Messages by category
 +===========+=======+=========+===========+
 |convention |0      |0        |=          |
 +-----------+-------+---------+-----------+
-|refactor   |10     |10       |=          |
+|refactor   |6      |6        |=          |
 +-----------+-------+---------+-----------+
 |warning    |0      |0        |=          |
 +-----------+-------+---------+-----------+
@@ -146,13 +141,11 @@ Messages by category
 % errors / warnings by module
 -----------------------------
 
-+---------------+------+--------+---------+-----------+
-|module         |error |warning |refactor |convention |
-+===============+======+========+=========+===========+
-|quilt.Markdown |0.00  |0.00    |40.00    |0.00       |
-+---------------+------+--------+---------+-----------+
-|quilt.Quilter  |0.00  |0.00    |20.00    |0.00       |
-+---------------+------+--------+---------+-----------+
++--------------+------+--------+---------+-----------+
+|module        |error |warning |refactor |convention |
++==============+======+========+=========+===========+
+|quilt.Quilter |0.00  |0.00    |33.33    |0.00       |
++--------------+------+--------+---------+-----------+
 
 
 
@@ -162,8 +155,6 @@ Messages
 +-----------------------------+------------+
 |message id                   |occurrences |
 +=============================+============+
-|no-self-use                  |4           |
-+-----------------------------+------------+
 |duplicate-code               |4           |
 +-----------------------------+------------+
 |too-many-instance-attributes |1           |
@@ -175,7 +166,7 @@ Messages
 
 Global evaluation
 -----------------
-Your code has been rated at 9.91/10 (previous run: 9.91/10, +0.00)
+Your code has been rated at 9.94/10 (previous run: 9.94/10, +0.00)
 
  
 tests
