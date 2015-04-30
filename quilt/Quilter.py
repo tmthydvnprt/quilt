@@ -191,13 +191,27 @@ class Quilter(object):
                 if patch["id"] in self.patches:
 
                     if patch["id"] == "scripts":
-                        patch_soup = bs4.BeautifulSoup(self.patches[patch["id"]].encode('utf-8'), "lxml", parse_only=HEAD_STRAINER)
+                        patch_soup = bs4.BeautifulSoup(
+                            self.patches[patch["id"]].encode('utf-8'),
+                            "lxml",
+                            parse_only=HEAD_STRAINER
+                        )
                     else:
-                        patch_soup = bs4.BeautifulSoup(self.patches[patch["id"]].encode('utf-8'), "lxml", parse_only=BODY_STRAINER)
+                        patch_soup = bs4.BeautifulSoup(
+                            self.patches[patch["id"]].encode('utf-8'),
+                            "lxml",
+                            parse_only=BODY_STRAINER
+                        )
 
                     if self.__do_debug:
-                        write_file(add_suffix(DEBUG_FILE, '_'+patch["id"]+'-html'), self.patches[patch["id"]].encode('utf-8'))
-                        write_file(add_suffix(DEBUG_FILE, '_'+patch["id"]+'-soup'), patch_soup.encode('utf-8', formatter='html'))
+                        write_file(
+                            add_suffix(DEBUG_FILE, '_'+patch["id"]+'-html'),
+                            self.patches[patch["id"]].encode('utf-8')
+                        )
+                        write_file(
+                            add_suffix(DEBUG_FILE, '_'+patch["id"]+'-soup'),
+                            patch_soup.encode('utf-8', formatter='html')
+                        )
 
                     if patch["id"] == "scripts":
                         patch.append('\n')
@@ -250,7 +264,7 @@ class Quilter(object):
                 pagevar_brace = "{{%s}}" % (page_var)
                 if page_var in self.pagevars:
                     variable = self.pagevars[page_var]
-                    if type(variable) is list:
+                    if isinstance(variable, list):
                         variable = ','.join(variable)
                     html = html.replace(pagevar_brace, str(variable))
                 else:
@@ -320,17 +334,6 @@ class Quilter(object):
                 if not tag.contents:
                     tag.decompose()
         return self
-
-#        for a_tag in self.soup.find_all("a"):
-#            if "href" not in a_tag.attrs:
-#                a_tag.attrs["href"] = "#"
-##            if "href" in a_tag.attrs:
-##                anchor = a_tag.attrs["href"]
-##                if anchor and anchor[0] == '#' and len(anchor) > 1:
-##                    target = self.soup.find(id=anchor[1:])
-##                    if not target:
-##                        a_tag.unwrap()
-
 
     #@profile
     def clean_html(self):

@@ -435,7 +435,7 @@ def vendorfy_css(block=None):
     """adds vendor prefixes to a block of css"""
 
     for i, blck in enumerate(block):
-        if type(blck[1]) == list:
+        if isinstance(blck[1], list):
             at_prefix = [a for a in AT_RULES if a in blck[0]]
             if at_prefix:
                 block[i] = (vendorfy_at_prefix(blck, at_prefix))
@@ -451,10 +451,10 @@ def unparse_css_blocks(blocks=None):
 
     css = ''
     for block in blocks:
-        if all([type(blck) == list for blck in block]):
+        if all([isinstance(blck, list) for blck in block]):
             for blck in block:
                 css += ('%s {%s}' % (blck[0], unparse_css_blocks(blck[1])))
-        elif any([type(blck) == list for blck in block]):
+        elif any([isinstance(blck, list) for blck in block]):
             css += ('%s {%s}' % (block[0], unparse_css_blocks(block[1])))
         else:
             css += ('%s {%s}' % (block[0], block[1]))
@@ -473,7 +473,7 @@ def group_links(pagevars=None, name=''):
     """place tag and category links"""
     linklist = ''
     if pagevars[name]:
-        groups = pagevars[name] if type(pagevars[name]) is list else [pagevars[name]]
+        groups = pagevars[name] if isinstance(pagevars[name], list) else [pagevars[name]]
         dirname = os.path.join(os.path.dirname(pagevars["url"]), name)
         linklist = '\n'.join([GROUPLINK % (name, os.path.join(dirname, "%s.html" % (x)), x) for x in groups])
     return linklist

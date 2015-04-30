@@ -1,26 +1,12 @@
 quilt
-************* Module quilt.Blog
-W:103,40: Using type() instead of isinstance() for a typecheck. (unidiomatic-typecheck)
-************* Module quilt.Markdown
-W: 30, 0: Unused import sys (unused-import)
 ************* Module quilt.Quilter
-C:194, 0: Line too long (131/128) (line-too-long)
-C:196, 0: Line too long (131/128) (line-too-long)
-C:200, 0: Line too long (129/128) (line-too-long)
 R: 76, 0: Too many instance attributes (9/8) (too-many-instance-attributes)
-W:253,23: Using type() instead of isinstance() for a typecheck. (unidiomatic-typecheck)
-R:336, 4: Too many branches (22/16) (too-many-branches)
-************* Module quilt.QuiltingRoom
-C:151, 0: Line too long (166/128) (line-too-long)
+R:339, 4: Too many branches (22/16) (too-many-branches)
 ************* Module quilt.Util
-W:438,11: Using type() instead of isinstance() for a typecheck. (unidiomatic-typecheck)
-W:454,16: Using type() instead of isinstance() for a typecheck. (unidiomatic-typecheck)
-W:457,18: Using type() instead of isinstance() for a typecheck. (unidiomatic-typecheck)
-W:476,35: Using type() instead of isinstance() for a typecheck. (unidiomatic-typecheck)
 R:  1, 0: Similar lines in 3 files
 ==quilt.Blog:144
 ==quilt.Blog:88
-==quilt.QuiltingRoom:335
+==quilt.QuiltingRoom:336
             qultr.stitch()
             qultr.clean_html()
             qultr.remove_empty()
@@ -32,7 +18,7 @@ R:  1, 0: Similar lines in 3 files
     #@profile (duplicate-code)
 R:  1, 0: Similar lines in 2 files
 ==quilt.Blog:129
-==quilt.QuiltingRoom:510
+==quilt.QuiltingRoom:511
             qultr.stitch()
             qultr.clean_html()
             qultr.remove_empty()
@@ -42,7 +28,7 @@ R:  1, 0: Similar lines in 2 files
     #@profile (duplicate-code)
 R:  1, 0: Similar lines in 2 files
 ==quilt.Blog:129
-==quilt.QuiltingRoom:335
+==quilt.QuiltingRoom:336
             qultr.stitch()
             qultr.clean_html()
             qultr.remove_empty()
@@ -52,18 +38,18 @@ R:  1, 0: Similar lines in 2 files
 R:  1, 0: Similar lines in 3 files
 ==quilt.Blog:144
 ==quilt.Blog:88
-==quilt.QuiltingRoom:510
-        qultr.stitch()
-        qultr.clean_html()
-        qultr.remove_empty()
-        qultr.write()
-        del qultr
+==quilt.QuiltingRoom:511
+            qultr.stitch()
+            qultr.clean_html()
+            qultr.remove_empty()
+            qultr.write()
+            del qultr
  (duplicate-code)
 
 
 Report
 ======
-1088 statements analysed.
+1089 statements analysed.
 
 Statistics by type
 ------------------
@@ -110,13 +96,13 @@ Raw metrics
 +----------+-------+------+---------+-----------+
 |type      |number |%     |previous |difference |
 +==========+=======+======+=========+===========+
-|code      |1324   |63.90 |1324     |=          |
+|code      |1338   |64.42 |1338     |=          |
 +----------+-------+------+---------+-----------+
-|docstring |414    |19.98 |414      |=          |
+|docstring |416    |20.03 |416      |=          |
 +----------+-------+------+---------+-----------+
-|comment   |242    |11.68 |242      |=          |
+|comment   |233    |11.22 |242      |-9.00      |
 +----------+-------+------+---------+-----------+
-|empty     |92     |4.44  |92       |=          |
+|empty     |90     |4.33  |92       |-2.00      |
 +----------+-------+------+---------+-----------+
 
 
@@ -129,7 +115,7 @@ Duplication
 +=========================+======+=========+===========+
 |nb duplicated lines      |43    |43       |=          |
 +-------------------------+------+---------+-----------+
-|percent duplicated lines |1.804 |1.804    |=          |
+|percent duplicated lines |1.801 |1.792    |+0.01      |
 +-------------------------+------+---------+-----------+
 
 
@@ -140,11 +126,11 @@ Messages by category
 +-----------+-------+---------+-----------+
 |type       |number |previous |difference |
 +===========+=======+=========+===========+
-|convention |4      |4        |=          |
+|convention |0      |0        |=          |
 +-----------+-------+---------+-----------+
 |refactor   |6      |6        |=          |
 +-----------+-------+---------+-----------+
-|warning    |7      |7        |=          |
+|warning    |0      |0        |=          |
 +-----------+-------+---------+-----------+
 |error      |0      |0        |=          |
 +-----------+-------+---------+-----------+
@@ -154,17 +140,11 @@ Messages by category
 % errors / warnings by module
 -----------------------------
 
-+-------------------+------+--------+---------+-----------+
-|module             |error |warning |refactor |convention |
-+===================+======+========+=========+===========+
-|quilt.Quilter      |0.00  |14.29   |33.33    |75.00      |
-+-------------------+------+--------+---------+-----------+
-|quilt.Markdown     |0.00  |14.29   |0.00     |0.00       |
-+-------------------+------+--------+---------+-----------+
-|quilt.Blog         |0.00  |14.29   |0.00     |0.00       |
-+-------------------+------+--------+---------+-----------+
-|quilt.QuiltingRoom |0.00  |0.00    |0.00     |25.00      |
-+-------------------+------+--------+---------+-----------+
++--------------+------+--------+---------+-----------+
+|module        |error |warning |refactor |convention |
++==============+======+========+=========+===========+
+|quilt.Quilter |0.00  |0.00    |33.33    |0.00       |
++--------------+------+--------+---------+-----------+
 
 
 
@@ -174,13 +154,7 @@ Messages
 +-----------------------------+------------+
 |message id                   |occurrences |
 +=============================+============+
-|unidiomatic-typecheck        |6           |
-+-----------------------------+------------+
-|line-too-long                |4           |
-+-----------------------------+------------+
 |duplicate-code               |4           |
-+-----------------------------+------------+
-|unused-import                |1           |
 +-----------------------------+------------+
 |too-many-instance-attributes |1           |
 +-----------------------------+------------+
@@ -191,7 +165,7 @@ Messages
 
 Global evaluation
 -----------------
-Your code has been rated at 9.84/10 (previous run: 9.84/10, +0.00)
+Your code has been rated at 9.94/10 (previous run: 9.94/10, +0.00)
 
  
 tests
@@ -209,9 +183,9 @@ Statistics by type
 +=========+=======+===========+===========+============+=========+
 |module   |2      |2          |=          |100.00      |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
-|class    |1      |3          |-2.00      |100.00      |0.00     |
+|class    |1      |1          |=          |100.00      |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
-|method   |1      |5          |-4.00      |100.00      |0.00     |
+|method   |1      |1          |=          |100.00      |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
 |function |0      |0          |=          |0           |0        |
 +---------+-------+-----------+-----------+------------+---------+
@@ -233,9 +207,9 @@ Raw metrics
 +----------+-------+------+---------+-----------+
 |type      |number |%     |previous |difference |
 +==========+=======+======+=========+===========+
-|code      |13     |44.83 |33       |-20.00     |
+|code      |13     |44.83 |13       |=          |
 +----------+-------+------+---------+-----------+
-|docstring |8      |27.59 |14       |-6.00      |
+|docstring |8      |27.59 |8        |=          |
 +----------+-------+------+---------+-----------+
 |comment   |4      |13.79 |4        |=          |
 +----------+-------+------+---------+-----------+
