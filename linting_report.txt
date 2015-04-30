@@ -6,7 +6,7 @@ R:339, 4: Too many branches (22/16) (too-many-branches)
 R:  1, 0: Similar lines in 3 files
 ==quilt.Blog:144
 ==quilt.Blog:88
-==quilt.QuiltingRoom:336
+==quilt.QuiltingRoom:338
             qultr.stitch()
             qultr.clean_html()
             qultr.remove_empty()
@@ -18,7 +18,7 @@ R:  1, 0: Similar lines in 3 files
     #@profile (duplicate-code)
 R:  1, 0: Similar lines in 2 files
 ==quilt.Blog:129
-==quilt.QuiltingRoom:511
+==quilt.QuiltingRoom:515
             qultr.stitch()
             qultr.clean_html()
             qultr.remove_empty()
@@ -28,7 +28,7 @@ R:  1, 0: Similar lines in 2 files
     #@profile (duplicate-code)
 R:  1, 0: Similar lines in 2 files
 ==quilt.Blog:129
-==quilt.QuiltingRoom:336
+==quilt.QuiltingRoom:338
             qultr.stitch()
             qultr.clean_html()
             qultr.remove_empty()
@@ -38,18 +38,18 @@ R:  1, 0: Similar lines in 2 files
 R:  1, 0: Similar lines in 3 files
 ==quilt.Blog:144
 ==quilt.Blog:88
-==quilt.QuiltingRoom:511
-            qultr.stitch()
-            qultr.clean_html()
-            qultr.remove_empty()
-            qultr.write()
-            del qultr
+==quilt.QuiltingRoom:515
+        qultr.stitch()
+        qultr.clean_html()
+        qultr.remove_empty()
+        qultr.write()
+        del qultr
  (duplicate-code)
 
 
 Report
 ======
-1089 statements analysed.
+1092 statements analysed.
 
 Statistics by type
 ------------------
@@ -96,13 +96,13 @@ Raw metrics
 +----------+-------+------+---------+-----------+
 |type      |number |%     |previous |difference |
 +==========+=======+======+=========+===========+
-|code      |1338   |64.42 |1338     |=          |
+|code      |1340   |64.36 |1340     |=          |
 +----------+-------+------+---------+-----------+
-|docstring |416    |20.03 |416      |=          |
+|docstring |418    |20.08 |418      |=          |
 +----------+-------+------+---------+-----------+
-|comment   |233    |11.22 |233      |=          |
+|comment   |232    |11.14 |232      |=          |
 +----------+-------+------+---------+-----------+
-|empty     |90     |4.33  |90       |=          |
+|empty     |92     |4.42  |92       |=          |
 +----------+-------+------+---------+-----------+
 
 
@@ -115,7 +115,7 @@ Duplication
 +=========================+======+=========+===========+
 |nb duplicated lines      |43    |43       |=          |
 +-------------------------+------+---------+-----------+
-|percent duplicated lines |1.801 |1.801    |=          |
+|percent duplicated lines |1.797 |1.797    |=          |
 +-------------------------+------+---------+-----------+
 
 
@@ -165,7 +165,7 @@ Messages
 
 Global evaluation
 -----------------
-Your code has been rated at 9.94/10 (previous run: 9.94/10, +0.00)
+Your code has been rated at 9.95/10 (previous run: 9.95/10, +0.00)
 
  
 tests
