@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--quilted head patch-->
+<head>
+<meta charset="utf-8"/>
+<meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<!--
+    -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    -- Page stitched together with quilt.py
+    -- url            : /Users/timothydavenport/GitHub/quilt/tests/output/news/markdown_syntax.html
+    -- quilted on     : 03/08/2015 1:32 pm
+    -- stitching took : 0.264 s
+    -- quilt pagevars :
+    --             author : tim
+    --        categories : example
+    --     category_list : <li class="categories"><a href="/Users/timothydavenport/GitHub/quilt/tests/output/news/categories/example.html" class="label label-success">example</a></li>
+
+    --          copydate : 2015
+    --              date : 03/08/2015 1:32 pm
+    --       description : An explanation of the markdown syntax specifics used by quilt
+    --         directory : news
+    --      disable_last : 
+    --      disable_next : 
+    --            domain : some_name.com
+    --             email : tmthydvnprt@users.noreply.github.com
+    --          keywords : 
+    --         last_post : /Users/timothydavenport/GitHub/quilt/tests/output/news/quilt-0.1.0.py.html
+    --        last_title : quilt 0.1.0
+    --        latestpost : latex_support
+    --      markdownlink : /Users/timothydavenport/GitHub/quilt/tests/output/news/markdown_syntax.md
+    --              name : quilt
+    --         next_post : /Users/timothydavenport/GitHub/quilt/tests/output/news/quilt-0.1.1.py.html
+    --        next_title : quilt 0.1.1
+    --            output : /Users/timothydavenport/GitHub/quilt/tests/output/news/markdown_syntax.html
+    --         page_path : <li><a href="">news</a></li>
+<li class="active">quilt's markdown syntax</li>
+    --       pagecomment : True
+    --      patchcomment : True
+    --      quiltcomment : True
+    --      relativepath : ../
+    --          rootpath : /Users/timothydavenport/GitHub/quilt/tests/output
+    --            source : /Users/timothydavenport/GitHub/quilt/tests/source/pages/news/markdown_syntax.md
+    --          tag_list : <li class="tags"><a href="/Users/timothydavenport/GitHub/quilt/tests/output/news/tags/github-flavored-markdown.html" class="label label-success">github-flavored-markdown</a></li>
+
+<li class="tags"><a href="/Users/timothydavenport/GitHub/quilt/tests/output/news/tags/markdown.html" class="label label-success">markdown</a></li>
+
+<li class="tags"><a href="/Users/timothydavenport/GitHub/quilt/tests/output/news/tags/syntax.html" class="label label-success">syntax</a></li>
+
+    --              tags : [u'github-flavored-markdown', u'markdown', u'syntax']
+    --             title : quilt's markdown syntax
+    --               url : /Users/timothydavenport/GitHub/quilt/tests/output/news/markdown_syntax.html
+    -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+<title>quilt's markdown syntax</title>
+<meta content="tim" name="author"/>
+<meta content="An explanation of the markdown syntax specifics used by quilt" name="description"/>
+<meta content="" name="keywords"/>
+<link href="../imgs/favicon.ico" rel="favicon"/>
+<link href="../img/icon_60x60.png" rel="apple-touch-icon"/>
+<link href="../img/icon_76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+<link href="../img/icon_120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="../img/icon_152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="../css/bootstrap_colorful_quilt.css" rel="stylesheet" type="text/css"/></head>
+<body>
+<!-- directory quilt -->
+<!--quilted nav patch-->
+<nav class="navbar navbar-default navbar-fixed-top" id="nav">
+<div class="container">
+<div class="navbar-header">
+<button aria-controls="navbar" aria-expanded="false" class="navbar-toggle collapsed" data-target="#navbar" data-toggle="collapse" type="button">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a alt="home" href="../index.html" title="quilt">
+<ul class="logo list-unstyled">
+<li><code>,,,,,,,</code></li>
+<li><code>;#~#~#;</code></li>
+<li><code>;~#~#~;</code></li>
+<li><code>;#~#~#;</code></li>
+<li><code>'''''''</code></li>
+</ul>
+</a>
+<a alt="home" class="navbar-brand" href="../index.html" title="quilt">quilt</a>
+</div>
+<div class="navbar-collapse collapse" id="navbar">
+<ul class="nav navbar-nav navbar-left">
+<li><a alt="about(readme)" href="../readme.html" title="about(readme)">about(readme)</a></li>
+<li><a alt="features+todo" href="../features_todo.html" title="features+todo">features+todo</a></li>
+<li class="dropdown">
+<a alt="docs" class="dropdown-toggle" data-toggle="dropdown" href="../docs/index.html" title="docs">docs<span class="caret"></span></a>
+<ul class="dropdown-menu" role="menu">
+<li><a alt="index" href="../docs/index.html" title="index"><strong>index</strong></a></li>
+<li><a alt="__init__" href="../docs/__init__.html" title="__init__">__init__</a></li>
+<li><a alt="QuiltingRoom" href="../docs/QuiltingRoom.html" title="QuiltingRoom">QuiltingRoom</a></li>
+<li><a alt="Quilter" href="../docs/Quilter.html" title="Quilter">Quilter</a></li>
+<li><a alt="Util" href="../docs/Util.html" title="Util">Util</a></li>
+<li><a alt="Constants" href="../docs/Constants.html" title="Constants">Constants</a></li>
+<li><a alt="Blog" href="../docs/Blog.html" title="Blog">Blog</a></li>
+<li><a alt="Markdown" href="../docs/Markdown.html" title="Markdown">Markdown</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a alt="news" class="dropdown-toggle" data-toggle="dropdown" href="../news/index.html" title="news">news<span class="caret"></span></a>
+<ul class="dropdown-menu" role="menu">
+<li><a alt="news" href="../news/index.html" title="news"><strong>news</strong></a></li>
+<li><a alt="latest post" href="../news/latex_support.html" title="latest post">latest post</a></li>
+<li><a alt="categories" href="../news/categories/index.html" title="categories">categories</a></li>
+<li><a alt="tags" href="../news/tags/index.html" title="tags">tags</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="nav-search">
+<form class="search navbar-form">
+<input class="form-control typeahead" placeholder="Search for..." type="text"/>
+</form>
+</div>
+</div>
+</nav>
+<!--quilted page patch-->
+<div class="container" id="page">
+<div class="row">
+<div class="col-sm-8 col-md-8 col-md-offset-1">
+<ul class="breadcrumb">
+<li><a alt="news" href="" title="news">news</a></li>
+<li class="active">quilt's markdown syntax</li>
+</ul>
+<article class="markdowned">
+<h1 id="title-description">quilt's markdown syntax <br/><small>An explanation of the markdown syntax specifics used by quilt</small><a alt="&sect;" class="headerlink" href="#title-description" title="Permanent link">&sect;</a></h1>
+<p class="h4">by tim <small>on 03/08/2015 1:32 pm</small><br/></p>
+<hr/>
+<div class="toc">
+<ul>
+<li><a alt="quilt's markdown syntax An explanation of the markdown syntax specifics used by quilt" href="#title-description" title="quilt's markdown syntax An explanation of the markdown syntax specifics used by quilt">quilt's markdown syntax <br/><small>An explanation of the markdown syntax specifics used by quilt</small></a><ul>
+<li><a alt="Syntax Examples:" href="#syntax-examples" title="Syntax Examples:">Syntax Examples:</a><ul>
+<li><a alt="Headings" href="#headings" title="Headings">Headings</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a alt="H1" href="#h1" title="H1">H1</a><ul>
+<li><a alt="H2" href="#h2" title="H2">H2</a><ul>
+<li><a alt="H3" href="#h3" title="H3">H3</a><ul>
+<li><a alt="H4" href="#h4" title="H4">H4</a><ul>
+<li><a alt="H5" href="#h5" title="H5">H5</a><ul>
+<li><a alt="H6" href="#h6" title="H6">H6</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a alt="H1 alternate" href="#h1-alternate" title="H1 alternate">H1 alternate</a><ul>
+<li><a alt="H2 alternate" href="#h2-alternate" title="H2 alternate">H2 alternate</a><ul>
+<li><a alt="Paragraphs &amp; Inline Text" href="#paragraphs-inline-text" title="Paragraphs &amp; Inline Text">Paragraphs &amp; Inline Text</a></li>
+<li><a alt="Lists" href="#lists" title="Lists">Lists</a></li>
+<li><a alt="Links" href="#links" title="Links">Links</a></li>
+<li><a alt="Code" href="#code" title="Code">Code</a></li>
+<li><a alt="Horizontal Rules" href="#horizontal-rules" title="Horizontal Rules">Horizontal Rules</a></li>
+<li><a alt="Tables" href="#tables" title="Tables">Tables</a></li>
+<li><a alt="Definition Lists" href="#definition-lists" title="Definition Lists">Definition Lists</a></li>
+<li><a alt="Footnotes" href="#footnotes" title="Footnotes">Footnotes</a></li>
+<li><a alt="HTML Capabilities" href="#html-capabilities" title="HTML Capabilities">HTML Capabilities</a></li>
+<li><a alt="Symbol Shortcuts" href="#symbol-shortcuts" title="Symbol Shortcuts">Symbol Shortcuts</a></li>
+<li><a alt="\(\LaTeX{}\) Support" href="#latex-support" title="\(\LaTeX{}\) Support">\(\LaTeX{}\) Support</a></li>
+<li><a alt="Escaping" href="#escaping" title="Escaping">Escaping</a></li>
+<li><a alt="Table of Contents" href="#table-of-contents" title="Table of Contents">Table of Contents</a></li>
+<li><a alt="Read the Source" href="#read-the-source" title="Read the Source">Read the Source</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="post">
+<p class="lead">Quilt uses <a alt="Python-Markdown" href="http://pythonhosted.org//Markdown/index.html" title="Python-Markdown">Python-Markdown</a> as it's <code>markdown</code> interpreter. Besides the base syntax rules of original <a alt="Markdown" href="http://daringfireball.net/projects/markdown/" title="Markdown">Markdown</a>, quilt parses extra <code>markdown</code> syntax. Extras includes abbreviations, attribute lists, definitions, fenced code, footnotes, tables (with escaped pipes (<code>\|</code>) in cells), smart strong (ignore underscores (<code>_</code>) in words), newline breaks, list type change, syntax highlighting, checklists, strikethroughs, super/subscript, insert/delete, user input/sample, variables, smalls, bigs, cites, auto wikilinks, and table of contents generation. Inline <span class="maths">\(\LaTeX\)</span> and <code>utf-8</code> is supported.<br/></p>
+<h2 id="syntax-examples">Syntax Examples:<a alt="&sect;" class="headerlink" href="#syntax-examples" title="Permanent link">&sect;</a></h2>
+<hr/>
+<h3 id="headings">Headings<a alt="&sect;" class="headerlink" href="#headings" title="Permanent link">&sect;</a></h3>
+<hr/>
+<p>Headings are specified by levels of hashes (<code>#</code>). Alternate Headings for H1 and H2 can be created by underlining them with three or more equals (<code>=</code>) or hyphens (<code>-</code>), respectively.</p>
+<h1 id="h1">H1<a alt="&sect;" class="headerlink" href="#h1" title="Permanent link">&sect;</a></h1>
+<div class="codehilite"><pre># H1
+</pre></div>
+<h2 id="h2">H2<a alt="&sect;" class="headerlink" href="#h2" title="Permanent link">&sect;</a></h2>
+<div class="codehilite"><pre>## H2
+</pre></div>
+<h3 id="h3">H3<a alt="&sect;" class="headerlink" href="#h3" title="Permanent link">&sect;</a></h3>
+<div class="codehilite"><pre>### H3
+</pre></div>
+<h4 id="h4">H4<a alt="&sect;" class="headerlink" href="#h4" title="Permanent link">&sect;</a></h4>
+<div class="codehilite"><pre>#### H4
+</pre></div>
+<h5 id="h5">H5<a alt="&sect;" class="headerlink" href="#h5" title="Permanent link">&sect;</a></h5>
+<div class="codehilite"><pre>##### H5
+</pre></div>
+<h6 id="h6">H6<a alt="&sect;" class="headerlink" href="#h6" title="Permanent link">&sect;</a></h6>
+<div class="codehilite"><pre>###### H6
+</pre></div>
+<h1 id="h1-alternate">H1 alternate<a alt="&sect;" class="headerlink" href="#h1-alternate" title="Permanent link">&sect;</a></h1>
+<div class="codehilite"><pre>H1 alternate 
+============
+</pre></div>
+<h2 id="h2-alternate">H2 alternate<a alt="&sect;" class="headerlink" href="#h2-alternate" title="Permanent link">&sect;</a></h2>
+<div class="codehilite"><pre>H2 alternate 
+------------
+</pre></div>
+<h3 id="paragraphs-inline-text">Paragraphs &amp; Inline Text<a alt="&sect;" class="headerlink" href="#paragraphs-inline-text" title="Permanent link">&sect;</a></h3>
+<hr/>
+<p>Here is one line of <strong>text</strong> <em>showing</em> <code>inline</code> styling. Besides italic, bold, and code quilt supports a variety of inline styling:</p>
+<p><em>italics</em> with single astrisks (<code>*</code>) or underscores (<code>_</code>)<br/>
+<strong>bold</strong> with double astrisks (<code>**</code>) or underscores (<code>__</code>)<br/>
+<u>underlines</u> with triple astrisks (<code>***</code>) or underscores (<code>___</code>) <br/>
+<s>strikethroughs</s> with double tildes (<code>~~</code>) <br/>
+<sup>superscript</sup> with carets (<code>^</code>)<br/>
+<sub>subscript</sub> with single tildes (<code>~</code>)<br/>
+<del>delete</del> with double hyphens (<code>--</code>)<br/>
+<ins>insert</ins> with double pluses (<code>++</code>)<br/>
+<small>small</small> with triple hyphens (<code>---</code>)<br/>
+<big>big</big> with triple hyphens (<code>+++</code>)<br/>
+<cite>cites</cite> with triple double quotes (<code>"""</code>)<br/>
+<mark>highlight</mark> with double equal signs (<code>==</code>)<br/>
+<code>inline code</code> with single/double backticks (<code>`</code>)<br/>
+<kbd>user input</kbd> with double colons (<code>::</code>)<br/>
+<var>variable</var> with single percent signs (<code>%</code>)<br/>
+<kbd>:sample output</kbd>: with triple colons (<code>:::</code>)<br/>
+<span class="text-success">custom span</span> with double exclamation marks (<code>!!</code>) and a pipe (<code>|</code>)<br/>
+inline &mu;&dagger;ℱ ╋ℯ╳╋ (<code>&mu;&dagger;ℱ ╋ℯ╳╋</code>)</p>
+<div class="codehilite"><pre><span class="n">Here</span> <span class="n">is</span> <span class="n">one</span> <span class="n">line</span> <span class="n">of</span> <span class="o">**</span><span class="n">text</span><span class="o">**</span> <span class="n">_showing_</span> <span class="err">`</span><span class="kr">inline</span><span class="err">`</span> <span class="n">styling</span><span class="p">.</span> <span class="n">Besides</span> <span class="n">italic</span><span class="p">,</span> <span class="n">bold</span><span class="p">,</span> <span class="n">and</span> <span class="n">code</span> <span class="n">quilt</span> <span class="n">supports</span> <span class="n">a</span> <span class="n">variety</span> <span class="n">of</span> <span class="kr">inline</span> <span class="nl">styling</span><span class="p">:</span>
+
+<span class="o">*</span><span class="n">italics</span><span class="o">*</span> <span class="n">with</span> <span class="n">single</span> <span class="n">astrisks</span> <span class="p">(</span><span class="err">`</span><span class="o">*</span><span class="err">`</span><span class="p">)</span> <span class="n">or</span> <span class="n">underscores</span> <span class="p">(</span><span class="err">`</span><span class="n">_</span><span class="err">`</span><span class="p">)</span>
+<span class="o">**</span><span class="n">bold</span><span class="o">**</span> <span class="n">with</span> <span class="kt">double</span> <span class="n">astrisks</span> <span class="p">(</span><span class="err">`</span><span class="o">**</span><span class="err">`</span><span class="p">)</span> <span class="n">or</span> <span class="n">underscores</span> <span class="p">(</span><span class="err">`</span><span class="n">__</span><span class="err">`</span><span class="p">)</span>
+<span class="o">***</span><span class="n">underlines</span><span class="o">***</span> <span class="n">with</span> <span class="n">triple</span> <span class="n">astrisks</span> <span class="p">(</span><span class="err">`</span><span class="o">***</span><span class="err">`</span><span class="p">)</span> <span class="n">or</span> <span class="n">underscores</span> <span class="p">(</span><span class="err">`</span><span class="n">___</span><span class="err">`</span><span class="p">)</span> 
+<span class="o">~~</span><span class="n">strikethroughs</span><span class="o">~~</span> <span class="n">with</span> <span class="kt">double</span> <span class="n">tildes</span> <span class="p">(</span><span class="err">`</span><span class="o">~~</span><span class="err">`</span><span class="p">)</span> 
+<span class="o">^</span><span class="n">superscript</span><span class="o">^</span> <span class="n">with</span> <span class="n">carets</span> <span class="p">(</span><span class="err">`</span><span class="o">^</span><span class="err">`</span><span class="p">)</span>
+<span class="o">~</span><span class="n">subscript</span><span class="o">~</span> <span class="n">with</span> <span class="n">single</span> <span class="n">tildes</span> <span class="p">(</span><span class="err">`</span><span class="o">~</span><span class="err">`</span><span class="p">)</span>
+<span class="o">--</span><span class="k">delete</span><span class="o">--</span> <span class="n">with</span> <span class="kt">double</span> <span class="n">hyphens</span> <span class="p">(</span><span class="err">`</span><span class="o">--</span><span class="err">`</span><span class="p">)</span>
+<span class="o">++</span><span class="n">insert</span><span class="o">++</span> <span class="n">with</span> <span class="kt">double</span> <span class="n">pluses</span> <span class="p">(</span><span class="err">`</span><span class="o">++</span><span class="err">`</span><span class="p">)</span>
+<span class="o">---</span><span class="n">small</span><span class="o">---</span> <span class="n">with</span> <span class="n">triple</span> <span class="n">hyphens</span> <span class="p">(</span><span class="err">`</span><span class="o">---</span><span class="err">`</span><span class="p">)</span>
+<span class="o">+++</span><span class="n">big</span><span class="o">+++</span> <span class="n">with</span> <span class="n">triple</span> <span class="n">hyphens</span> <span class="p">(</span><span class="err">`</span><span class="o">+++</span><span class="err">`</span><span class="p">)</span>
+<span class="s">"""cites"""</span> <span class="n">with</span> <span class="n">triple</span> <span class="kt">double</span> <span class="n">quotes</span> <span class="p">(</span><span class="err">`</span><span class="s">"""`)</span>
+<span class="o">==</span><span class="n">highlight</span><span class="o">==</span> <span class="n">with</span> <span class="kt">double</span> <span class="n">equal</span> <span class="n">signs</span> <span class="p">(</span><span class="err">`</span><span class="o">==</span><span class="err">`</span><span class="p">)</span>
+<span class="err">`</span><span class="kr">inline</span> <span class="n">code</span><span class="err">`</span> <span class="n">with</span> <span class="n">single</span><span class="o">/</span><span class="kt">double</span> <span class="n">backticks</span> <span class="p">(</span><span class="err">``</span> <span class="err">`</span> <span class="err">``</span><span class="p">)</span>
+<span class="o">::</span><span class="n">user</span> <span class="n">input</span><span class="o">::</span> <span class="n">with</span> <span class="kt">double</span> <span class="n">colons</span> <span class="p">(</span><span class="err">`</span><span class="o">::</span><span class="err">`</span><span class="p">)</span>
+<span class="nf">%variable</span><span class="o">%</span> <span class="n">with</span> <span class="n">single</span> <span class="n">percent</span> <span class="n">signs</span> <span class="p">(</span><span class="err">`</span><span class="o">%</span><span class="err">`</span><span class="p">)</span>
+<span class="o">:::</span><span class="n">sample</span> <span class="n">output</span><span class="o">:::</span> <span class="n">with</span> <span class="n">triple</span> <span class="n">colons</span> <span class="p">(</span><span class="err">`</span><span class="o">:::</span><span class="err">`</span><span class="p">)</span>
+<span class="o">!!</span><span class="n">text</span><span class="o">-</span><span class="n">success</span><span class="o">|</span><span class="n">custom</span> <span class="n">span</span><span class="o">!!</span> <span class="n">with</span> <span class="kt">double</span> <span class="n">exclamation</span> <span class="n">marks</span> <span class="p">(</span><span class="err">`</span><span class="o">!!</span><span class="err">`</span><span class="p">)</span> <span class="n">and</span> <span class="n">a</span> <span class="n">pipe</span> <span class="p">(</span><span class="err">`</span><span class="o">|</span><span class="err">`</span><span class="p">)</span>
+<span class="kr">inline</span> <span class="err">&mu;&dagger;ℱ</span> <span class="err">╋ℯ╳╋</span> <span class="p">(</span><span class="err">`&mu;&dagger;ℱ</span> <span class="err">╋ℯ╳╋`</span><span class="p">)</span>
+</pre></div>
+<p>Multiple lines next to each other will be combined into one paragraph.<br/>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+<p>Lines with a blank line between them will become two paragraphs. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<div class="codehilite"><pre>Multiple lines next to each other will be combined into one paragraph.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+Lines with a blank line between them will become two paragraphs. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</pre></div>
+<p>Force add blank lines using double percents (<code>%%</code>).<br/>
+<br/>
+This will <code>&lt;br&gt;</code> to the output.</p>
+<div class="codehilite"><pre>Force add blank lines using double percents (`%%`).
+%%
+This will `&lt;br&gt;` to the output.
+</pre></div>
+<p class="alert alert-warning"><br/>
+<code>markdown.extensions.nl2br</code> also adds a <code>&lt;br&gt;</code> for each <code>\n</code> newline, so <code>%%</code> may cause multiple <code>&lt;br&gt;</code>s!</p>
+<p>Please not that multiple_underscores_in_a_string will not produce italics (this is helpful for filenames!).</p>
+<div class="codehilite"><pre>Please not that multiple_underscores_in_a_string will not produce italics (this is helpful for filenames!).
+</pre></div>
+<blockquote>
+<p>Blockquote paragraphs can <br/>
+be created with a greater than <br/>
+sign (<code>&gt;</code>) before each line.</p>
+<blockquote>
+<p>Even nested<br/>
+blockquotes.</p>
+</blockquote>
+<p>A blank line was needed to <em>unnest</em> a level.<br/>
+<small>blockquote examples from """the quilt site"""</small></p>
+</blockquote>
+<div class="codehilite"><pre>&gt; Blockquote paragraphs can 
+&gt; be created with a greater than 
+&gt; sign (`&gt;`) before each line.
+&gt; &gt; Even nested
+&gt; &gt; blockquotes.
+&gt;
+&gt; A blank line was needed to *unnest* a level.
+&gt; ---blockquote examples from """the quilt site"""---
+</pre></div>
+<p>Abbreviations can be used with an inline <abbr title="an abbreviation of abbreviation">abbr</abbr> and an astrisk squared bracket colon (<code>*[ ]:</code>) definition somewhere else in the document.</p>
+<div class="codehilite"><pre>Abbreviations can be used with an inline abbr and an astrisk squared bracket colon (`*[ ]:`) definition somewhere else in the document.
+
+*[abbr]: an abbreviation of abbreviation 
+</pre></div>
+<h3 id="lists">Lists<a alt="&sect;" class="headerlink" href="#lists" title="Permanent link">&sect;</a></h3>
+<hr/>
+<p>Unordered lists can be created with any of the following markers:</p>
+<ul>
+<li>astrisks (<code>*</code>)</li>
+<li>pluses (<code>+</code>)</li>
+<li>hyphens (<code>-</code>)</li>
+</ul>
+<div class="codehilite"><pre>* astrisks (`*`)
++ pluses (`+`)
+- hyphens (`-`)
+</pre></div>
+<p>Ordered lists can be created with:</p>
+<ol>
+<li>a number</li>
+<li>a period (<code>.</code>)</li>
+<li>the list item</li>
+</ol>
+<div class="codehilite"><pre>1. a number
+2. a period (`.`)
+3. the list item
+</pre></div>
+<p>Todo or task lists can be created by adding a square bracket (<code>[ ]</code>) checkbox after a hyphen (<code>-</code>) marker:</p>
+<ul class="checklist">
+<li><input checked="" type="checkbox"/> finished item</li>
+<li><input type="checkbox"/> unfinished item</li>
+</ul>
+<div class="codehilite"><pre>- [x] finished item
+- [ ] unfinished item
+</pre></div>
+<p>List items that are separated by blank lines are wrapped with <code>&lt;p&gt;</code> tags:</p>
+<ul>
+<li>
+<p>this is a whole paragraph</p>
+</li>
+<li>
+<p>even if it is short</p>
+</li>
+</ul>
+<div class="codehilite"><pre>- this is a whole paragraph
+
+- even if it is short
+</pre></div>
+<p>Lists can also have some block level styles too (requires item to be indented), like:</p>
+<ul>
+<li>
+<p>blockquotes</p>
+<blockquote>
+<p>blockquotes in a list</p>
+</blockquote>
+</li>
+<li>
+<p>code blocks need two indents</p>
+<pre class="codehilite"><code>code inside a list</code></pre>
+</li>
+</ul>
+<div class="codehilite"><pre>-   blockquotes
+
+    &gt; blockquotes in a list
+
+-   code blocks need two indents
+
+        code inside a list
+</pre></div>
+<p>Markers can be switched from unordered/ordered to create two lists </p>
+<ol>
+<li>first</li>
+<li>ordered</li>
+<li>list</li>
+</ol>
+<ul>
+<li>followed</li>
+<li>by </li>
+<li>one</li>
+<li>ordered</li>
+<li>lists</li>
+</ul>
+<div class="codehilite"><pre>1. first
+2. ordered
+3. list
+
+- followed
+- by 
+* one
+* ordered
+* lists
+</pre></div>
+<p>Lists may be nested with indentation</p>
+<ol>
+<li>an ordered list</li>
+<li>that contains <ul>
+<li>an unordered list</li>
+<li>that contains<ol>
+<li>an ordered list</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>a list may also contain<ul class="checklist">
+<li><input type="checkbox"/> checkbox </li>
+<li><input checked="" type="checkbox"/> lists</li>
+</ul>
+</li>
+</ol>
+<div class="codehilite"><pre>1. an ordered list
+2. that contains 
+    * an unordered list
+    * that contains
+        1. an ordered list
+3. a list may also contain
+    - [ ] checkbox 
+    - [x] lists
+</pre></div>
+<h3 id="links">Links<a alt="&sect;" class="headerlink" href="#links" title="Permanent link">&sect;</a></h3>
+<hr/>
+<p>Create an automatic link, <a alt="http://example.com/" href="http://example.com/" title="http://example.com/">http://example.com/</a>, using greater/less than signs (<code>&lt;&gt;</code>) that can also be used for <a alt="an.email.address@example.com" href="mailto:an.email.address@example.com" title="an.email.address@example.com">an.email.address@example.com</a>.  Link cannot be first character on line.</p>
+<div class="codehilite"><pre>Create an automatic link, &lt;http://example.com/&gt;, using greater/less than signs (`&lt;&gt;`) that can also be used for &lt;an.email.address@example.com&gt;.  Link cannot be first character on line.
+</pre></div>
+<p>Specify an <a alt="inline link" href="http://example.com" title="linky">inline link</a> with square bracket (<code>[]</code>) text and parentheses (<code>()</code>) url and optional title.</p>
+<div class="codehilite"><pre><span class="n">Specify</span> <span class="n">an</span> <span class="p">[</span><span class="kr">inline</span> <span class="n">link</span><span class="p">](</span><span class="nl">http</span><span class="p">:</span><span class="c1">//example.com "linky") with square bracket (`[]`) text and parentheses (`()`) url and optional title.</span>
+</pre></div>
+<p>A <a alt="reference link" href="http://example.com" title="linky">reference link</a> refers to links by an id in square brackets (<code>[1]</code>) that is defined somewhere else in the document with <code>[1]:</code></p>
+<div class="codehilite"><pre><span class="n">A</span> <span class="p">[</span><span class="n">reference</span> <span class="n">link</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="n">refers</span> <span class="n">to</span> <span class="n">links</span> <span class="n">by</span> <span class="n">an</span> <span class="kt">id</span> <span class="k">in</span> <span class="n">square</span> <span class="n">brackets</span> <span class="p">(</span><span class="err">`</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="err">`</span><span class="p">)</span> <span class="n">that</span> <span class="n">is</span> <span class="n">defined</span> <span class="n">somewhere</span> <span class="k">else</span> <span class="k">in</span> <span class="n">the</span> <span class="n">document</span> <span class="n">with</span> <span class="err">`</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">:</span><span class="err">`</span>
+
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">:</span> <span class="nl">http</span><span class="p">:</span><span class="c1">//example.com "linky"</span>
+</pre></div>
+<p>Images can by linked with inline or reference using an exclamation mark (<code>!</code>) in front of the link.</p>
+<p><img alt="alt text" class="center-block" src="/imgs/icon.png" title="some relative pathed image"/></p>
+<div class="codehilite"><pre><span class="o">!</span><span class="p">[</span><span class="n">alt</span> <span class="n">text</span><span class="p">](</span><span class="o">/</span><span class="n">imgs</span><span class="o">/</span><span class="n">icon</span><span class="p">.</span><span class="n">png</span> <span class="s">"some relative pathed image"</span><span class="p">){</span><span class="o">:</span> <span class="p">.</span><span class="n">center</span><span class="o">-</span><span class="n">block</span><span class="p">}</span>
+</pre></div>
+<p>A double square bracket (<code>[[]]</code>) <a alt="link" class="wikilink" href="http://en.wikipedia.org/wiki/link" title="link">link</a> will point to wikipedia</p>
+<div class="codehilite"><pre>A double square bracket (`[[]]`) [[link]] will point to wikipedia
+</pre></div>
+<h3 id="code">Code<a alt="&sect;" class="headerlink" href="#code" title="Permanent link">&sect;</a></h3>
+<hr/>
+<p>Inline code is styled with <code>backticks</code> (<code>`</code>).</p>
+<div class="codehilite"><pre>Inline code is styled with `backticks` (`` ` ``).
+</pre></div>
+<pre class="codehilite"><code>A code block is 
+specified by indenting
+each line using
+(4 spaces or a tab)</code></pre>
+<div class="codehilite"><pre>    A code block is 
+    specified by indenting
+    each line using
+    (4 spaces or a tab)
+</pre></div>
+<p>A non-indented code block with syntax highlighting may also be specified using <em>fenced</em> code where pre formated code is wrapped by three backticks (<code>```</code>) or three tildes (<code>~~~</code>) and an optional first line defining the language </p>
+<div class="codehilite"><pre><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="sd">"""add a and b together"""</span>
+
+    <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+    <span class="k">return</span> <span class="n">c</span>
+</pre></div>
+<div class="codehilite"><pre>```python
+def add(a, b):
+    """add a and b together"""
+
+    c = a + b
+
+    return c
+```
+</pre></div>
+<h3 id="horizontal-rules">Horizontal Rules<a alt="&sect;" class="headerlink" href="#horizontal-rules" title="Permanent link">&sect;</a></h3>
+<hr/>
+<p>Horizontal rules are created using three or more astrisks (<code>*</code>), hyphens (<code>-</code>), or underscores (<code>_</code>) (with optional space) on their own line</p>
+<p>astrisks</p>
+<hr/>
+<hr/>
+<p>hyphens</p>
+<hr/>
+<hr/>
+<p>underscores</p>
+<hr/>
+<hr/>
+<div class="codehilite"><pre>astrisks
+
+***
+* * *
+
+hyphens
+
+--- 
+- - -
+
+underscores
+
+___
+_ _ _
+</pre></div>
+<h3 id="tables">Tables<a alt="&sect;" class="headerlink" href="#tables" title="Permanent link">&sect;</a></h3>
+<hr/>
+<p>Tables are build with hyphens (<code>-</code>) and pipes (<code>|</code>), pipes on the outer right and left are optional.</p>
+<table class="table">
+<thead>
+<tr>
+<th>First Header</th>
+<th>Second Header</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+<tr>
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+</tbody>
+</table>
+<div class="codehilite"><pre>First Header  | Second Header
+--------------|--------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+</pre></div>
+<p>Right or Left align a column by placing a colon (<code>:</code>) on the right or left of the header/cell separator.</p>
+<table class="table">
+<thead>
+<tr>
+<th align="left">First Header</th>
+<th align="right">Second Header</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Content Cell</td>
+<td align="right">Content Cell</td>
+</tr>
+<tr>
+<td align="left">Content Cell</td>
+<td align="right">Content Cell</td>
+</tr>
+</tbody>
+</table>
+<div class="codehilite"><pre><span class="nv">First</span> <span class="nv">Header</span>  <span class="p">|</span> <span class="nv">Second</span> <span class="nv">Header</span>
+<span class="p">:-</span><span class="s-Atom">------------</span><span class="p">|</span><span class="s-Atom">-------------:</span>
+<span class="nv">Content</span> <span class="nv">Cell</span>  <span class="p">|</span> <span class="nv">Content</span> <span class="nv">Cell</span>
+<span class="nv">Content</span> <span class="nv">Cell</span>  <span class="p">|</span> <span class="nv">Content</span> <span class="nv">Cell</span>
+</pre></div>
+<p>Center align a column by placing colons on both sides of header/cell separator.</p>
+<table class="table">
+<thead>
+<tr>
+<th align="center">First Header</th>
+<th align="center">Second Header</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Content Cell</td>
+<td align="center">Content Cell</td>
+</tr>
+<tr>
+<td align="center">Content Cell</td>
+<td align="center">Content Cell</td>
+</tr>
+</tbody>
+</table>
+<div class="codehilite"><pre><span class="nv">First</span> <span class="nv">Header</span>  <span class="p">|</span> <span class="nv">Second</span> <span class="nv">Header</span>
+<span class="p">:-</span><span class="s-Atom">-----------:</span><span class="p">|:-</span><span class="s-Atom">-----------:</span>
+<span class="nv">Content</span> <span class="nv">Cell</span>  <span class="p">|</span> <span class="nv">Content</span> <span class="nv">Cell</span>
+<span class="nv">Content</span> <span class="nv">Cell</span>  <span class="p">|</span> <span class="nv">Content</span> <span class="nv">Cell</span>
+</pre></div>
+<p>Add attribute lists to the first line after a table.</p>
+<table class="table">
+<thead>
+<tr>
+<th align="center">First Header</th>
+<th align="center">Second Header</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Content Cell</td>
+<td align="center">Content Cell</td>
+</tr>
+<tr>
+<td align="center">Content Cell</td>
+<td align="center">Content Cell</td>
+</tr>
+</tbody>
+</table>
+<p>{: .table-striped .table-hover .table-condensed}</p>
+<div class="codehilite"><pre><span class="nv">First</span> <span class="nv">Header</span>  <span class="p">|</span> <span class="nv">Second</span> <span class="nv">Header</span>
+<span class="p">:-</span><span class="s-Atom">-----------:</span><span class="p">|:-</span><span class="s-Atom">-----------:</span>
+<span class="nv">Content</span> <span class="nv">Cell</span>  <span class="p">|</span> <span class="nv">Content</span> <span class="nv">Cell</span>
+<span class="nv">Content</span> <span class="nv">Cell</span>  <span class="p">|</span> <span class="nv">Content</span> <span class="nv">Cell</span>
+
+
+<span class="p">{</span><span class="s-Atom">:</span> <span class="p">.</span><span class="s-Atom">table</span><span class="o">-</span><span class="s-Atom">striped</span> <span class="p">.</span><span class="s-Atom">table</span><span class="o">-</span><span class="s-Atom">hover</span> <span class="p">.</span><span class="s-Atom">table</span><span class="o">-</span><span class="s-Atom">condensed</span><span class="p">}</span>
+</pre></div>
+<p>Cells may contain pipes (<code>|</code>) if backslash escaped (<code>\|</code>).</p>
+<table class="table">
+<thead>
+<tr>
+<th align="center">First Header</th>
+<th align="center">Second Header</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">plain | pipe</td>
+<td align="center"><code>this | that</code></td>
+</tr>
+<tr>
+<td align="center">Content Cell</td>
+<td align="center">Content Cell</td>
+</tr>
+</tbody>
+</table>
+<div class="codehilite"><pre><span class="nv">First</span> <span class="nv">Header</span>  <span class="p">|</span> <span class="nv">Second</span> <span class="nv">Header</span>
+<span class="p">:-</span><span class="s-Atom">-----------:</span><span class="p">|:-</span><span class="s-Atom">-----------:</span>
+<span class="s-Atom">plain</span> <span class="s-Atom">\</span><span class="p">|</span> <span class="s-Atom">pipe</span> <span class="p">|</span> <span class="err">`</span><span class="s-Atom">this</span> <span class="s-Atom">\</span><span class="p">|</span> <span class="s-Atom">that</span><span class="err">`</span>
+<span class="nv">Content</span> <span class="nv">Cell</span>  <span class="p">|</span> <span class="nv">Content</span> <span class="nv">Cell</span>
+</pre></div>
+<h3 id="definition-lists">Definition Lists<a alt="&sect;" class="headerlink" href="#definition-lists" title="Permanent link">&sect;</a></h3>
+<hr/>
+<dl>
+<dt>Definition List</dt>
+<dd>a list defined by a term followed by a colon (<code>:</code>) and the definition of that term</dd>
+</dl>
+<div class="codehilite"><pre>Definition List
+:  a list defined by a term followed by a colon (`:`) and the definition of that term
+</pre></div>
+<h3 id="footnotes">Footnotes<a alt="&sect;" class="headerlink" href="#footnotes" title="Permanent link">&sect;</a></h3>
+<hr/>
+<p>Footnotes can by defined with a square bracket caret number (<code>[^1]</code>) <sup id="fnref-1"><a alt="1" class="footnote-ref" href="#fn-1" title="1">1</a></sup> and a <code>[^1]:</code> reference somewhere else in the document.  The final location of the footnotes may be set with the <code>///</code>@@<code>footnotes</code>@@<code>///</code> <sup id="fnref-2"><a alt="2" class="footnote-ref" href="#fn-2" title="2">2</a></sup> </p>
+<div class="codehilite"><pre>Footnotes can by defined with a square bracket caret number (`[^1]`) [^1] and a `[^1]:` reference somewhere else in the document.  The final location of the footnotes may be set with the `///`@@`footnotes`@@`///` [^2] 
+
+[^1]: these are kind of like reference style links
+[^2]: otherwise it will be appended to the end of the document.
+
+///footnotes///
+</pre></div>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn-1">
+<p>these are kind of like reference style links&nbsp;<a alt="↩" class="footnote-backref" href="#fnref-1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn-2">
+<p>otherwise it will be appended to the end of the document.&nbsp;<a alt="↩" class="footnote-backref" href="#fnref-2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+<h3 id="html-capabilities">HTML Capabilities<a alt="&sect;" class="headerlink" href="#html-capabilities" title="Permanent link">&sect;</a></h3>
+<hr/>
+<p>Span-level inline HTML <span style="font-size:32px;"><em>can</em></span> be inserted at any point. <br/>
+Markdown may be used inside span-level inline HTML.</p>
+<div class="panel panel-primary">
+<div class="panel-heading">
+<h3 class="panel-title">Block-level inline HTML</h3>
+</div>
+<div class="panel-body">
+<p>Block-level inline HTML is also possible.</p>
+<p>Markdown may <span class="text-danger">*not*</span> be used inside block-level inline HTML</p>
+</div>
+</div>
+<div class="codehilite"><pre>Span-level inline HTML <span class="nt">&lt;span</span> <span class="na">style=</span><span class="s">"font-size:32px;"</span><span class="nt">&gt;</span>*can*<span class="nt">&lt;/span&gt;</span> be inserted at any point. 
+Markdown may be used inside span-level inline HTML.
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel panel-primary"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel-heading"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">"panel-title"</span><span class="nt">&gt;</span>Block-level inline HTML<span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel-body"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Block-level inline HTML is also possible.<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Markdown may <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"text-danger"</span><span class="nt">&gt;</span>*not*<span class="nt">&lt;/span&gt;</span> be used inside block-level inline HTML<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+<p class="alert alert-success text-center"><br/>
+Markdown <strong>may</strong> be wrapped in HTML if the attribute <code>markdown="1"</code> is added to the element.<br/>
+</p>
+<div class="codehilite"><pre><span class="nt">&lt;p</span> <span class="na">markdown=</span><span class="s">"1"</span> <span class="na">class=</span><span class="s">"alert alert-success text-center"</span><span class="nt">&gt;</span>
+Markdown **may** be wrapped in HTML if the attribute `markdown="1"` is added to the element.
+<span class="nt">&lt;/p&gt;</span>
+</pre></div>
+<p class="lead" id="attribute-added">HTML attributes may be added to markdown by placing an attributes list on the next line (headers and inline go on the same line).<br/></p>
+<div class="codehilite"><pre>HTML attributes may be added to markdown by placing an attributes list on the next line (headers have to be on the same line).
+{: #attribute-added .lead}
+</pre></div>
+<h3 id="symbol-shortcuts">Symbol Shortcuts<a alt="&sect;" class="headerlink" href="#symbol-shortcuts" title="Permanent link">&sect;</a></h3>
+<hr/>
+<p>Use symbols like <code>(c)</code> as shortcuts to certain html entities like <span class="symbol">&copy;</span></p>
+<table class="table">
+<thead>
+<tr>
+<th>symbol</th>
+<th>Character</th>
+<th><code>html</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>(c)</code></td>
+<td><span class="symbol">&copy;</span></td>
+<td><code>&amp;copy;</code></td>
+</tr>
+<tr>
+<td><code>(r)</code></td>
+<td><span class="symbol">&reg;</span></td>
+<td><code>&amp;reg;</code></td>
+</tr>
+<tr>
+<td><code>(tm)</code></td>
+<td><span class="symbol">&trade;</span></td>
+<td><code>&amp;trade;</code></td>
+</tr>
+<tr>
+<td><code>...</code></td>
+<td><span class="symbol">&hellip;</span></td>
+<td><code>&amp;hellip;</code></td>
+</tr>
+<tr>
+<td><code>--</code></td>
+<td><span class="symbol">&ndash;</span></td>
+<td><code>&amp;ndash;</code></td>
+</tr>
+<tr>
+<td><code>---</code></td>
+<td><span class="symbol">&mdash;</span></td>
+<td><code>&amp;mdash;</code></td>
+</tr>
+<tr>
+<td><code>+-</code></td>
+<td><span class="symbol">&plusmn;</span></td>
+<td><code>&amp;plusmn;</code></td>
+</tr>
+<tr>
+<td><code>(d)</code></td>
+<td><span class="symbol">&deg;</span></td>
+<td><code>&amp;deg;</code></td>
+</tr>
+<tr>
+<td><code>(o)</code></td>
+<td><span class="symbol">&deg;</span></td>
+<td><code>&amp;deg;</code></td>
+</tr>
+<tr>
+<td><code>1/2</code></td>
+<td><span class="symbol">&frac12;</span></td>
+<td><code>&amp;frac12;</code></td>
+</tr>
+<tr>
+<td><code>1/4</code></td>
+<td><span class="symbol">&frac14;</span></td>
+<td><code>&amp;frac14;</code></td>
+</tr>
+<tr>
+<td><code>3/4</code></td>
+<td><span class="symbol">&frac34;</span></td>
+<td><code>&amp;frac34;</code></td>
+</tr>
+<tr>
+<td><code>(x)</code></td>
+<td><span class="symbol">&times;</span></td>
+<td><code>&amp;times;</code></td>
+</tr>
+<tr>
+<td><code>(/)</code></td>
+<td><span class="symbol">&divide;</span></td>
+<td><code>&amp;divide;</code></td>
+</tr>
+<tr>
+<td><code>(f)</code></td>
+<td><span class="symbol">&fnof;</span></td>
+<td><code>&amp;fnof;</code></td>
+</tr>
+<tr>
+<td><code>(t)</code></td>
+<td><span class="symbol">&dagger;</span></td>
+<td><code>&amp;dagger;</code></td>
+</tr>
+<tr>
+<td><code>(tt)</code></td>
+<td><span class="symbol">&Dagger;</span></td>
+<td><code>&amp;Dagger;</code></td>
+</tr>
+<tr>
+<td><code>(&lt;)</code></td>
+<td><span class="symbol">&larr;</span></td>
+<td><code>&amp;larr;</code></td>
+</tr>
+<tr>
+<td><code>(&gt;)</code></td>
+<td><span class="symbol">&rarr;</span></td>
+<td><code>&amp;rarr;</code></td>
+</tr>
+<tr>
+<td><code>(^)</code></td>
+<td><span class="symbol">&uarr;</span></td>
+<td><code>&amp;uarr;</code></td>
+</tr>
+<tr>
+<td><code>(v)</code></td>
+<td><span class="symbol">&darr;</span></td>
+<td><code>&amp;darr;</code></td>
+</tr>
+<tr>
+<td><code>(&lt;&gt;)</code></td>
+<td><span class="symbol">&harr;</span></td>
+<td><code>&amp;harr;</code></td>
+</tr>
+<tr>
+<td><code>(oo)</code></td>
+<td><span class="symbol">&infin;</span></td>
+<td><code>&amp;infin;</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>Use symbols like `(c)` as shortcuts to certain html entities like (c)</code></p>
+<div class="codehilite"><pre>Use symbols like `(c)` as shortcuts to certain html entities like (c)
+</pre></div>
+<h3 id="latex-support"><span class="maths">\(\LaTeX{}\)</span> Support<a alt="&sect;" class="headerlink" href="#latex-support" title="Permanent link">&sect;</a></h3>
+<hr/>
+<p class="lead">The Lorenz Equations<br/></p>
+<p><span class="maths">$$
+    \begin{align}
+    \dot{x} &amp; = \sigma(y-x) \\
+    \dot{y} &amp; = \rho x - y - xz \\
+    \dot{z} &amp; = -\beta z + xy
+    \end{align}
+$$</span></p>
+<p class="lead">The Cauchy-Schwarz Inequality<br/></p>
+<p><span class="maths">$$
+    \left( \sum_{k=1}^n a_k b_k \right)^{\!\!2} \leq
+    \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+$$</span></p>
+<p class="lead">A Cross Product Formula<br/></p>
+<p><span class="maths">$$
+    \mathbf{V}_1 \times \mathbf{V}_2 =
+    \begin{vmatrix}
+    \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\
+    \frac{\partial X}{\partial u} &amp; \frac{\partial Y}{\partial u} &amp; 0 \\
+    \frac{\partial X}{\partial v} &amp; \frac{\partial Y}{\partial v} &amp; 0 \\
+    \end{vmatrix}
+$$</span></p>
+<p class="lead">The probability of getting <span class="maths">\(k\)</span> heads when flipping <span class="maths">\(n\)</span> coins is:<br/></p>
+<p><span class="maths">$$P(E) = {n \choose k} p^k (1-p)^{ n-k}$$</span></p>
+<p class="lead">An Identity of Ramanujan<br/></p>
+<p><span class="maths">$$
+    \frac{1}{(\sqrt{\phi \sqrt{5}}-\phi) e^{\frac25 \pi}} =
+    1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}}
+    {1+\frac{e^{-8\pi}} {1+\ldots} } } }
+$$</span></p>
+<p class="lead">A Rogers-Ramanujan Identity<br/></p>
+<p><span class="maths">$$
+    1 +  \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots = 
+    \prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})},
+    \quad\quad \text{for $|q|&lt;1$}.
+$$</span></p>
+<p class="lead">Maxwell's Equations<br/></p>
+<p><span class="maths">$$
+    \begin{align}
+    \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp; = \frac{4\pi}{c}\vec{\mathbf{j}} \\   \nabla \cdot \vec{\mathbf{E}} &amp; = 4 \pi \rho \\
+    \nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} &amp; = \vec{\mathbf{0}} \\
+    \nabla \cdot \vec{\mathbf{B}} &amp; = 0 
+    \end{align}
+$$</span></p>
+<p class="lead">In-line Mathematics<br/></p>
+<p>Finally, while display equations look good for a page of samples, the ability to mix math and text in a paragraph is also important.  This expression <span class="maths">\(\sqrt{3x-1}+(1+x)^2\)</span> is an example of an inline equation.  As you see, MathJax equations can be used this way as well, without unduly disturbing the spacing between lines.</p>
+<p class="lead">More examples <br/></p>
+<p><span class="maths">$$k_{n+1} = n^2 + k_n^2 - k_{n-1}$$</span></p>
+<p><span class="maths">$$\frac{\frac{1}{x}+\frac{1}{y}}{y-z}$$</span></p>
+<p><span class="maths">$$\cos (2\theta) = \cos^2 \theta - \sin^2 \theta$$</span></p>
+<p><span class="maths">$$\sqrt[n]{1+x+x^2+x^3+\ldots}$$</span></p>
+<p><span class="maths">$$\sum_{i=1}^{10} t_i$$</span></p>
+<p><span class="maths">$$\int_{-\infty}^{\infty} f( x ) e^{2\pi i k} dx$$</span></p>
+<p><span class="maths">$$( a ), [ b ], \{ c \}, | d |, \| e \|, \langle f \rangle, \lfloor g \rfloor, \lceil h \rceil, \ulcorner i \urcorner$$</span></p>
+<p><span class="maths">$$\alpha, A, \beta, B, \gamma, \Gamma, \pi, \Pi, \phi, \varphi, \Phi$$</span></p>
+<div class="codehilite"><pre><span class="x">The Lorenz Equations</span>
+<span class="err">{</span><span class="x">: .lead}</span>
+
+<span class="p">$$</span><span class="x"></span>
+<span class="x">    \begin</span><span class="err">{</span><span class="x">align}</span>
+<span class="x">    \dot</span><span class="err">{</span><span class="x">x} &amp; = \sigma(y-x) \\</span>
+<span class="x">    \dot</span><span class="err">{</span><span class="x">y} &amp; = \rho x - y - xz \\</span>
+<span class="x">    \dot</span><span class="err">{</span><span class="x">z} &amp; = -\beta z + xy</span>
+<span class="x">    \end</span><span class="err">{</span><span class="x">align}</span>
+<span class="p">$$</span><span class="x"></span>
+
+<span class="x">The Cauchy-Schwarz Inequality</span>
+<span class="err">{</span><span class="x">: .lead}</span>
+
+<span class="p">$$</span><span class="x"></span>
+<span class="x">    \left( \sum_</span><span class="err">{</span><span class="x">k=1}^n a_k b_k \right)^</span><span class="err">{</span><span class="x">\!\!2} \leq</span>
+<span class="x">    \left( \sum_</span><span class="err">{</span><span class="x">k=1}^n a_k^2 \right) \left( \sum_</span><span class="err">{</span><span class="x">k=1}^n b_k^2 \right)</span>
+<span class="p">$$</span><span class="x"></span>
+
+<span class="x">A Cross Product Formula</span>
+<span class="err">{</span><span class="x">: .lead}</span>
+
+<span class="p">$$</span><span class="x"></span>
+<span class="x">    \mathbf</span><span class="err">{</span><span class="x">V}_1 \times \mathbf</span><span class="err">{</span><span class="x">V}_2 =</span>
+<span class="x">    \begin</span><span class="err">{</span><span class="x">vmatrix}</span>
+<span class="x">    \mathbf</span><span class="err">{</span><span class="x">i} &amp; \mathbf</span><span class="err">{</span><span class="x">j} &amp; \mathbf</span><span class="err">{</span><span class="x">k} \\</span>
+<span class="x">    \frac</span><span class="err">{</span><span class="x">\partial X}</span><span class="err">{</span><span class="x">\partial u} &amp; \frac</span><span class="err">{</span><span class="x">\partial Y}</span><span class="err">{</span><span class="x">\partial u} &amp; 0 \\</span>
+<span class="x">    \frac</span><span class="err">{</span><span class="x">\partial X}</span><span class="err">{</span><span class="x">\partial v} &amp; \frac</span><span class="err">{</span><span class="x">\partial Y}</span><span class="err">{</span><span class="x">\partial v} &amp; 0 \\</span>
+<span class="x">    \end</span><span class="err">{</span><span class="x">vmatrix}</span>
+<span class="p">$$</span><span class="x"></span>
+
+<span class="x">The probability of getting \(k\) heads when flipping \(n\) coins is:</span>
+<span class="err">{</span><span class="x">: .lead}</span>
+
+<span class="p">$$</span><span class="nv">P</span><span class="p">(</span><span class="err">E</span><span class="p">)</span><span class="x"> = </span><span class="err">{</span><span class="x">n \choose k} p^k (1-p)^</span><span class="err">{</span><span class="x"> n-k}</span><span class="p">$$</span><span class="x"></span>
+
+<span class="x">An Identity of Ramanujan</span>
+<span class="err">{</span><span class="x">: .lead}</span>
+
+<span class="p">$$</span><span class="x"></span>
+<span class="x">    \frac</span><span class="err">{</span><span class="x">1}</span><span class="err">{</span><span class="x">(\sqrt</span><span class="err">{</span><span class="x">\phi \sqrt</span><span class="err">{</span><span class="x">5}}-\phi) e^</span><span class="err">{</span><span class="x">\frac25 \pi}} =</span>
+<span class="x">    1+\frac</span><span class="err">{</span><span class="x">e^</span><span class="err">{</span><span class="x">-2\pi}} </span><span class="err">{</span><span class="x">1+\frac</span><span class="err">{</span><span class="x">e^</span><span class="err">{</span><span class="x">-4\pi}} </span><span class="err">{</span><span class="x">1+\frac</span><span class="err">{</span><span class="x">e^</span><span class="err">{</span><span class="x">-6\pi}}</span>
+<span class="x">    </span><span class="err">{</span><span class="x">1+\frac</span><span class="err">{</span><span class="x">e^</span><span class="err">{</span><span class="x">-8\pi}} </span><span class="err">{</span><span class="x">1+\ldots} } } }</span>
+<span class="p">$$</span><span class="x"></span>
+
+<span class="x">A Rogers-Ramanujan Identity</span>
+<span class="err">{</span><span class="x">: .lead}</span>
+
+<span class="p">$$</span><span class="x"></span>
+<span class="x">    1 +  \frac</span><span class="err">{</span><span class="x">q^2}</span><span class="err">{</span><span class="x">(1-q)}+\frac</span><span class="err">{</span><span class="x">q^6}</span><span class="err">{</span><span class="x">(1-q)(1-q^2)}+\cdots = </span>
+<span class="x">    \prod_</span><span class="err">{</span><span class="x">j=0}^</span><span class="err">{</span><span class="x">\infty}\frac</span><span class="err">{</span><span class="x">1}</span><span class="err">{</span><span class="x">(1-q^</span><span class="err">{</span><span class="x">5j+2})(1-q^</span><span class="err">{</span><span class="x">5j+3})},</span>
+<span class="x">    \quad\quad \text</span><span class="err">{</span><span class="x">for </span><span class="p">$</span><span class="x">|q|&lt;1</span><span class="p">$}</span><span class="x">.</span>
+<span class="p">$$</span><span class="x"></span>
+
+<span class="x">Maxwell's Equations</span>
+<span class="err">{</span><span class="x">: .lead}</span>
+
+<span class="p">$$</span><span class="x"></span>
+<span class="x">    \begin</span><span class="err">{</span><span class="x">align}</span>
+<span class="x">    \nabla \times \vec</span><span class="err">{</span><span class="x">\mathbf</span><span class="err">{</span><span class="x">B}} -\, \frac1c\, \frac</span><span class="err">{</span><span class="x">\partial\vec</span><span class="err">{</span><span class="x">\mathbf</span><span class="err">{</span><span class="x">E}}}</span><span class="err">{</span><span class="x">\partial t} &amp; = \frac</span><span class="err">{</span><span class="x">4\pi}</span><span class="err">{</span><span class="x">c}\vec</span><span class="err">{</span><span class="x">\mathbf</span><span class="err">{</span><span class="x">j}} \\   \nabla \cdot \vec</span><span class="err">{</span><span class="x">\mathbf</span><span class="err">{</span><span class="x">E}} &amp; = 4 \pi \rho \\</span>
+<span class="x">    \nabla \times \vec</span><span class="err">{</span><span class="x">\mathbf</span><span class="err">{</span><span class="x">E}}\, +\, \frac1c\, \frac</span><span class="err">{</span><span class="x">\partial\vec</span><span class="err">{</span><span class="x">\mathbf</span><span class="err">{</span><span class="x">B}}}</span><span class="err">{</span><span class="x">\partial t} &amp; = \vec</span><span class="err">{</span><span class="x">\mathbf</span><span class="err">{</span><span class="x">0}} \\</span>
+<span class="x">    \nabla \cdot \vec</span><span class="err">{</span><span class="x">\mathbf</span><span class="err">{</span><span class="x">B}} &amp; = 0 </span>
+<span class="x">    \end</span><span class="err">{</span><span class="x">align}</span>
+<span class="p">$$</span><span class="x"></span>
+
+<span class="x">In-line Mathematics</span>
+<span class="err">{</span><span class="x">: .lead}</span>
+
+<span class="x">Finally, while display equations look good for a page of samples, the ability to mix math and text in a paragraph is also important.  This expression </span><span class="p">$$</span><span class="x">\sqrt</span><span class="err">{</span><span class="x">3x-1}+(1+x)^2</span><span class="p">$$</span><span class="x"> is an example of an inline equation.  As you see, MathJax equations can be used this way as well, without unduly disturbing the spacing between lines.</span>
+
+<span class="x">More examples </span>
+<span class="err">{</span><span class="x">: .lead}</span>
+
+<span class="p">$$</span><span class="nv">k_</span><span class="err">{</span><span class="x">n+1} = n^2 + k_n^2 - k_</span><span class="err">{</span><span class="x">n-1}</span><span class="p">$$</span><span class="x"></span>
+
+<span class="p">$$</span><span class="x">\frac</span><span class="err">{</span><span class="x">\frac</span><span class="err">{</span><span class="x">1}</span><span class="err">{</span><span class="x">x}+\frac</span><span class="err">{</span><span class="x">1}</span><span class="err">{</span><span class="x">y}}</span><span class="err">{</span><span class="x">y-z}</span><span class="p">$$</span><span class="x"></span>
+
+<span class="p">$$</span><span class="x">\cos (2\theta) = \cos^2 \theta - \sin^2 \theta</span><span class="p">$$</span><span class="x"></span>
+
+<span class="p">$$</span><span class="x">\sqrt[n]</span><span class="err">{</span><span class="x">1+x+x^2+x^3+\ldots}</span><span class="p">$$</span><span class="x"></span>
+
+<span class="p">$$</span><span class="x">\sum_</span><span class="err">{</span><span class="x">i=1}^</span><span class="err">{</span><span class="x">10} t_i</span><span class="p">$$</span><span class="x"></span>
+
+<span class="p">$$</span><span class="x">\int_</span><span class="err">{</span><span class="x">-\infty}^</span><span class="err">{</span><span class="x">\infty} f( x ) e^</span><span class="err">{</span><span class="x">2\pi i k} dx</span><span class="p">$$</span><span class="x"></span>
+
+<span class="p">$$(</span> <span class="err">a</span> <span class="p">)</span><span class="x">, [ b ], \</span><span class="err">{</span><span class="x"> c \}, | d |, \| e \|, \langle f \rangle, \lfloor g \rfloor, \lceil h \rceil, \ulcorner i \urcorner</span><span class="p">$$</span><span class="x"></span>
+
+<span class="p">$$</span><span class="x">\alpha, A, \beta, B, \gamma, \Gamma, \pi, \Pi, \phi, \varphi, \Phi</span><span class="p">$$</span><span class="x"></span>
+</pre></div>
+<h3 id="escaping">Escaping<a alt="&sect;" class="headerlink" href="#escaping" title="Permanent link">&sect;</a></h3>
+<hr/>
+<p>Escape these characters with a backslash (<code>\</code>):</p>
+<ul>
+<li><code>\</code> backslash</li>
+<li><code>`</code> backtick</li>
+<li><code>*</code> astrisk</li>
+<li><code>_</code> underscore</li>
+<li><code>{}</code> curly braces</li>
+<li><code>[]</code> square brackets</li>
+<li><code>()</code> parentheses</li>
+<li><code>#</code> hash mark</li>
+<li><code>+</code> plus sign</li>
+<li><code>-</code> minus sign (hyphen)</li>
+<li><code>.</code> dot</li>
+<li><code>!</code> exclamation mark</li>
+</ul>
+<h3 id="table-of-contents">Table of Contents<a alt="&sect;" class="headerlink" href="#table-of-contents" title="Permanent link">&sect;</a></h3>
+<hr/>
+<p>All headings will be used to generate a table of contents and placed at <code>[TOC]</code>. See the <a alt="table of contents" href="#post" title="table of contents">table of contents</a> at the top of the page.</p>
+<h3 id="read-the-source">Read the Source<a alt="&sect;" class="headerlink" href="#read-the-source" title="Permanent link">&sect;</a></h3>
+<hr/>
+<p class="lead">Replacing <code>html</code> with <code>md</code> in the url with load the original markdown source.<br/></p>
+<div class="alert alert-warning">
+<h4>Caveats</h4>
+<ol>
+<li><code>markdown.extensions.footnotes</code> was edited to allow custom footnote placement.</li>
+<li><code>markdown.extensions.codehilite</code> was edited to allow language and guessed language class.</li>
+<li><code>markdown.extensions.tables</code> was edited to splits row based on more robust <code>regex</code> to ignore escaped backslash (<code>\|</code>).</li>
+<li><code>markdown.extensions.tables</code> was edited to allow attribute lists to be defined on first line after table.</li>
+</ol>
+</div>
+</div>
+</article>
+</div>
+<div class="col-sm-4 col-md-2 well affix affix-right">
+<h6>quilt's markdown syntax<br/><small>An explanation of the markdown syntax specifics used by quilt</small></h6>
+<ul class="list-inline">
+<li><a alt="atom" class="label label-primary" href="../feed/feed.atom" title="atom">atom</a></li>
+<li><a alt="rss" class="label label-primary" href="../feed/feed.rss" title="rss">rss</a></li>
+</ul>
+<hr/>
+<nav>
+<ul class="pager">
+<li class="previous ">
+<a alt="quilt 0.1.0" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/quilt-0.1.0.py.html" title="quilt 0.1.0"><span>&larr;</span> older</a>
+</li>
+<li class="next ">
+<a alt="quilt 0.1.1" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/quilt-0.1.1.py.html" title="quilt 0.1.1">newer <span>&rarr;</span></a>
+</li>
+</ul>
+</nav>
+<hr/>
+<ul class="list-unstyled">
+<li>
+<h5><a alt="Categories" href="categories/index.html" title="Categories">Categories</a></h5>
+<ul class="list-inline">
+<li class="categories"><a alt="example" class="label label-success" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/categories/example.html" title="example">example</a></li>
+</ul>
+</li>
+<li>
+<h5><a alt="Tags" href="tags/index.html" title="Tags">Tags</a></h5>
+<ul class="list-inline">
+<li class="tags"><a alt="github-flavored-markdown" class="label label-success" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/tags/github-flavored-markdown.html" title="github-flavored-markdown">github-flavored-markdown</a></li>
+<li class="tags"><a alt="markdown" class="label label-success" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/tags/markdown.html" title="markdown">markdown</a></li>
+<li class="tags"><a alt="syntax" class="label label-success" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/tags/syntax.html" title="syntax">syntax</a></li>
+</ul>
+</li>
+</ul>
+<hr/>
+<ul class="list-inline center-block">
+<li>
+<a alt="top" class="btn btn-default btn-sm" href="#page" title="top"><span>&uarr;</span> top</a>
+</li>
+<li>
+<a alt="bottom" class="btn btn-default btn-sm" href="#footer" title="bottom">bottom<span>&darr;</span></a>
+</li>
+</ul>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-8 col-md-8 col-md-offset-1">
+<hr class="visible-xs"/>
+<ul class="list-inline visible-xs">
+<li>
+<h4><a alt="Categories" href="categories/index.html" title="Categories">Categories</a></h4>
+<ul class="list-inline">
+<li class="categories"><a alt="example" class="label label-success" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/categories/example.html" title="example">example</a></li>
+</ul>
+</li>
+<li>
+<h4><a alt="Tags" href="tags/index.html" title="Tags">Tags</a></h4>
+<ul class="list-inline">
+<li class="tags"><a alt="github-flavored-markdown" class="label label-success" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/tags/github-flavored-markdown.html" title="github-flavored-markdown">github-flavored-markdown</a></li>
+<li class="tags"><a alt="markdown" class="label label-success" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/tags/markdown.html" title="markdown">markdown</a></li>
+<li class="tags"><a alt="syntax" class="label label-success" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/tags/syntax.html" title="syntax">syntax</a></li>
+</ul>
+</li>
+</ul>
+<hr class="visible-xs"/>
+<nav>
+<ul class="pager">
+<li class="previous ">
+<a alt="quilt 0.1.0" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/quilt-0.1.0.py.html" title="quilt 0.1.0"><span>&larr;</span> older</a>
+</li>
+<li class="next ">
+<a alt="quilt 0.1.1" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/quilt-0.1.1.py.html" title="quilt 0.1.1">newer <span>&rarr;</span></a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<a alt="view original markdown" class="markdown-link" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/markdown_syntax.md" role="button" title="view original markdown">markdown</a>
+</div>
+<!--quilted footer patch-->
+<footer id="footer">
+<div class="container">
+<hr/>
+<div class="clearfix">
+<p class="pull-left">quilt: python based static site html stitcher.</p>
+<p class="pull-right">2015 &copy; <a alt="tim" href="#" title="tim">tim</a></p>
+</div>
+</div>
+</footer>
+<!--quilted scripts patch-->
+<script id="scripts" rel="javascript" type="text/javascript">
+pagevars = { "author":"tim", "categories":"example", "copydate":"2015", "date":"03/08/2015 1:32 pm", "description":"An explanation of the markdown syntax specifics used by quilt", "directory":"news", "disable_last":"disabled", "disable_next":"disabled", "domain":"some_name.com", "email":"tmthydvnprt@users.noreply.github.com", "keywords":"", "last_post":"", "last_title":"", "latestpost":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/news/markdown_syntax.md", "name":"quilt", "next_post":"", "next_title":"", "output":"/Users/timothydavenport/GitHub/quilt/tests/output/news/markdown_syntax.html", "page_path":"", "pagecomment":true, "patchcomment":true, "quiltcomment":true, "relativepath":"../", "rootpath":"/Users/timothydavenport/GitHub/quilt/tests/output", "source":"/Users/timothydavenport/GitHub/quilt/tests/source/pages/news/markdown_syntax.md", "tags":[ "github-flavored-markdown", "markdown", "syntax" ], "title":"quilt's markdown syntax", "url":"/Users/timothydavenport/GitHub/quilt/tests/output/news/markdown_syntax.html" };
+</script>
+<script rel="javascript" src="../js/jquery-1.11.2.min_bootstrap.min_typeahead.bundle.min_quilt.js" type="text/javascript"></script>
+<script rel="javascript" type="text/x-mathjax-config">MathJax.Hub.Config({ showMathMenu:false, imageFont:null, MathEvents:{ hover:256 }, jax:["input/TeX","output/HTML-CSS", "output/CommonHTML"], extensions:["tex2jax.js", "CHTML-preview.js"], TeX:{ extensions:["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"], autoNumber:"AMS" } });</script>
+<script rel="javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full" type="text/javascript"></script>
+<script rel="javascript" src="../js/mathjax/MathJax.js?config=TeX-AMS_HTML-full" type="text/javascript"></script>
+</body>
+</html>

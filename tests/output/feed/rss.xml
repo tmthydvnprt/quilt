@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>quilt Feed</title>
+        <description>/Users/timothydavenport/GitHub/quilt/tests/source/pages/news</description>
+        <link>quilt.com</link>
+        <id>randomid</id>
+        <language>en-us</language>
+        <lastBuildDate>2015-04-29T21:24:32-7:00</lastBuildDate>
+        <pubDate>2015-04-29T21:24:32-7:00</pubDate>
+        <managingEditor>tmthydvnprt</managingEditor>
+           <item>
+        <title>HTML Entities</title>
+        <link>/Users/timothydavenport/GitHub/quilt/tests/output/news/html_entities.html</link>
+        <guid>randomid</guid>
+        <pubDate>3/18/2015 5:46 am</pubDate>
+        <description>
+This list of html entities is for reference and testing of entity handling. Name
+Character
+HTML (quilt shortcut)
+Unicode hex (decimal)
+Description
+
+
+
+
+quot
+"
+&quot;
+\x0022 (34)
+quotation mark (APL</description>
+    </item>
+   <item>
+        <title>\(\LaTeX\) Support</title>
+        <link>/Users/timothydavenport/GitHub/quilt/tests/output/news/latex_support.html</link>
+        <guid>randomid</guid>
+        <pubDate>3/20/2015 10:49 pm</pubDate>
+        <description>
+A list of MathJax \(\LaTeX\) Command  examples. These alphabetical examples come from here.</description>
+    </item>
+   <item>
+        <title>quilt's markdown syntax</title>
+        <link>/Users/timothydavenport/GitHub/quilt/tests/output/news/markdown_syntax.html</link>
+        <guid>randomid</guid>
+        <pubDate>03/08/2015 1:32 pm</pubDate>
+        <description>
+Quilt uses Python-Markdown as it's markdown interpreter. Besides the base syntax rules of original Markdown, quilt parses extra markdown syntax.</description>
+    </item>
+   <item>
+        <title>quilt 0.1.1</title>
+        <link>/Users/timothydavenport/GitHub/quilt/tests/output/news/quilt-0.1.1.py.html</link>
+        <guid>randomid</guid>
+        <pubDate>3/9/2015 8:31 am</pubDate>
+        <description>
+The syntax for page variable headers changed from json  to key: value plaintext. The method follows MultiMarkdown's metadata
+
+key
+[A-Za-z0-9_-]+ from beginning of line until :
+value
+a string per line</description>
+    </item>
+   <item>
+        <title>quilt 0.1.0</title>
+        <link>/Users/timothydavenport/GitHub/quilt/tests/output/news/quilt-0.1.0.py.html</link>
+        <guid>randomid</guid>
+        <pubDate>3/1/2015 3:15 pm</pubDate>
+        <description>
+A python based static site html stitcher. Description
+Generate a static site via python from content-only .html and .md pages that are stitched together  along with patch (e.g.</description>
+    </item>
+
+    </channel>
+</rss>
