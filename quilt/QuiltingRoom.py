@@ -147,10 +147,12 @@ class QuiltingRoom(object):
             "tags"          : self.config["tags"],           # page tags (for pages in posts/)
             "keywords"      : self.config["keywords"],       # page keywords = tags + categories
             "date"          : self.config["now"]["fulldate"],# created date (useful for posts/)
-            # copyright dates (auto extend to now)
-            "copydate"      : '&ndash;'.join([self.config["copydate"], self.config["now"]["yearlong"]]) \
-                if self.config["copydate"] else self.config["now"]["yearlong"]
+            "copydate"      : self.config["copydate"],       # copyright dates (auto extend to now)
+            "copyrighter"   : self.config["copyrighter"]     # copyright owner
         }
+        # extend copyright date
+        if self.config["copydate"] > self.config["now"]["yearlong"]:
+            self.config["page_defaults"]["copydate"] += '&ndash;' + self.config["now"]["yearlong"]
 
         # start blog
         if self.config["buildblog"]:
@@ -434,6 +436,8 @@ class QuiltingRoom(object):
             user_words_text = read_file(self.config["correctwords"])
             user_words = {x.lower() for x in user_words_text.split('\n')}
             correct_words.update(user_words)
+        # add empty string and space
+        correct_words.update({'', ' '})
 
         return correct_words
 
@@ -454,8 +458,8 @@ class QuiltingRoom(object):
 
             progbar.animate(i + 1)
 
-            # read page
-            page_text = read_file(page_loc)
+            # read page, make sure BeautifulSoup separate words around <br>s with space
+            page_text = read_file(page_loc).replace('<br/>', ' <br/>')
             # get text and spell check
             soup = bs4.BeautifulSoup(page_text, "lxml", parse_only=BODY_STRAINER)
             for ignore in soup(['script', 'code']):

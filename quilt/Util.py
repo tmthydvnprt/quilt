@@ -18,7 +18,7 @@ import random
 import codecs
 import fnmatch
 import urlparse
-import datetime
+import datetime as dt
 
 from quilt.Constants import STOPWORDS, PLACEHOLDER_SIZE # , PUNCTUATION, NUM_RE, PUNCT_RE, UNI_ESCAPE_RE, HEX_RE
 from quilt.Constants import BLOCK_COMMENT_RE, LINE_COMMENT_RE, KEEP_COMMENT_RE, OPTIONAL_CARRIAGE_RETURN_RE
@@ -47,7 +47,8 @@ DEFAULT_CONFIG = {
     "blogname"    : "quilt news",           # atom id
     "atomid"      : "randomid",             # atom id
     "rssid"       : "randomid",             # rss id
-    "copydate"    : False,                  # copywrite date (auto extended to current year)
+    "copydate"    : dt.datetime.now().year, # copyright dates (auto extend to now)
+    "copyrighter" : "you",                  # copyright owner
     # configuration
     # -----------------------------------------------------------------------------------
     "local"       : False,                  # use local disk paths as urls (dev)
@@ -514,13 +515,13 @@ def summarize_text(text='', sentence_number=4):
 def reverse_chronological_order(posts=None):
     """sort posts in reverse chronological order"""
 
-    return sorted(posts, key=lambda x: datetime.datetime.strptime(x['date'], '%m/%d/%Y %I:%M %p'), reverse=True)
+    return sorted(posts, key=lambda x: dt.datetime.strptime(x['date'], '%m/%d/%Y %I:%M %p'), reverse=True)
 
 #@profile
 def chronological_order(posts=None):
     """sort posts in reverse chronological order"""
 
-    return sorted(posts, key=lambda x: datetime.datetime.strptime(x['date'], '%m/%d/%Y %I:%M %p'), reverse=False)
+    return sorted(posts, key=lambda x: dt.datetime.strptime(x['date'], '%m/%d/%Y %I:%M %p'), reverse=False)
 
 #@profile
 def get_just_words(text=''):
