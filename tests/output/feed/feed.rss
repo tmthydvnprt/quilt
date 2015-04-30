@@ -6,8 +6,8 @@
         <link>quilt.com</link>
         <id>randomid</id>
         <language>en-us</language>
-        <lastBuildDate>2015-04-30T05:33:39-7:00</lastBuildDate>
-        <pubDate>2015-04-30T05:33:39-7:00</pubDate>
+        <lastBuildDate>2015-04-30T05:40:26-7:00</lastBuildDate>
+        <pubDate>2015-04-30T05:40:26-7:00</pubDate>
         <managingEditor>tmthydvnprt</managingEditor>
            <item>
         <title>HTML Entities</title>
@@ -36,7 +36,7 @@ quotation mark (APL</description>
         <guid>randomid</guid>
         <pubDate>3/20/2015 10:49 pm</pubDate>
         <description>
-A list of MathJax \LaTeX Command  examples. These alphabetical examples come from here.</description>
+A list of MathJax \(\LaTeX\) Command  examples. These alphabetical examples come from here.</description>
     </item>
    <item>
         <title>quilt's markdown syntax</title>
