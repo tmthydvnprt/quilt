@@ -100,7 +100,7 @@ class Blog(object):
 
         groups = defaultdict(list)
         for post in self.posts:
-            post_groups = post[name] if type(post[name]) is list else [post[name]]
+            post_groups = post[name] if isinstance(post[name], list) else [post[name]]
             for group in post_groups:
                 groups[group].append(post)
         return groups

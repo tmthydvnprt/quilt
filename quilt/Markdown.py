@@ -29,13 +29,13 @@ Adds both included and custom extensions to `Python-Markdown` :
 import re
 import sys
 
-sys.path.append('/Users/timothydavenport/GitHub/')
-import markdown_speedup
-from markdown_speedup.util import AMP_SUBSTITUTE, etree, AtomicString
-from markdown_speedup.extensions import Extension
-from markdown_speedup.postprocessors import Postprocessor
-from markdown_speedup.inlinepatterns import Pattern
-from markdown_speedup.inlinepatterns import SimpleTagPattern
+sys.path.insert(1, '/Users/timothydavenport/GitHub/Python-Markdown')
+import markdown
+from markdown.util import AMP_SUBSTITUTE, etree, AtomicString
+from markdown.extensions import Extension
+from markdown.postprocessors import Postprocessor
+from markdown.inlinepatterns import Pattern
+from markdown.inlinepatterns import SimpleTagPattern
 
 from quilt.Constants import CHECKBOX_RE, MD_INLINE_TAGS, MULTIMATCH_RE, SYMBOLS, SYMBOLS_RE
 from quilt.Constants import CUSTOM_CLS_RE, REPLACE_TAGS, REPLACE_TAGS_RE, MATHS_RE
@@ -104,76 +104,76 @@ class MathsPattern(SimpleTagPattern):
 
 class ChecklistExtension(Extension):
     """adds checkbox to markdown list (e.g. [x] checked or [ ] unchecked)"""
-    def extend_markdown(self, md, md_globals):
+    def extendMarkdown(self, md, md_globals):
         """Modifies inline patterns."""
         md.postprocessors.add('checklist', ChecklistPostprocessor(md), '>raw_html')
         return self
 
 class MultiExtension(Extension):
     """extension: multiple matches"""
-    def extend_markdown(self, md, md_globals):
+    def extendMarkdown(self, md, md_globals):
         """Modifies inline patterns."""
-        md.inline_patterns.add('multi', MultiPattern(MULTIMATCH_RE), '>not_strong')
+        md.inlinePatterns.add('multi', MultiPattern(MULTIMATCH_RE), '>not_strong')
 
 class CustomSpanExtension(Extension):
     """Adds custom span extension to Markdown class"""
-    def extend_markdown(self, md, md_globals):
+    def extendMarkdown(self, md, md_globals):
         """Modifies inline patterns."""
-        md.inline_patterns.add('custom_span', CustomSpanPattern(CUSTOM_CLS_RE, md), '>not_strong')
+        md.inlinePatterns.add('custom_span', CustomSpanPattern(CUSTOM_CLS_RE, md), '>not_strong')
 
 class ReplaceTagsExtension(Extension):
     """Adds line break extension to Markdown class."""
-    def extend_markdown(self, md, md_globals):
+    def extendMarkdown(self, md, md_globals):
         """Modifies inline patterns."""
-        md.inline_patterns.add('replacement_tags', ReplacePattern(REPLACE_TAGS_RE), '>not_strong')
+        md.inlinePatterns.add('replacement_tags', ReplacePattern(REPLACE_TAGS_RE), '>not_strong')
 
 class SymbolExtension(Extension):
     """pre process to add checklist class to list element"""
-    def extend_markdown(self, md, md_globals):
+    def extendMarkdown(self, md, md_globals):
         """Modifies inline patterns"""
-        md.inline_patterns.add('symbols', SymbolPattern(SYMBOLS_RE), '>not_strong')
+        md.inlinePatterns.add('symbols', SymbolPattern(SYMBOLS_RE), '>not_strong')
 
 class MathExtension(Extension):
     """ create mathjax extension"""
-    def extend_markdown(self, md, md_globals):
+    def extendMarkdown(self, md, md_globals):
         """Modifies inline patterns"""
-        md.inline_patterns.add('inlinemaths', MathsPattern(MATHS_RE, 'span'), '<escape')
+        md.inlinePatterns.add('inlinemaths', MathsPattern(MATHS_RE, 'span'), '<escape')
         return self
 
 MD_EXT = [
-    'markdown_speedup.extensions.extra',
-    'markdown_speedup.extensions.nl2br',
-    'markdown_speedup.extensions.sane_lists',
-    'markdown_speedup.extensions.codehilite',
-    'markdown_speedup.extensions.wikilinks',
-    'markdown_speedup.extensions.toc',
+    'markdown.extensions.extra',
+    'markdown.extensions.nl2br',
+    'markdown.extensions.sane_lists',
+    'markdown.extensions.codehilite',
+    'markdown.extensions.wikilinks',
+    'markdown.extensions.toc',
     ChecklistExtension(),
     CustomSpanExtension(),
     ReplaceTagsExtension(),
-    'markdown_speedup.extensions.footnotes',
+    'markdown.extensions.footnotes',
     SymbolExtension(),
     MultiExtension(),
     MathExtension()
 ]
 
 MD_EXT_CONFIG = {
-    'markdown_speedup.extensions.codehilite': {
+    'markdown.extensions.codehilite': {
         'guess_lang': True,
         'use_pygments': False
     },
-    'markdown_speedup.extensions.footnotes': {
+    'markdown.extensions.footnotes': {
         'PLACE_MARKER': '///footnotes///'
     },
-    'markdown_speedup.extensions.toc': {
+    'markdown.extensions.toc': {
         'permalink': '%ssect;' % (AMP_SUBSTITUTE)
     },
-    'markdown_speedup.extensions.wikilinks': {
+    'markdown.extensions.wikilinks': {
         'base_url': 'http://en.wikipedia.org/wiki/',
         'end_url': ''
     }
 }
 
-MD = markdown_speedup.Markdown(
+MD = markdown.Markdown(
     extensions=MD_EXT,
     extension_configs=MD_EXT_CONFIG,
     output_format="html5",

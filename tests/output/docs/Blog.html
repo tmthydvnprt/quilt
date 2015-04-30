@@ -9,13 +9,13 @@
     -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     -- Page stitched together with quilt.py
     -- url            : /Users/timothydavenport/GitHub/quilt/tests/output/docs/Blog.html
-    -- quilted on     : 04/28/15
-    -- stitching took : 0.069 s
+    -- quilted on     : 04/29/15
+    -- stitching took : 0.089 s
     -- quilt pagevars :
     --            author : markdoc.py
     --       categories : []
     --         copydate : 2015
-    --             date : 04/28/15
+    --             date : 04/29/15
     --      description : Provide blog capabilities for static site
     --        directory : docs
     --     disable_last : disabled
@@ -206,7 +206,7 @@ create group dictionary</p>
 </blockquote>
 <h2 id="data"><strong>DATA</strong><a alt="&sect;" class="headerlink" href="#data" title="Permanent link">&sect;</a></h2>
 <p><strong>ATOMENTRY</strong></p>
-<div class="codehilite None XML"><pre>    <span class="nt">&lt;entry&gt;</span>
+<div class="codehilite"><pre>    <span class="nt">&lt;entry&gt;</span>
         <span class="nt">&lt;title&gt;</span>%s<span class="nt">&lt;title&gt;</span>
         <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"%s"</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"alternate"</span> <span class="na">type=</span><span class="s">"text/html"</span> <span class="na">href=</span><span class="s">"%s"</span><span class="nt">/&gt;</span>
@@ -225,7 +225,7 @@ create group dictionary</p>
     <span class="nt">&lt;/entry&gt;</span>
 </pre></div>
 <p><strong>ATOMXML</strong></p>
-<div class="codehilite None SWIG"><pre><span class="o">&lt;?</span><span class="n">xml</span> <span class="n">version</span><span class="o">=</span><span class="s">"1.0"</span> <span class="n">encoding</span><span class="o">=</span><span class="s">"utf-8"</span><span class="o">?&gt;</span>
+<div class="codehilite"><pre><span class="o">&lt;?</span><span class="n">xml</span> <span class="n">version</span><span class="o">=</span><span class="s">"1.0"</span> <span class="n">encoding</span><span class="o">=</span><span class="s">"utf-8"</span><span class="o">?&gt;</span>
 <span class="o">&lt;</span><span class="n">feed</span> <span class="n">xmlns</span><span class="o">=</span><span class="s">"http://www.w3.org/2005/Atom"</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="nf">%s</span> <span class="n">Feed</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="n">subtitle</span><span class="o">&gt;</span><span class="nf">%s</span><span class="o">&lt;/</span><span class="n">subtitle</span><span class="o">&gt;</span>
@@ -237,12 +237,12 @@ create group dictionary</p>
 <span class="o">&lt;/</span><span class="n">feed</span><span class="o">&gt;</span>
 </pre></div>
 <p><strong>GROUP</strong></p>
-<div class="codehilite None XML"><pre>  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"%s-link"</span><span class="nt">&gt;</span>
+<div class="codehilite"><pre>  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"%s-link"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;h3&gt;&lt;a</span> <span class="na">href=</span><span class="s">"%s"</span><span class="nt">&gt;</span>%s<span class="nt">&lt;/a&gt;</span> <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge"</span><span class="nt">&gt;</span>%s posts<span class="nt">&lt;/span&gt;&lt;/h3&gt;</span>
     <span class="nt">&lt;/li&gt;</span>
 </pre></div>
 <p><strong>GROUPLIST</strong></p>
-<div class="codehilite None SWIG"><pre><span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">"container"</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">"container"</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">"row"</span><span class="o">&gt;</span>
         <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">"col-sm-8 col-sm-offset-2"</span><span class="o">&gt;</span>
             <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="nf">%s</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
@@ -255,12 +255,12 @@ create group dictionary</p>
 <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
 </pre></div>
 <p><strong>GROUPVARS</strong></p>
-<div class="codehilite None Text only"><pre>title: %s
+<div class="codehilite"><pre>title: %s
 description: %s
 author: %s
 </pre></div>
 <p><strong>POST</strong></p>
-<div class="codehilite None SWIG"><pre>  <span class="o">&lt;</span><span class="n">li</span> <span class="n">class</span><span class="o">=</span><span class="s">"post-link list-group-item"</span><span class="o">&gt;</span>
+<div class="codehilite"><pre>  <span class="o">&lt;</span><span class="n">li</span> <span class="n">class</span><span class="o">=</span><span class="s">"post-link list-group-item"</span><span class="o">&gt;</span>
         <span class="o">&lt;</span><span class="n">h3</span> <span class="n">class</span><span class="o">=</span><span class="s">"list-group-item-heading"</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">"%s"</span><span class="o">&gt;</span><span class="nf">%s</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s">"h4"</span><span class="o">&gt;</span><span class="n">by</span> <span class="nf">%s</span> <span class="o">&lt;</span><span class="n">small</span><span class="o">&gt;</span><span class="n">on</span> <span class="nf">%s</span><span class="o">&lt;/</span><span class="n">small</span><span class="o">&gt;&lt;/</span><span class="n">span</span><span class="o">&gt;&lt;/</span><span class="n">h3</span><span class="o">&gt;</span>
         <span class="o">&lt;</span><span class="n">hr</span><span class="o">&gt;</span>
         <span class="o">&lt;</span><span class="n">p</span> <span class="n">class</span><span class="o">=</span><span class="s">"lead list-group-item-text"</span><span class="o">&gt;</span><span class="nf">%s</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">"%s"</span><span class="o">&gt;&amp;</span><span class="n">hellip</span><span class="p">;</span><span class="k">continue</span><span class="o">&amp;</span><span class="n">hellip</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
@@ -275,7 +275,7 @@ author: %s
     <span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
 </pre></div>
 <p><strong>POSTLIST</strong></p>
-<div class="codehilite None SWIG"><pre><span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">"container"</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">"container"</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">"row"</span><span class="o">&gt;</span>
         <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">"col-sm-8 col-sm-offset-2"</span><span class="o">&gt;</span>
             <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="nf">%s</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
@@ -288,7 +288,7 @@ author: %s
 <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
 </pre></div>
 <p><strong>RSSITEM</strong></p>
-<div class="codehilite None XML"><pre>   <span class="nt">&lt;item&gt;</span>
+<div class="codehilite"><pre>   <span class="nt">&lt;item&gt;</span>
         <span class="nt">&lt;title&gt;</span>%s<span class="nt">&lt;/title&gt;</span>
         <span class="nt">&lt;link&gt;</span>%s<span class="nt">&lt;/link&gt;</span>
         <span class="nt">&lt;guid&gt;</span>%s<span class="nt">&lt;/guid&gt;</span>
@@ -297,7 +297,7 @@ author: %s
     <span class="nt">&lt;/item&gt;</span>
 </pre></div>
 <p><strong>RSSXML</strong></p>
-<div class="codehilite None SWIG"><pre><span class="o">&lt;?</span><span class="n">xml</span> <span class="n">version</span><span class="o">=</span><span class="s">"1.0"</span> <span class="n">encoding</span><span class="o">=</span><span class="s">"utf-8"</span><span class="o">?&gt;</span>
+<div class="codehilite"><pre><span class="o">&lt;?</span><span class="n">xml</span> <span class="n">version</span><span class="o">=</span><span class="s">"1.0"</span> <span class="n">encoding</span><span class="o">=</span><span class="s">"utf-8"</span><span class="o">?&gt;</span>
 <span class="o">&lt;</span><span class="n">rss</span> <span class="n">version</span><span class="o">=</span><span class="s">"2.0"</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="n">channel</span><span class="o">&gt;</span>
         <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="nf">%s</span> <span class="n">Feed</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
@@ -328,7 +328,7 @@ author: %s
 </footer>
 <!--quilted scripts patch-->
 <script id="scripts" rel="javascript" type="text/javascript">
-pagevars = { "author":"markdoc.py", "categories":[], "copydate":"2015", "date":"04/28/15", "description":"Provide blog capabilities for static site", "directory":"docs", "disable_last":"disabled", "disable_next":"disabled", "domain":"some_name.com", "email":"tmthydvnprt@users.noreply.github.com", "keywords":"", "last_post":"", "last_title":"", "latestpost":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/docs/Blog.md", "name":"quilt", "next_post":"", "next_title":"", "output":"/Users/timothydavenport/GitHub/quilt/tests/output/docs/Blog.html", "page_path":"", "pagecomment":true, "patchcomment":true, "quiltcomment":true, "relativepath":"../", "rootpath":"/Users/timothydavenport/GitHub/quilt/tests/output", "source":"/Users/timothydavenport/GitHub/quilt/tests/source/pages/docs/Blog.md", "tags":[], "title":"quilt docs:Blog", "url":"/Users/timothydavenport/GitHub/quilt/tests/output/docs/Blog.html" };
+pagevars = { "author":"markdoc.py", "categories":[], "copydate":"2015", "date":"04/29/15", "description":"Provide blog capabilities for static site", "directory":"docs", "disable_last":"disabled", "disable_next":"disabled", "domain":"some_name.com", "email":"tmthydvnprt@users.noreply.github.com", "keywords":"", "last_post":"", "last_title":"", "latestpost":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/docs/Blog.md", "name":"quilt", "next_post":"", "next_title":"", "output":"/Users/timothydavenport/GitHub/quilt/tests/output/docs/Blog.html", "page_path":"", "pagecomment":true, "patchcomment":true, "quiltcomment":true, "relativepath":"../", "rootpath":"/Users/timothydavenport/GitHub/quilt/tests/output", "source":"/Users/timothydavenport/GitHub/quilt/tests/source/pages/docs/Blog.md", "tags":[], "title":"quilt docs:Blog", "url":"/Users/timothydavenport/GitHub/quilt/tests/output/docs/Blog.html" };
 </script>
 <script rel="javascript" src="../js/jquery-1.11.2.min_bootstrap.min_typeahead.bundle.min_quilt.js" type="text/javascript"></script>
 <script rel="javascript" type="text/x-mathjax-config">MathJax.Hub.Config({ showMathMenu:false, imageFont:null, MathEvents:{ hover:256 }, jax:["input/TeX","output/HTML-CSS", "output/CommonHTML"], extensions:["tex2jax.js", "CHTML-preview.js"], TeX:{ extensions:["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"], autoNumber:"AMS" } });</script>

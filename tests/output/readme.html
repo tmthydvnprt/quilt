@@ -9,13 +9,13 @@
     -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     -- Page stitched together with quilt.py
     -- url            : /Users/timothydavenport/GitHub/quilt/tests/output/readme.html
-    -- quilted on     : 04/28/15
-    -- stitching took : 0.119 s
+    -- quilted on     : 04/29/15
+    -- stitching took : 0.15 s
     -- quilt pagevars :
     --            author : tmthydvnprt
     --       categories : []
     --         copydate : 2015
-    --             date : 04/28/15
+    --             date : 04/29/15
     --      description : default description
     --        directory : pages
     --     disable_last : disabled
@@ -125,14 +125,14 @@
 <li><a alt="Code Examples" href="#code-examples" title="Code Examples">Code Examples</a></li>
 <li><a alt="Installation" href="#installation" title="Installation">Installation</a></li>
 <li><a alt="How it works" href="#how-it-works" title="How it works">How it works</a><ul>
-<li><a alt="QuiltingRoom class (site-level)" href="#QuiltingRoom" title="QuiltingRoom class (site-level)">QuiltingRoom class (site-level)</a><ul>
+<li><a alt="QuiltingRoom class ---(site-level)---" href="#QuiltingRoom" title="QuiltingRoom class ---(site-level)---">QuiltingRoom class ---(site-level)---</a><ul>
 <li><a alt="Example directory structure" href="#exampledir" title="Example directory structure">Example directory structure</a></li>
 <li><a alt="Source" href="#source" title="Source">Source</a></li>
 <li><a alt="Output" href="#output" title="Output">Output</a></li>
 <li><a alt="Default Quilting Configuration:" href="#configuration" title="Default Quilting Configuration:">Default Quilting Configuration:</a></li>
 </ul>
 </li>
-<li><a alt="Quilter class (page-level)" href="#Quilter" title="Quilter class (page-level)">Quilter class (page-level)</a><ul>
+<li><a alt="Quilter class ---(page-level)---" href="#Quilter" title="Quilter class ---(page-level)---">Quilter class ---(page-level)---</a><ul>
 <li><a alt="Page Variables:" href="#pagevars" title="Page Variables:">Page Variables:</a><ul>
 <li><a alt="Example quilt file (quilt.html):" href="#quiltfile" title="Example quilt file (quilt.html):">Example quilt file (quilt.html):</a></li>
 <li><a alt="Example patch file (head.html):" href="#patchfile" title="Example patch file (head.html):">Example patch file (head.html):</a></li>
@@ -142,7 +142,7 @@
 </li>
 </ul>
 </li>
-<li><a alt="Blog class (blog-level)" href="#Blog" title="Blog class (blog-level)">Blog class (blog-level)</a></li>
+<li><a alt="Blog class ---(blog-level)---" href="#Blog" title="Blog class ---(blog-level)---">Blog class ---(blog-level)---</a></li>
 </ul>
 </li>
 <li><a alt="TODO" href="#todo" title="TODO">TODO</a></li>
@@ -161,20 +161,20 @@
 <h2 id="code-examples">Code Examples<a alt="&sect;" class="headerlink" href="#code-examples" title="Permanent link">&sect;</a></h2>
 <hr/>
 <p>Assuming the <a alt="directory structure" href="#exampledir" title="directory structure">directory structure</a> is set up correctly, quilting is quite easy. Quilt a site located at <code>path/to/site/source/files</code> from inside python.</p>
-<div class="codehilite python Python"><pre><span class="kn">from</span> <span class="nn">quilt.QuiltingRoom</span> <span class="kn">import</span> <span class="n">QuiltingRoom</span>
+<div class="codehilite"><pre><span class="kn">from</span> <span class="nn">quilt.QuiltingRoom</span> <span class="kn">import</span> <span class="n">QuiltingRoom</span>
 
 <span class="n">q</span> <span class="o">=</span> <span class="n">QuiltingRoom</span><span class="p">(</span><span class="s">'path/to/site/source/files'</span><span class="p">)</span>
 <span class="n">q</span><span class="o">.</span><span class="n">quilt</span><span class="p">()</span>
 </pre></div>
 <p>The project also includes a <code>__main__.py</code> to execute from command-line.</p>
-<div class="codehilite shell Bash"><pre>machine:~ user<span class="nv">$ </span>python quilt path/to/site/source/files
+<div class="codehilite"><pre>machine:~ user<span class="nv">$ </span>python quilt path/to/site/source/files
 </pre></div>
 <h2 id="installation">Installation<a alt="&sect;" class="headerlink" href="#installation" title="Permanent link">&sect;</a></h2>
 <hr/>
 <p class="lead">TBD, just run from a directory at the moment.<br/></p>
 <h2 id="how-it-works">How it works<a alt="&sect;" class="headerlink" href="#how-it-works" title="Permanent link">&sect;</a></h2>
 <hr/>
-<h3 id="QuiltingRoom">QuiltingRoom class <small>(site-level)</small><a alt="&sect;" class="headerlink" href="#QuiltingRoom" title="Permanent link">&sect;</a></h3>
+<h3 id="QuiltingRoom">QuiltingRoom class ---(site-level)---<a alt="&sect;" class="headerlink" href="#QuiltingRoom" title="Permanent link">&sect;</a></h3>
 <p class="lead">Used to <em><em>quilt</em></em> a whole site together.<br/></p>
 <ol>
 <li>set <code>source</code> to users directory containing the <a alt="appropriate files" href="#exampledir" title="appropriate files">appropriate files</a> (default output is <code>quilted_</code> + <code>source</code>)</li>
@@ -223,13 +223,13 @@
 <li class="dir"><code>css/</code><br/><ul>
 <li class="file"><code>site.css</code><br/></li>
 <li class="file"><code>bootstrap.css</code><br/></li>
-<li class="file"><span class="symbol">&hellip;</span><br/></li>
+<li class="file">...<br/></li>
 </ul>
 </li>
 <li class="dir"><code>js/</code><br/><ul>
 <li class="file"><code>site.js</code><br/></li>
 <li class="file"><code>jquery.js</code><br/></li>
-<li class="file"><span class="symbol">&hellip;</span><br/></li>
+<li class="file">...<br/></li>
 </ul>
 </li>
 <li class="dir"><code>imgs/</code><br/><ul>
@@ -238,7 +238,7 @@
 </ul>
 </li>
 <li class="dir"><code>fonts/</code><br/><ul>
-<li class="file"><span class="symbol">&hellip;</span><br/></li>
+<li class="file">...<br/></li>
 </ul>
 </li>
 </ul>
@@ -249,10 +249,10 @@
 <li class="dir"><code>blog/</code><br/><ul>
 <li class="file"><code>post1.md</code><br/></li>
 <li class="file"><code>post2.html</code><br/></li>
-<li class="file"><span class="symbol">&hellip;</span><br/></li>
+<li class="file">...<br/></li>
 </ul>
 </li>
-<li class="file"><span class="symbol">&hellip;</span><br/></li>
+<li class="file">...<br/></li>
 </ul>
 </li>
 <li class="dir"><code>patches/</code><br/><ul>
@@ -280,22 +280,22 @@
 <li class="dir"><code>blog/</code><br/><ul>
 <li class="file"><code>post1.html</code> <br/></li>
 <li class="file"><code>post2.html</code> <br/></li>
-<li class="file"><span class="symbol">&hellip;</span> <br/></li>
+<li class="file">...  <br/></li>
 </ul>
 </li>
 <li class="file"><code>sitemap.xml</code> <br/></li>
 <li class="file"><code>sitemapindex.xml</code> <br/></li>
-<li class="file"><span class="symbol">&hellip;</span><br/></li>
+<li class="file">...<br/></li>
 <li class="dir"><code>css/</code> <br/><ul>
 <li class="file"><code>site.css</code> <br/></li>
 <li class="file"><code>bootstrap.css</code> <br/></li>
-<li class="file"><span class="symbol">&hellip;</span> <br/></li>
+<li class="file">...  <br/></li>
 </ul>
 </li>
 <li class="dir"><code>js/</code> <br/><ul>
 <li class="file"><code>site.js</code> <br/></li>
 <li class="file"><code>jquery.js</code> <br/></li>
-<li class="file"><span class="symbol">&hellip;</span> <br/></li>
+<li class="file">... <br/></li>
 </ul>
 </li>
 <li class="dir"><code>imgs/</code><br/><ul>
@@ -304,7 +304,7 @@
 </ul>
 </li>
 <li class="dir"><code>fonts/</code> <br/><ul>
-<li class="file"><span class="symbol">&hellip;</span><br/></li>
+<li class="file">...<br/></li>
 </ul>
 </li>
 </ul>
@@ -329,7 +329,7 @@
 <div class="panel-heading" markdown="2">
 <h4 class="panel-title" id="configuration">Default Quilting Configuration:<a alt="&sect;" class="headerlink" href="#configuration" title="Permanent link">&sect;</a></h4>
 </div>
-<div class="codehilite python Python"><pre><span class="c"># default config, overridden by config.json in source directory</span>
+<div class="codehilite"><pre><span class="c"># default config, overridden by config.json in source directory</span>
 <span class="n">DEFAULT_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
     <span class="c"># project variables</span>
     <span class="c"># -----------------------------------------------------------------------------------</span>
@@ -389,7 +389,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<h3 id="Quilter">Quilter class <small>(page-level)</small><a alt="&sect;" class="headerlink" href="#Quilter" title="Permanent link">&sect;</a></h3>
+<h3 id="Quilter">Quilter class ---(page-level)---<a alt="&sect;" class="headerlink" href="#Quilter" title="Permanent link">&sect;</a></h3>
 <p class="lead">Used to <em><em>stitch</em></em> one page together with a quilt file, patch files, and a page file.<br/></p>
 <ol>
 <li>use <a alt="quilt file" href="#quiltfile" title="quilt file">quilt file</a> to create quilt</li>
@@ -415,7 +415,7 @@
 <div class="panel-heading" markdown="2">
 <h4 class="panel-title" id="pagevars">Page Variables:<a alt="&sect;" class="headerlink" href="#pagevars" title="Permanent link">&sect;</a></h4>
 </div>
-<div class="codehilite python Python"><pre><span class="c"># set quilting page defaults</span>
+<div class="codehilite"><pre><span class="c"># set quilting page defaults</span>
 <span class="n">page_defaults</span> <span class="o">=</span> <span class="p">{</span>
     <span class="c"># internal variables used by quilt (auto-generated, but may be used in content)</span>
     <span class="c"># -----------------------------------------------------------------------------------</span>
@@ -455,7 +455,7 @@
 <div class="panel-heading" markdown="2">
 <h5 class="panel-title" id="quiltfile">Example quilt file (<code>quilt.html</code>):<a alt="&sect;" class="headerlink" href="#quiltfile" title="Permanent link">&sect;</a></h5>
 </div>
-<div class="codehilite html HTML"><pre><span class="cp">&lt;!doctype html&gt;</span>
+<div class="codehilite"><pre><span class="cp">&lt;!doctype html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
     <span class="nt">&lt;head&gt;&lt;/head&gt;</span>
     <span class="nt">&lt;body&gt;</span>
@@ -472,7 +472,7 @@
 <div class="panel-heading" markdown="2">
 <h5 class="panel-title" id="patchfile">Example patch file (<code>head.html</code>):<a alt="&sect;" class="headerlink" href="#patchfile" title="Permanent link">&sect;</a></h5>
 </div>
-<div class="codehilite html HTML"><pre><span class="nt">&lt;head&gt;</span>
+<div class="codehilite"><pre><span class="nt">&lt;head&gt;</span>
     <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge"</span><span class="nt">&gt;</span>
 
@@ -498,13 +498,13 @@
 <h5 class="panel-title" id="pagefile">Example page file (<code>index.html</code>):<a alt="&sect;" class="headerlink" href="#pagefile" title="Permanent link">&sect;</a></h5>
 </div>
 <div class="single-file">
-<div class="codehilite shell Bash"><pre>title: quilt project example index.html
+<div class="codehilite"><pre>title: quilt project example index.html
 description: an example page file with pagevar header, page html, <span class="p">&amp;</span> page script
 author: haha
 name: this is already defined in a sites variables, this will override it...
 uniquepagevar: make a page variable
 </pre></div>
-<div class="codehilite html HTML"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"page"</span> <span class="na">class=</span><span class="s">"container-fluid"</span><span class="nt">&gt;</span>
+<div class="codehilite"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"page"</span> <span class="na">class=</span><span class="s">"container-fluid"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"jumbotron text-center"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;h1&gt;</span>{{name}}<span class="nt">&lt;/h1&gt;</span>
         <span class="nt">&lt;p&gt;</span>
@@ -514,7 +514,7 @@ uniquepagevar: make a page variable
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </pre></div>
-<div class="codehilite html HTML"><pre><span class="nt">&lt;script&gt;</span>
+<div class="codehilite"><pre><span class="nt">&lt;script&gt;</span>
 <span class="cm">/* unique to this page, NOT inserted with patch#page but appended after global scripts */</span>
 <span class="nx">alert</span><span class="p">(</span><span class="s1">'page script'</span><span class="p">);</span>
 <span class="nt">&lt;/script&gt;</span>
@@ -526,26 +526,26 @@ uniquepagevar: make a page variable
 <h5 class="panel-title" id="pagefilemd">Example page file (<code>index.md</code>):<a alt="&sect;" class="headerlink" href="#pagefilemd" title="Permanent link">&sect;</a></h5>
 </div>
 <div class="single-file">
-<div class="codehilite shell Bash"><pre>title: quilt project example index.html
+<div class="codehilite"><pre>title: quilt project example index.html
 description: an example page file with pagevar header, page html, <span class="p">&amp;</span> page script
 author: haha
 name: this is already defined in a sites variables, this will override it...
 uniquepagevar: make a page variable
 </pre></div>
-<div class="codehilite markdown reStructuredText"><pre><span class="gh">{{name}}</span>
+<div class="codehilite"><pre><span class="gh">{{name}}</span>
 <span class="gh">=========</span>
 
 <span class="gh">A `python` based static site `html` _stitcher_.</span>
 <span class="gh">--------------------------------------------------</span>
 </pre></div>
-<div class="codehilite html HTML"><pre><span class="nt">&lt;script&gt;</span>
+<div class="codehilite"><pre><span class="nt">&lt;script&gt;</span>
 <span class="cm">/* unique to this page, NOT inserted with patch#page but appended after global scripts */</span>
 <span class="nx">alert</span><span class="p">(</span><span class="s1">'page script'</span><span class="p">);</span>
 <span class="nt">&lt;/script&gt;</span>
 </pre></div>
 </div>
 </div>
-<h3 id="Blog">Blog class <small>(blog-level)</small><a alt="&sect;" class="headerlink" href="#Blog" title="Permanent link">&sect;</a></h3>
+<h3 id="Blog">Blog class ---(blog-level)---<a alt="&sect;" class="headerlink" href="#Blog" title="Permanent link">&sect;</a></h3>
 <p class="lead">Used to add dynamic <em>blog</em> abilities to <code>posts/</code> directory under <code>pages/</code><br/></p>
 <ol>
 <li>set <code>source</code> to <code>posts/</code> along with unique or default quilt and patches</li>
@@ -578,7 +578,7 @@ uniquepagevar: make a page variable
 <tbody>
 <tr>
 <td align="center">0.1.0</td>
-<td align="center">03/0<span class="symbol">&frac12;</span>013</td>
+<td align="center">03/01/2013</td>
 <td align="left">initial release</td>
 </tr>
 <tr>
@@ -597,7 +597,7 @@ uniquepagevar: make a page variable
 <h2 id="license">License<a alt="&sect;" class="headerlink" href="#license" title="Permanent link">&sect;</a></h2>
 <hr/>
 <h3 id="mit">MIT<a alt="&sect;" class="headerlink" href="#mit" title="Permanent link">&sect;</a></h3>
-<p class="lead">Copyright <span class="symbol">&copy;</span> 2015 Timothy Davenport<br/></p>
+<p class="lead">Copyright (c) 2015 Timothy Davenport<br/></p>
 <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
 <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
 <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
@@ -617,7 +617,7 @@ uniquepagevar: make a page variable
 </footer>
 <!--quilted scripts patch-->
 <script id="scripts" rel="javascript" type="text/javascript">
-pagevars = { "author":"tmthydvnprt", "categories":[], "copydate":"2015", "date":"04/28/15", "description":"default description", "directory":"pages", "disable_last":"disabled", "disable_next":"disabled", "domain":"some_name.com", "email":"tmthydvnprt@users.noreply.github.com", "keywords":"", "last_post":"", "last_title":"", "latestpost":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/readme.md", "name":"quilt", "next_post":"", "next_title":"", "output":"/Users/timothydavenport/GitHub/quilt/tests/output/readme.html", "page_path":"", "pagecomment":true, "patchcomment":true, "quiltcomment":true, "relativepath":"", "rootpath":"/Users/timothydavenport/GitHub/quilt/tests/output", "source":"/Users/timothydavenport/GitHub/quilt/tests/source/pages/readme.md", "tags":[], "title":"quilt about(readme)", "url":"/Users/timothydavenport/GitHub/quilt/tests/output/readme.html" };
+pagevars = { "author":"tmthydvnprt", "categories":[], "copydate":"2015", "date":"04/29/15", "description":"default description", "directory":"pages", "disable_last":"disabled", "disable_next":"disabled", "domain":"some_name.com", "email":"tmthydvnprt@users.noreply.github.com", "keywords":"", "last_post":"", "last_title":"", "latestpost":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/readme.md", "name":"quilt", "next_post":"", "next_title":"", "output":"/Users/timothydavenport/GitHub/quilt/tests/output/readme.html", "page_path":"", "pagecomment":true, "patchcomment":true, "quiltcomment":true, "relativepath":"", "rootpath":"/Users/timothydavenport/GitHub/quilt/tests/output", "source":"/Users/timothydavenport/GitHub/quilt/tests/source/pages/readme.md", "tags":[], "title":"quilt about(readme)", "url":"/Users/timothydavenport/GitHub/quilt/tests/output/readme.html" };
 </script>
 <script rel="javascript" src="js/jquery-1.11.2.min_bootstrap.min_typeahead.bundle.min_quilt.js" type="text/javascript"></script>
 <script rel="javascript" type="text/x-mathjax-config">MathJax.Hub.Config({ showMathMenu:false, imageFont:null, MathEvents:{ hover:256 }, jax:["input/TeX","output/HTML-CSS", "output/CommonHTML"], extensions:["tex2jax.js", "CHTML-preview.js"], TeX:{ extensions:["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"], autoNumber:"AMS" } });</script>

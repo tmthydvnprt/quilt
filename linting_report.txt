@@ -1,62 +1,17 @@
 quilt
-************* Module quilt.Blog
-W:103,40: Using type() instead of isinstance() for a typecheck. (unidiomatic-typecheck)
 ************* Module quilt.Markdown
-F: 33, 0: Unable to import 'markdown_speedup' (import-error)
-F: 34, 0: Unable to import 'markdown_speedup.util' (import-error)
-F: 35, 0: Unable to import 'markdown_speedup.extensions' (import-error)
-F: 36, 0: Unable to import 'markdown_speedup.postprocessors' (import-error)
-F: 37, 0: Unable to import 'markdown_speedup.inlinepatterns' (import-error)
-F: 38, 0: Unable to import 'markdown_speedup.inlinepatterns' (import-error)
-W: 48, 0: Class has no __init__ method (no-init)
-R: 50, 4: Method could be a function (no-self-use)
-W: 57, 0: Class has no __init__ method (no-init)
 R: 59, 4: Method could be a function (no-self-use)
-W: 68, 0: Class has no __init__ method (no-init)
 R: 70, 4: Method could be a function (no-self-use)
-W: 78, 0: Class has no __init__ method (no-init)
 R: 80, 4: Method could be a function (no-self-use)
-W: 87, 0: Class has no __init__ method (no-init)
 R: 89, 4: Method could be a function (no-self-use)
-W: 96, 0: Class has no __init__ method (no-init)
-E:100,29: Instance of 'MathsPattern' has no 'tag' member (no-member)
-W:105, 0: Class has no __init__ method (no-init)
-W:107,34: Unused argument 'md_globals' (unused-argument)
-W:112, 0: Class has no __init__ method (no-init)
-W:114,34: Unused argument 'md_globals' (unused-argument)
-R:114, 4: Method could be a function (no-self-use)
-W:118, 0: Class has no __init__ method (no-init)
-W:120,34: Unused argument 'md_globals' (unused-argument)
-R:120, 4: Method could be a function (no-self-use)
-W:124, 0: Class has no __init__ method (no-init)
-W:126,34: Unused argument 'md_globals' (unused-argument)
-R:126, 4: Method could be a function (no-self-use)
-W:130, 0: Class has no __init__ method (no-init)
-W:132,34: Unused argument 'md_globals' (unused-argument)
-R:132, 4: Method could be a function (no-self-use)
-W:136, 0: Class has no __init__ method (no-init)
-W:138,34: Unused argument 'md_globals' (unused-argument)
 ************* Module quilt.Quilter
-C:202, 0: Line too long (131/128) (line-too-long)
-C:204, 0: Line too long (131/128) (line-too-long)
-C:208, 0: Line too long (129/128) (line-too-long)
 R: 84, 0: Too many instance attributes (9/8) (too-many-instance-attributes)
-W:261,23: Using type() instead of isinstance() for a typecheck. (unidiomatic-typecheck)
-R:400, 4: Too many branches (22/16) (too-many-branches)
-W: 34, 0: Unused PAGEVAR_SEARCH_RE imported from quilt.Constants (unused-import)
-************* Module quilt.QuiltingRoom
-C:151, 0: Line too long (166/128) (line-too-long)
+R:414, 4: Too many branches (22/16) (too-many-branches)
 ************* Module quilt.Util
-W:230,23: Unused argument 'size' (unused-argument)
-W:478,11: Using type() instead of isinstance() for a typecheck. (unidiomatic-typecheck)
-W:509,16: Using type() instead of isinstance() for a typecheck. (unidiomatic-typecheck)
-W:512,18: Using type() instead of isinstance() for a typecheck. (unidiomatic-typecheck)
-W:531,35: Using type() instead of isinstance() for a typecheck. (unidiomatic-typecheck)
-W: 18, 0: Unused import random (unused-import)
 R:  1, 0: Similar lines in 3 files
 ==quilt.Blog:144
 ==quilt.Blog:88
-==quilt.QuiltingRoom:335
+==quilt.QuiltingRoom:336
             qultr.stitch()
             qultr.clean_html()
             qultr.remove_empty()
@@ -68,7 +23,7 @@ R:  1, 0: Similar lines in 3 files
     #@profile (duplicate-code)
 R:  1, 0: Similar lines in 2 files
 ==quilt.Blog:129
-==quilt.QuiltingRoom:506
+==quilt.QuiltingRoom:507
             qultr.stitch()
             qultr.clean_html()
             qultr.remove_empty()
@@ -78,7 +33,7 @@ R:  1, 0: Similar lines in 2 files
     #@profile (duplicate-code)
 R:  1, 0: Similar lines in 2 files
 ==quilt.Blog:129
-==quilt.QuiltingRoom:335
+==quilt.QuiltingRoom:336
             qultr.stitch()
             qultr.clean_html()
             qultr.remove_empty()
@@ -88,18 +43,18 @@ R:  1, 0: Similar lines in 2 files
 R:  1, 0: Similar lines in 3 files
 ==quilt.Blog:144
 ==quilt.Blog:88
-==quilt.QuiltingRoom:506
-            qultr.stitch()
-            qultr.clean_html()
-            qultr.remove_empty()
-            qultr.write()
-            del qultr
+==quilt.QuiltingRoom:507
+        qultr.stitch()
+        qultr.clean_html()
+        qultr.remove_empty()
+        qultr.write()
+        del qultr
  (duplicate-code)
 
 
 Report
 ======
-1071 statements analysed.
+1070 statements analysed.
 
 Statistics by type
 ------------------
@@ -125,6 +80,11 @@ External dependencies
     PIL 
       \-Image (quilt.QuiltingRoom)
     bs4 (quilt.QuiltingRoom,quilt.Quilter,quilt.Util)
+    markdown (quilt.Markdown)
+      \-extensions (quilt.Markdown)
+      \-inlinepatterns (quilt.Markdown)
+      \-postprocessors (quilt.Markdown)
+      \-util (quilt.Markdown)
     nltk (quilt.Constants,quilt.Util)
     numpy (quilt.Util)
     quilt 
@@ -142,13 +102,13 @@ Raw metrics
 +----------+-------+------+---------+-----------+
 |type      |number |%     |previous |difference |
 +==========+=======+======+=========+===========+
-|code      |1313   |59.60 |1314     |-1.00      |
+|code      |1325   |59.77 |1325     |=          |
 +----------+-------+------+---------+-----------+
-|docstring |412    |18.70 |412      |=          |
+|docstring |414    |18.67 |414      |=          |
 +----------+-------+------+---------+-----------+
-|comment   |379    |17.20 |378      |+1.00      |
+|comment   |379    |17.10 |379      |=          |
 +----------+-------+------+---------+-----------+
-|empty     |99     |4.49  |99       |=          |
+|empty     |99     |4.47  |99       |=          |
 +----------+-------+------+---------+-----------+
 
 
@@ -161,7 +121,7 @@ Duplication
 +=========================+======+=========+===========+
 |nb duplicated lines      |43    |43       |=          |
 +-------------------------+------+---------+-----------+
-|percent duplicated lines |1.721 |1.721    |=          |
+|percent duplicated lines |1.712 |1.712    |=          |
 +-------------------------+------+---------+-----------+
 
 
@@ -172,13 +132,13 @@ Messages by category
 +-----------+-------+---------+-----------+
 |type       |number |previous |difference |
 +===========+=======+=========+===========+
-|convention |4      |4        |=          |
+|convention |0      |0        |=          |
 +-----------+-------+---------+-----------+
-|refactor   |15     |15       |=          |
+|refactor   |10     |10       |=          |
 +-----------+-------+---------+-----------+
-|warning    |27     |27       |=          |
+|warning    |0      |0        |=          |
 +-----------+-------+---------+-----------+
-|error      |1      |1        |=          |
+|error      |0      |0        |=          |
 +-----------+-------+---------+-----------+
 
 
@@ -186,17 +146,13 @@ Messages by category
 % errors / warnings by module
 -----------------------------
 
-+-------------------+-------+--------+---------+-----------+
-|module             |error  |warning |refactor |convention |
-+===================+=======+========+=========+===========+
-|quilt.Markdown     |100.00 |66.67   |60.00    |0.00       |
-+-------------------+-------+--------+---------+-----------+
-|quilt.Quilter      |0.00   |7.41    |13.33    |75.00      |
-+-------------------+-------+--------+---------+-----------+
-|quilt.Blog         |0.00   |3.70    |0.00     |0.00       |
-+-------------------+-------+--------+---------+-----------+
-|quilt.QuiltingRoom |0.00   |0.00    |0.00     |25.00      |
-+-------------------+-------+--------+---------+-----------+
++---------------+------+--------+---------+-----------+
+|module         |error |warning |refactor |convention |
++===============+======+========+=========+===========+
+|quilt.Markdown |0.00  |0.00    |40.00    |0.00       |
++---------------+------+--------+---------+-----------+
+|quilt.Quilter  |0.00  |0.00    |20.00    |0.00       |
++---------------+------+--------+---------+-----------+
 
 
 
@@ -206,34 +162,20 @@ Messages
 +-----------------------------+------------+
 |message id                   |occurrences |
 +=============================+============+
-|no-init                      |12          |
-+-----------------------------+------------+
-|no-self-use                  |9           |
-+-----------------------------+------------+
-|unused-argument              |7           |
-+-----------------------------+------------+
-|unidiomatic-typecheck        |6           |
-+-----------------------------+------------+
-|import-error                 |6           |
-+-----------------------------+------------+
-|line-too-long                |4           |
+|no-self-use                  |4           |
 +-----------------------------+------------+
 |duplicate-code               |4           |
-+-----------------------------+------------+
-|unused-import                |2           |
 +-----------------------------+------------+
 |too-many-instance-attributes |1           |
 +-----------------------------+------------+
 |too-many-branches            |1           |
-+-----------------------------+------------+
-|no-member                    |1           |
 +-----------------------------+------------+
 
 
 
 Global evaluation
 -----------------
-Your code has been rated at 9.52/10 (previous run: 9.52/10, +0.00)
+Your code has been rated at 9.91/10 (previous run: 9.91/10, +0.00)
 
  
 tests

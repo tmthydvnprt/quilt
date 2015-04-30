@@ -5,7 +5,7 @@
     <link href="some_name.com/feed/" rel="self"/>
     <link href="some_name.com"/>
     <id>randomid</id>
-    <updated>2015-04-28T19:42:38-7:00</updated>
+    <updated>2015-04-29T21:44:25-7:00</updated>
         <entry>
         <title>HTML Entities<title>
         <link href="/Users/timothydavenport/GitHub/quilt/tests/output/news/html_entities.html"/>
@@ -44,7 +44,7 @@ quotation mark (APL</summary>
         <id>randomid</id>
         <updated>3/20/2015 10:49 pm</updated>
         <summary>
-A list of MathJax \(\LaTeX\) Command  examples. These alphabetical examples come from here.</summary>
+A list of MathJax \LaTeX Command  examples. These alphabetical examples come from here.</summary>
         <content type="xhtml">
             <div xmlns="http://www.w3.org/1999/xhtml">
                 <p></p>

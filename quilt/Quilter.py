@@ -31,10 +31,10 @@ import shutil
 from collections import defaultdict
 
 from quilt.Constants import JS_HTML_PATTERN_RE, FIRST_KEY_RE, FIRST_EMPTY_LINE_RE, KEY_VALUE_RE, VALUE_RE
-from quilt.Constants import PAGEVAR_RE, ESCAPED_PAGEVAR_RE, PAGEVAR_SEARCH_RE
+from quilt.Constants import PAGEVAR_RE, ESCAPED_PAGEVAR_RE
 from quilt.Constants import PATCHCOMMENT, QUILTCOMMENT, PAGEOBJ, DOTSTAR_RE
 from quilt.Util import write_file, relative_path, group_links, minimize_js, NO_EMPTY_TAGS
-from quilt.Util import  HEAD_STRAINER, BODY_STRAINER#, a_strainer, link_strainer, script_strainer, table_strainer, img_strainer
+from quilt.Util import  HEAD_STRAINER, BODY_STRAINER
 from quilt.Markdown import MD
 
 DEBUG_FILE = ''
@@ -199,13 +199,27 @@ class Quilter(object):
                 if patch["id"] in self.patches:
 
                     if patch["id"] == "scripts":
-                        patch_soup = bs4.BeautifulSoup(self.patches[patch["id"]].encode('utf-8'), "lxml", parse_only=HEAD_STRAINER)
+                        patch_soup = bs4.BeautifulSoup(
+                            self.patches[patch["id"]].encode('utf-8'),
+                            "lxml",
+                            parse_only=HEAD_STRAINER
+                        )
                     else:
-                        patch_soup = bs4.BeautifulSoup(self.patches[patch["id"]].encode('utf-8'), "lxml", parse_only=BODY_STRAINER)
+                        patch_soup = bs4.BeautifulSoup(
+                            self.patches[patch["id"]].encode('utf-8'),
+                            "lxml",
+                            parse_only=BODY_STRAINER
+                        )
 
                     if self.__do_debug:
-                        write_file(add_suffix(DEBUG_FILE, '_'+patch["id"]+'-html'), self.patches[patch["id"]].encode('utf-8'))
-                        write_file(add_suffix(DEBUG_FILE, '_'+patch["id"]+'-soup'), patch_soup.encode('utf-8', formatter='html'))
+                        write_file(
+                            add_suffix(DEBUG_FILE, '_'+patch["id"]+'-html'),
+                            self.patches[patch["id"]].encode('utf-8')
+                        )
+                        write_file(
+                            add_suffix(DEBUG_FILE, '_'+patch["id"]+'-soup'),
+                            patch_soup.encode('utf-8', formatter='html')
+                        )
 
                     if patch["id"] == "scripts":
                         patch.append('\n')
@@ -258,7 +272,7 @@ class Quilter(object):
                 pagevar_brace = "{{" + page_var + "}}"
                 if page_var in self.pagevars:
                     variable = self.pagevars[page_var]
-                    if type(variable) is list:
+                    if isinstance(variable, list):
                         variable = ','.join(variable)
                     html = html.replace(pagevar_brace, str(variable))
                 else:
