@@ -242,7 +242,7 @@ class QuiltingRoom(object):
             # read source
             source = read_file(source_file.replace("{{relativepath}}", self.config["assets"]+'/'))
             # prefix css
-            if file_type == '.css' and self.config["vendorfycss"]:
+            if file_type == '.css' and self.config["vendorizecss"]:
                 source = prefix_vendor_css(source)
             # minimize css or js
             if '.min' not in source_file:

@@ -1,6 +1,6 @@
 
 Quilt Linting Report
-Fri May 1 07:39:25 PDT 2015
+Fri May 1 08:06:22 PDT 2015
 =========================================
 
 ************* Module quilt.Quilter
@@ -43,11 +43,11 @@ R:  1, 0: Similar lines in 3 files
 ==quilt.Blog:144
 ==quilt.Blog:88
 ==quilt.QuiltingRoom:512
-        qultr.stitch()
-        qultr.clean_html()
-        qultr.remove_empty()
-        qultr.write()
-        del qultr
+            qultr.stitch()
+            qultr.clean_html()
+            qultr.remove_empty()
+            qultr.write()
+            del qultr
  (duplicate-code)
 
 
@@ -101,7 +101,7 @@ Raw metrics
 +----------+-------+------+---------+-----------+
 |type      |number |%     |previous |difference |
 +==========+=======+======+=========+===========+
-|code      |1327   |59.96 |1326     |+1.00      |
+|code      |1327   |59.96 |1327     |=          |
 +----------+-------+------+---------+-----------+
 |docstring |417    |18.84 |417      |=          |
 +----------+-------+------+---------+-----------+
@@ -120,7 +120,7 @@ Duplication
 +=========================+======+=========+===========+
 |nb duplicated lines      |43    |43       |=          |
 +-------------------------+------+---------+-----------+
-|percent duplicated lines |1.714 |1.715    |-0.00      |
+|percent duplicated lines |1.714 |1.714    |=          |
 +-------------------------+------+---------+-----------+
 
 
@@ -176,7 +176,7 @@ Your code has been rated at 9.94/10 (previous run: 9.94/10, +0.00)
 
 
 Tests Linting Report
-Fri May 1 07:39:33 PDT 2015
+Fri May 1 08:06:30 PDT 2015
 =========================================
 
 

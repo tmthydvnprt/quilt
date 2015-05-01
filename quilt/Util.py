@@ -60,7 +60,7 @@ DEFAULT_CONFIG = {
     "copymd"      : True,                   # copy original markdown to output
     "combinecss"  : True,                   # combine all `css` into one
     "combinejs"   : True,                   # combine all `js` into one
-    "vendorfycss" : True,                   # auto add vendor prefixes
+    "vendorizecss" : True,                   # auto add vendor prefixes
     "minimizecss" : True,                   # minimize `css`
     "minimizejs"  : True,                   # minimize `js`
     "buildindex"  : True,                   # add `index.html` to directories w/o it
@@ -417,7 +417,7 @@ def parse_css_blocks(css=''):
     return block
 
 #@profile
-def vendorfy_at_prefix(blck=None, at_prefix=None):
+def vendorize_at_prefix(blck=None, at_prefix=None):
     """handle @prefix rules"""
 
     b0vender = []
@@ -439,7 +439,7 @@ def vendorfy_at_prefix(blck=None, at_prefix=None):
     return b0vender
 
 #@profile
-def vendorfy_block_list(blck=None):
+def vendorize_block_list(blck=None):
     """handle block"""
 
     b1vender = []
@@ -457,7 +457,7 @@ def vendorfy_block_list(blck=None):
     return b1vender
 
 #@profile
-def vendorfy_block(blck=None):
+def vendorize_block(blck=None):
     """handle block"""
 
     b1vender = []
@@ -472,18 +472,18 @@ def vendorfy_block(blck=None):
     return ';'.join(b1vender)
 
 #@profile
-def vendorfy_css(block=None):
+def vendorize_css(block=None):
     """adds vendor prefixes to a block of css"""
 
     for i, blck in enumerate(block):
         if isinstance(blck[1], list):
             at_prefix = [a for a in AT_RULES if a in blck[0]]
             if at_prefix:
-                block[i] = (vendorfy_at_prefix(blck, at_prefix))
+                block[i] = (vendorize_at_prefix(blck, at_prefix))
             else:
-                block[i][1] = vendorfy_block_list(blck)
+                block[i][1] = vendorize_block_list(blck)
         else:
-            block[i][1] = vendorfy_block(blck)
+            block[i][1] = vendorize_block(blck)
     return block
 
 ##@profile
@@ -522,7 +522,7 @@ def prefix_vendor_css(css=''):
     if any(x in css for x in VENDORS):
         return css
     else:
-        return unparse_css_blocks(vendorfy_css(parse_css_blocks(css)))
+        return unparse_css_blocks(vendorize_css(parse_css_blocks(css)))
 
 #@profile
 def group_links(pagevars=None, name=''):

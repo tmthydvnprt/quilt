@@ -10,7 +10,7 @@
     -- Page stitched together with quilt.py
     -- url            : http://tmthydvnprt.github.io/quilt/docs/Util.html
     -- quilted on     : 05/01/15
-    -- stitching took : 0.064 s
+    -- stitching took : 0.068 s
     -- quilt pagevars :
     --            author : markdoc.py
     --       categories : []
@@ -237,19 +237,19 @@
 <blockquote>
 <p>unparse css blocks back into a css string</p>
 </blockquote>
-<p class="lead">def <strong>vendorfy_at_prefix</strong>(<em>blck=None, at_prefix=None</em>'):<br/></p>
+<p class="lead">def <strong>vendorize_at_prefix</strong>(<em>blck=None, at_prefix=None</em>'):<br/></p>
 <blockquote>
 <p>handle at prefix rules</p>
 </blockquote>
-<p class="lead">def <strong>vendorfy_block</strong>(<em>blck=None</em>'):<br/></p>
+<p class="lead">def <strong>vendorize_block</strong>(<em>blck=None</em>'):<br/></p>
 <blockquote>
 <p>handle block</p>
 </blockquote>
-<p class="lead">def <strong>vendorfy_block_list</strong>(<em>blck=None</em>'):<br/></p>
+<p class="lead">def <strong>vendorize_block_list</strong>(<em>blck=None</em>'):<br/></p>
 <blockquote>
 <p>handle block</p>
 </blockquote>
-<p class="lead">def <strong>vendorfy_css</strong>(<em>block=None</em>'):<br/></p>
+<p class="lead">def <strong>vendorize_css</strong>(<em>block=None</em>'):<br/></p>
 <blockquote>
 <p>adds vendor prefixes to a block of css</p>
 </blockquote>
@@ -309,7 +309,7 @@ increment progress</p>
 <div class="codehilite"><pre>(^|\})([^{]+):([^{]+\{)
 </pre></div>
 <p><strong>DEFAULT_CONFIG</strong></p>
-<div class="codehilite"><pre>{'buildicon': True, 'atomid': 'randomid', 'keywords': [], 'combinejs': True, 'spellcheck': True, 'patches': 'patches', 'title': 'some default title', 'quiltcomment': True, 'combinecss': True, 'priority': '0.5', 'pageobject': True, 'spellignore': ['maths', 'codehilite'], 'local': False, 'correctwords': 'correct_words.txt', 'vendorfycss': True, 'iconsizes': [64, 60, 76, 120, 152], 'categories': [], 'assets': 'assets', 'name': 'some name', 'posts': 'posts', 'copymd': True, 'blogname': 'quilt news', 'pagecomment': True, 'domain': 'some_name.com', 'page_ext': ['*.html', '*.md'], 'quilt': 'quilt.html', 'patchcomment': True, 'minimizecss': True, 'asset_ext': ['*.*'], 'buildsearch': True, 'author': 'you', 'buildatom': True, 'buildrobot': True, 'iconfile': 'icon.png', 'assetcomment': True, 'email': 'you@some_name.com', 'templates': 'templates', 'patch_ext': ['*.html'], 'buildrss': True, 'description': 'default description', 'tags': [], 'template_ext': ['*.html'], 'rssid': 'randomid', 'changefreq': 'monthly', 'pages': 'pages', 'buildindex': True, 'buildsitemap': True, 'minimizejs': True, 'buildblog': True}
+<div class="codehilite"><pre>{'buildicon': True, 'atomid': 'randomid', 'keywords': [], 'combinejs': True, 'spellcheck': True, 'patches': 'patches', 'title': 'some default title', 'quiltcomment': True, 'combinecss': True, 'priority': '0.5', 'pageobject': True, 'spellignore': ['maths', 'codehilite'], 'local': False, 'correctwords': 'correct_words.txt', 'vendorizecss': True, 'iconsizes': [64, 60, 76, 120, 152], 'categories': [], 'assets': 'assets', 'name': 'some name', 'posts': 'posts', 'copymd': True, 'blogname': 'quilt news', 'pagecomment': True, 'domain': 'some_name.com', 'page_ext': ['*.html', '*.md'], 'quilt': 'quilt.html', 'patchcomment': True, 'minimizecss': True, 'asset_ext': ['*.*'], 'buildsearch': True, 'author': 'you', 'buildatom': True, 'buildrobot': True, 'iconfile': 'icon.png', 'assetcomment': True, 'email': 'you@some_name.com', 'templates': 'templates', 'patch_ext': ['*.html'], 'buildrss': True, 'description': 'default description', 'tags': [], 'template_ext': ['*.html'], 'rssid': 'randomid', 'changefreq': 'monthly', 'pages': 'pages', 'buildindex': True, 'buildsitemap': True, 'minimizejs': True, 'buildblog': True}
 </pre></div>
 <p><strong>EMPTY_BRACES_RE</strong></p>
 <div class="codehilite"><pre>[^}]+{}

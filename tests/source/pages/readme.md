@@ -249,7 +249,7 @@ DEFAULT_CONFIG = {
     "copymd"      : True,                   # copy original markdown to output
     "combinecss"  : True,                   # combine all `css` into one
     "combinejs"   : True,                   # combine all `js` into one
-    "vendorfycss" : True,                   # auto add vendor prefixes
+    "vendorizecss" : True,                   # auto add vendor prefixes
     "minimizecss" : True,                   # minimize `css`
     "minimizejs"  : True,                   # minimize `js`
     "buildindex"  : True,                   # add `index.html` to directories w/o it

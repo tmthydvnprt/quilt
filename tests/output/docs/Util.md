@@ -118,19 +118,19 @@ def __unparse\_css\_blocks__(_blocks=None_'):
 {: .lead}
 > unparse css blocks back into a css string
 
-def __vendorfy\_at\_prefix__(_blck=None, at\_prefix=None_'):
+def __vendorize\_at\_prefix__(_blck=None, at\_prefix=None_'):
 {: .lead}
 > handle at prefix rules
 
-def __vendorfy\_block__(_blck=None_'):
+def __vendorize\_block__(_blck=None_'):
 {: .lead}
 > handle block
 
-def __vendorfy\_block\_list__(_blck=None_'):
+def __vendorize\_block\_list__(_blck=None_'):
 {: .lead}
 > handle block
 
-def __vendorfy\_css__(_block=None_'):
+def __vendorize\_css__(_block=None_'):
 {: .lead}
 > adds vendor prefixes to a block of css
 
@@ -212,7 +212,7 @@ __CLEAN\_SELECTORS\_RE__
 
 __DEFAULT\_CONFIG__
 ```
-{'buildicon': True, 'atomid': 'randomid', 'keywords': [], 'combinejs': True, 'spellcheck': True, 'patches': 'patches', 'title': 'some default title', 'quiltcomment': True, 'combinecss': True, 'priority': '0.5', 'pageobject': True, 'spellignore': ['maths', 'codehilite'], 'local': False, 'correctwords': 'correct_words.txt', 'vendorfycss': True, 'iconsizes': [64, 60, 76, 120, 152], 'categories': [], 'assets': 'assets', 'name': 'some name', 'posts': 'posts', 'copymd': True, 'blogname': 'quilt news', 'pagecomment': True, 'domain': 'some_name.com', 'page_ext': ['*.html', '*.md'], 'quilt': 'quilt.html', 'patchcomment': True, 'minimizecss': True, 'asset_ext': ['*.*'], 'buildsearch': True, 'author': 'you', 'buildatom': True, 'buildrobot': True, 'iconfile': 'icon.png', 'assetcomment': True, 'email': 'you@some_name.com', 'templates': 'templates', 'patch_ext': ['*.html'], 'buildrss': True, 'description': 'default description', 'tags': [], 'template_ext': ['*.html'], 'rssid': 'randomid', 'changefreq': 'monthly', 'pages': 'pages', 'buildindex': True, 'buildsitemap': True, 'minimizejs': True, 'buildblog': True}
+{'buildicon': True, 'atomid': 'randomid', 'keywords': [], 'combinejs': True, 'spellcheck': True, 'patches': 'patches', 'title': 'some default title', 'quiltcomment': True, 'combinecss': True, 'priority': '0.5', 'pageobject': True, 'spellignore': ['maths', 'codehilite'], 'local': False, 'correctwords': 'correct_words.txt', 'vendorizecss': True, 'iconsizes': [64, 60, 76, 120, 152], 'categories': [], 'assets': 'assets', 'name': 'some name', 'posts': 'posts', 'copymd': True, 'blogname': 'quilt news', 'pagecomment': True, 'domain': 'some_name.com', 'page_ext': ['*.html', '*.md'], 'quilt': 'quilt.html', 'patchcomment': True, 'minimizecss': True, 'asset_ext': ['*.*'], 'buildsearch': True, 'author': 'you', 'buildatom': True, 'buildrobot': True, 'iconfile': 'icon.png', 'assetcomment': True, 'email': 'you@some_name.com', 'templates': 'templates', 'patch_ext': ['*.html'], 'buildrss': True, 'description': 'default description', 'tags': [], 'template_ext': ['*.html'], 'rssid': 'randomid', 'changefreq': 'monthly', 'pages': 'pages', 'buildindex': True, 'buildsitemap': True, 'minimizejs': True, 'buildblog': True}
 ```
 
 __EMPTY\_BRACES\_RE__

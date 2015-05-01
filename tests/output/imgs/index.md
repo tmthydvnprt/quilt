@@ -10,7 +10,7 @@
     -- Page stitched together with quilt.py
     -- url            : http://tmthydvnprt.github.io/quilt/imgs/index.html
     -- quilted on     : 05/01/15
-    -- stitching took : 0.015 s
+    -- stitching took : 0.014 s
     -- quilt pagevars :
     --            author : tmthydvnprt
     --       categories : []

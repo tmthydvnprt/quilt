@@ -36,7 +36,7 @@ generate_sitemap
 template_ext
 rootpath
 buildrobot
-vendorfycss
+vendorizecss
 iconsizes
 page_defaults
 uniquepagevar
