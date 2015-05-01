@@ -1,12 +1,12 @@
 quilt
 ************* Module quilt.Quilter
 R: 84, 0: Too many instance attributes (9/8) (too-many-instance-attributes)
-R:414, 4: Too many branches (22/16) (too-many-branches)
+R:403, 4: Too many branches (22/16) (too-many-branches)
 ************* Module quilt.Util
 R:  1, 0: Similar lines in 3 files
 ==quilt.Blog:144
 ==quilt.Blog:88
-==quilt.QuiltingRoom:336
+==quilt.QuiltingRoom:338
             qultr.stitch()
             qultr.clean_html()
             qultr.remove_empty()
@@ -18,7 +18,7 @@ R:  1, 0: Similar lines in 3 files
     #@profile (duplicate-code)
 R:  1, 0: Similar lines in 2 files
 ==quilt.Blog:129
-==quilt.QuiltingRoom:507
+==quilt.QuiltingRoom:511
             qultr.stitch()
             qultr.clean_html()
             qultr.remove_empty()
@@ -28,7 +28,7 @@ R:  1, 0: Similar lines in 2 files
     #@profile (duplicate-code)
 R:  1, 0: Similar lines in 2 files
 ==quilt.Blog:129
-==quilt.QuiltingRoom:336
+==quilt.QuiltingRoom:338
             qultr.stitch()
             qultr.clean_html()
             qultr.remove_empty()
@@ -38,18 +38,18 @@ R:  1, 0: Similar lines in 2 files
 R:  1, 0: Similar lines in 3 files
 ==quilt.Blog:144
 ==quilt.Blog:88
-==quilt.QuiltingRoom:507
-        qultr.stitch()
-        qultr.clean_html()
-        qultr.remove_empty()
-        qultr.write()
-        del qultr
+==quilt.QuiltingRoom:511
+            qultr.stitch()
+            qultr.clean_html()
+            qultr.remove_empty()
+            qultr.write()
+            del qultr
  (duplicate-code)
 
 
 Report
 ======
-1070 statements analysed.
+1073 statements analysed.
 
 Statistics by type
 ------------------
@@ -97,13 +97,13 @@ Raw metrics
 +----------+-------+------+---------+-----------+
 |type      |number |%     |previous |difference |
 +==========+=======+======+=========+===========+
-|code      |1325   |59.77 |1340     |-15.00     |
+|code      |1327   |60.02 |1325     |+2.00      |
 +----------+-------+------+---------+-----------+
-|docstring |414    |18.67 |418      |-4.00      |
+|docstring |416    |18.82 |414      |+2.00      |
 +----------+-------+------+---------+-----------+
-|comment   |379    |17.10 |232      |+147.00    |
+|comment   |369    |16.69 |379      |-10.00     |
 +----------+-------+------+---------+-----------+
-|empty     |99     |4.47  |92       |+7.00      |
+|empty     |99     |4.48  |99       |=          |
 +----------+-------+------+---------+-----------+
 
 
@@ -116,7 +116,7 @@ Duplication
 +=========================+======+=========+===========+
 |nb duplicated lines      |43    |43       |=          |
 +-------------------------+------+---------+-----------+
-|percent duplicated lines |1.712 |1.797    |-0.09      |
+|percent duplicated lines |1.715 |1.712    |+0.00      |
 +-------------------------+------+---------+-----------+
 
 
@@ -166,7 +166,7 @@ Messages
 
 Global evaluation
 -----------------
-Your code has been rated at 9.94/10 (previous run: 9.95/10, -0.00)
+Your code has been rated at 9.94/10 (previous run: 9.94/10, +0.00)
 
  
 tests

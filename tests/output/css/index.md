@@ -15,6 +15,7 @@
     --            author : tmthydvnprt
     --       categories : []
     --         copydate : 2015
+    --      copyrighter : tmthydvnprt
     --             date : 04/30/15
     --      description : blank index page of css directory
     --        directory : css
@@ -129,7 +130,7 @@
 </footer>
 <!--quilted scripts patch-->
 <script id="scripts" rel="javascript" type="text/javascript">
-pagevars = { "author":"tmthydvnprt", "categories":[], "copydate":"2015", "date":"04/30/15", "description":"blank index page of css directory", "directory":"css", "disable_last":"disabled", "disable_next":"disabled", "domain":"some_name.com", "email":"tmthydvnprt@users.noreply.github.com", "keywords":"i,n,d,e,x", "last_post":"", "last_title":"", "latestpost":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/css/index.html", "name":"quilt", "next_post":"", "next_title":"", "output":"/Users/timothydavenport/GitHub/quilt/tests/output/css/index.html", "page_path":"", "pagecomment":true, "patchcomment":true, "quiltcomment":true, "relativepath":"../../../../../../../", "rootpath":"/Users/timothydavenport/GitHub/quilt/tests/output", "source":"/Users/timothydavenport/GitHub/quilt/tests/output/css/index.html", "tags":[], "title":"css directory index", "url":"/Users/timothydavenport/GitHub/quilt/tests/output/css/index.html" };
+pagevars = { "author":"tmthydvnprt", "categories":[], "copydate":2015, "copyrighter":"tmthydvnprt", "date":"04/30/15", "description":"blank index page of css directory", "directory":"css", "disable_last":"disabled", "disable_next":"disabled", "domain":"some_name.com", "email":"tmthydvnprt@users.noreply.github.com", "keywords":"i,n,d,e,x", "last_post":"", "last_title":"", "latestpost":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/css/index.html", "name":"quilt", "next_post":"", "next_title":"", "output":"/Users/timothydavenport/GitHub/quilt/tests/output/css/index.html", "page_path":"", "pagecomment":true, "patchcomment":true, "quiltcomment":true, "relativepath":"../../../../../../../", "rootpath":"/Users/timothydavenport/GitHub/quilt/tests/output", "source":"/Users/timothydavenport/GitHub/quilt/tests/output/css/index.html", "tags":[], "title":"css directory index", "url":"/Users/timothydavenport/GitHub/quilt/tests/output/css/index.html" };
 </script>
 <script rel="javascript" src="../../../../../../../js/jquery-1.11.2.min_bootstrap.min_typeahead.bundle.min_quilt.js" type="text/javascript"></script>
 <script rel="javascript" type="text/x-mathjax-config">MathJax.Hub.Config({ showMathMenu:false, imageFont:null, MathEvents:{ hover:256 }, jax:["input/TeX","output/HTML-CSS", "output/CommonHTML"], extensions:["tex2jax.js", "CHTML-preview.js"], TeX:{ extensions:["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"], autoNumber:"AMS" } });</script>

@@ -399,17 +399,6 @@ class Quilter(object):
                 tag.decompose()
         return self
 
-#        for a_tag in self.soup.find_all("a"):
-#            if "href" not in a_tag.attrs:
-#                a_tag.attrs["href"] = "#"
-##            if "href" in a_tag.attrs:
-##                anchor = a_tag.attrs["href"]
-##                if anchor and anchor[0] == '#' and len(anchor) > 1:
-##                    target = self.soup.find(id=anchor[1:])
-##                    if not target:
-##                        a_tag.unwrap()
-
-
     #@profile
     def clean_html(self):
         """clean html, post process html"""
