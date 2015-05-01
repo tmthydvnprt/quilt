@@ -1,3 +1,8 @@
+
+Quilt Testing Report
+Fri May 1 06:05:57 PDT 2015
+=========================================
+
 generate site ... ok
 
 Name                 Stmts   Miss Branch BrMiss  Cover   Missing
@@ -14,6 +19,6 @@ tests.test              11      0      0      0   100%
 ----------------------------------------------------------------
 TOTAL                 1074     89    339     93    87%   
 ----------------------------------------------------------------------
-Ran 1 test in 12.014s
+Ran 1 test in 11.812s
 
 OK
