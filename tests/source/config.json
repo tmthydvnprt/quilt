@@ -5,7 +5,8 @@
     "email"       : "tmthydvnprt@users.noreply.github.com",
     "github"      : "https://github.com/tmthydvnprt",
     "posts"       : "news",
-    "local"       : false,
     "copydate"    : 2015,
-    "copyrighter" : "tmthydvnprt"
+    "copyrighter" : "tmthydvnprt",
+    "keywords"    : ["quilt", "python", "static", "site", "generator"],
+    "local"       : false
 }

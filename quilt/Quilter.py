@@ -112,7 +112,6 @@ class Quilter(object):
         # update pagevars
         if overrides:
             self.pagevars.update(overrides)
-        self.pagevars["keywords"] = ','.join(self.pagevars["keywords"])
 
         self.__do_debug = self.pagevars["output"] == DEBUG_FILE
 
@@ -130,11 +129,12 @@ class Quilter(object):
 
     #@profile
     def parse_page(self, page):
-        """parses page into vars, html, and scripts7.487 s"""
+        """parses page into vars, content, and scripts7.487 s"""
 
         if self.__do_debug:
             write_file(add_suffix(DEBUG_FILE, '_original-page'), page.encode('utf-8'))
 
+        # parse variables, content, and scripts
         if FIRST_KEY_RE.match(page.split('\n', 1)[0]):
             page_vars, page_html = FIRST_EMPTY_LINE_RE.split(page, 1)
         else:

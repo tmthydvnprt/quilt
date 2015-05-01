@@ -331,7 +331,7 @@ class QuiltingRoom(object):
                 "title" : (os.path.basename(no_index_dir)) + " directory index",
                 "directory" : os.path.basename(no_index_dir),
                 "description" : "blank index page of " + (os.path.basename(no_index_dir)) + " directory",
-                "keywords" : "index"
+                "keywords" : ["index"] + self.config["keywords"]
             }
 
             # stitch the page together

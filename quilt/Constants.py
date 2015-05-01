@@ -25,7 +25,7 @@ DOTSTAR_RE = re.compile(r'.*')
 # compiled regex to split page files into page variables, html, script
 FIRST_KEY_RE = re.compile(r'[A-Za-z0-9_-]+:')
 FIRST_EMPTY_LINE_RE = re.compile(r'\n\s*\n')
-JS_HTML_PATTERN_RE = re.compile(r'(>tpircs/<.*>tpircs<)?(.*)', re.DOTALL)
+JS_HTML_PATTERN_RE = re.compile(r'\s*(>tpircs/<.*?>tpircs<)?(.*)', re.DOTALL)
 KEY_VALUE_RE = re.compile(r'^[ ]{0,3}(?P<key>[A-Za-z0-9_-]+):\s*(?P<value>.*)')
 VALUE_RE = re.compile(r'^[ ]{4,}(?P<value>.*)')
 

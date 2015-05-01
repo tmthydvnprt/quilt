@@ -23,7 +23,7 @@
     --     disable_next : disabled
     --           domain : http://tmthydvnprt.github.io/quilt
     --            email : tmthydvnprt@users.noreply.github.com
-    --         keywords : i,n,d,e,x
+    --         keywords : ['index', u'quilt', u'python', u'static', u'site', u'generator']
     --        last_post : 
     --       last_title : 
     --       latestpost : latex_support
@@ -47,7 +47,7 @@
 <title>js directory index</title>
 <meta content="tmthydvnprt" name="author"/>
 <meta content="blank index page of js directory" name="description"/>
-<meta content="i,n,d,e,x" name="keywords"/>
+<meta content="index,quilt,python,static,site,generator" name="keywords"/>
 <link href="../../../../../../../imgs/favicon.ico" rel="favicon"/>
 <link href="../../../../../../../img/icon_60x60.png" rel="apple-touch-icon"/>
 <link href="../../../../../../../img/icon_76x76.png" rel="apple-touch-icon" sizes="76x76"/>
@@ -130,7 +130,7 @@
 </footer>
 <!--quilted scripts patch-->
 <script id="scripts" rel="javascript" type="text/javascript">
-pagevars = { "author":"tmthydvnprt", "categories":[], "copydate":2015, "copyrighter":"tmthydvnprt", "date":"05/01/15", "description":"blank index page of js directory", "directory":"js", "disable_last":"disabled", "disable_next":"disabled", "domain":"http://tmthydvnprt.github.io/quilt", "email":"tmthydvnprt@users.noreply.github.com", "keywords":"i,n,d,e,x", "last_post":"", "last_title":"", "latestpost":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/js/index.html", "name":"quilt", "next_post":"", "next_title":"", "output":"/Users/timothydavenport/GitHub/quilt/tests/output/js/index.html", "page_path":"", "pagecomment":true, "patchcomment":true, "quiltcomment":true, "relativepath":"../../../../../../../", "rootpath":"/Users/timothydavenport/GitHub/quilt/tests/output", "source":"/Users/timothydavenport/GitHub/quilt/tests/output/js/index.html", "tags":[], "title":"js directory index", "url":"http://tmthydvnprt.github.io/quilt/js/index.html" };
+pagevars = { "author":"tmthydvnprt", "categories":[], "copydate":2015, "copyrighter":"tmthydvnprt", "date":"05/01/15", "description":"blank index page of js directory", "directory":"js", "disable_last":"disabled", "disable_next":"disabled", "domain":"http://tmthydvnprt.github.io/quilt", "email":"tmthydvnprt@users.noreply.github.com", "keywords":[ "index", "quilt", "python", "static", "site", "generator" ], "last_post":"", "last_title":"", "latestpost":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/js/index.html", "name":"quilt", "next_post":"", "next_title":"", "output":"/Users/timothydavenport/GitHub/quilt/tests/output/js/index.html", "page_path":"", "pagecomment":true, "patchcomment":true, "quiltcomment":true, "relativepath":"../../../../../../../", "rootpath":"/Users/timothydavenport/GitHub/quilt/tests/output", "source":"/Users/timothydavenport/GitHub/quilt/tests/output/js/index.html", "tags":[], "title":"js directory index", "url":"http://tmthydvnprt.github.io/quilt/js/index.html" };
 </script>
 <script rel="javascript" src="../../../../../../../js/jquery-1.11.2.min_bootstrap.min_typeahead.bundle.min_quilt.js" type="text/javascript"></script>
 <script rel="javascript" type="text/x-mathjax-config">MathJax.Hub.Config({ showMathMenu:false, imageFont:null, MathEvents:{ hover:256 }, jax:["input/TeX","output/HTML-CSS", "output/CommonHTML"], extensions:["tex2jax.js", "CHTML-preview.js"], TeX:{ extensions:["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"], autoNumber:"AMS" } });</script>

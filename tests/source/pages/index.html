@@ -86,3 +86,10 @@ description: a python based static site html code stitcher
         </div>        
     </div>
 </div>
+
+<script>
+    $(document).ready(function(){
+        // test inculsion of an inline page script
+        console.log('Quilt - A python based static site html stitcher.');
+    });
+</script>
