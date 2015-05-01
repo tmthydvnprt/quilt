@@ -1,11 +1,11 @@
 {
     "name"        : "quilt",
-    "url"         : "quilt.com",
+    "domain"      : "http://tmthydvnprt.github.io/quilt",
     "author"      : "tmthydvnprt",
     "email"       : "tmthydvnprt@users.noreply.github.com",
     "github"      : "https://github.com/tmthydvnprt",
     "posts"       : "news",
-    "local"       : true,
+    "local"       : false,
     "copydate"    : 2015,
     "copyrighter" : "tmthydvnprt"
 }

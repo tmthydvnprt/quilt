@@ -375,7 +375,7 @@ class QuiltingRoom(object):
     def generate_robot(self):
         """generate robot.txt in root"""
 
-        robot = ROBOTTXT % (self.config["url"])
+        robot = ROBOTTXT % (self.config["domain"])
         write_file(os.path.join(self.output, 'robots.txt'), robot)
 
         return self

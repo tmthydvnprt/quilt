@@ -171,14 +171,14 @@ class Blog(object):
         atom_xml = ATOMXML % (
             self.config["name"],
             self.config["posts"],
-            self.config["domain"],
-            self.config["domain"],
+            os.path.join(self.config["domain"], self.config['feed']),
+            os.path.join(self.config["domain"], self.config['feed']),
             self.config["atomid"],
             self.config["now"]["iso"],
             ''.join(entries)
         )
 
-        feed_path = os.path.join(self.output, 'feed')
+        feed_path = os.path.join(self.output, self.config['feed'])
         # make feed/ if need be
         if not os.path.exists(feed_path):
             os.makedirs(feed_path)
@@ -206,7 +206,7 @@ class Blog(object):
         rss_xml = RSSXML % (
             self.config['name'],
             self.config['posts'],
-            self.config['url'],
+            os.path.join(self.config['domain'], self.config['feed']),
             self.config['rssid'],
             self.config["now"]["iso"],
             self.config["now"]["iso"],
@@ -214,7 +214,7 @@ class Blog(object):
             ''.join(items)
         )
 
-        feed_path = os.path.join(self.output, 'feed')
+        feed_path = os.path.join(self.output, self.config['feed'])
         # make feed/ if need be
         if not os.path.exists(feed_path):
             os.makedirs(feed_path)

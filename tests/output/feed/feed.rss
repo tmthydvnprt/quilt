@@ -3,15 +3,15 @@
     <channel>
         <title>quilt Feed</title>
         <description>/Users/timothydavenport/GitHub/quilt/tests/source/pages/news</description>
-        <link>quilt.com</link>
+        <link>http://tmthydvnprt.github.io/quilt/feed</link>
         <id>randomid</id>
         <language>en-us</language>
-        <lastBuildDate>2015-04-30T19:23:34-7:00</lastBuildDate>
-        <pubDate>2015-04-30T19:23:34-7:00</pubDate>
+        <lastBuildDate>2015-05-01T05:43:42-7:00</lastBuildDate>
+        <pubDate>2015-05-01T05:43:42-7:00</pubDate>
         <managingEditor>tmthydvnprt</managingEditor>
            <item>
         <title>HTML Entities</title>
-        <link>/Users/timothydavenport/GitHub/quilt/tests/output/news/html_entities.html</link>
+        <link>http://tmthydvnprt.github.io/quilt/news/html_entities.html</link>
         <guid>randomid</guid>
         <pubDate>3/18/2015 5:46 am</pubDate>
         <description>
@@ -32,7 +32,7 @@ quotation mark (APL</description>
     </item>
    <item>
         <title>\(\LaTeX\) Support</title>
-        <link>/Users/timothydavenport/GitHub/quilt/tests/output/news/latex_support.html</link>
+        <link>http://tmthydvnprt.github.io/quilt/news/latex_support.html</link>
         <guid>randomid</guid>
         <pubDate>3/20/2015 10:49 pm</pubDate>
         <description>
@@ -40,7 +40,7 @@ A list of MathJax \(\LaTeX\) Command  examples. These alphabetical examples come
     </item>
    <item>
         <title>quilt's markdown syntax</title>
-        <link>/Users/timothydavenport/GitHub/quilt/tests/output/news/markdown_syntax.html</link>
+        <link>http://tmthydvnprt.github.io/quilt/news/markdown_syntax.html</link>
         <guid>randomid</guid>
         <pubDate>03/08/2015 1:32 pm</pubDate>
         <description>
@@ -48,7 +48,7 @@ Quilt uses Python-Markdown as it's markdown interpreter. Besides the base syntax
     </item>
    <item>
         <title>quilt 0.1.1</title>
-        <link>/Users/timothydavenport/GitHub/quilt/tests/output/news/quilt-0.1.1.py.html</link>
+        <link>http://tmthydvnprt.github.io/quilt/news/quilt-0.1.1.py.html</link>
         <guid>randomid</guid>
         <pubDate>3/9/2015 8:31 am</pubDate>
         <description>
@@ -61,7 +61,7 @@ a string per line</description>
     </item>
    <item>
         <title>quilt 0.1.0</title>
-        <link>/Users/timothydavenport/GitHub/quilt/tests/output/news/quilt-0.1.0.py.html</link>
+        <link>http://tmthydvnprt.github.io/quilt/news/quilt-0.1.0.py.html</link>
         <guid>randomid</guid>
         <pubDate>3/1/2015 3:15 pm</pubDate>
         <description>

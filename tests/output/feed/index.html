@@ -8,20 +8,20 @@
 <!--
     -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     -- Page stitched together with quilt.py
-    -- url            : /Users/timothydavenport/GitHub/quilt/tests/output/feed/index.html
-    -- quilted on     : 04/30/15
-    -- stitching took : 0.015 s
+    -- url            : http://tmthydvnprt.github.io/quilt/feed/index.html
+    -- quilted on     : 05/01/15
+    -- stitching took : 0.016 s
     -- quilt pagevars :
     --            author : tmthydvnprt
     --       categories : []
     --         copydate : 2015
     --      copyrighter : tmthydvnprt
-    --             date : 04/30/15
+    --             date : 05/01/15
     --      description : blank index page of feed directory
     --        directory : feed
     --     disable_last : disabled
     --     disable_next : disabled
-    --           domain : some_name.com
+    --           domain : http://tmthydvnprt.github.io/quilt
     --            email : tmthydvnprt@users.noreply.github.com
     --         keywords : i,n,d,e,x
     --        last_post : 
@@ -41,7 +41,7 @@
     --           source : /Users/timothydavenport/GitHub/quilt/tests/output/feed/index.html
     --             tags : []
     --            title : feed directory index
-    --              url : /Users/timothydavenport/GitHub/quilt/tests/output/feed/index.html
+    --              url : http://tmthydvnprt.github.io/quilt/feed/index.html
     -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -->
 <title>feed directory index</title>
@@ -130,7 +130,7 @@
 </footer>
 <!--quilted scripts patch-->
 <script id="scripts" rel="javascript" type="text/javascript">
-pagevars = { "author":"tmthydvnprt", "categories":[], "copydate":2015, "copyrighter":"tmthydvnprt", "date":"04/30/15", "description":"blank index page of feed directory", "directory":"feed", "disable_last":"disabled", "disable_next":"disabled", "domain":"some_name.com", "email":"tmthydvnprt@users.noreply.github.com", "keywords":"i,n,d,e,x", "last_post":"", "last_title":"", "latestpost":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/feed/index.html", "name":"quilt", "next_post":"", "next_title":"", "output":"/Users/timothydavenport/GitHub/quilt/tests/output/feed/index.html", "page_path":"", "pagecomment":true, "patchcomment":true, "quiltcomment":true, "relativepath":"../../../../../../../", "rootpath":"/Users/timothydavenport/GitHub/quilt/tests/output", "source":"/Users/timothydavenport/GitHub/quilt/tests/output/feed/index.html", "tags":[], "title":"feed directory index", "url":"/Users/timothydavenport/GitHub/quilt/tests/output/feed/index.html" };
+pagevars = { "author":"tmthydvnprt", "categories":[], "copydate":2015, "copyrighter":"tmthydvnprt", "date":"05/01/15", "description":"blank index page of feed directory", "directory":"feed", "disable_last":"disabled", "disable_next":"disabled", "domain":"http://tmthydvnprt.github.io/quilt", "email":"tmthydvnprt@users.noreply.github.com", "keywords":"i,n,d,e,x", "last_post":"", "last_title":"", "latestpost":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/feed/index.html", "name":"quilt", "next_post":"", "next_title":"", "output":"/Users/timothydavenport/GitHub/quilt/tests/output/feed/index.html", "page_path":"", "pagecomment":true, "patchcomment":true, "quiltcomment":true, "relativepath":"../../../../../../../", "rootpath":"/Users/timothydavenport/GitHub/quilt/tests/output", "source":"/Users/timothydavenport/GitHub/quilt/tests/output/feed/index.html", "tags":[], "title":"feed directory index", "url":"http://tmthydvnprt.github.io/quilt/feed/index.html" };
 </script>
 <script rel="javascript" src="../../../../../../../js/jquery-1.11.2.min_bootstrap.min_typeahead.bundle.min_quilt.js" type="text/javascript"></script>
 <script rel="javascript" type="text/x-mathjax-config">MathJax.Hub.Config({ showMathMenu:false, imageFont:null, MathEvents:{ hover:256 }, jax:["input/TeX","output/HTML-CSS", "output/CommonHTML"], extensions:["tex2jax.js", "CHTML-preview.js"], TeX:{ extensions:["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"], autoNumber:"AMS" } });</script>

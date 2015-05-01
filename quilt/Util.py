@@ -82,6 +82,7 @@ DEFAULT_CONFIG = {
     "templates"   : "templates",            # templates directory
     "assets"      : "assets",               # assets directory
     "posts"       : "posts",                # post directory in `pages/` directory
+    "feed"        : "feed",                 # post directory in `pages/` directory
     "images"      : "imgs",                 # image directory in `assets/` directory
     "iconfile"    : "icon.png",             # image for favicon
     "correctwords": "correct_words.txt",    # correctly spelled unique user words

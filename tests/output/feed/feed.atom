@@ -2,14 +2,14 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>quilt Feed</title>
     <subtitle>/Users/timothydavenport/GitHub/quilt/tests/source/pages/news</subtitle>
-    <link href="some_name.com/feed/" rel="self"/>
-    <link href="some_name.com"/>
+    <link href="http://tmthydvnprt.github.io/quilt/feed/feed/" rel="self"/>
+    <link href="http://tmthydvnprt.github.io/quilt/feed"/>
     <id>randomid</id>
-    <updated>2015-04-30T19:23:34-7:00</updated>
+    <updated>2015-05-01T05:43:42-7:00</updated>
         <entry>
         <title>HTML Entities<title>
-        <link href="/Users/timothydavenport/GitHub/quilt/tests/output/news/html_entities.html"/>
-        <link rel="alternate" type="text/html" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/html_entities.html"/>
+        <link href="http://tmthydvnprt.github.io/quilt/news/html_entities.html"/>
+        <link rel="alternate" type="text/html" href="http://tmthydvnprt.github.io/quilt/news/html_entities.html"/>
         <id>randomid</id>
         <updated>3/18/2015 5:46 am</updated>
         <summary>
@@ -39,8 +39,8 @@ quotation mark (APL</summary>
     </entry>
     <entry>
         <title>\(\LaTeX\) Support<title>
-        <link href="/Users/timothydavenport/GitHub/quilt/tests/output/news/latex_support.html"/>
-        <link rel="alternate" type="text/html" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/latex_support.html"/>
+        <link href="http://tmthydvnprt.github.io/quilt/news/latex_support.html"/>
+        <link rel="alternate" type="text/html" href="http://tmthydvnprt.github.io/quilt/news/latex_support.html"/>
         <id>randomid</id>
         <updated>3/20/2015 10:49 pm</updated>
         <summary>
@@ -57,8 +57,8 @@ A list of MathJax \(\LaTeX\) Command  examples. These alphabetical examples come
     </entry>
     <entry>
         <title>quilt's markdown syntax<title>
-        <link href="/Users/timothydavenport/GitHub/quilt/tests/output/news/markdown_syntax.html"/>
-        <link rel="alternate" type="text/html" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/markdown_syntax.html"/>
+        <link href="http://tmthydvnprt.github.io/quilt/news/markdown_syntax.html"/>
+        <link rel="alternate" type="text/html" href="http://tmthydvnprt.github.io/quilt/news/markdown_syntax.html"/>
         <id>randomid</id>
         <updated>03/08/2015 1:32 pm</updated>
         <summary>
@@ -75,8 +75,8 @@ Quilt uses Python-Markdown as it's markdown interpreter. Besides the base syntax
     </entry>
     <entry>
         <title>quilt 0.1.1<title>
-        <link href="/Users/timothydavenport/GitHub/quilt/tests/output/news/quilt-0.1.1.py.html"/>
-        <link rel="alternate" type="text/html" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/quilt-0.1.1.py.html"/>
+        <link href="http://tmthydvnprt.github.io/quilt/news/quilt-0.1.1.py.html"/>
+        <link rel="alternate" type="text/html" href="http://tmthydvnprt.github.io/quilt/news/quilt-0.1.1.py.html"/>
         <id>randomid</id>
         <updated>3/9/2015 8:31 am</updated>
         <summary>
@@ -98,8 +98,8 @@ a string per line</summary>
     </entry>
     <entry>
         <title>quilt 0.1.0<title>
-        <link href="/Users/timothydavenport/GitHub/quilt/tests/output/news/quilt-0.1.0.py.html"/>
-        <link rel="alternate" type="text/html" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/quilt-0.1.0.py.html"/>
+        <link href="http://tmthydvnprt.github.io/quilt/news/quilt-0.1.0.py.html"/>
+        <link rel="alternate" type="text/html" href="http://tmthydvnprt.github.io/quilt/news/quilt-0.1.0.py.html"/>
         <id>randomid</id>
         <updated>3/1/2015 3:15 pm</updated>
         <summary>
