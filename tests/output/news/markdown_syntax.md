@@ -139,12 +139,12 @@ Lines with a blank line between them will become two paragraphs. Ut enim ad mini
 
 Force add blank lines using double percents (`%%`).
 %%
-This will `<br>` to the output.
+This will add a `<br>` to the output.
 
 ```{.example}
 Force add blank lines using double percents (`%%`).
 %%
-This will `<br>` to the output.
+This will add a `<br>` to the output.
 ```
 
 <p markdown="1" class="alert alert-warning">
