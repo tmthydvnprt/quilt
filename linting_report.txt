@@ -1,4 +1,8 @@
-quilt
+
+Quilt Linting Report
+Fri May 1 05:55:17 PDT 2015
+=========================================
+
 ************* Module quilt.Quilter
 R: 84, 0: Too many instance attributes (9/8) (too-many-instance-attributes)
 R:403, 4: Too many branches (22/16) (too-many-branches)
@@ -168,8 +172,13 @@ Global evaluation
 -----------------
 Your code has been rated at 9.94/10 (previous run: 9.94/10, +0.00)
 
- 
-tests
+
+
+
+Tests Linting Report
+Fri May 1 05:55:24 PDT 2015
+=========================================
+
 
 
 Report
