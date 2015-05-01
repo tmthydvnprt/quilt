@@ -30,6 +30,7 @@ import re
 import sys
 
 sys.path.insert(1, '/Users/timothydavenport/GitHub/Python-Markdown')
+
 import markdown
 from markdown.util import AMP_SUBSTITUTE, etree, AtomicString
 from markdown.extensions import Extension
