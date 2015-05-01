@@ -119,7 +119,7 @@ CHECKBOX_RE = r'<li>\[([ Xx])\]'
 # match !! class | text !!
 CUSTOM_CLS_RE = r'[!]{2}(?P<class>.+?)[|](?P<text>.+?)[!]{2}'
 # match double %% @@
-REPLACE_TAGS_RE = r'( {} )'.format(r' | '.join([re.escape(x) for x in REPLACE_TAGS.keys()]))
+REPLACE_TAGS_RE = r'({})'.format(r'|'.join([re.escape(x) for x in REPLACE_TAGS.keys()]))
 # $$...$$ \(...\) \[...\]
 MATHS_RE = r'(\$\$|\\\(|\\\[)(.+?)(\$\$|\\\)|\\\])'
 # match *** ___ """ ::: +++ --- :: ++ -- == ~~ ~ %
