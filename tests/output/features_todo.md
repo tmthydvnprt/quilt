@@ -43,8 +43,9 @@ Unfinished or untested tasks are marked with a `~`, _questionable_ tasks end wit
 - [x] build keyword search index for whole site search (e.g. with `typeahead`)
 - [ ] relative/root path handling~
 - [x] favicon image creator (with multiple sizes)
-- [x] spell checking 
+- [x] spell checking
     - [x] user specific correct word list `correct_words.txt`
+    - [ ] suggest words for *erors*
 - [ ]
 
 ###Blog class ---(blog\-level)---

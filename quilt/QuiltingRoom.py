@@ -151,8 +151,9 @@ class QuiltingRoom(object):
             "copyrighter"   : self.config["copyrighter"]     # copyright owner
         }
         # extend copyright date
-        if self.config["copydate"] > self.config["now"]["yearlong"]:
-            self.config["page_defaults"]["copydate"] += '&ndash;' + self.config["now"]["yearlong"]
+        if self.config["copydate"] < self.config["now"]["yearlong"]:
+            self.config["page_defaults"]["copydate"] = str(self.config["page_defaults"]["copydate"]) \
+                + '&ndash;' + self.config["now"]["yearlong"]
 
         # start blog
         if self.config["buildblog"]:

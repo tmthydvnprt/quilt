@@ -1,6 +1,6 @@
 
 Quilt Linting Report
-Fri May 1 07:21:54 PDT 2015
+Fri May 1 07:39:25 PDT 2015
 =========================================
 
 ************* Module quilt.Quilter
@@ -10,19 +10,19 @@ R:403, 4: Too many branches (22/16) (too-many-branches)
 R:  1, 0: Similar lines in 3 files
 ==quilt.Blog:144
 ==quilt.Blog:88
-==quilt.QuiltingRoom:338
-            qultr.stitch()
-            qultr.clean_html()
-            qultr.remove_empty()
-            qultr.write()
-            del qultr
+==quilt.QuiltingRoom:339
+        qultr.stitch()
+        qultr.clean_html()
+        qultr.remove_empty()
+        qultr.write()
+        del qultr
 
         return self
 
     #@profile (duplicate-code)
 R:  1, 0: Similar lines in 2 files
 ==quilt.Blog:129
-==quilt.QuiltingRoom:511
+==quilt.QuiltingRoom:512
             qultr.stitch()
             qultr.clean_html()
             qultr.remove_empty()
@@ -32,7 +32,7 @@ R:  1, 0: Similar lines in 2 files
     #@profile (duplicate-code)
 R:  1, 0: Similar lines in 2 files
 ==quilt.Blog:129
-==quilt.QuiltingRoom:338
+==quilt.QuiltingRoom:339
             qultr.stitch()
             qultr.clean_html()
             qultr.remove_empty()
@@ -42,12 +42,12 @@ R:  1, 0: Similar lines in 2 files
 R:  1, 0: Similar lines in 3 files
 ==quilt.Blog:144
 ==quilt.Blog:88
-==quilt.QuiltingRoom:511
-            qultr.stitch()
-            qultr.clean_html()
-            qultr.remove_empty()
-            qultr.write()
-            del qultr
+==quilt.QuiltingRoom:512
+        qultr.stitch()
+        qultr.clean_html()
+        qultr.remove_empty()
+        qultr.write()
+        del qultr
  (duplicate-code)
 
 
@@ -101,13 +101,13 @@ Raw metrics
 +----------+-------+------+---------+-----------+
 |type      |number |%     |previous |difference |
 +==========+=======+======+=========+===========+
-|code      |1326   |59.95 |1326     |=          |
+|code      |1327   |59.96 |1326     |+1.00      |
 +----------+-------+------+---------+-----------+
-|docstring |417    |18.85 |417      |=          |
+|docstring |417    |18.84 |417      |=          |
 +----------+-------+------+---------+-----------+
-|comment   |370    |16.73 |370      |=          |
+|comment   |370    |16.72 |370      |=          |
 +----------+-------+------+---------+-----------+
-|empty     |99     |4.48  |101      |-2.00      |
+|empty     |99     |4.47  |99       |=          |
 +----------+-------+------+---------+-----------+
 
 
@@ -120,7 +120,7 @@ Duplication
 +=========================+======+=========+===========+
 |nb duplicated lines      |43    |43       |=          |
 +-------------------------+------+---------+-----------+
-|percent duplicated lines |1.715 |1.714    |+0.00      |
+|percent duplicated lines |1.714 |1.715    |-0.00      |
 +-------------------------+------+---------+-----------+
 
 
@@ -176,7 +176,7 @@ Your code has been rated at 9.94/10 (previous run: 9.94/10, +0.00)
 
 
 Tests Linting Report
-Fri May 1 07:22:02 PDT 2015
+Fri May 1 07:39:33 PDT 2015
 =========================================
 
 
