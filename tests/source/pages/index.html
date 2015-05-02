@@ -75,6 +75,9 @@ description: a python based static site html code stitcher
                 <li><input checked="" type="checkbox">index the text of final site for searching (e.g. with <a href="https://twitter.github.io/typeahead.js/" target="_blank"><code>typeahead</code></a>)</li>
                 <li><input type="checkbox"><mark>potential for <a href="http://www.nltk.org" target="_blank"><code>nltk</code></a> integration</mark></li>
                 <li><input checked="" type="checkbox">spell checking</li>
+                <li><input type="checkbox"><mark>parallel processing</mark></li>
+                <li><input type="checkbox"><em>any ideas?</em></li>
+                <li><input type="checkbox"></li>
             </ul>
             <p>Check out all the features and what's coming up on the <a href="features_todo.html">features+todo</a> page.</p>
             <h2>Want an example?</h2>

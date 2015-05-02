@@ -29,6 +29,9 @@ Cause there's a bunch of other static site generators already!
 - [ ] potential for `nltk` integration
 - [x] spell checking
 - [x] Check out all the features and what's coming up on the features+todo page.
+- [ ] parallel processing
+- [ ] *any ideas?*
+- [ ]
 
 ### Want an example?
 This site was stitched with quilt! Download or inspect the source.
