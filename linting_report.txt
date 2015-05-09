@@ -1,59 +1,16 @@
 
 Quilt Linting Report
-Fri May 1 08:06:22 PDT 2015
+Sat May 9 07:23:46 PDT 2015
 =========================================
 
 ************* Module quilt.Quilter
 R: 84, 0: Too many instance attributes (9/8) (too-many-instance-attributes)
-R:403, 4: Too many branches (22/16) (too-many-branches)
-************* Module quilt.Util
-R:  1, 0: Similar lines in 3 files
-==quilt.Blog:144
-==quilt.Blog:88
-==quilt.QuiltingRoom:339
-        qultr.stitch()
-        qultr.clean_html()
-        qultr.remove_empty()
-        qultr.write()
-        del qultr
-
-        return self
-
-    #@profile (duplicate-code)
-R:  1, 0: Similar lines in 2 files
-==quilt.Blog:129
-==quilt.QuiltingRoom:512
-            qultr.stitch()
-            qultr.clean_html()
-            qultr.remove_empty()
-            qultr.write()
-            del qultr
-
-    #@profile (duplicate-code)
-R:  1, 0: Similar lines in 2 files
-==quilt.Blog:129
-==quilt.QuiltingRoom:339
-            qultr.stitch()
-            qultr.clean_html()
-            qultr.remove_empty()
-            qultr.write()
-            del qultr
- (duplicate-code)
-R:  1, 0: Similar lines in 3 files
-==quilt.Blog:144
-==quilt.Blog:88
-==quilt.QuiltingRoom:512
-            qultr.stitch()
-            qultr.clean_html()
-            qultr.remove_empty()
-            qultr.write()
-            del qultr
- (duplicate-code)
+R:393, 4: Too many branches (24/16) (too-many-branches)
 
 
 Report
 ======
-1072 statements analysed.
+1055 statements analysed.
 
 Statistics by type
 ------------------
@@ -65,7 +22,7 @@ Statistics by type
 +---------+-------+-----------+-----------+------------+---------+
 |class    |16     |16         |=          |100.00      |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
-|method   |50     |50         |=          |100.00      |0.00     |
+|method   |49     |49         |=          |100.00      |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
 |function |32     |32         |=          |100.00      |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
@@ -101,13 +58,13 @@ Raw metrics
 +----------+-------+------+---------+-----------+
 |type      |number |%     |previous |difference |
 +==========+=======+======+=========+===========+
-|code      |1327   |59.96 |1327     |=          |
+|code      |1310   |59.71 |1310     |=          |
 +----------+-------+------+---------+-----------+
-|docstring |417    |18.84 |417      |=          |
+|docstring |416    |18.96 |416      |=          |
 +----------+-------+------+---------+-----------+
-|comment   |370    |16.72 |370      |=          |
+|comment   |369    |16.82 |369      |=          |
 +----------+-------+------+---------+-----------+
-|empty     |99     |4.47  |99       |=          |
+|empty     |99     |4.51  |99       |=          |
 +----------+-------+------+---------+-----------+
 
 
@@ -118,9 +75,9 @@ Duplication
 +-------------------------+------+---------+-----------+
 |                         |now   |previous |difference |
 +=========================+======+=========+===========+
-|nb duplicated lines      |43    |43       |=          |
+|nb duplicated lines      |0     |0        |=          |
 +-------------------------+------+---------+-----------+
-|percent duplicated lines |1.714 |1.714    |=          |
+|percent duplicated lines |0.000 |0.000    |=          |
 +-------------------------+------+---------+-----------+
 
 
@@ -133,7 +90,7 @@ Messages by category
 +===========+=======+=========+===========+
 |convention |0      |0        |=          |
 +-----------+-------+---------+-----------+
-|refactor   |6      |6        |=          |
+|refactor   |2      |2        |=          |
 +-----------+-------+---------+-----------+
 |warning    |0      |0        |=          |
 +-----------+-------+---------+-----------+
@@ -148,7 +105,7 @@ Messages by category
 +--------------+------+--------+---------+-----------+
 |module        |error |warning |refactor |convention |
 +==============+======+========+=========+===========+
-|quilt.Quilter |0.00  |0.00    |33.33    |0.00       |
+|quilt.Quilter |0.00  |0.00    |100.00   |0.00       |
 +--------------+------+--------+---------+-----------+
 
 
@@ -159,8 +116,6 @@ Messages
 +-----------------------------+------------+
 |message id                   |occurrences |
 +=============================+============+
-|duplicate-code               |4           |
-+-----------------------------+------------+
 |too-many-instance-attributes |1           |
 +-----------------------------+------------+
 |too-many-branches            |1           |
@@ -170,13 +125,11 @@ Messages
 
 Global evaluation
 -----------------
-Your code has been rated at 9.94/10 (previous run: 9.94/10, +0.00)
+Your code has been rated at 9.98/10 (previous run: 9.98/10, +0.00)
 
-
-
-
+\n\n
 Tests Linting Report
-Fri May 1 08:06:30 PDT 2015
+Sat May 9 07:23:53 PDT 2015
 =========================================
 
 

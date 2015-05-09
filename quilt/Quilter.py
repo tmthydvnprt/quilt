@@ -390,16 +390,6 @@ class Quilter(object):
         return self
 
     #@profile
-    def remove_empty(self):
-        """remove empty tags"""
-
-#        for tag_name in NO_EMPTY_TAGS:
-        for tag in self.soup.body.find_all(NO_EMPTY_TAGS):
-            if not tag.contents:
-                tag.decompose()
-        return self
-
-    #@profile
     def clean_html(self):
         """clean html, post process html"""
 
@@ -474,6 +464,11 @@ class Quilter(object):
         # add .table to <table>
         for table in self.soup.find_all("table"):
             table.attrs["class"] = ['table'] + table.attrs["class"] if "class" in table.attrs else 'table'
+
+        # remove empty tags
+        for tag in self.soup.body.find_all(NO_EMPTY_TAGS):
+            if not tag.contents:
+                tag.decompose()
 
         return self
 

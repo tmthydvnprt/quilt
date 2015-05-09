@@ -86,10 +86,7 @@ class Blog(object):
         quilt, patches = check_local_quilt(page, self.quilt_pattern, self.patches, self.config)
         # stitch the page together
         qultr = Quilter(page, quilt, patches, page_html, self.config)
-        qultr.stitch()
-        qultr.clean_html()
-        qultr.remove_empty()
-        qultr.write()
+        qultr.stitch().clean_html().write()
         del qultr
 
         return self
@@ -127,10 +124,7 @@ class Blog(object):
 
             # stitch the page together
             qultr = Quilter(page, quilt, patches, page_html, self.config)
-            qultr.stitch()
-            qultr.clean_html()
-            qultr.remove_empty()
-            qultr.write()
+            qultr.stitch().clean_html().write()
             del qultr
 
         # create index of groups
@@ -142,10 +136,7 @@ class Blog(object):
 
         # stitch the page together
         qultr = Quilter(page, self.quilt_pattern, self.patches, page_html, self.config)
-        qultr.stitch()
-        qultr.clean_html()
-        qultr.remove_empty()
-        qultr.write()
+        qultr.stitch().clean_html().write()
         del qultr
 
         return self

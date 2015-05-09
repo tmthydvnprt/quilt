@@ -337,10 +337,7 @@ class QuiltingRoom(object):
 
             # stitch the page together
             qultr = Quilter(page, self.quilt_pattern, self.patches, self.patches["index"], self.config, overrides)
-            qultr.stitch()
-            qultr.clean_html()
-            qultr.remove_empty()
-            qultr.write()
+            qultr.stitch().clean_html().write()
             del qultr
 
         return self
@@ -509,11 +506,7 @@ class QuiltingRoom(object):
                 qultr.pagevars["last_post"] = post_data[i+1]["url"] if i < len(post_data)-1 else "#"
                 qultr.pagevars["last_title"] = post_data[i+1]["title"] if i < len(post_data)-1 else NO_OLD_POSTS
                 qultr.pagevars["disable_last"] = "" if i < len(post_data)-1 else "disabled"
-
-            qultr.stitch()
-            qultr.clean_html()
-            qultr.remove_empty()
-            qultr.write()
+            qultr.stitch().clean_html().write()
             del qultr
 
     #@profile
