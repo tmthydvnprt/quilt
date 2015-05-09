@@ -27,6 +27,19 @@ Main module to quilt a static site by stitching html page together
 13. generate `search.json`, a word to url index for `typeahead`
 14. generate `sitemap.xml`
 
+project    : quilt
+version    : 0.1.0
+status     : development
+modifydate : 2015-05-09 08:51:00 -0700
+createdate : 2015-04-28 06:02:00 -0700
+website    : https://github.com/tmthydvnprt/quilt
+author     : tmthydvnprt
+email      : tmthydvnprt@users.noreply.github.com
+maintainer : tmthydvnprt
+license    : MIT
+copyright  : Copyright 2015, quilt
+credits    :
+
 """
 
 import os

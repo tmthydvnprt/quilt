@@ -12,6 +12,19 @@ Provide blog capabilities for static site
     2. create page for each group with list of associated posts in reverse chronological order
 5. generate `atom` feed and/or `rss` feed
 
+project    : quilt
+version    : 0.1.0
+status     : development
+modifydate : 2015-05-09 08:51:00 -0700
+createdate : 2015-04-28 06:02:00 -0700
+website    : https://github.com/tmthydvnprt/quilt
+author     : tmthydvnprt
+email      : tmthydvnprt@users.noreply.github.com
+maintainer : tmthydvnprt
+license    : MIT
+copyright  : Copyright 2015, quilt
+credits    :
+
 """
 
 import os
