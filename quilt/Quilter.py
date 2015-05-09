@@ -392,9 +392,8 @@ class Quilter(object):
 
         return self
 
-    #@profile
-    def clean_html(self):
-        """clean html, post process html"""
+    def clean_document(self):
+        """check, clean, standardize document"""
 
         # make sure doctype is set
         doctype = [x for x in self.soup.contents if isinstance(x, bs4.Doctype)]
@@ -402,11 +401,10 @@ class Quilter(object):
             self.soup.insert(0, bs4.Doctype('html'))
 
         # make sure language is set
-        if "lang" not in self.soup.html:
-            self.soup.html["lang"] = "en"
+        self.soup.html["lang"] = self.soup.html.get("lang") or "en"
 
         # make sure certain metas are set
-        viewport_meta = self.soup.head.find("meta", viewport=True)#attrs={"viewport": DOTSTAR_RE})
+        viewport_meta = self.soup.head.find("meta", viewport=True)
         if not viewport_meta:
             viewport_meta_tag = self.soup.new_tag('meta')
             viewport_meta_tag["name"] = "viewport"
@@ -429,22 +427,22 @@ class Quilter(object):
             self.soup.head.insert(0, charset_meta_tag)
             self.soup.head.insert(0, '\n')
 
+        return self
+
+    def clean_tags(self):
+        """check, clean, standardize tags"""
+
         # make sure as have clean hrefs and alts/titles
         for a_tag in self.soup.find_all("a"):
-            if "href" not in a_tag.attrs:
-                a_tag.attrs["href"] = "#"
-            if "alt" not in a_tag.attrs or a_tag.attrs["alt"] == "":
-                a_tag.attrs["alt"] = a_tag.get_text()
-            if "title" not in a_tag.attrs or a_tag.attrs["title"] == "":
-                a_tag.attrs["title"] = a_tag.get_text()
+            a_tag.attrs["href"] = a_tag.attrs.get("href") or "#"
+            a_tag.attrs["alt"] = a_tag.attrs.get("alt") or a_tag.get_text()
+            a_tag.attrs["title"] = a_tag.attrs.get("title") or a_tag.get_text()
 
         # make sure imgs have clear src and alt/tiles
         for img_tag in self.soup.find_all("img"):
             if "src" in img_tag.attrs:
-                if "alt" not in img_tag.attrs or img_tag.attrs["alt"] == "":
-                    img_tag.attrs["alt"] = img_tag.attrs["src"]
-                if "title" not in img_tag.attrs or img_tag.attrs["title"] == "":
-                    img_tag.attrs["title"] = img_tag.attrs["src"]
+                img_tag.attrs["alt"] = img_tag.attrs.get("alt") or img_tag.attrs["src"]
+                img_tag.attrs["title"] = img_tag.attrs.get("title") or img_tag.attrs["src"]
 
         # make sure css links have href and proper rel and type
         for link_tag in self.soup.find_all("link"):
@@ -459,19 +457,31 @@ class Quilter(object):
             if len(script_tag.contents) == 0 and "src" not in script_tag.attrs:
                 script_tag.decompose()
             else:
-                if "rel" not in script_tag.attrs:
-                    script_tag.attrs["rel"] = "javascript"
-                if "type" not in script_tag.attrs:
-                    script_tag.attrs["type"] = "text/javascript"
+                script_tag.attrs["rel"] = script_tag.attrs.get("rel") or "javascript"
+                script_tag.attrs["type"] = script_tag.attrs.get("type") or "text/javascript"
 
         # add .table to <table>
         for table in self.soup.find_all("table"):
             table.attrs["class"] = ['table'] + table.attrs["class"] if "class" in table.attrs else 'table'
 
-        # remove empty tags
+        return self
+
+    def remove_empty_tags(self):
+        """remove empty tags"""
+
         for tag in self.soup.body.find_all(NO_EMPTY_TAGS):
             if not tag.contents:
                 tag.decompose()
+
+        return self
+
+    #@profile
+    def clean_html(self):
+        """clean html, post process html"""
+
+        self.clean_document()
+        self.clean_tags()
+        self.remove_empty_tags()
 
         return self
 
