@@ -8,7 +8,7 @@ Generate a static site via python from content-only html and markdown pages that
 ### Why? 
 Cause there's a bunch of other static site generators already!
 
-#### BecauseI wanted...
+#### Because I wanted...
 1. specific features
 2. something I didn't see in others
 3. to improve python fluency
