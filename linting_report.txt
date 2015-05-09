@@ -1,16 +1,15 @@
 
 Quilt Linting Report
-Sat May 9 07:23:46 PDT 2015
+Sat May 9 07:30:25 PDT 2015
 =========================================
 
 ************* Module quilt.Quilter
-R: 84, 0: Too many instance attributes (9/8) (too-many-instance-attributes)
-R:393, 4: Too many branches (24/16) (too-many-branches)
+R:396, 4: Too many branches (24/16) (too-many-branches)
 
 
 Report
 ======
-1055 statements analysed.
+1053 statements analysed.
 
 Statistics by type
 ------------------
@@ -58,11 +57,11 @@ Raw metrics
 +----------+-------+------+---------+-----------+
 |type      |number |%     |previous |difference |
 +==========+=======+======+=========+===========+
-|code      |1310   |59.71 |1310     |=          |
+|code      |1309   |59.58 |1310     |-1.00      |
 +----------+-------+------+---------+-----------+
-|docstring |416    |18.96 |416      |=          |
+|docstring |419    |19.07 |416      |+3.00      |
 +----------+-------+------+---------+-----------+
-|comment   |369    |16.82 |369      |=          |
+|comment   |370    |16.84 |369      |+1.00      |
 +----------+-------+------+---------+-----------+
 |empty     |99     |4.51  |99       |=          |
 +----------+-------+------+---------+-----------+
@@ -90,7 +89,7 @@ Messages by category
 +===========+=======+=========+===========+
 |convention |0      |0        |=          |
 +-----------+-------+---------+-----------+
-|refactor   |2      |2        |=          |
+|refactor   |1      |2        |-1.00      |
 +-----------+-------+---------+-----------+
 |warning    |0      |0        |=          |
 +-----------+-------+---------+-----------+
@@ -113,23 +112,21 @@ Messages by category
 Messages
 --------
 
-+-----------------------------+------------+
-|message id                   |occurrences |
-+=============================+============+
-|too-many-instance-attributes |1           |
-+-----------------------------+------------+
-|too-many-branches            |1           |
-+-----------------------------+------------+
++------------------+------------+
+|message id        |occurrences |
++==================+============+
+|too-many-branches |1           |
++------------------+------------+
 
 
 
 Global evaluation
 -----------------
-Your code has been rated at 9.98/10 (previous run: 9.98/10, +0.00)
+Your code has been rated at 9.99/10 (previous run: 9.98/10, +0.01)
 
 \n\n
 Tests Linting Report
-Sat May 9 07:23:53 PDT 2015
+Sat May 9 07:30:33 PDT 2015
 =========================================
 
 

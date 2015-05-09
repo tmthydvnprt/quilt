@@ -91,8 +91,6 @@ class Quilter(object):
         # set settings
         self.config = config
         self.post = self.config["buildblog"] and os.path.join(os.path.basename(self.config["posts"]), "") in page_file
-        self.__do_markdown = page_file[-3:] == '.md'
-        self.__wrap = wrap or self.__do_markdown
 
         # set pagevars, handling some special cases
         self.pagevars = copy.deepcopy(self.config["page_defaults"])
@@ -113,7 +111,12 @@ class Quilter(object):
         if overrides:
             self.pagevars.update(overrides)
 
-        self.__do_debug = self.pagevars["output"] == DEBUG_FILE
+        # set control
+        self.control = {
+            "do_debug"    : self.pagevars["output"] == DEBUG_FILE,
+            "do_markdown" : page_file[-3:] == '.md',
+            "wrap"        : wrap or page_file[-3:] == '.md'
+        }
 
         # parse html and build soup
         self.soup = bs4.BeautifulSoup(quilt, "lxml")
@@ -131,7 +134,7 @@ class Quilter(object):
     def parse_page(self, page):
         """parses page into vars, content, and scripts7.487 s"""
 
-        if self.__do_debug:
+        if self.control["do_debug"]:
             write_file(add_suffix(DEBUG_FILE, '_original-page'), page.encode('utf-8'))
 
         # parse variables, content, and scripts
@@ -147,20 +150,20 @@ class Quilter(object):
         if page_vars:
             self.pagevars.update(parse_pagevars(page_vars))
 
-        if self.__do_debug:
+        if self.control["do_debug"]:
             write_file(add_suffix(DEBUG_FILE, 'parsed-page'), page_html.encode('utf-8'))
 
         # handle markdown if necessary
-        if self.__do_markdown:
+        if self.control["do_markdown"]:
 
             page_html_md = MD.reset().convert(page_html)
 
-            if self.__do_debug:
+            if self.control["do_debug"]:
                 write_file(add_suffix(DEBUG_FILE, '_markdown-output'), page_html_md.encode('utf-8'))
 
             page_html = page_html_md.replace("<code> ", "<code>").replace(" </code>", "</code>")
 
-        if self.__wrap and self.patches["markdown"]:
+        if self.control["wrap"] and self.patches["markdown"]:
             page_html = self.patches["markdown"].replace("{{markdown}}", page_html)
 
         # set page html
@@ -176,7 +179,7 @@ class Quilter(object):
                 page_obj = minimize_js(page_obj)
             self.patches["scripts"] = '\n'.join((PAGEOBJ % (page_obj), self.patches["scripts"]))
 
-        if self.__do_debug:
+        if self.control["do_debug"]:
             write_file(add_suffix(DEBUG_FILE, '_markdown-wrapped'), page_html.encode('utf-8'))
 
         return self
@@ -211,7 +214,7 @@ class Quilter(object):
                             parse_only=BODY_STRAINER
                         )
 
-                    if self.__do_debug:
+                    if self.control["do_debug"]:
                         write_file(
                             add_suffix(DEBUG_FILE, '_'+patch["id"]+'-html'),
                             self.patches[patch["id"]].encode('utf-8')
@@ -238,13 +241,13 @@ class Quilter(object):
                         patch.insert(0, '\n')
                     patch.unwrap()
 
-                    if self.__do_debug:
+                    if self.control["do_debug"]:
                         write_file(add_suffix(DEBUG_FILE, '_added-'+patch["id"]), self.soup.encode('utf-8', formatter='html'))
 
                 else:
                     patch.decompose()
 
-                if self.__do_debug:
+                if self.control["do_debug"]:
                     write_file(add_suffix(DEBUG_FILE, 'replaced_patches'), self.soup.encode('utf-8', formatter='html'))
 
             # check for new patches (see if patch had nested patches)
@@ -259,7 +262,7 @@ class Quilter(object):
         html = self.soup.encode('utf-8', formatter='html')
         page_vars = list(set(PAGEVAR_RE.findall(html)))
 
-        if self.__do_debug:
+        if self.control["do_debug"]:
             write_file(add_suffix(DEBUG_FILE, 'replacing_vars'), html)
 
         if self.post:
@@ -284,12 +287,12 @@ class Quilter(object):
             for escaped_page_var in escaped_page_vars:
                 html = html.replace("{ {" + escaped_page_var + "}}", "{{" + escaped_page_var + "}}")
 
-        if self.__do_debug:
+        if self.control["do_debug"]:
             write_file(add_suffix(DEBUG_FILE, 'replaced_vars'), html)
 
         self.soup = bs4.BeautifulSoup(html, "lxml")
 
-        if self.__do_debug:
+        if self.control["do_debug"]:
             write_file(add_suffix(DEBUG_FILE, 'replaced_vars_soup'), self.soup.encode('utf-8', formatter='html'))
 
         return self
@@ -345,7 +348,7 @@ class Quilter(object):
 #                tag.append(new_tag)
 #
 #
-#        if self.__do_debug:
+#        if self.control["do_debug"]:
 #            write_file(add_suffix(DEBUG_FILE, 'replaced_vars_soup'), self.soup.encode('utf-8', formatter='html'))
 #
 #        return self
