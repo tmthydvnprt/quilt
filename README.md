@@ -30,6 +30,7 @@ Cause there's a bunch of other static site generators already!
 - [x] spell checking
 - [x] Check out all the features and what's coming up on the features+todo page.
 - [ ] parallel processing
+- [ ] `git` integration (pull modify dates from repo commits)
 - [ ] *any ideas?*
 - [ ] 
 
