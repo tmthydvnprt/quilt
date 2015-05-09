@@ -621,4 +621,4 @@ class QuiltingRoom(object):
             self.spellcheck()
         print 'quilting time: ' + str(time.time() - __t0)
 
-        return self
+        return False

@@ -22,6 +22,6 @@ class GenerateSite(unittest.TestCase):
         """generate site"""
 
         room = QuiltingRoom(SOURCE_PATH, OUTPUT_PATH)
-        room.quilt()
+        status = room.quilt()
 
-        self.assertNotEqual(True, False)
+        self.assertEqual(status, False)
