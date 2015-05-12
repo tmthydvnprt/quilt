@@ -4,7 +4,7 @@ generate documentation quilt nose tests
 project    : juxtapy
 version    : 0.1.0
 status     : development
-modifydate : 2015-05-11 19:48:00 -0700
+modifydate : 2015-05-12 05:21:00 -0700
 createdate : 2015-04-28 07:23:00 -0700
 website    : https://github.com/tmthydvnprt/quilt
 author     : tmthydvnprt
