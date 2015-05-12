@@ -14,7 +14,7 @@ QuiltingRoom - quilt.QuiltingRoom
 
 ## __FILE__
 
-`/Users/timothydavenport/Documents/notebook/quilt/quilt`
+`/Users/timothydavenport/GitHub/quilt/quilt`
 
 ## __DESCRIPTION__
 
@@ -43,6 +43,19 @@ Main module to quilt a static site by stitching html page together
 12. add `robot.txt`
 13. generate `search.json`, a word to url index for `typeahead`
 14. generate `sitemap.xml`
+
+project    : quilt
+version    : 0.1.0
+status     : development
+modifydate : 2015-05-12 06:43:00 -0700
+createdate : 2015-04-28 06:02:00 -0700
+website    : https://github.com/tmthydvnprt/quilt
+author     : tmthydvnprt
+email      : tmthydvnprt@users.noreply.github.com
+maintainer : tmthydvnprt
+license    : MIT
+copyright  : Copyright 2015, quilt
+credits    :
 
 ## __MODULES__
 
@@ -158,7 +171,7 @@ __CSS\_EXT\_RE__
 
 __DEFAULT\_CONFIG__
 ```
-{'buildicon': True, 'atomid': 'randomid', 'keywords': [], 'combinejs': True, 'spellcheck': True, 'patches': 'patches', 'title': 'some default title', 'quiltcomment': True, 'combinecss': True, 'priority': '0.5', 'pageobject': True, 'spellignore': ['maths', 'codehilite'], 'local': False, 'correctwords': 'correct_words.txt', 'vendorfycss': True, 'iconsizes': [64, 60, 76, 120, 152], 'categories': [], 'assets': 'assets', 'name': 'some name', 'posts': 'posts', 'copymd': True, 'blogname': 'quilt news', 'pagecomment': True, 'domain': 'some_name.com', 'page_ext': ['*.html', '*.md'], 'quilt': 'quilt.html', 'patchcomment': True, 'minimizecss': True, 'asset_ext': ['*.*'], 'buildsearch': True, 'author': 'you', 'buildatom': True, 'buildrobot': True, 'iconfile': 'icon.png', 'assetcomment': True, 'email': 'you@some_name.com', 'templates': 'templates', 'patch_ext': ['*.html'], 'buildrss': True, 'description': 'default description', 'tags': [], 'template_ext': ['*.html'], 'rssid': 'randomid', 'changefreq': 'monthly', 'pages': 'pages', 'buildindex': True, 'buildsitemap': True, 'minimizejs': True, 'buildblog': True}
+{'copyrighter': 'you', 'buildicon': True, 'atomid': 'randomid', 'keywords': [], 'combinejs': True, 'spellcheck': True, 'patches': 'patches', 'title': 'some default title', 'quiltcomment': True, 'combinecss': True, 'priority': '0.5', 'pageobject': True, 'local': False, 'correctwords': 'correct_words.txt', 'copydate': 2015, 'vendorfycss': True, 'iconsizes': [64, 60, 76, 120, 152], 'assets': 'assets', 'categories': [], 'spellignore': ['maths', 'codehilite'], 'name': 'some name', 'posts': 'posts', 'copymd': True, 'blogname': 'quilt news', 'pagecomment': True, 'domain': 'some_name.com', 'page_ext': ['*.html', '*.md'], 'quilt': 'quilt.html', 'patchcomment': True, 'minimizecss': True, 'images': 'imgs', 'asset_ext': ['*.*'], 'buildsearch': True, 'author': 'you', 'buildatom': True, 'buildrobot': True, 'iconfile': 'icon.png', 'assetcomment': True, 'email': 'you@some_name.com', 'templates': 'templates', 'patch_ext': ['*.html'], 'buildrss': True, 'description': 'default description', 'tags': [], 'template_ext': ['*.html'], 'rssid': 'randomid', 'changefreq': 'monthly', 'pages': 'pages', 'buildindex': True, 'buildsitemap': True, 'minimizejs': True, 'buildblog': True}
 ```
 
 __HEAD\_STRAINER__

@@ -1,6 +1,6 @@
 title: quilt docs
 description: quilt documentation
-author: markdoc.py
+author: pydoc_markdown.py
 
 
 #quilt
