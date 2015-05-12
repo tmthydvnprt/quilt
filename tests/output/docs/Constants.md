@@ -14,12 +14,25 @@ Constants - quilt.Constants
 
 ## __FILE__
 
-`/Users/timothydavenport/Documents/notebook/quilt/quilt`
+`/Users/timothydavenport/GitHub/quilt/quilt`
 
 ## __DESCRIPTION__
 
 Formatable strings and default objects, maybe a list or two.
 {: .lead}
+
+project    : quilt
+version    : 0.1.0
+status     : development
+modifydate : 2015-05-12 06:43:00 -0700
+createdate : 2015-04-28 06:02:00 -0700
+website    : https://github.com/tmthydvnprt/quilt
+author     : tmthydvnprt
+email      : tmthydvnprt@users.noreply.github.com
+maintainer : tmthydvnprt
+license    : MIT
+copyright  : Copyright 2015, quilt
+credits    :
 
 ## __MODULES__
 

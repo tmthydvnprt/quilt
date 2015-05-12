@@ -9,14 +9,14 @@
     -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     -- Page stitched together with quilt.py
     -- url            : /Users/timothydavenport/GitHub/quilt/tests/output/imgs/index.html
-    -- quilted on     : 05/11/15
-    -- stitching took : 0.015 s
+    -- quilted on     : 05/12/15
+    -- stitching took : 0.014 s
     -- quilt pagevars :
     --            author : tmthydvnprt
     --       categories : []
     --         copydate : 2015
     --      copyrighter : tmthydvnprt
-    --             date : 05/11/15
+    --             date : 05/12/15
     --      description : blank index page of imgs directory
     --        directory : imgs
     --     disable_last : disabled
@@ -130,7 +130,7 @@
 </footer>
 <!--quilted scripts patch-->
 <script id="scripts" rel="javascript" type="text/javascript">
-pagevars = { "author":"tmthydvnprt", "categories":[], "copydate":2015, "copyrighter":"tmthydvnprt", "date":"05/11/15", "description":"blank index page of imgs directory", "directory":"imgs", "disable_last":"disabled", "disable_next":"disabled", "domain":"some_name.com", "email":"tmthydvnprt@users.noreply.github.com", "keywords":"i,n,d,e,x", "last_post":"", "last_title":"", "latestpost":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/imgs/index.html", "name":"quilt", "next_post":"", "next_title":"", "output":"/Users/timothydavenport/GitHub/quilt/tests/output/imgs/index.html", "page_path":"", "pagecomment":true, "patchcomment":true, "quiltcomment":true, "relativepath":"../../../../../../../", "rootpath":"/Users/timothydavenport/GitHub/quilt/tests/output", "source":"/Users/timothydavenport/GitHub/quilt/tests/output/imgs/index.html", "tags":[], "title":"imgs directory index", "url":"/Users/timothydavenport/GitHub/quilt/tests/output/imgs/index.html" };
+pagevars = { "author":"tmthydvnprt", "categories":[], "copydate":2015, "copyrighter":"tmthydvnprt", "date":"05/12/15", "description":"blank index page of imgs directory", "directory":"imgs", "disable_last":"disabled", "disable_next":"disabled", "domain":"some_name.com", "email":"tmthydvnprt@users.noreply.github.com", "keywords":"i,n,d,e,x", "last_post":"", "last_title":"", "latestpost":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/imgs/index.html", "name":"quilt", "next_post":"", "next_title":"", "output":"/Users/timothydavenport/GitHub/quilt/tests/output/imgs/index.html", "page_path":"", "pagecomment":true, "patchcomment":true, "quiltcomment":true, "relativepath":"../../../../../../../", "rootpath":"/Users/timothydavenport/GitHub/quilt/tests/output", "source":"/Users/timothydavenport/GitHub/quilt/tests/output/imgs/index.html", "tags":[], "title":"imgs directory index", "url":"/Users/timothydavenport/GitHub/quilt/tests/output/imgs/index.html" };
 </script>
 <script rel="javascript" src="../../../../../../../js/jquery-1.11.2.min_bootstrap.min_typeahead.bundle.min_quilt.js" type="text/javascript"></script>
 <script rel="javascript" type="text/x-mathjax-config">MathJax.Hub.Config({ showMathMenu:false, imageFont:null, MathEvents:{ hover:256 }, jax:["input/TeX","output/HTML-CSS", "output/CommonHTML"], extensions:["tex2jax.js", "CHTML-preview.js"], TeX:{ extensions:["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"], autoNumber:"AMS" } });</script>
