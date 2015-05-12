@@ -2,6 +2,20 @@
 quilt cli
 
 command-line tool for quilt.py
+
+project    : juxtapy
+version    : 0.1.0
+status     : development
+modifydate : 2015-05-11 19:48:00 -0700
+createdate : 2015-04-28 06:02:00 -0700
+website    : https://github.com/tmthydvnprt/quilt
+author     : tmthydvnprt
+email      : tmthydvnprt@users.noreply.github.com
+maintainer : tmthydvnprt
+license    : MIT
+copyright  : Copyright 2015, juxtapy
+credits    :
+
 """
 
 import os
