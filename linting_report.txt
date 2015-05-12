@@ -1,16 +1,16 @@
 
 Quilt Linting Report
-2015-05-11 19:37:39 -0700
+2015-05-11 19:48:33 -0700
 =========================================
 
 ************* Module quilt.Quilter
-R: 76, 0: Too many instance attributes (9/8) (too-many-instance-attributes)
-R:339, 4: Too many branches (22/16) (too-many-branches)
+R: 89, 0: Too many instance attributes (9/8) (too-many-instance-attributes)
+R:352, 4: Too many branches (22/16) (too-many-branches)
 ************* Module quilt.Util
 R:  1, 0: Similar lines in 3 files
-==quilt.Blog:144
-==quilt.Blog:88
-==quilt.QuiltingRoom:338
+==quilt.Blog:101
+==quilt.Blog:157
+==quilt.QuiltingRoom:351
             qultr.stitch()
             qultr.clean_html()
             qultr.remove_empty()
@@ -21,8 +21,8 @@ R:  1, 0: Similar lines in 3 files
 
     #@profile (duplicate-code)
 R:  1, 0: Similar lines in 2 files
-==quilt.Blog:129
-==quilt.QuiltingRoom:515
+==quilt.Blog:142
+==quilt.QuiltingRoom:528
             qultr.stitch()
             qultr.clean_html()
             qultr.remove_empty()
@@ -31,8 +31,8 @@ R:  1, 0: Similar lines in 2 files
 
     #@profile (duplicate-code)
 R:  1, 0: Similar lines in 2 files
-==quilt.Blog:129
-==quilt.QuiltingRoom:338
+==quilt.Blog:142
+==quilt.QuiltingRoom:351
             qultr.stitch()
             qultr.clean_html()
             qultr.remove_empty()
@@ -40,9 +40,9 @@ R:  1, 0: Similar lines in 2 files
             del qultr
  (duplicate-code)
 R:  1, 0: Similar lines in 3 files
-==quilt.Blog:144
-==quilt.Blog:88
-==quilt.QuiltingRoom:515
+==quilt.Blog:101
+==quilt.Blog:157
+==quilt.QuiltingRoom:528
         qultr.stitch()
         qultr.clean_html()
         qultr.remove_empty()
@@ -65,7 +65,7 @@ Statistics by type
 +---------+-------+-----------+-----------+------------+---------+
 |class    |16     |16         |=          |100.00      |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
-|method   |50     |52         |-2.00      |100.00      |0.00     |
+|method   |50     |50         |=          |100.00      |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
 |function |32     |32         |=          |100.00      |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
@@ -100,13 +100,13 @@ Raw metrics
 +----------+-------+------+---------+-----------+
 |type      |number |%     |previous |difference |
 +==========+=======+======+=========+===========+
-|code      |1340   |64.36 |1317     |+23.00     |
+|code      |1340   |61.27 |1340     |=          |
 +----------+-------+------+---------+-----------+
-|docstring |418    |20.08 |527      |-109.00    |
+|docstring |523    |23.91 |418      |+105.00    |
 +----------+-------+------+---------+-----------+
-|comment   |232    |11.14 |369      |-137.00    |
+|comment   |232    |10.61 |232      |=          |
 +----------+-------+------+---------+-----------+
-|empty     |92     |4.42  |99       |-7.00      |
+|empty     |92     |4.21  |92       |=          |
 +----------+-------+------+---------+-----------+
 
 
@@ -117,9 +117,9 @@ Duplication
 +-------------------------+------+---------+-----------+
 |                         |now   |previous |difference |
 +=========================+======+=========+===========+
-|nb duplicated lines      |43    |0        |+43.00     |
+|nb duplicated lines      |43    |43       |=          |
 +-------------------------+------+---------+-----------+
-|percent duplicated lines |1.797 |0.000    |+1.80      |
+|percent duplicated lines |1.721 |1.797    |-0.08      |
 +-------------------------+------+---------+-----------+
 
 
@@ -132,7 +132,7 @@ Messages by category
 +===========+=======+=========+===========+
 |convention |0      |0        |=          |
 +-----------+-------+---------+-----------+
-|refactor   |6      |0        |+6.00      |
+|refactor   |6      |6        |=          |
 +-----------+-------+---------+-----------+
 |warning    |0      |0        |=          |
 +-----------+-------+---------+-----------+
@@ -169,11 +169,11 @@ Messages
 
 Global evaluation
 -----------------
-Your code has been rated at 9.95/10 (previous run: 10.00/10, -0.05)
+Your code has been rated at 9.95/10 (previous run: 9.95/10, +0.00)
 
 
 Tests Linting Report
-2015-05-11 19:37:46 -0700
+2015-05-11 19:48:40 -0700
 =========================================
 
 
@@ -190,9 +190,9 @@ Statistics by type
 +=========+=======+===========+===========+============+=========+
 |module   |2      |2          |=          |100.00      |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
-|class    |1      |3          |-2.00      |100.00      |0.00     |
+|class    |1      |1          |=          |100.00      |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
-|method   |1      |5          |-4.00      |100.00      |0.00     |
+|method   |1      |1          |=          |100.00      |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
 |function |0      |0          |=          |0           |0        |
 +---------+-------+-----------+-----------+------------+---------+
@@ -214,13 +214,13 @@ Raw metrics
 +----------+-------+------+---------+-----------+
 |type      |number |%     |previous |difference |
 +==========+=======+======+=========+===========+
-|code      |13     |44.83 |33       |-20.00     |
+|code      |13     |22.81 |13       |=          |
 +----------+-------+------+---------+-----------+
-|docstring |8      |27.59 |42       |-34.00     |
+|docstring |36     |63.16 |8        |+28.00     |
 +----------+-------+------+---------+-----------+
-|comment   |4      |13.79 |4        |=          |
+|comment   |4      |7.02  |4        |=          |
 +----------+-------+------+---------+-----------+
-|empty     |4      |13.79 |4        |=          |
+|empty     |4      |7.02  |4        |=          |
 +----------+-------+------+---------+-----------+
 
 
