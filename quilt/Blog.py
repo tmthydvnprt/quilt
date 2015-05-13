@@ -12,17 +12,17 @@ Provide blog capabilities for static site
     2. create page for each group with list of associated posts in reverse chronological order
 5. generate `atom` feed and/or `rss` feed
 
-project    : juxtapy
+project    : quilt
 version    : 0.1.0
 status     : development
-modifydate : 2015-05-12 05:21:00 -0700
+modifydate : 2015-05-12 06:43:00 -0700
 createdate : 2015-04-28 06:02:00 -0700
 website    : https://github.com/tmthydvnprt/quilt
 author     : tmthydvnprt
 email      : tmthydvnprt@users.noreply.github.com
 maintainer : tmthydvnprt
 license    : MIT
-copyright  : Copyright 2015, juxtapy
+copyright  : Copyright 2015, quilt
 credits    :
 
 """

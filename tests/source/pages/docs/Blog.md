@@ -14,7 +14,7 @@ Blog - quilt.Blog
 
 ## __FILE__
 
-`/Users/timothydavenport/Documents/notebook/quilt/quilt`
+`/Users/timothydavenport/GitHub/quilt/quilt`
 
 ## __DESCRIPTION__
 
@@ -28,6 +28,19 @@ Provide blog capabilities for static site
     1. create page that list all groups (e.g. list all tags)
     2. create page for each group with list of associated posts in reverse chronological order
 5. generate `atom` feed and/or `rss` feed
+
+project    : quilt
+version    : 0.1.0
+status     : development
+modifydate : 2015-05-12 06:43:00 -0700
+createdate : 2015-04-28 06:02:00 -0700
+website    : https://github.com/tmthydvnprt/quilt
+author     : tmthydvnprt
+email      : tmthydvnprt@users.noreply.github.com
+maintainer : tmthydvnprt
+license    : MIT
+copyright  : Copyright 2015, quilt
+credits    :
 
 ## __MODULES__
 

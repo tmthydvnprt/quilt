@@ -14,7 +14,7 @@ Markdown - Markdown
 
 ## __FILE__
 
-`/Users/timothydavenport/Documents/notebook/quilt/quilt`
+`/Users/timothydavenport/GitHub/quilt/quilt`
 
 ## __DESCRIPTION__
 
@@ -41,6 +41,19 @@ Adds both included and custom extensions to `Python-Markdown` :
 17. BlankLineExtension()
 18. 'markdown.extensions.footnotes'
 19. AetherExtension()
+
+project    : quilt
+version    : 0.1.0
+status     : development
+modifydate : 2015-05-12 06:43:00 -0700
+createdate : 2015-04-28 06:02:00 -0700
+website    : https://github.com/tmthydvnprt/quilt
+author     : tmthydvnprt
+email      : tmthydvnprt@users.noreply.github.com
+maintainer : tmthydvnprt
+license    : MIT
+copyright  : Copyright 2015, quilt
+credits    :
 
 ## __MODULES__
 
@@ -241,12 +254,12 @@ __MATHS\_RE__
 
 __MD__
 ```
-<markdown.Markdown object at 0x1081a9790>
+<markdown.Markdown object at 0x109dba850>
 ```
 
 __MD\_EXT__
 ```
-['markdown.extensions.extra', 'markdown.extensions.nl2br', 'markdown.extensions.sane_lists', 'markdown.extensions.codehilite', 'markdown.extensions.wikilinks', 'markdown.extensions.toc', <Markdown.ChecklistExtension object at 0x1081a95d0>, <Markdown.CustomSpanExtension object at 0x1081a9650>, <Markdown.ReplaceTagsExtension object at 0x1081a9690>, 'markdown.extensions.footnotes', <Markdown.SymbolExtension object at 0x1081a96d0>, <Markdown.MultiExtension object at 0x1081a9710>, <Markdown.MathExtension object at 0x1081a9750>]
+['markdown.extensions.extra', 'markdown.extensions.nl2br', 'markdown.extensions.sane_lists', 'markdown.extensions.codehilite', 'markdown.extensions.wikilinks', 'markdown.extensions.toc', <Markdown.ChecklistExtension object at 0x109dba690>, <Markdown.CustomSpanExtension object at 0x109dba710>, <Markdown.ReplaceTagsExtension object at 0x109dba750>, 'markdown.extensions.footnotes', <Markdown.SymbolExtension object at 0x109dba790>, <Markdown.MultiExtension object at 0x109dba7d0>, <Markdown.MathExtension object at 0x109dba810>]
 ```
 
 __MD\_EXT\_CONFIG__

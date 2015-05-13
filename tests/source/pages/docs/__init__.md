@@ -14,7 +14,7 @@ author: markdoc.py
 
 ## __FILE__
 
-`/Users/timothydavenport/Documents/notebook/quilt/quilt`
+`/Users/timothydavenport/GitHub/quilt/quilt`
 
 ## __DESCRIPTION__
 
@@ -24,17 +24,34 @@ A `python` based static site `html` _stitcher_.
 Generate a static site via `python` from content-only `.html` and `.md` pages that are _stitched_ together
 along with patch (e.g. `nav.html`, `footer.html`) files onto a main site `quilt.html` file.
 
+project    : quilt
+version    : 0.1.0
+status     : development
+modifydate : 2015-05-12 06:43:00 -0700
+createdate : 2015-04-28 06:02:00 -0700
+website    : https://github.com/tmthydvnprt/quilt
+author     : tmthydvnprt
+email      : tmthydvnprt@users.noreply.github.com
+maintainer : tmthydvnprt
+license    : MIT
+copyright  : Copyright 2015, quilt
+credits    :
+
 ## __VERSION__
 
-0.1.1
+0.1.0
 
 ## __DATE__
 
-2015/03/10
+2015-05-12 06:43:00 -0700
 
 ## __AUTHOR__
 
 tmthydvnprt
+
+## __CREDITS__
+
+
 
 ## __DATA__
 
@@ -48,13 +65,48 @@ __\_\_author\_\___
 tmthydvnprt
 ```
 
+__\_\_copyright\_\___
+```
+Copyright 2015, quilt
+```
+
+__\_\_credits\_\___
+```
+
+```
+
 __\_\_date\_\___
 ```
-2015/03/10
+2015-05-12 06:43:00 -0700
+```
+
+__\_\_email\_\___
+```
+tmthydvnprt@users.noreply.github.com
+```
+
+__\_\_license\_\___
+```
+MIT
+```
+
+__\_\_maintainer\_\___
+```
+tmthydvnprt
+```
+
+__\_\_status\_\___
+```
+development
 ```
 
 __\_\_version\_\___
 ```
-0.1.1
+0.1.0
+```
+
+__\_\_website\_\___
+```
+https://github.com/tmthydvnprt/quilt
 ```
 

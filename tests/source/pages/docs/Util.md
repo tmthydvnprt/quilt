@@ -14,7 +14,7 @@ Util - quilt.Util
 
 ## __FILE__
 
-`/Users/timothydavenport/Documents/notebook/quilt/quilt`
+`/Users/timothydavenport/GitHub/quilt/quilt`
 
 ## __DESCRIPTION__
 
@@ -23,9 +23,22 @@ Utility functions
 
 Helper functions used all over, but don't belong anywhere.
 
+project    : quilt
+version    : 0.1.0
+status     : development
+modifydate : 2015-05-12 06:43:00 -0700
+createdate : 2015-04-28 06:02:00 -0700
+website    : https://github.com/tmthydvnprt/quilt
+author     : tmthydvnprt
+email      : tmthydvnprt@users.noreply.github.com
+maintainer : tmthydvnprt
+license    : MIT
+copyright  : Copyright 2015, quilt
+credits    :
+
 ## __MODULES__
 
-[bs4](https://www.google.com/#q=python+bs4), [codecs](https://www.google.com/#q=python+codecs), [copy](https://www.google.com/#q=python+copy), [datetime](https://www.google.com/#q=python+datetime), [fnmatch](https://www.google.com/#q=python+fnmatch), [nltk](https://www.google.com/#q=python+nltk), [os](https://www.google.com/#q=python+os), [random](https://www.google.com/#q=python+random), [string](https://www.google.com/#q=python+string), [sys](https://www.google.com/#q=python+sys), [urlparse](https://www.google.com/#q=python+urlparse)
+[bs4](https://www.google.com/#q=python+bs4), [codecs](https://www.google.com/#q=python+codecs), [copy](https://www.google.com/#q=python+copy), [dt](https://www.google.com/#q=python+dt), [fnmatch](https://www.google.com/#q=python+fnmatch), [nltk](https://www.google.com/#q=python+nltk), [os](https://www.google.com/#q=python+os), [random](https://www.google.com/#q=python+random), [string](https://www.google.com/#q=python+string), [sys](https://www.google.com/#q=python+sys), [urlparse](https://www.google.com/#q=python+urlparse)
 {: .lead}
 
 ## __FUNCTIONS__
@@ -212,7 +225,7 @@ __CLEAN\_SELECTORS\_RE__
 
 __DEFAULT\_CONFIG__
 ```
-{'buildicon': True, 'atomid': 'randomid', 'keywords': [], 'combinejs': True, 'spellcheck': True, 'patches': 'patches', 'title': 'some default title', 'quiltcomment': True, 'combinecss': True, 'priority': '0.5', 'pageobject': True, 'spellignore': ['maths', 'codehilite'], 'local': False, 'correctwords': 'correct_words.txt', 'vendorfycss': True, 'iconsizes': [64, 60, 76, 120, 152], 'categories': [], 'assets': 'assets', 'name': 'some name', 'posts': 'posts', 'copymd': True, 'blogname': 'quilt news', 'pagecomment': True, 'domain': 'some_name.com', 'page_ext': ['*.html', '*.md'], 'quilt': 'quilt.html', 'patchcomment': True, 'minimizecss': True, 'asset_ext': ['*.*'], 'buildsearch': True, 'author': 'you', 'buildatom': True, 'buildrobot': True, 'iconfile': 'icon.png', 'assetcomment': True, 'email': 'you@some_name.com', 'templates': 'templates', 'patch_ext': ['*.html'], 'buildrss': True, 'description': 'default description', 'tags': [], 'template_ext': ['*.html'], 'rssid': 'randomid', 'changefreq': 'monthly', 'pages': 'pages', 'buildindex': True, 'buildsitemap': True, 'minimizejs': True, 'buildblog': True}
+{'copyrighter': 'you', 'buildicon': True, 'atomid': 'randomid', 'keywords': [], 'combinejs': True, 'spellcheck': True, 'patches': 'patches', 'title': 'some default title', 'quiltcomment': True, 'combinecss': True, 'priority': '0.5', 'pageobject': True, 'local': False, 'correctwords': 'correct_words.txt', 'copydate': 2015, 'vendorfycss': True, 'iconsizes': [64, 60, 76, 120, 152], 'assets': 'assets', 'categories': [], 'spellignore': ['maths', 'codehilite'], 'name': 'some name', 'posts': 'posts', 'copymd': True, 'blogname': 'quilt news', 'pagecomment': True, 'domain': 'some_name.com', 'page_ext': ['*.html', '*.md'], 'quilt': 'quilt.html', 'patchcomment': True, 'minimizecss': True, 'images': 'imgs', 'asset_ext': ['*.*'], 'buildsearch': True, 'author': 'you', 'buildatom': True, 'buildrobot': True, 'iconfile': 'icon.png', 'assetcomment': True, 'email': 'you@some_name.com', 'templates': 'templates', 'patch_ext': ['*.html'], 'buildrss': True, 'description': 'default description', 'tags': [], 'template_ext': ['*.html'], 'rssid': 'randomid', 'changefreq': 'monthly', 'pages': 'pages', 'buildindex': True, 'buildsitemap': True, 'minimizejs': True, 'buildblog': True}
 ```
 
 __EMPTY\_BRACES\_RE__
@@ -283,7 +296,7 @@ __MORE\_THAN\_ONE\_WHITESPACE\_RE__
 
 __NO\_EMPTY\_TAGS__
 ```
-['section', 'article', 'header', 'footer', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hgroup', 'nav', 'aside', 'div', 'main', 'p', 'pre', 'bockquote', 'ol', 'ul', 'li', 'a', 'abbr', 'cite', 'code', 'b', 'strong', 'em', 'i', 's', 'q', 'small', 'samp', 'u', 'time', 'var', 'sup', 'sub', 'kdb', 'mark', 'dl', 'dt', 'dd', 'table', 'thead', 'td', 'tr', 'th', 'tbody', 'tfooter']
+['section', 'article', 'header', 'footer', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hgroup', 'nav', 'aside', 'div', 'main', 'p', 'pre', 'bockquote', 'ol', 'ul', 'li', 'a', 'abbr', 'cite', 'code', 'b', 'strong', 'em', 's', 'q', 'small', 'samp', 'u', 'time', 'var', 'sup', 'sub', 'kdb', 'mark', 'dl', 'dt', 'dd', 'table', 'thead', 'td', 'tr', 'th', 'tbody', 'tfooter']
 ```
 
 __OPTIONAL\_CARRIAGE\_RETURN\_RE__
