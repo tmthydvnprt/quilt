@@ -16,7 +16,7 @@ Cause there's a bunch of other static site generators already!
 
 ### Notable features
 - [x] focus on page content, site features (head, navbar, footer) are written & stored separately
-- [x] write content in <mark>`html` or `markdown</mark>`
+- [x] write content in <mark>`html` or `markdown`</mark>
 - [x] extensible markdown for custom needs
 - [x] <mark>LaTeX Support</mark>
 - [x] unique template overrides in each directory
