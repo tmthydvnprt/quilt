@@ -10,7 +10,7 @@
     -- Page stitched together with quilt.py
     -- url            : /Users/timothydavenport/GitHub/quilt/tests/output/features_todo.html
     -- quilted on     : 05/13/15
-    -- stitching took : 0.042 s
+    -- stitching took : 0.044 s
     -- quilt pagevars :
     --            author : tmthydvnprt
     --       categories : []
@@ -116,8 +116,9 @@
 <div class="row">
 <div class="col-sm-8 col-sm-offset-2 markdowned">
 <h1 id="featurestodo">Features+Todo<a alt="&sect;" class="headerlink" href="#featurestodo" title="Permanent link">&sect;</a></h1>
-<p class="lead">Features are just todos with an &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input checked="" type="checkbox"/>!<br/>
-Unfinished or untested tasks are marked with a <code>~</code>, <em>questionable</em> tasks end with a <code>?</code>.<br/></p>
+<p class="lead"><strong>Features</strong> are just <strong>todos</strong> with an &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input checked="" type="checkbox"/>!<br/>
+Unfinished/untested todos are marked with <small><mark>dev</mark></small>.<br/>
+<em>Questionable</em> todos are marked with <small><mark>???</mark></small>.<br/></p>
 <hr/>
 <div class="toc">
 <ul>
@@ -139,7 +140,7 @@ Unfinished or untested tasks are marked with a <code>~</code>, <em>questionable<
 <li><input type="checkbox"/> profiled and optimized</li>
 <li><input type="checkbox"/> w3 validator</li>
 <li><input type="checkbox"/> pass user site vars (from <code>config.json</code>) to page vars</li>
-<li><input type="checkbox"/> warnings for unused files <code>css</code>, <code>js</code>, maybe <code>html</code></li>
+<li><input type="checkbox"/> <small><mark>???</mark></small> warnings for unused files <code>css</code>, <code>js</code>, maybe <code>html</code></li>
 <li><input type="checkbox"/></li>
 </ul>
 <h3 id="quiltingroom-class-site45level">QuiltingRoom class <small>(site-level)</small><a alt="&sect;" class="headerlink" href="#quiltingroom-class-site45level" title="Permanent link">&sect;</a></h3>
@@ -170,13 +171,15 @@ Unfinished or untested tasks are marked with a <code>~</code>, <em>questionable<
 <li><input checked="" type="checkbox"/> generate blank index for empty directories</li>
 <li><input checked="" type="checkbox"/> generate sitemap</li>
 <li><input checked="" type="checkbox"/> build keyword search index for whole site search (e.g. with <code>typeahead</code>)</li>
-<li><input type="checkbox"/> relative/root path handling~</li>
+<li><input type="checkbox"/> <small><mark>dev</mark></small> relative/root path handling</li>
 <li><input checked="" type="checkbox"/> favicon image creator (with multiple sizes)</li>
 <li><input checked="" type="checkbox"/> spell checking <ul class="checklist">
 <li><input checked="" type="checkbox"/> user specific correct word list <code>correct_words.txt</code></li>
+<li><input type="checkbox"/> suggest words for <em>errors</em></li>
 </ul>
 </li>
-<li><input type="checkbox"/></li>
+<li><input type="checkbox"/> generate <code>404.html</code> page if not found</li>
+<li><input type="checkbox"/> </li>
 </ul>
 <h3 id="blog-class-blog45level">Blog class <small>(blog-level)</small><a alt="&sect;" class="headerlink" href="#blog-class-blog45level" title="Permanent link">&sect;</a></h3>
 <hr/>
@@ -185,14 +188,16 @@ Unfinished or untested tasks are marked with a <code>~</code>, <em>questionable<
 <li><input checked="" type="checkbox"/> reverse chronological order home page</li>
 <li><input checked="" type="checkbox"/> category pages</li>
 <li><input checked="" type="checkbox"/> tag pages</li>
-<li><input checked="" type="checkbox"/> top sentences (summary?) for post links</li>
+<li><input checked="" type="checkbox"/> top sentences (summary <small><mark>???</mark></small>) for post links</li>
 <li><input checked="" type="checkbox"/> rss/atom for blog</li>
 <li><input type="checkbox"/> <s>folder structure is YYYY/MM/DD</s></li>
 <li><input checked="" type="checkbox"/> hierarchical view from each post, tag or category page</li>
 <li><input checked="" type="checkbox"/> pagination</li>
-<li><input type="checkbox"/> handle, dates, title, authors</li>
-<li><input type="checkbox"/> handle space in names?</li>
-<li><input type="checkbox"/> handle capitalization?</li>
+<li><input checked="" type="checkbox"/> handle, dates, title, authors</li>
+<li><input type="checkbox"/> <small><mark>dev</mark></small> handle space in names</li>
+<li><input type="checkbox"/> <small><mark>dev</mark></small> handle capitalization</li>
+<li><input type="checkbox"/> add <em>featured</em> pages that gathers posts with <code>featured</code> pagevar boolean</li>
+<li><input type="checkbox"/> <small><mark>???</mark></small> <code>git</code> based timestamps for posts</li>
 <li><input type="checkbox"/></li>
 </ul>
 <h3 id="quilter-class-page45level">Quilter class <small>(page-level)</small><a alt="&sect;" class="headerlink" href="#quilter-class-page45level" title="Permanent link">&sect;</a></h3>
@@ -201,7 +206,7 @@ Unfinished or untested tasks are marked with a <code>~</code>, <em>questionable<
 <li><input checked="" type="checkbox"/> starts with a <code>quilt.html</code> file defining <code>&lt;patch&gt;</code> tags</li>
 <li><input checked="" type="checkbox"/> replace all <code>&lt;patch id="x"&gt;</code> tags with <code>patches/x.html</code> files</li>
 <li><input checked="" type="checkbox"/> allows page variables with <code>{{***}}</code> braces wrapping</li>
-<li><input type="checkbox"/> pretty or minimized html~?</li>
+<li><input type="checkbox"/> <small><mark>dev</mark></small> <small><mark>???</mark></small> pretty or minimized html</li>
 <li><input checked="" type="checkbox"/> page file contains <code>json</code> header, content (<code>html</code> or <code>.md</code>), and <code>script</code></li>
 <li><input checked="" type="checkbox"/> parse <code>json</code></li>
 <li><input checked="" type="checkbox"/> parse page</li>
@@ -229,7 +234,7 @@ Unfinished or untested tasks are marked with a <code>~</code>, <em>questionable<
 <li><input checked="" type="checkbox"/> auto remove empty tags</li>
 <li><input checked="" type="checkbox"/> tag and category links</li>
 <li><input checked="" type="checkbox"/> insert permalinks for headers</li>
-<li><input type="checkbox"/> add markdown source link</li>
+<li><input checked="" type="checkbox"/> add markdown source link</li>
 <li><input type="checkbox"/></li>
 </ul>
 <div class="alert alert-warning">
