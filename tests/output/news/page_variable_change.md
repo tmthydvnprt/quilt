@@ -1,6 +1,6 @@
-title:       quilt 0.1.1
+title:       Page Variable Change
 date:        3/9/2015 8:31 am
-description: release memo
+description: release memo (0.1.1)
 author:      tim
 categories:  release
 tags:        quilt
@@ -27,9 +27,9 @@ notes
 
 For example the page variables of this page are written as
 ```
-title:       quilt.py (0.1.1) release
+title:       Page Variable Change
 date:        3/9/2015 8:31 am
-description: 0.1.1 release memo
+description: release memo (0.1.1)
 author:      tim
 categories:  release
 tags:        quilt

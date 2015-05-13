@@ -46,6 +46,7 @@ _Questionable_ todos are marked with <small>==???==</small>.
 - [x] favicon image creator (with multiple sizes)
 - [x] spell checking 
     - [x] user specific correct word list `correct_words.txt`
+    - [ ] suggest words for *errors*
 - [ ] generate `404.html` page if not found
 - [ ] 
 
@@ -64,6 +65,8 @@ _Questionable_ todos are marked with <small>==???==</small>.
 - [x] handle, dates, title, authors
 - [ ] <small>==dev==</small> handle space in names
 - [ ] <small>==dev==</small> handle capitalization
+- [ ] add *featured* pages that gathers posts with `featured` pagevar boolean
+- [ ] <small>==???==</small> `git` based timestamps for posts
 - [ ]
 
 ###Quilter class ---(page\-level)---

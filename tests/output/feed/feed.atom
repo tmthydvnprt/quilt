@@ -5,7 +5,7 @@
     <link href="some_name.com/feed/" rel="self"/>
     <link href="some_name.com"/>
     <id>randomid</id>
-    <updated>2015-05-13T06:44:36-7:00</updated>
+    <updated>2015-05-13T07:06:32-7:00</updated>
         <entry>
         <title>HTML Entities<title>
         <link href="/Users/timothydavenport/GitHub/quilt/tests/output/news/html_entities.html"/>
@@ -56,7 +56,7 @@ A list of MathJax \(\LaTeX\) Command  examples. These alphabetical examples come
         </author>
     </entry>
     <entry>
-        <title>quilt's markdown syntax<title>
+        <title>Quilt's Markdown Syntax<title>
         <link href="/Users/timothydavenport/GitHub/quilt/tests/output/news/markdown_syntax.html"/>
         <link rel="alternate" type="text/html" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/markdown_syntax.html"/>
         <id>randomid</id>
@@ -74,18 +74,14 @@ Quilt uses Python-Markdown as it's markdown interpreter. Besides the base syntax
         </author>
     </entry>
     <entry>
-        <title>quilt 0.1.1<title>
-        <link href="/Users/timothydavenport/GitHub/quilt/tests/output/news/quilt-0.1.1.py.html"/>
-        <link rel="alternate" type="text/html" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/quilt-0.1.1.py.html"/>
+        <title>Quilt: A python based static site html stitcher.<title>
+        <link href="/Users/timothydavenport/GitHub/quilt/tests/output/news/quilt_a_python_based_static_site_html_stitcher.html"/>
+        <link rel="alternate" type="text/html" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/quilt_a_python_based_static_site_html_stitcher.html"/>
         <id>randomid</id>
-        <updated>3/9/2015 8:31 am</updated>
+        <updated>3/1/2015 3:15 pm</updated>
         <summary>
-The syntax for page variable headers changed from json  to key: value plaintext. The method follows MultiMarkdown's metadata
-
-key
-[A-Za-z0-9_-]+ from beginning of line until :
-value
-a string per line</summary>
+A python based static site html stitcher. Description
+Generate a static site via python from content-only .html and .md pages that are stitched together  along with patch (e.g.</summary>
         <content type="xhtml">
             <div xmlns="http://www.w3.org/1999/xhtml">
                 <p></p>
@@ -97,14 +93,18 @@ a string per line</summary>
         </author>
     </entry>
     <entry>
-        <title>quilt 0.1.0<title>
-        <link href="/Users/timothydavenport/GitHub/quilt/tests/output/news/quilt-0.1.0.py.html"/>
-        <link rel="alternate" type="text/html" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/quilt-0.1.0.py.html"/>
+        <title>Page Variable Change<title>
+        <link href="/Users/timothydavenport/GitHub/quilt/tests/output/news/page_variable_change.html"/>
+        <link rel="alternate" type="text/html" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/page_variable_change.html"/>
         <id>randomid</id>
-        <updated>3/1/2015 3:15 pm</updated>
+        <updated>3/9/2015 8:31 am</updated>
         <summary>
-A python based static site html stitcher. Description
-Generate a static site via python from content-only .html and .md pages that are stitched together  along with patch (e.g.</summary>
+The syntax for page variable headers changed from json  to key: value plaintext. The method follows MultiMarkdown's metadata
+
+key
+[A-Za-z0-9_-]+ from beginning of line until :
+value
+a string per line</summary>
         <content type="xhtml">
             <div xmlns="http://www.w3.org/1999/xhtml">
                 <p></p>

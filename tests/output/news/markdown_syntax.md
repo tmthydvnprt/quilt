@@ -1,4 +1,4 @@
-title:       quilt's markdown syntax
+title:       Quilt's Markdown Syntax
 date:        03/08/2015 1:32 pm
 description: An explanation of the markdown syntax specifics used by quilt
 author:      tim

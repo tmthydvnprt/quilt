@@ -1,6 +1,6 @@
-title:       quilt 0.1.0
+title:       Quilt: A python based static site html stitcher.
 date:        3/1/2015 3:15 pm
-description: initial development release
+description: initial development release (0.1.0)
 author:      tim
 categories:  release
 tags:        quilt
