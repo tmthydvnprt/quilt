@@ -16,9 +16,9 @@ Cause there's a bunch of other static site generators already!
 
 ### Notable features
 - [x] focus on page content, site features (head, navbar, footer) are written & stored separately
-- [x] write content in `html` or `markdown`
+- [x] write content in <mark>`html` or `markdown</mark>`
 - [x] extensible markdown for custom needs
-- [x] LaTeX Support
+- [x] <mark>LaTeX Support</mark>
 - [x] unique template overrides in each directory
 - [x] automatically fill `alt`/`img` attributes, and remove empty tags
 - [x] automatically vendorize, minimize, & combine `css` and `js` files
@@ -26,10 +26,10 @@ Cause there's a bunch of other static site generators already!
 - [x] provide some dynamic blogy abilities (reverse chronology, tags, categories)
 - [x] create atom/rss feeds
 - [x] index the text of final site for searching (e.g. with typeahead)
-- [ ] potential for `nltk` integration
+- [ ] <mark>potential for `nltk` integration</mark>
 - [x] spell checking
 - [x] Check out all the features and what's coming up on the features+todo page.
-- [ ] parallel processing
+- [ ] <mark>parallel processing</mark>
 - [ ] `git` integration (pull modify dates from repo commits)
 - [ ] *any ideas?*
 - [ ] 
