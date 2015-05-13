@@ -34,8 +34,10 @@ Cause there's a bunch of other static site generators already!
 - [ ] *any ideas?*
 - [ ] 
 
+Check out all the features and what's coming up on the [features+todo](http://tmthydvnprt.com/quilt/features_todo.html) page
+
 ### Want an example?
-This site was stitched with quilt! Download or inspect the source.
+This [site](http://tmthydvnprt.github.io/quilt) was stitched with quilt! Download or inspect the [source](https://github.com/tmthydvnprt/quilt/tree/master/tests).
 
 ### Want to learn more?
-Get an overview on the about(readme) page, or read the full documentation.
+Get an overview on the [about(readme)](http://tmthydvnprt.com/quilt/readme.html) page, or read the [documentation](http://tmthydvnprt.com/quilt/docs/index.html).
