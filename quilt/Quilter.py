@@ -20,9 +20,9 @@ Object to stitch a page based on quilt
 9. fill in blank `alt` attributes for `<a>` and `<img>` tags
 
 project    : quilt
-version    : 0.1.0
+version    : 0.1.1
 status     : development
-modifydate : 2015-05-12 06:43:00 -0700
+modifydate : 2015-05-13 07:09:00 -0700
 createdate : 2015-04-28 06:02:00 -0700
 website    : https://github.com/tmthydvnprt/quilt
 author     : tmthydvnprt
