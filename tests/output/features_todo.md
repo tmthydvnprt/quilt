@@ -3,8 +3,9 @@ description: see what quilt does
 
 Features+Todo
 =============
-Features are just todos with an &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input checked="" type="checkbox"/>!
-Unfinished or untested tasks are marked with a `~`, _questionable_ tasks end with a `?`.
+**Features** are just **todos** with an &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input checked="" type="checkbox"/>!
+Unfinished/untested todos are marked with <small>==dev==</small>.
+_Questionable_ todos are marked with <small>==???==</small>.
 {: .lead}
 ****************************************************************************************************************
 [TOC]
@@ -18,7 +19,7 @@ Unfinished or untested tasks are marked with a `~`, _questionable_ tasks end wit
 - [ ] profiled and optimized
 - [ ] w3 validator
 - [ ] pass user site vars (from `config.json`) to page vars
-- [ ] warnings for unused files `css`, `js`, maybe `html`
+- [ ] <small>==???==</small> warnings for unused files `css`, `js`, maybe `html`
 - [ ]
 
 ###QuiltingRoom class ---(site\-level)---
@@ -41,11 +42,12 @@ Unfinished or untested tasks are marked with a `~`, _questionable_ tasks end wit
 - [x] generate blank index for empty directories
 - [x] generate sitemap
 - [x] build keyword search index for whole site search (e.g. with `typeahead`)
-- [ ] relative/root path handling~
+- [ ] <small>==dev==</small> relative/root path handling
 - [x] favicon image creator (with multiple sizes)
 - [x] spell checking 
     - [x] user specific correct word list `correct_words.txt`
-- [ ]
+- [ ] generate `404.html` page if not found
+- [ ] 
 
 ###Blog class ---(blog\-level)---
 *****************************************
@@ -54,14 +56,14 @@ Unfinished or untested tasks are marked with a `~`, _questionable_ tasks end wit
 - [x] reverse chronological order home page
 - [x] category pages
 - [x] tag pages
-- [x] top sentences (summary?) for post links
+- [x] top sentences (summary <small>==???==</small>) for post links
 - [x] rss/atom for blog
 - [ ] ~~folder structure is YYYY/MM/DD~~
 - [x] hierarchical view from each post, tag or category page
 - [x] pagination
-- [ ] handle, dates, title, authors
-- [ ] handle space in names?
-- [ ] handle capitalization?
+- [x] handle, dates, title, authors
+- [ ] <small>==dev==</small> handle space in names
+- [ ] <small>==dev==</small> handle capitalization
 - [ ]
 
 ###Quilter class ---(page\-level)---
@@ -70,7 +72,7 @@ Unfinished or untested tasks are marked with a `~`, _questionable_ tasks end wit
 - [x] starts with a `quilt.html` file defining `<patch>` tags
 - [x] replace all `<patch id="x">` tags with `patches/x.html` files
 - [x] allows page variables with `{ {***}}` braces wrapping
-- [ ] pretty or minimized html~?
+- [ ] <small>==dev==</small> <small>==???==</small> pretty or minimized html
 - [x] page file contains `json` header, content (`html` or `.md`), and `script`
 - [x] parse `json`
 - [x] parse page
@@ -94,7 +96,7 @@ Unfinished or untested tasks are marked with a `~`, _questionable_ tasks end wit
 - [x] auto remove empty tags
 - [x] tag and category links
 - [x] insert permalinks for headers
-- [ ] add markdown source link
+- [x] add markdown source link
 - [ ]
 
 <div markdown="1" class="alert alert-warning">
