@@ -12,7 +12,7 @@ description: a python based static site html code stitcher
                 <h1>{{name}}</h1>
                 <p>A <code>python</code> based static site <code>html</code> <em>stitcher</em>.</p>
             </div>
-            <div class="col-xs-6 col-sm-4">
+            <div class="col-sm-4 hidden-xs">
                 <ul>
                     <li class="dir"><code>site_files/</code><br/>
                         <ul>
