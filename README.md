@@ -3,7 +3,7 @@ Quilt
 
 What is quilt? — another static site generator
 ----------------------------------------------
-Generate a static site via python from content-only html and markdown pages that are stitched together along with patch (e.g. nav.html, footer.html) files onto a main site quilt.html file.
+Generate a static site via python from content-only html and markdown pages that are stitched together along with patch (e.g. nav.html, footer.html) files onto a main site quilt.html file. http://tmthydvnprt.github.io/quilt
 
 ### Why? 
 Cause there's a bunch of other static site generators already!
