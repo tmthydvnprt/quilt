@@ -43,9 +43,9 @@ Adds both included and custom extensions to `Python-Markdown` :
 19. AetherExtension()
 
 project    : quilt
-version    : 0.1.0
+version    : 0.1.1
 status     : development
-modifydate : 2015-05-12 06:43:00 -0700
+modifydate : 2015-05-13 07:09:00 -0700
 createdate : 2015-04-28 06:02:00 -0700
 website    : https://github.com/tmthydvnprt/quilt
 author     : tmthydvnprt
@@ -254,12 +254,12 @@ __MATHS\_RE__
 
 __MD__
 ```
-<markdown.Markdown object at 0x109dba850>
+<markdown.Markdown object at 0x1093b9850>
 ```
 
 __MD\_EXT__
 ```
-['markdown.extensions.extra', 'markdown.extensions.nl2br', 'markdown.extensions.sane_lists', 'markdown.extensions.codehilite', 'markdown.extensions.wikilinks', 'markdown.extensions.toc', <Markdown.ChecklistExtension object at 0x109dba690>, <Markdown.CustomSpanExtension object at 0x109dba710>, <Markdown.ReplaceTagsExtension object at 0x109dba750>, 'markdown.extensions.footnotes', <Markdown.SymbolExtension object at 0x109dba790>, <Markdown.MultiExtension object at 0x109dba7d0>, <Markdown.MathExtension object at 0x109dba810>]
+['markdown.extensions.extra', 'markdown.extensions.nl2br', 'markdown.extensions.sane_lists', 'markdown.extensions.codehilite', 'markdown.extensions.wikilinks', 'markdown.extensions.toc', <Markdown.ChecklistExtension object at 0x1093b9690>, <Markdown.CustomSpanExtension object at 0x1093b9710>, <Markdown.ReplaceTagsExtension object at 0x1093b9750>, 'markdown.extensions.footnotes', <Markdown.SymbolExtension object at 0x1093b9790>, <Markdown.MultiExtension object at 0x1093b97d0>, <Markdown.MathExtension object at 0x1093b9810>]
 ```
 
 __MD\_EXT\_CONFIG__
