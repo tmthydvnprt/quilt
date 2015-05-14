@@ -3,6 +3,11 @@ Todo
 
 Issues found while using in the wild
 
+Functionallity
+--------------
+
+- [ ] don't override patch `id` if `id` is already defined by the element
+
 Error Handling
 --------------
 
@@ -12,8 +17,11 @@ Error Handling
 
 Robust Regex
 ------------
-- [ ] allow whitespace in pagevars:
+
+- [x] allow whitespace in pagevars:
 
       turn `FIRST_KEY_RE = re.compile(r'[A-Za-z0-9_-]+:')`
       
       into `FIRST_KEY_RE = re.compile(r'[A-Za-z0-9_-]+[ \t]*:')`
+
+      
