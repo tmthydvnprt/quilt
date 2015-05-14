@@ -13,5 +13,7 @@ Error Handling
 Robust Regex
 ------------
 - [ ] allow whitespace in pagevars:
+
       turn `FIRST_KEY_RE = re.compile(r'[A-Za-z0-9_-]+:')`
+      
       into `FIRST_KEY_RE = re.compile(r'[A-Za-z0-9_-]+[ \t]*:')`
