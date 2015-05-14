@@ -6,7 +6,7 @@ Issues found while using in the wild
 Functionallity
 --------------
 
-- [ ] don't override patch `id` if `id` is already defined by the element
+- [x] don't override patch `id` if `id` is already defined by the element
 
 Error Handling
 --------------

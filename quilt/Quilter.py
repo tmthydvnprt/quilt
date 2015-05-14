@@ -235,8 +235,8 @@ class Quilter(object):
                         patch.append(patch_soup.body)
                         patch.body.unwrap()
 
-                    # auto add patch id for replaced element id
-                    patch.contents[1].attrs["id"] = patch["id"]
+                    # auto add patch id for replaced element id, unless already defined
+                    patch.contents[1].attrs["id"] = patch.contents[1].attrs.get("id") or patch["id"]
                     # add patch comment if necessary
                     if self.pagevars["patchcomment"]:
                         patch.insert(0, self.soup.new_string(PATCHCOMMENT % (patch["id"]), bs4.Comment))
