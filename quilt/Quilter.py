@@ -345,7 +345,11 @@ class Quilter(object):
         for tag_name in NO_EMPTY_TAGS:
             for tag in self.soup.body.findAll(tag_name):
                 if not tag.contents:
-                    tag.decompose()
+                    if tag.attrs.get("id") or tag.attrs.get("class"):
+                        print 'warning: empty tag on page', self.pagevars["url"].replace(self.pagevars["domain"], '')
+                        print 'id =', tag.attrs.get("id"), 'class =', tag.attrs.get("class")
+                    else:
+                        tag.decompose()
         return self
 
     #@profile
