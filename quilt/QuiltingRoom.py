@@ -173,6 +173,9 @@ class QuiltingRoom(object):
         else:
             self.blog = None
 
+        # processes all template files
+        self.patches["templates"] = '\n'.join([read_file(template) for template in self.files["templates"]])
+
     #@profile
     def ouput_path(self, filepath='', replacement=''):
         """get the output directory equivalent"""
@@ -567,7 +570,8 @@ class QuiltingRoom(object):
         __t0 = time.time()
 
         print QUILTHEADER % (self.source, self.config["date"]), '\n', \
-        'loaded patches:', '\t' + '  '.join(self.patches.keys()), '\n'
+        'loaded patches:', '\t' + '  '.join(self.patches.keys()), '\n' \
+        'loaded templates:', '\t' + '  '.join([os.path.splitext(os.path.basename(x))[0] for x in self.files["templates"]]), '\n'
 
         # destroy last version
         if os.path.isdir(self.output):
