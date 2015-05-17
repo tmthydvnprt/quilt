@@ -152,7 +152,7 @@ class QuiltingRoom(object):
             # content page variables (intended to be overriden)
             # -----------------------------------------------------------------------------------
             "name"          : self.config["name"],           # site/project name
-            "title"         : self.config["name"],           # page title
+            "title"         : self.config["title"],          # page title
             "author"        : self.config["author"],         # page author
             'email'         : self.config["email"],          # page email
             "description"   : self.config["description"],    # page description

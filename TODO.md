@@ -21,8 +21,12 @@ Robust Regex
 
 - [x] allow whitespace in pagevars:
 
-      turn `FIRST_KEY_RE = re.compile(r'[A-Za-z0-9_-]+:')`
+      turn 
+        FIRST_KEY_RE = re.compile(r'[A-Za-z0-9_-]+:')
+        KEY_VALUE_RE = re.compile(r'^[ ]{0,3}(?P<key>[A-Za-z0-9_-]+):\s*(?P<value>.*)')
       
-      into `FIRST_KEY_RE = re.compile(r'[A-Za-z0-9_-]+[ \t]*:')`
+      into 
+        FIRST_KEY_RE = re.compile(r'[A-Za-z0-9_-]+[ \t]*:')
+        KEY_VALUE_RE = re.compile(r'^[ ]{0,3}(?P<key>[A-Za-z0-9_-]+)[ \t]*:\s*(?P<value>.*)')
 
       
