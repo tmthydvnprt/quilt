@@ -107,7 +107,7 @@ DEFAULT_CONFIG = {
 }
 
 VENDORS = ['-webkit-', '-moz-', '-ms-', '-o-']
-PREFIXES = ['transform', 'transition', 'animation', 'perspective', 'padding-start', 'padding-end']
+PREFIXES = ['transform', 'transition', 'animation', 'perspective', 'perspective-origin', 'padding-start', 'padding-end']
 AT_RULES = ['keyframes']
 
 NO_EMPTY_TAGS = [
