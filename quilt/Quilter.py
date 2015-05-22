@@ -201,7 +201,7 @@ class Quilter(object):
         patch_tags = self.soup.find_all("patch")
         while len(patch_tags) > 0:
             for patch in patch_tags:
-                if patch["id"] in self.patches:
+                if patch["id"] in self.patches and self.patches[patch["id"]]:
 
                     if patch["id"] == "scripts":
                         patch_soup = bs4.BeautifulSoup(
