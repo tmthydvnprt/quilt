@@ -87,6 +87,7 @@ DEFAULT_CONFIG = {
     "iconsizes"   : [64, 60, 76, 120, 152], # image sizes to create
     "spellcheck"  : True,                   # spell check after quilting
     "spellignore" : ["maths", "codehilite"],# classes to ignore spelling
+    "emptywarning": False,                  # print empty warnings
     # file and directory names
     # -----------------------------------------------------------------------------------
     "quilt"       : "quilt.html",           # name of quilt file

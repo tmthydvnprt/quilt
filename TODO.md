@@ -7,7 +7,8 @@ Functionallity
 --------------
 
 - [x] don't override patch `id` if `id` is already defined by the element
-- [ ] create warning for removing empty elements with id or class
+- [x] create warning for removing empty elements with id or class
+- [ ] make warnings supressable
 
 Error Handling
 --------------
