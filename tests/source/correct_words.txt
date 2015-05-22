@@ -1,4 +1,7 @@
 timothydavenport
+juxtapy
+unittest
+testcase
 correct_words
 pylint
 codehilite
