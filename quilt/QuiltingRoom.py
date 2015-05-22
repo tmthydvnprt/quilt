@@ -478,7 +478,7 @@ class QuiltingRoom(object):
             page_text = read_file(page_loc).replace('<br/>', ' <br/>')
             # get text and spell check
             soup = bs4.BeautifulSoup(page_text, "lxml", parse_only=BODY_STRAINER)
-            for ignore in soup(['script', 'code']):
+            for ignore in soup(['script', 'code', 'pre']):
                 ignore.extract()
             for ignore in soup.find_all(True, self.config["spellignore"]):
                 ignore.extract()
