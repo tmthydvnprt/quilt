@@ -9,6 +9,7 @@ Functionallity
 - [x] don't override patch `id` if `id` is already defined by the element
 - [x] create warning for removing empty elements with id or class
 - [ ] make warnings supressable
+- [ ] `transform-origin: 0 0;` gets compressed to `transform-origin: 0;`, this is missing y value which defaults to 50%;
 
 Error Handling
 --------------
