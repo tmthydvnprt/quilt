@@ -219,7 +219,7 @@ class Blog(object):
         rss_xml = RSSXML % (
             self.config['name'],
             self.config['posts'],
-            self.config['url'],
+            self.config['domain'],
             self.config['rssid'],
             self.config["now"]["iso"],
             self.config["now"]["iso"],
