@@ -44,12 +44,13 @@ def create_post_list(name, posts=None, offset=''):
     postlist = []
     for post in posts:
         post_url = offset + os.path.basename(post['url'])
+        print post['summary']
         postlist.append(POST % (
             post_url,
             post['title'],
             post['author'],
             post['date'],
-            post['summary'].encode('utf8'),
+            post['summary'], #.encode('utf8'),
             post_url,
             os.path.join(os.path.dirname(post["url"]), 'tags', 'index.html'),
             group_links(post, "tags"),
@@ -178,14 +179,14 @@ class Blog(object):
             post['url'],
             self.config['atomid'],
             post['date'],
-            post['summary'].encode('utf8'),
-            post['content'].encode('utf8'),
+            post['summary'], #.encode('utf8'),
+            post['content'], #.encode('utf8'),
             post['author'],
             post['email']
         ) for post in self.posts]
 
         # generate the atom xml file
-        atom_xml = ATOMXML % (
+        atom_xml = (ATOMXML % (
             self.config["name"],
             self.config["posts"],
             self.config["domain"],
@@ -193,7 +194,7 @@ class Blog(object):
             self.config["atomid"],
             self.config["now"]["iso"],
             ''.join(entries)
-        )
+        )).encode('utf8')
 
         feed_path = os.path.join(self.output, 'feed')
         # make feed/ if need be
@@ -216,11 +217,11 @@ class Blog(object):
             post['url'],
             self.config['atomid'],
             post['date'],
-            post['summary'].encode('utf8')
+            post['summary'], #.encode('utf8')
         ) for post in self.posts]
 
         # generate the rss xml file
-        rss_xml = RSSXML % (
+        rss_xml = (RSSXML % (
             self.config['name'],
             self.config['posts'],
             self.config['domain'],
@@ -229,7 +230,7 @@ class Blog(object):
             self.config["now"]["iso"],
             self.config['author'],
             ''.join(items)
-        )
+        )).encode('utf8')
 
         feed_path = os.path.join(self.output, 'feed')
         # make feed/ if need be
