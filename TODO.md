@@ -14,8 +14,8 @@ Functionallity
 
 - [x] create warning for removing empty elements with id or class
 - [ ] make warnings supressable
-- [ ] add `latest.html` for blog
 - [ ] add `featured.html` for blog
+- [ ] make blog index page oriented
 
 Error Handling
 --------------
