@@ -44,7 +44,6 @@ def create_post_list(name, posts=None, offset=''):
     postlist = []
     for post in posts:
         post_url = offset + os.path.basename(post['url'])
-        print post['summary']
         postlist.append(POST % (
             post_url,
             post['title'],
