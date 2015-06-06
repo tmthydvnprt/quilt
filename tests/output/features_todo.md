@@ -20,7 +20,8 @@ _Questionable_ todos are marked with <small>==???==</small>.
 - [ ] w3 validator
 - [ ] pass user site vars (from `config.json`) to page vars
 - [ ] <small>==???==</small> warnings for unused files `css`, `js`, maybe `html`
-- [ ]
+- [ ] generate blank site
+- [ ] 
 
 ###QuiltingRoom class ---(site\-level)---
 *************************************************

@@ -156,7 +156,7 @@ class Blog(object):
 
         # check for directory quilt and directory patches?
         quilt, patches = check_local_quilt(os.path.dirname(page), self.quilt_pattern, self.patches, self.config)
-            
+
         # stitch the page together
         qultr = Quilter(page, quilt, patches, page_html, self.config)
         qultr.stitch()
