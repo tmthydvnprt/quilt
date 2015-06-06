@@ -97,6 +97,7 @@ class Blog(object):
 
         # check for directory quilt and directory patches?
         quilt, patches = check_local_quilt(page, self.quilt_pattern, self.patches, self.config)
+
         # stitch the page together
         qultr = Quilter(page, quilt, patches, page_html, self.config)
         qultr.stitch()
@@ -136,7 +137,7 @@ class Blog(object):
             page = os.path.join(self.config["posts"], name, "%s.html" % group)
 
             # check for directory quilt and directory patches?
-            quilt, patches = check_local_quilt(page, self.quilt_pattern, self.patches, self.config)
+            quilt, patches = check_local_quilt(os.path.dirname(page), self.quilt_pattern, self.patches, self.config)
 
             # stitch the page together
             qultr = Quilter(page, quilt, patches, page_html, self.config)
@@ -153,8 +154,11 @@ class Blog(object):
         # stitch blog home page
         page = os.path.join(self.config["posts"], name, "index.html")
 
+        # check for directory quilt and directory patches?
+        quilt, patches = check_local_quilt(os.path.dirname(page), self.quilt_pattern, self.patches, self.config)
+            
         # stitch the page together
-        qultr = Quilter(page, self.quilt_pattern, self.patches, page_html, self.config)
+        qultr = Quilter(page, quilt, patches, page_html, self.config)
         qultr.stitch()
         qultr.clean_html()
         qultr.remove_empty()

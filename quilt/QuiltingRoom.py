@@ -513,7 +513,6 @@ class QuiltingRoom(object):
             # read page
             page_text = read_file(page)
 
-
             # check for directory quilt and directory patches?
             quilt, patches = check_local_quilt(page, self.quilt_pattern, self.patches, self.config)
 
