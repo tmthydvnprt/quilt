@@ -209,14 +209,13 @@ def find_hrefsrc(soup, tag_name='', re_pattern=None):
 #@profile
 def path_link_list(path_string='', file_name=''):
     """create lists of links for each level in a path"""
-
     post_paths = path_string.split('/')[1:]
     path_list = []
     for j, post_path in enumerate(post_paths):
         if j == len(post_paths)-1:
             path_list.append('<li class="active">%s</li>' % (file_name))
         else:
-            url = '%sindex.html' % '../' * (len(post_paths)-2-j)
+            url = '%sindex.html' % ('../' * (len(post_paths)-2-j))
             path_list.append('<li><a href="%s">%s</a></li>' % (url, post_path))
 
     return '\n'.join(path_list)
