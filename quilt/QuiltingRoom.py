@@ -549,10 +549,20 @@ class QuiltingRoom(object):
             # read page
             page_text = read_file(page)
 
-            qultr = Quilter(page, self.quilt_pattern, self.patches, page_text, self.config)
+            # check for directory quilt and directory patches?
+            quilt, patches = check_local_quilt(page, self.quilt_pattern, self.patches, self.config)
+
+            # stitch the page together
+            qultr = Quilter(page, quilt, patches, page_text, self.config)
             qultr.stitch()
+            
+            # keep track of the post
             post = copy.deepcopy(qultr.pagevars)
-            post["summary"] = top_sentences(qultr.soup.find(id="post").get_text(), 2)
+            post_text = qultr.soup.find(id="post")
+            if post_text:
+                post["summary"] = top_sentences(post_text.get_text(), 2)
+            else:
+                post["summary"] = 'Could not summarize this page, did not find #post id.'
             post["content"] = ''
             self.blog.append(post)
             del qultr
