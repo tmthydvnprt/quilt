@@ -169,6 +169,31 @@ PAGEOBJ = """
 pagevars = %s;
 </script>"""
 
+PAGEVARS_TO_PRINT = '''author
+categories
+copydate
+copyrighter
+date
+description
+directory
+disable_last
+disable_next
+domain
+email
+keywords
+last_post
+last_title
+latestpostlink
+markdownlink
+name
+next_post
+next_title
+page_path
+relativepath
+tags
+title
+url'''.split('\n')
+
 # size of random placeholder for minimize code
 PLACEHOLDER_SIZE = 64
 # sitemap strings
@@ -244,19 +269,11 @@ RSSITEM = """   <item>
     </item>
 """
 # post link strings
-POSTLIST = """<div class="container">
-    <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-            <h1>%s</h1>
-            <hr>
-            <div class="posts list-group">
-                %s
-            </div>
-        </div>
-    </div>
+POSTLIST = """<div class="posts list-group">
+    %s
 </div>
 """
-POST = """  <li class="post-link list-group-item">
+POST = """<li class="post-link list-group-item">
         <h3 class="list-group-item-heading"><a href="%s">%s</a> <span class="h4">by %s <small>on %s</small></span></h3>
         <hr>
         <p class="lead list-group-item-text">%s <a href="%s">&hellip;continue&hellip;</a></p>
@@ -273,19 +290,13 @@ POST = """  <li class="post-link list-group-item">
 NO_NEW_POSTS = "There are no newer posts"
 NO_OLD_POSTS = "There are no earlier posts"
 # post link strings
-GROUPLIST = """<div class="container">
-    <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-            <h1>%s</h1>
-            <hr>
-            <ul class="%s list-unstyled">
-                %s
-            </ul>
-        </div>
-    </div>
-</div>
+GROUPLIST = """<h1>%s</h1>
+<hr>
+<ul class="%s list-unstyled">
+    %s
+</ul>
 """
-GROUP = """  <li class="%s-link">
+GROUP = """<li class="%s-link">
         <h3><a href="%s">%s</a> <span class="badge">%s posts</span></h3>
     </li>
 """

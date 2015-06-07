@@ -56,7 +56,7 @@ def create_post_list(name, posts=None, offset=''):
             os.path.join(os.path.dirname(post["url"]), 'categories', 'index.html'),
             group_links(post, "categories")
         ))
-    return POSTLIST % (name, ''.join(postlist))
+    return POSTLIST % (''.join(postlist))
 
 class Blog(object):
     """blog object"""
@@ -90,7 +90,6 @@ class Blog(object):
             self.name,
             "quilt"
         )
-        page_html = ''.join((page_html, create_post_list(self.name, reverse_chronological_order(self.posts))))
 
         # stitch blog home page
         page = os.path.join(self.config["posts"], "index.html")
@@ -98,8 +97,16 @@ class Blog(object):
         # check for directory quilt and directory patches?
         quilt, patches = check_local_quilt(page, self.quilt_pattern, self.patches, self.config)
 
+        # use index patch as starting point
+        page_html = ''.join((page_html, patches["index"]))
+
         # stitch the page together
         qultr = Quilter(page, quilt, patches, page_html, self.config)
+
+        # update pagevars with special blog variables
+        qultr.pagevars["reverse_chron_posts"] = create_post_list(self.name, reverse_chronological_order(self.posts))
+        qultr.pagevars["latest_post"] = reverse_chronological_order(self.posts)[0]["content"]
+
         qultr.stitch()
         qultr.clean_html()
         qultr.remove_empty()

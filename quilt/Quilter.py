@@ -45,7 +45,7 @@ from collections import defaultdict
 
 from quilt.Constants import JS_HTML_PATTERN_RE, FIRST_KEY_RE, FIRST_EMPTY_LINE_RE, KEY_VALUE_RE, VALUE_RE
 from quilt.Constants import PAGEVAR_RE, ESCAPED_PAGEVAR_RE
-from quilt.Constants import PATCHCOMMENT, QUILTCOMMENT, PAGEOBJ, DOTSTAR_RE
+from quilt.Constants import PATCHCOMMENT, QUILTCOMMENT, PAGEOBJ, DOTSTAR_RE, PAGEVARS_TO_PRINT
 from quilt.Util import write_file, relative_path, group_links, minimize_js, NO_EMPTY_TAGS
 from quilt.Util import  HEAD_STRAINER, BODY_STRAINER#, a_strainer, link_strainer, script_strainer, table_strainer, img_strainer
 from quilt.Markdown import MD
@@ -308,7 +308,7 @@ class Quilter(object):
         if self.pagevars["pagecomment"]:
             max_key_len = str(max([len(x) for x in self.pagevars.keys()])+1)
             keyval_line = '{{:>{}}} : {{}}'.format(max_key_len)
-            keyvalpair = [keyval_line.format(k, v) for k, v in sorted(self.pagevars.items())]
+            keyvalpair = [keyval_line.format(k, v) for k, v in sorted(self.pagevars.items()) if k in PAGEVARS_TO_PRINT]
             pagevar_comment = '    -- quilt pagevars :\n    --     %s' % ('\n    --    '.join(keyvalpair))
         else:
             pagevar_comment = ''
@@ -317,7 +317,7 @@ class Quilter(object):
             quilt_comment = QUILTCOMMENT % (
                 self.pagevars["url"],
                 self.pagevars["date"],
-                math.floor(1000*etime)/1000,
+                math.floor(1000 * etime) / 1000,
                 pagevar_comment
             )
         else:

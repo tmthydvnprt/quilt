@@ -141,7 +141,7 @@ class QuiltingRoom(object):
             "patchcomment"  : self.config["patchcomment"],   # print comment showing patch source
             "quiltcomment"  : self.config["quiltcomment"],   # print quilt comment in header
             "pagecomment"   : self.config["pagecomment"],    # print page var comment in header
-            "latestpost"    : "",                            # filename of latest post
+            "latestpostlink": "",                            # filename of latest post
             "page_path"     : "",                            # breadcrumb path of post
             "next_post"     : "",                            # url of next post
             "next_title"    : "",                            # title of next post
@@ -555,20 +555,21 @@ class QuiltingRoom(object):
             # stitch the page together
             qultr = Quilter(page, quilt, patches, page_text, self.config)
             qultr.stitch()
-            
+
             # keep track of the post
             post = copy.deepcopy(qultr.pagevars)
             post_text = qultr.soup.find(id="post")
             if post_text:
                 post["summary"] = top_sentences(post_text.get_text(), 2)
+                post["content"] = post_text
             else:
                 post["summary"] = 'Could not summarize this page, did not find #post id.'
-            post["content"] = ''
+                post["content"] = 'No Content,  did not find #post id.'
             self.blog.append(post)
             del qultr
 
         latest_post = os.path.splitext(os.path.basename(reverse_chronological_order(self.blog.posts)[0]["url"]))[0]
-        self.config["page_defaults"]["latestpost"] = latest_post
+        self.config["page_defaults"]["latestpostlink"] = latest_post
 
         return self
 
