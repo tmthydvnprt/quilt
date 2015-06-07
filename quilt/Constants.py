@@ -290,9 +290,7 @@ POST = """<li class="post-link list-group-item">
 NO_NEW_POSTS = "There are no newer posts"
 NO_OLD_POSTS = "There are no earlier posts"
 # post link strings
-GROUPLIST = """<h1>%s</h1>
-<hr>
-<ul class="%s list-unstyled">
+GROUPLIST = """<ul class="%s list-unstyled">
     %s
 </ul>
 """

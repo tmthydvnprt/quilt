@@ -38,7 +38,7 @@ from quilt.Constants import POST, POSTLIST
 from quilt.Constants import GROUP, GROUPLIST, GROUPVARS
 
 #@profile
-def create_post_list(name, posts=None, offset=''):
+def create_post_list(posts=None, offset=''):
     """create list html from posts"""
 
     postlist = []
@@ -88,7 +88,7 @@ class Blog(object):
         page_html = GROUPVARS % (
             self.name,
             self.name,
-            "quilt"
+            self.config["author"]
         )
 
         # stitch blog home page
@@ -104,7 +104,7 @@ class Blog(object):
         qultr = Quilter(page, quilt, patches, page_html, self.config)
 
         # update pagevars with special blog variables
-        qultr.pagevars["reverse_chron_posts"] = create_post_list(self.name, reverse_chronological_order(self.posts))
+        qultr.pagevars["reverse_chron_posts"] = create_post_list(reverse_chronological_order(self.posts))
         qultr.pagevars["latest_post"] = reverse_chronological_order(self.posts)[0]["content"]
 
         qultr.stitch()
@@ -138,16 +138,23 @@ class Blog(object):
 
         # create page for each group
         for group, posts in groups.items():
-            page_html = create_post_list('%s Posts' % (group.title()), reverse_chronological_order(posts), '../')
 
             # stitch blog home page
             page = os.path.join(self.config["posts"], name, "%s.html" % group)
 
             # check for directory quilt and directory patches?
             quilt, patches = check_local_quilt(os.path.dirname(page), self.quilt_pattern, self.patches, self.config)
+            
+            # use category or tag patch as page
+            page_html = patches['tag' if name == 'tags' else 'category']
 
             # stitch the page together
             qultr = Quilter(page, quilt, patches, page_html, self.config)
+            
+            # update pagevars with list of group posts
+            qultr.pagevars["post_list"] = create_post_list(reverse_chronological_order(posts), '../')
+            qultr.pagevars["group"] = group.title()
+            
             qultr.stitch()
             qultr.clean_html()
             qultr.remove_empty()
@@ -156,7 +163,7 @@ class Blog(object):
 
         # create index of groups
         grouplist = ''.join([GROUP % (name, "%s.html" % (group), group, len(posts)) for group, posts in groups.items()])
-        page_html = GROUPLIST % (name.title(), name, grouplist)
+        page_html = patches[name]
 
         # stitch blog home page
         page = os.path.join(self.config["posts"], name, "index.html")
@@ -166,6 +173,10 @@ class Blog(object):
 
         # stitch the page together
         qultr = Quilter(page, quilt, patches, page_html, self.config)
+        
+        # update pagevars with list of groups
+        qultr.pagevars["group_list"] = GROUPLIST % (name, grouplist)
+        
         qultr.stitch()
         qultr.clean_html()
         qultr.remove_empty()
