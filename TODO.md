@@ -15,9 +15,9 @@ Functionallity
 - [x] create warning for removing empty elements with id or class
 - [ ] make warnings supressable
 - [ ] add `featured.html` for blog
-- [x] make blog index page oriented
-- [ ] make blog category/categories page oriented
-- [ ] make blog tag/tags page oriented
+- [x] make blog index patch oriented
+- [x] make blog category/categories patch oriented
+- [x] make blog tag/tags patch oriented
 
 Error Handling
 --------------
