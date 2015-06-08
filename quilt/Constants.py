@@ -77,6 +77,10 @@ MORE_THAN_ONE_SEMICOLON_RE = re.compile(r';;+')
 SEMICOLON_CLOSE_BRACE_RE = re.compile(r';}')
 EMPTY_BRACES_RE = re.compile(r'[^}]+{}')
 
+# compiled regex for text analysis
+WHITESPACE_RE = re.compile(r'\s')
+EXT_LINK = re.compile(r'((?:[Ff]|[Hh][Tt])[Tt][Pp][Ss]?://[^>]*)')
+
 # tags for markdown inline match
 MD_INLINE_TAGS = {
     '***' : 'u',
@@ -192,7 +196,21 @@ page_path
 relativepath
 tags
 title
-url'''.split('\n')
+url
+post-length
+post-characters
+post-lines
+post-words
+post-symbols
+post-numbers
+post-diversity
+post-sentences
+post-questions
+post-extlinks
+post-intlinks
+post-anchors
+post-images
+post-headers'''.split('\n')
 
 # size of random placeholder for minimize code
 PLACEHOLDER_SIZE = 64
@@ -290,14 +308,7 @@ POST = """<li class="post-link list-group-item">
 NO_NEW_POSTS = "There are no newer posts"
 NO_OLD_POSTS = "There are no earlier posts"
 # post link strings
-GROUPLIST = """<ul class="%s list-unstyled">
-    %s
-</ul>
-"""
-GROUP = """<li class="%s-link">
-        <h3><a href="%s">%s</a> <span class="badge">%s posts</span></h3>
-    </li>
-"""
+
 GROUPLINK = """<li class="%s"><a href="%s" class="label label-success">%s</a></li>
 """
 TAG_CATEGORY = """<div class="container">

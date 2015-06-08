@@ -6,8 +6,8 @@
         <link>some_name.com</link>
         <id>randomid</id>
         <language>en-us</language>
-        <lastBuildDate>2015-06-07T08:00:51-7:00</lastBuildDate>
-        <pubDate>2015-06-07T08:00:51-7:00</pubDate>
+        <lastBuildDate>2015-06-07T20:21:41-7:00</lastBuildDate>
+        <pubDate>2015-06-07T20:21:41-7:00</pubDate>
         <managingEditor>tmthydvnprt</managingEditor>
            <item>
         <title>HTML Entities</title>
@@ -36,7 +36,12 @@ quotation mark (APL</description>
         <guid>randomid</guid>
         <pubDate>3/20/2015 10:49 pm</pubDate>
         <description>
-A list of MathJax \(\LaTeX\) Command  examples. These alphabetical examples come from here.</description>
+A list of MathJax \(\LaTeX\) Command  examples. These alphabetical examples come from here. There are a lot of examples so the page may take a while to render. Symbols§
+
+
+
+\(\LaTeX\) Command
+Syntax </description>
     </item>
    <item>
         <title>Quilt's Markdown Syntax</title>
@@ -44,7 +49,7 @@ A list of MathJax \(\LaTeX\) Command  examples. These alphabetical examples come
         <guid>randomid</guid>
         <pubDate>03/08/2015 1:32 pm</pubDate>
         <description>
-Quilt uses Python-Markdown as it's markdown interpreter. Besides the base syntax rules of original Markdown, quilt parses extra markdown syntax.</description>
+Quilt uses Python-Markdown as it's markdown interpreter. Besides the base syntax rules of original Markdown, quilt parses extra markdown syntax. Extras includes abbreviations, attribute lists, defini</description>
     </item>
    <item>
         <title>Quilt: A python based static site html stitcher.</title>
@@ -53,7 +58,7 @@ Quilt uses Python-Markdown as it's markdown interpreter. Besides the base syntax
         <pubDate>3/1/2015 3:15 pm</pubDate>
         <description>
 A python based static site html stitcher. Description
-Generate a static site via python from content-only .html and .md pages that are stitched together  along with patch (e.g.</description>
+Generate a static site via python from content-only .html and .md pages that are stitched together  along with patch (e.g. nav.html, footer.html</description>
     </item>
    <item>
         <title>Page Variable Change</title>

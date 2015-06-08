@@ -18,6 +18,7 @@ Functionallity
 - [x] make blog index patch oriented
 - [x] make blog category/categories patch oriented
 - [x] make blog tag/tags patch oriented
+- [ ] gather data for each group
 
 Error Handling
 --------------

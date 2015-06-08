@@ -176,6 +176,7 @@ class Quilter(object):
             self.patches["scripts"] = '%s\n%s' % (self.patches["scripts"], page_js)
         # add page variables to object
         if self.config["pageobject"]:
+            filtered_pagevars = {k:v for k, v in self.pagevars.items() if k in PAGEVARS_TO_PRINT}
             page_obj = json.dumps(self.pagevars, indent=4, separators=(',', ': '), sort_keys=True)
             if self.config["minimizejs"]:
                 page_obj = minimize_js(page_obj)
@@ -253,7 +254,7 @@ class Quilter(object):
                     write_file(add_suffix(DEBUG_FILE, 'replaced_patches'), self.soup.encode('utf-8', formatter='html'))
 
             # check for new patches (see if patch had nested patches)
-            patch_tags = self.soup.find_all("patch")
+            patch_tags = self.soup.find_all("patch")       
 
         return self
 
@@ -263,7 +264,7 @@ class Quilter(object):
 
         html = self.soup.encode('utf-8', formatter='html')
         page_vars = list(set(PAGEVAR_RE.findall(html)))
-
+        
         if self.__do_debug:
             write_file(add_suffix(DEBUG_FILE, 'replacing_vars'), html)
 
@@ -279,7 +280,7 @@ class Quilter(object):
                     variable = self.pagevars[page_var]
                     if isinstance(variable, list):
                         variable = ','.join(variable)
-                    html = html.replace(pagevar_brace, str(variable))
+                    html = html.replace(pagevar_brace, unicode(variable).encode('utf8'))
                 else:
                     html = html.replace(pagevar_brace, "not found")
             # check for new page variables (see if variable had nested variable)

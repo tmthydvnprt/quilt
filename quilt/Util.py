@@ -40,7 +40,7 @@ from quilt.Constants import CLEAN_SELECTORS_RE, CLEAN_SELECTORS2_RE, SELECTORCOL
 from quilt.Constants import MEDIA_RE, EXTRA_SPACES_RE, MISSING_SEMICOLON_RE, ZERO_UNITS_RE, FOUR_ZEROS_RE
 from quilt.Constants import THREE_ZEROS_RE, TWO_ZEROS_RE, BG_ZERO_RE, LEADING_ZERO_DECIMAL_RE
 from quilt.Constants import MORE_THAN_ONE_SEMICOLON_RE, SEMICOLON_CLOSE_BRACE_RE, EMPTY_BRACES_RE
-from quilt.Constants import GROUPLINK, WORD_RE
+from quilt.Constants import GROUPLINK, WORD_RE, WHITESPACE_RE, EXT_LINK
 
 # default config, overridden by config.json in source directory
 DEFAULT_CONFIG = {
@@ -558,6 +558,55 @@ def spell_check(text='', correct_words=None):
 
     return word_errors
 
+def analyze_post(soup=None, domain=''):
+    """analyze text and structure of post"""
+
+    post_text = soup.get_text()
+
+    wordpunct = nltk.wordpunct_tokenize(post_text)
+    sents = nltk.sent_tokenize(post_text)
+    alpha_words = [x for x in wordpunct if x.isalpha()]
+
+    # determine where link goes
+    links = { 'ext' : 0, 'int' : 0, 'anchor' : 0 }
+    for a in soup.find_all('a'):
+        if a['href'].startswith('#'):
+            links['anchor'] += 1
+        elif EXT_LINK.match(a['href']) and domain not in a['href']:
+            links['ext'] += 1
+        else:
+            links['int'] += 1
+    
+    data = {
+        'post-length'     : len(post_text),
+        'post-characters' : len(WHITESPACE_RE.sub('', post_text)),
+        'post-lines'      : post_text.count('\n'),
+        'post-words'      : len(alpha_words),
+        'post-symbols'    : len([x for x in wordpunct if not (x.isalpha() or x.isdigit())]),
+        'post-numbers'    : len([x for x in wordpunct if x.isdigit()]),
+        'post-diversity'  : 100.0 * float(len(set(alpha_words))) / float(len(alpha_words)),
+        'post-sentences'  : len(sents),
+        'post-questions'  : post_text.count('?'),
+        'summary'         : top_sentences(post_text, 4),
+        'content'         : soup,
+        'post-extlinks'   : links['ext'],
+        'post-intlinks'   : links['int'],
+        'post-anchors'    : links['anchor'],
+        'post-images'     : len(soup.find_all(['img', 'svg'])),
+        'post-headers'    : len(soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])),
+    }
+
+    return data
+
+def handlebar_replace(string='', variables=None):
+    """ replace variables """
+    
+    for key, val in variables.items():
+        x_brace = "{{%s}}" % (key)
+        string = string.replace(x_brace, unicode(val))
+
+    return string
+    
 class ProgressBar(object):
     """implements a comand-line progress bar"""
 

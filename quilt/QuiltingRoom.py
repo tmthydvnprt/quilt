@@ -57,7 +57,7 @@ from quilt.Blog import Blog
 from quilt.Quilter import Quilter
 from quilt.Util import DEFAULT_CONFIG, read_file, write_file, load_files, get_file_names
 from quilt.Util import find_hrefsrc, filter_external_url, minimize_css, minimize_js, prefix_vendor_css
-from quilt.Util import path_link_list, top_sentences, get_just_words, get_keywords, spell_check, ProgressBar
+from quilt.Util import path_link_list, top_sentences, get_just_words, get_keywords, spell_check, analyze_post, ProgressBar
 from quilt.Util import reverse_chronological_order, check_local_quilt
 from quilt.Util import  HEAD_STRAINER, BODY_STRAINER
 from quilt.Constants import QUILTHEADER, ASSETCOMMENT, ROBOTTXT, SITEMAPINDEX, SITEMAP, SITEMAPURL
@@ -558,13 +558,12 @@ class QuiltingRoom(object):
 
             # keep track of the post
             post = copy.deepcopy(qultr.pagevars)
-            post_text = qultr.soup.find(id="post")
-            if post_text:
-                post["summary"] = top_sentences(post_text.get_text(), 2)
-                post["content"] = post_text
-            else:
-                post["summary"] = 'Could not summarize this page, did not find #post id.'
-                post["content"] = 'No Content,  did not find #post id.'
+            
+            # analyze the post text and structure
+            post_data = analyze_post(qultr.soup.find(id="post"), self.config['domain'])
+            post.update(post_data)
+            
+            # store it
             self.blog.append(post)
             del qultr
 
