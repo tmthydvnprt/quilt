@@ -34,29 +34,28 @@ from quilt.Quilter import Quilter
 from quilt.Util import write_file, group_links, reverse_chronological_order, handlebar_replace, check_local_quilt
 from quilt.Constants import ATOMENTRY, ATOMXML
 from quilt.Constants import RSSITEM, RSSXML
-from quilt.Constants import POST, POSTLIST
 from quilt.Constants import GROUPVARS
 
 #@profile
-def create_post_list(posts=None, offset=''):
+def create_post_list(posts=None, post_list_template='', offset=''):
     """create list html from posts"""
 
     postlist = []
     for post in posts:
         post_url = offset + os.path.basename(post['url'])
-        postlist.append(POST % (
-            post_url,
-            post['title'],
-            post['author'],
-            post['date'],
-            post['summary'], #.encode('utf8'),
-            post_url,
-            os.path.join(os.path.dirname(post["url"]), 'tags', 'index.html'),
-            group_links(post, "tags"),
-            os.path.join(os.path.dirname(post["url"]), 'categories', 'index.html'),
-            group_links(post, "categories")
-        ))
-    return POSTLIST % (''.join(postlist))
+        postvars = {
+            'url'          : post_url,
+            'title'        : post['title'],
+            'author'       : post['author'],
+            'date'         : post['date'],
+            'summary'      : post['summary'],
+            'tag_link'     : os.path.join(os.path.dirname(post["url"]), 'tags', 'index.html'),
+            'tag_list'     : group_links(post, "tags"),
+            'category_link': os.path.join(os.path.dirname(post["url"]), 'categories', 'index.html'),
+            'category_list': group_links(post, "categories")
+        }
+        postlist.append(handlebar_replace(post_list_template, postvars))
+    return '\n'.join(postlist)
 
 class Blog(object):
     """blog object"""
@@ -104,7 +103,7 @@ class Blog(object):
         # update pagevars with special blog variables
         qultr.pagevars["latest_post"] = reverse_chronological_order(self.posts)[0]["content"]
         # generate reverse chronological order of first x posts
-        qultr.pagevars["reverse_chron_posts"] = create_post_list(reverse_chronological_order(self.posts))
+        qultr.pagevars["postitems"] = create_post_list(reverse_chronological_order(self.posts), patches['post_item'])
 
         qultr.stitch()
         qultr.clean_html()
@@ -171,7 +170,7 @@ class Blog(object):
             qultr = Quilter(page, quilt, patches, page_html, self.config)
             
             # update pagevars with list of group posts
-            qultr.pagevars["post_list"] = create_post_list(reverse_chronological_order(posts), '../')
+            qultr.pagevars["postitems"] = create_post_list(reverse_chronological_order(posts), patches['post_item'], '../')
             qultr.pagevars["group"] = group.title()
             qultr.pagevars["grouptype"] = singular_name.title()
             

@@ -582,6 +582,7 @@ def analyze_post(soup=None, domain=''):
         'post-characters' : len(WHITESPACE_RE.sub('', post_text)),
         'post-lines'      : post_text.count('\n'),
         'post-words'      : len(alpha_words),
+        'post-unique'     : len(set(alpha_words)),
         'post-symbols'    : len([x for x in wordpunct if not (x.isalpha() or x.isdigit())]),
         'post-numbers'    : len([x for x in wordpunct if x.isdigit()]),
         'post-diversity'  : 100.0 * float(len(set(alpha_words))) / float(len(alpha_words)),
@@ -592,6 +593,7 @@ def analyze_post(soup=None, domain=''):
         'post-extlinks'   : links['ext'],
         'post-intlinks'   : links['int'],
         'post-anchors'    : links['anchor'],
+        'post-quotes'     : len(soup.find_all(['blockquote'])),
         'post-images'     : len(soup.find_all(['img', 'svg'])),
         'post-headers'    : len(soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])),
     }
@@ -603,7 +605,10 @@ def handlebar_replace(string='', variables=None):
     
     for key, val in variables.items():
         x_brace = "{{%s}}" % (key)
-        string = string.replace(x_brace, unicode(val))
+        if isinstance(val, float):
+            string = string.replace(x_brace, '%.2f' % val)
+        else:
+            string = string.replace(x_brace, unicode(val))
 
     return string
     

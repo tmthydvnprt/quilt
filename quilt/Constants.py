@@ -287,27 +287,8 @@ RSSITEM = """   <item>
     </item>
 """
 # post link strings
-POSTLIST = """<div class="posts list-group">
-    %s
-</div>
-"""
-POST = """<li class="post-link list-group-item">
-        <h3 class="list-group-item-heading"><a href="%s">%s</a> <span class="h4">by %s <small>on %s</small></span></h3>
-        <hr>
-        <p class="lead list-group-item-text">%s <a href="%s">&hellip;continue&hellip;</a></p>
-        <ul class="group-list list-inline">
-            <li><a href="%s">Tags:</a> </li>
-            %s
-        </ul>
-        <ul class="group-list list-inline">
-            <li><a href="%s">Categores:</a> </li>
-            %s
-        </ul>
-    </li>
-"""
 NO_NEW_POSTS = "There are no newer posts"
 NO_OLD_POSTS = "There are no earlier posts"
-# post link strings
 
 GROUPLINK = """<li class="%s"><a href="%s" class="label label-success">%s</a></li>
 """
