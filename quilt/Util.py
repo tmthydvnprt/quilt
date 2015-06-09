@@ -483,13 +483,22 @@ def prefix_vendor_css(css=''):
         return unparse_css_blocks(vendorfy_css(parse_css_blocks(css)))
 
 #@profile
+def get_group(pagevars=None, name=''):
+    """get list of tags or categories"""
+    return pagevars[name] if isinstance(pagevars[name], list) else [pagevars[name]] if pagevars[name] else []
+
+def make_group_links(groups=None, pagevars=None, name=''):
+    """make link list out of group set or list"""
+    dirname = os.path.join(os.path.dirname(pagevars["url"]), name)
+    linklist = '\n'.join([GROUPLINK % (name, os.path.join(dirname, "%s.html" % (x)), x) for x in groups])
+    return linklist
+
 def group_links(pagevars=None, name=''):
     """place tag and category links"""
     linklist = ''
     if pagevars[name]:
-        groups = pagevars[name] if isinstance(pagevars[name], list) else [pagevars[name]]
-        dirname = os.path.join(os.path.dirname(pagevars["url"]), name)
-        linklist = '\n'.join([GROUPLINK % (name, os.path.join(dirname, "%s.html" % (x)), x) for x in groups])
+        groups = get_group(pagevars, name)
+        linklist = make_group_links(groups, pagevars, name)
     return linklist
 
 #@profile

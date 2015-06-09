@@ -58,7 +58,7 @@ from quilt.Quilter import Quilter
 from quilt.Util import DEFAULT_CONFIG, read_file, write_file, load_files, get_file_names
 from quilt.Util import find_hrefsrc, filter_external_url, minimize_css, minimize_js, prefix_vendor_css
 from quilt.Util import path_link_list, top_sentences, get_just_words, get_keywords, spell_check, analyze_post, ProgressBar
-from quilt.Util import reverse_chronological_order, check_local_quilt
+from quilt.Util import reverse_chronological_order, check_local_quilt, get_group, make_group_links
 from quilt.Util import  HEAD_STRAINER, BODY_STRAINER
 from quilt.Constants import QUILTHEADER, ASSETCOMMENT, ROBOTTXT, SITEMAPINDEX, SITEMAP, SITEMAPURL
 from quilt.Constants import NO_NEW_POSTS, NO_OLD_POSTS, CSS_EXT_RE, ROOT_LEVEL_JS_EXT_RE
@@ -166,6 +166,11 @@ class QuiltingRoom(object):
         # extend copyright date
         if self.config["copydate"] > self.config["now"]["yearlong"]:
             self.config["page_defaults"]["copydate"] += '&ndash;' + self.config["now"]["yearlong"]
+        
+        # add user variables (keys not found in DEFAULT_CONFIG)
+        for key, val in self.config.items():
+            if not key in DEFAULT_CONFIG:
+                self.config["page_defaults"][key] = val
 
         # start blog
         if self.config["buildblog"]:
@@ -541,6 +546,9 @@ class QuiltingRoom(object):
         print 'analyzing posts:'
         progbar = ProgressBar(len(self.files["posts"]))
 
+        all_tags = set()
+        all_categories = set()
+        
         # quilt all the posts
         for i, page in enumerate(self.files["posts"]):
 
@@ -563,13 +571,21 @@ class QuiltingRoom(object):
             post_data = analyze_post(qultr.soup.find(id="post"), self.config['domain'])
             post.update(post_data)
             
+            # keep track of groups
+            all_tags.update(get_group(post, 'tags'))
+            all_categories.update(get_group(post, 'categories'))
+            
             # store it
             self.blog.append(post)
             del qultr
 
+        # add "global view" of blog to pagevars
         latest_post = os.path.splitext(os.path.basename(reverse_chronological_order(self.blog.posts)[0]["url"]))[0]
         self.config["page_defaults"]["latestpostlink"] = latest_post
+        self.config["page_defaults"]["all_category_list"] = make_group_links(all_categories, self.blog.posts[0], 'categories')
+        self.config["page_defaults"]["all_tag_list"] = make_group_links(all_tags, self.blog.posts[0], 'tags')
 
+        
         return self
 
     #@profile
