@@ -290,7 +290,7 @@ RSSITEM = """   <item>
 NO_NEW_POSTS = "There are no newer posts"
 NO_OLD_POSTS = "There are no earlier posts"
 
-GROUPLINK = """<li class="%s"><a href="%s" class="label label-success">%s</a></li>
+GROUPLINK = """<li class="%s"><a href="%s" class="group-link">%s</a></li>
 """
 TAG_CATEGORY = """<div class="container">
     <div class="row">

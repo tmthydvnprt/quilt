@@ -153,6 +153,8 @@ class QuiltingRoom(object):
             # -----------------------------------------------------------------------------------
             "name"          : self.config["name"],           # site/project name
             "title"         : self.config["title"],          # page title
+            "blogtitle"     : self.config["blogtitle"],      # name of blog
+            "blogsubtitle"  : self.config["blogsubtitle"],   # subtitle or description for blog
             "author"        : self.config["author"],         # page author
             'email'         : self.config["email"],          # page email
             "description"   : self.config["description"],    # page description
@@ -174,7 +176,7 @@ class QuiltingRoom(object):
 
         # start blog
         if self.config["buildblog"]:
-            self.blog = Blog(self.config["blogname"], self.source, self.output, self.quilt_pattern, self.patches, self.config)
+            self.blog = Blog(self.config["blogtitle"], self.source, self.output, self.quilt_pattern, self.patches, self.config)
         else:
             self.blog = None
 

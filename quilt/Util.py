@@ -57,7 +57,8 @@ DEFAULT_CONFIG = {
     "tags"        : [],                     # page tags
     "changefreq"  : "monthly",              # sitemap changefreq
     "priority"    : "0.5",                  # sitemap priority
-    "blogname"    : "quilt news",           # atom id
+    "blogtitle"   : "some blog",            # name of blog
+    "blogsubtitle": "a blogy blog",         # subtitle or description for blog
     "atomid"      : "randomid",             # atom id
     "rssid"       : "randomid",             # rss id
     "copydate"    : dt.datetime.now().year, # copyright dates (auto extend to now)
