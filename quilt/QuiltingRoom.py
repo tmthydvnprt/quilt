@@ -549,6 +549,7 @@ class QuiltingRoom(object):
         progbar = ProgressBar(len(self.files["posts"]))
 
         all_tags = set()
+        all_featured = set()
         all_categories = set()
         
         # quilt all the posts
@@ -574,6 +575,9 @@ class QuiltingRoom(object):
             post.update(post_data)
             
             # keep track of groups
+            
+            if 'featured' in post.keys() and post['featured']:
+                all_featured.update([(post['url'], post['title'], post['description'])])
             all_tags.update(get_group(post, 'tags'))
             all_categories.update(get_group(post, 'categories'))
             
@@ -582,10 +586,15 @@ class QuiltingRoom(object):
             del qultr
 
         # add "global view" of blog to pagevars
+        print all_featured
         latest_post = os.path.splitext(os.path.basename(reverse_chronological_order(self.blog.posts)[0]["url"]))[0]
         self.config["page_defaults"]["latestpostlink"] = latest_post
         self.config["page_defaults"]["all_category_list"] = make_group_links(all_categories, self.blog.posts[0], 'categories')
         self.config["page_defaults"]["all_tag_list"] = make_group_links(all_tags, self.blog.posts[0], 'tags')
+        self.config["page_defaults"]["all_featured_list"] = '\n'.join([
+            '<li><h5><a href="%s">%s</a><br><small>%s</small></h5></li>' % (url, title, description) 
+                for (url, title, description) in all_featured
+        ])
 
         
         return self
