@@ -269,8 +269,15 @@ class Quilter(object):
             write_file(add_suffix(DEBUG_FILE, 'replacing_vars'), html)
 
         if self.post:
-            if 'featured' in self.pagevars.keys():
-                self.pagevars["featured"] = True if TRUE_RE.match(self.pagevars["featured"]) else False
+            if 'featured' in self.pagevars.keys() and TRUE_RE.match(self.pagevars["featured"]):
+                self.pagevars["featured"] = True
+            else:
+                self.pagevars["featured"] = False
+            if self.pagevars["featured"]:
+                dirname = os.path.join(os.path.dirname(self.pagevars["url"]), 'featured', 'index.html')
+                self.pagevars["featured_label"] = '<a href="' + dirname + '" class="featured group-link">featured</a>'
+            else:
+                self.pagevars["featured_label"] = ''
             self.pagevars["tag_list"] = group_links(self.pagevars, "tags")
             self.pagevars["category_list"] = group_links(self.pagevars, "categories")
 
