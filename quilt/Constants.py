@@ -42,6 +42,9 @@ JS_HTML_PATTERN_RE = re.compile(r'(>tpircs/<.*>tpircs<)?(.*)', re.DOTALL)
 KEY_VALUE_RE = re.compile(r'^[ ]{0,3}(?P<key>[A-Za-z0-9_-]+)[ \t]*:\s*(?P<value>.*)')
 VALUE_RE = re.compile(r'^[ ]{4,}(?P<value>.*)')
 
+# compiled regex for finding true
+TRUE_RE = re.compile(r'[Tt]rue')
+
 # compiled "handlebar" pagevars
 PAGEVAR_RE = re.compile(r'{{(.*?)}}')
 ESCAPED_PAGEVAR_RE = re.compile(r'{ {(.*?)}}')
@@ -307,6 +310,17 @@ description: %s
 author: %s
 
 """
+GROUP_SINGLE_NAME = {
+    'tags'      : 'tag',
+    'categories': 'category',
+    'featured'  : 'featured'
+}
+GROUP_VERBS = {
+    'tags'      : 'tagged with',
+    'categories': 'categorized in',
+    'featured'  : 'featured'
+}
+
 # robot.txt string
 ROBOTTXT = """# Sitemap location
 Sitemap: %s/sitemap.xml

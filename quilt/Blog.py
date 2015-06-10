@@ -32,7 +32,7 @@ from collections import defaultdict
 
 from quilt.Quilter import Quilter
 from quilt.Util import write_file, group_links, reverse_chronological_order, handlebar_replace, check_local_quilt
-from quilt.Constants import ATOMENTRY, ATOMXML
+from quilt.Constants import ATOMENTRY, ATOMXML, GROUP_SINGLE_NAME, GROUP_VERBS
 from quilt.Constants import RSSITEM, RSSXML
 from quilt.Constants import GROUPVARS
 
@@ -119,18 +119,63 @@ class Blog(object):
 
         groups = defaultdict(list)
         for post in self.posts:
-            post_groups = post[name] if isinstance(post[name], list) else [post[name]]
+            if name in post.keys():
+                post_groups = post[name] if isinstance(post[name], list) else [post[name]]
+            else:
+                post_groups = []
             for group in post_groups:
                 groups[group].append(post)
         return groups
 
+    def generate_featured(self):
+        """generate featured posts"""
+        
+        name = 'featured'
+        
+        # make group folder
+        os.makedirs(os.path.join(self.config["posts"], name).replace(self.config["pages"], self.output))
+
+        # create group -> page look up table
+        groups = self.group_by(name)
+
+        group = name
+        posts = groups[True]
+        
+        # stitch blog home page
+        page = os.path.join(self.config["posts"], name, "index.html")
+
+        # check for directory quilt and directory patches?
+        quilt, patches = check_local_quilt(os.path.dirname(page), self.quilt_pattern, self.patches, self.config)
+
+        # use category or tag patch as page
+        page_html = GROUPVARS % (
+            'Featured Posts',
+            'Cherry Picked Posts',
+            self.config["author"]
+        )
+        page_html += patches['group']
+
+        # stitch the page together
+        qultr = Quilter(page, quilt, patches, page_html, self.config)
+
+        # update pagevars with list of group posts
+        qultr.pagevars["postitems"] = create_post_list(reverse_chronological_order(posts), patches['post_item'], '../')
+        qultr.pagevars["group"] = ''
+        qultr.pagevars["grouptype"] = group.title()
+
+        qultr.stitch()
+        qultr.clean_html()
+        qultr.remove_empty()
+        qultr.write()
+        del qultr
+    
     #@profile
     def generate_group_pages(self, name=''):
         """generate tag or category page"""
 
-        singular_name = 'tag' if name == 'tags' else 'category'
-        verb = 'tagged with' if name == 'tags' else 'categorized in'
-        
+        singular_name = GROUP_SINGLE_NAME[name]
+        verb =  GROUP_VERBS[name]
+
         # make group folder
         os.makedirs(os.path.join(self.config["posts"], name).replace(self.config["pages"], self.output))
 

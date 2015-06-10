@@ -43,7 +43,7 @@ import math
 import shutil
 from collections import defaultdict
 
-from quilt.Constants import JS_HTML_PATTERN_RE, FIRST_KEY_RE, FIRST_EMPTY_LINE_RE, KEY_VALUE_RE, VALUE_RE
+from quilt.Constants import JS_HTML_PATTERN_RE, FIRST_KEY_RE, FIRST_EMPTY_LINE_RE, KEY_VALUE_RE, VALUE_RE, TRUE_RE
 from quilt.Constants import PAGEVAR_RE, ESCAPED_PAGEVAR_RE
 from quilt.Constants import PATCHCOMMENT, QUILTCOMMENT, PAGEOBJ, DOTSTAR_RE, PAGEVARS_TO_PRINT
 from quilt.Util import write_file, relative_path, group_links, minimize_js, NO_EMPTY_TAGS
@@ -269,6 +269,8 @@ class Quilter(object):
             write_file(add_suffix(DEBUG_FILE, 'replacing_vars'), html)
 
         if self.post:
+            if 'featured' in self.pagevars.keys():
+                self.pagevars["featured"] = True if TRUE_RE.match(self.pagevars["featured"]) else False
             self.pagevars["tag_list"] = group_links(self.pagevars, "tags")
             self.pagevars["category_list"] = group_links(self.pagevars, "categories")
 

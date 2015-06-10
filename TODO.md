@@ -14,11 +14,11 @@ Functionallity
 
 - [x] create warning for removing empty elements with id or class
 - [ ] make warnings supressable
-- [ ] add `featured.html` for blog
+- [x] add featured group for blog
 - [x] make blog index patch oriented
 - [x] make blog category/categories patch oriented
 - [x] make blog tag/tags patch oriented
-- [ ] gather data for each group
+- [x] gather data for each group
 
 Error Handling
 --------------
