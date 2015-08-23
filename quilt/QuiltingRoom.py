@@ -165,7 +165,7 @@ class QuiltingRoom(object):
             "copydate"      : self.config["copydate"],       # copyright dates (auto extend to now)
             "copyrighter"   : self.config["copyrighter"]     # copyright owner
         }
-        
+
         # extend copyright date
         if self.config["page_defaults"]["copydate"] < int(self.config["now"]["yearlong"]):
             self.config["page_defaults"]["copydate"] = '{}&ndash;{}'.format(self.config["page_defaults"]["copydate"], self.config["now"]["yearlong"])
@@ -221,10 +221,11 @@ class QuiltingRoom(object):
     def copy_asset_directory(self):
         """copy the whole asset directory over to the output directory"""
 
-        assetdirs = glob.glob(os.path.join(self.config["assets"], "*/"))
-        for assetdir in assetdirs:
-            dirname = os.path.basename(assetdir[:-1])
-            shutil.copytree(assetdir, os.path.join(self.output, dirname))
+        # assetdirs = glob.glob(os.path.join(self.config["assets"], "*/"))
+        # for assetdir in assetdirs:
+            # dirname = os.path.basename(assetdir[:-1])
+            # shutil.copytree(assetdir, os.path.join(self.output, dirname))
+        shutil.copytree(self.config["assets"], self.output)
 
         return self
 
@@ -614,16 +615,16 @@ class QuiltingRoom(object):
         if os.path.isdir(self.output):
             shutil.rmtree(self.output)
 
+        # quilt all the assets
+        self.build_assets()
+        print 'quilting time: %s' % ((time.time() - __t0))
+
         # setup pages output directories
         folders = [self.ouput_path(b, self.config["pages"]) for b in self.files["pages"]]
         folders += [self.ouput_path(b, self.config["pages"]) for b in self.files["posts"]]
         for folder in folders:
             if not os.path.isdir(folder):
                 os.makedirs(folder)
-
-        # quilt all the assets
-        self.build_assets()
-        print 'quilting time: %s' % ((time.time() - __t0))
 
         # analyze all the posts
         if self.config["buildblog"]:
