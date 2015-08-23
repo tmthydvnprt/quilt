@@ -382,7 +382,7 @@ class QuiltingRoom(object):
 
         # add to sitemap
         sitemapurls = [SITEMAPURL % (
-            output_loc,
+            'http://' + output_loc,
             self.config["now"]["iso"],
             self.config["changefreq"],
             self.config["priority"]
@@ -391,7 +391,7 @@ class QuiltingRoom(object):
         # output sitemap & sitemap index
         sitemap = SITEMAP % ("".join(sitemapurls))
         sitemapindex = SITEMAPINDEX % (
-            os.path.join(self.config["domain"], "sitemap.xml"),
+            'http://' + os.path.join(self.config["domain"], "sitemap.xml"),
             self.config["now"]["iso"]
         )
         write_file(os.path.join(self.output, "sitemap.xml"), sitemap)
