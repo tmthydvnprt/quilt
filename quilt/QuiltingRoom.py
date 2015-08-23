@@ -84,7 +84,7 @@ class QuiltingRoom(object):
         __hh, __mm = divmod((__delta.days * 24*60*60 + __delta.seconds + 30) // 60, 60)
         self.config["date"] = __date
         self.config["now"] = {
-            "iso"	    : "%s%+02d:%02d" % (__date.isoformat(), __hh, __mm),
+            "iso"	    : "%s%+03d:%02d" % (__date.isoformat(), __hh, __mm),
             "wkday"	    : __date.strftime('%a'),
             "wkdaylong" : __date.strftime('%A'),
             "date"	    : __date.strftime('%d'),
