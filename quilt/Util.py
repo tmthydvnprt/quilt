@@ -105,7 +105,7 @@ DEFAULT_CONFIG = {
     "patch_ext"   : ["*.html"],             # allowable patch extension
     "page_ext"    : ["*.html", "*.md"],     # allowable page extension
     "template_ext": ["*.html"],             # allowable template extension
-    "asset_ext"   : ["*.*"]                 # allowable resource extension
+    "asset_ext"   : ["*"]                   # allowable resource extension
 }
 
 VENDORS = ['-webkit-', '-moz-', '-ms-', '-o-']
@@ -586,7 +586,7 @@ def analyze_post(soup=None, domain=''):
             links['ext'] += 1
         else:
             links['int'] += 1
-    
+
     data = {
         'post-length'     : len(post_text),
         'post-characters' : len(WHITESPACE_RE.sub('', post_text)),
@@ -612,7 +612,7 @@ def analyze_post(soup=None, domain=''):
 
 def handlebar_replace(string='', variables=None):
     """ replace variables """
-    
+
     for key, val in variables.items():
         x_brace = "{{%s}}" % (key)
         if isinstance(val, float):
@@ -621,7 +621,7 @@ def handlebar_replace(string='', variables=None):
             string = string.replace(x_brace, unicode(val))
 
     return string
-    
+
 class ProgressBar(object):
     """implements a comand-line progress bar"""
 
