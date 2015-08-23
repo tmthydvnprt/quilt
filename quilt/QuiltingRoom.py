@@ -166,9 +166,9 @@ class QuiltingRoom(object):
             "copyrighter"   : self.config["copyrighter"]     # copyright owner
         }
         # extend copyright date
-        if self.config["copydate"] > self.config["now"]["yearlong"]:
+        if self.config["copydate"] < self.config["now"]["yearlong"]:
             self.config["page_defaults"]["copydate"] += '&ndash;' + self.config["now"]["yearlong"]
-        
+
         # add user variables (keys not found in DEFAULT_CONFIG)
         for key, val in self.config.items():
             if not key in DEFAULT_CONFIG:
@@ -551,7 +551,7 @@ class QuiltingRoom(object):
         all_tags = set()
         all_featured = set()
         all_categories = set()
-        
+
         # quilt all the posts
         for i, page in enumerate(self.files["posts"]):
 
@@ -569,18 +569,18 @@ class QuiltingRoom(object):
 
             # keep track of the post
             post = copy.deepcopy(qultr.pagevars)
-            
+
             # analyze the post text and structure
             post_data = analyze_post(qultr.soup.find(id="post"), self.config['domain'])
             post.update(post_data)
-            
+
             # keep track of groups
-            
+
             if 'featured' in post.keys() and post['featured']:
                 all_featured.update([(post['url'], post['title'], post['description'])])
             all_tags.update(get_group(post, 'tags'))
             all_categories.update(get_group(post, 'categories'))
-            
+
             # store it
             self.blog.append(post)
             del qultr
@@ -592,11 +592,11 @@ class QuiltingRoom(object):
         self.config["page_defaults"]["all_category_list"] = make_group_links(all_categories, self.blog.posts[0], 'categories')
         self.config["page_defaults"]["all_tag_list"] = make_group_links(all_tags, self.blog.posts[0], 'tags')
         self.config["page_defaults"]["all_featured_list"] = '\n'.join([
-            '<li><h5><a href="%s">%s</a><br><small>%s</small></h5></li>' % (url, title, description) 
+            '<li><h5><a href="%s">%s</a><br><small>%s</small></h5></li>' % (url, title, description)
                 for (url, title, description) in all_featured
         ])
 
-        
+
         return self
 
     #@profile
