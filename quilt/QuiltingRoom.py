@@ -165,8 +165,9 @@ class QuiltingRoom(object):
             "copydate"      : self.config["copydate"],       # copyright dates (auto extend to now)
             "copyrighter"   : self.config["copyrighter"]     # copyright owner
         }
+        
         # extend copyright date
-        if self.config["copydate"] < self.config["now"]["yearlong"]:
+        if self.config["page_defaults"]["copydate"] < int(self.config["now"]["yearlong"]):
             self.config["page_defaults"]["copydate"] = '{}&ndash;{}'.format(self.config["page_defaults"]["copydate"], self.config["now"]["yearlong"])
 
         # add user variables (keys not found in DEFAULT_CONFIG)
