@@ -101,9 +101,10 @@ class Quilter(object):
 
         # set pagevars, handling some special cases
         self.pagevars = copy.deepcopy(self.config["page_defaults"])
+
         self.pagevars.update({
             "rootpath" : self.config["output"],
-            "relativepath" : relative_path(page_file, self.config["pages"]),
+            "relativepath" : relative_path(page_file.replace(self.config["pages"], self.config["output"]).replace('.md', '.html'), self.config["output"]),
             "source" : page_file,
             "output" : page_file.replace(self.config["pages"], self.config["output"]).replace('.md', '.html'),
             "markdownlink" : page_file.replace(self.config["pages"], self.config["output"]),
@@ -254,7 +255,7 @@ class Quilter(object):
                     write_file(add_suffix(DEBUG_FILE, 'replaced_patches'), self.soup.encode('utf-8', formatter='html'))
 
             # check for new patches (see if patch had nested patches)
-            patch_tags = self.soup.find_all("patch")       
+            patch_tags = self.soup.find_all("patch")
 
         return self
 
@@ -264,7 +265,7 @@ class Quilter(object):
 
         html = self.soup.encode('utf-8', formatter='html')
         page_vars = list(set(PAGEVAR_RE.findall(html)))
-        
+
         if self.__do_debug:
             write_file(add_suffix(DEBUG_FILE, 'replacing_vars'), html)
 
