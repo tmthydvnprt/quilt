@@ -200,7 +200,7 @@ class QuiltingRoom(object):
 
         if os.path.exists(icon_file):
             print 'creating icons from:\t', icon_file
-            print 'creating icons in:\t', imgs_path
+            print 'creating icons in:\t', imgs_path, '\n'
             # create favicon from icon
             icon_img = PIL.Image.open(icon_file)
             default_size = self.config["iconsizes"][0]
