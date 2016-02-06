@@ -199,7 +199,8 @@ class QuiltingRoom(object):
         imgs_path = os.path.join(self.output, self.config["images"])
 
         if os.path.exists(icon_file):
-            print 'creating icons:\tfrom ', icon_file, ' to ', imgs_path, '\n'
+            print 'creating icons from:\t', icon_file
+            print 'creating icons in:\t', imgs_path
             # create favicon from icon
             icon_img = PIL.Image.open(icon_file)
             default_size = self.config["iconsizes"][0]
@@ -216,7 +217,7 @@ class QuiltingRoom(object):
                 fname, ext = os.path.splitext(self.config['iconfile'])
                 img.save(os.path.join(imgs_path, '%s_%sx%s%s' % (fname, str(size), str(size), ext)), **png_info)
         else:
-            print print 'creating icons:\t', 'missing icon file, could not create', '\n'
+            print 'creating icons from :\t', 'missing icon file, could not create', '\n'
         return self
 
     #@profile
