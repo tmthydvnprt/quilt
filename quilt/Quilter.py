@@ -320,7 +320,7 @@ class Quilter(object):
             max_key_len = str(max([len(x) for x in self.pagevars.keys()])+1)
             keyval_line = '{{:>{}}} : {{}}'.format(max_key_len)
             keyvalpair = [keyval_line.format(k, v) for k, v in sorted(self.pagevars.items()) if k in PAGEVARS_TO_PRINT]
-            pagevar_comment = '    -- quilt pagevars :\n    --     %s' % ('\n    --    '.join(keyvalpair))
+            pagevar_comment = '\nquilt pagevars :\n    %s' % ('\n    '.join(keyvalpair))
         else:
             pagevar_comment = ''
 
@@ -328,6 +328,7 @@ class Quilter(object):
             quilt_comment = QUILTCOMMENT % (
                 self.pagevars["url"],
                 self.pagevars["date"],
+                self.pagevars["githash"],
                 math.floor(1000 * etime) / 1000,
                 pagevar_comment
             )

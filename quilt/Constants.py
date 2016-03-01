@@ -155,13 +155,13 @@ QUILTHEADER = """,,,,,,,
 """
 # comment put in head if config["quiltcomment"] is True
 QUILTCOMMENT = """
-    -- """ + "~"*64 + """
-    -- Page stitched together with quilt.py
-    -- url            : %s
-    -- quilted on     : %s
-    -- stitching took : %s s
-%s
-    -- """ + "~"*64 + """
+""" + "~"*64 + """
+Page stitched together with quilt.py
+url            : %s
+quilted on     : %s
+source hash    : %s
+stitching took : %s s%s
+""" + "~"*64 + """
 """
 # comment put between asset source if config["assetcomment"] is True
 ASSETCOMMENT = """/*!
