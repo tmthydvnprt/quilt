@@ -77,7 +77,7 @@ class QuiltingRoom(object):
 
         # set runtime variables
         self.source = source
-        self.output = output or os.path.dirname(self.source)+'/quilted_'+os.path.basename(self.source)
+        self.output = output or os.path.dirname(self.source) + '/quilted_' + os.path.basename(self.source)
 
         # runtime
         __date = datetime.datetime.now().replace(microsecond=0)

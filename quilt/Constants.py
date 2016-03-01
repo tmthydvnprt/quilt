@@ -156,7 +156,8 @@ QUILTHEADER = """,,,,,,, quilt %s
 # comment put in head if config["quiltcomment"] is True
 QUILTCOMMENT = """
 """ + "~"*64 + """
-Page stitched together with quilt.py
+Page stitched together with quilt:
+quilt          : %s
 url            : %s
 quilted on     : %s
 source branch  : %s

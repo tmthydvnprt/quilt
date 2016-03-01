@@ -326,6 +326,7 @@ class Quilter(object):
 
         if self.pagevars["quiltcomment"]:
             quilt_comment = QUILTCOMMENT % (
+                'v{}, {}, {}'.format(self.pagevars["quiltversion"], self.pagevars["quiltbranch"], self.pagevars["quilthash"]),
                 self.pagevars["url"],
                 self.pagevars["date"],
                 self.pagevars["branch"],
