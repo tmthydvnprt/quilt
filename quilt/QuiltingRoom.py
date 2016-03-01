@@ -52,6 +52,7 @@ import shutil
 import fnmatch
 import datetime
 import PIL.Image
+import subprocess
 
 from quilt.Blog import Blog
 from quilt.Quilter import Quilter
@@ -112,6 +113,15 @@ class QuiltingRoom(object):
         self.config["templates"] = os.path.join(self.source, self.config["templates"])
         self.config["correctwords"] = os.path.join(self.source, self.config["correctwords"])
 
+        # get git repo info
+        if (self.config["git"]):
+            self.config["githash"] = subprocess.check_output(
+                'git -C {} rev-parse HEAD'.format(os.path.join(os.path.dirname(self.source), '.git')),
+                shell=True
+            ).strip()
+        else:
+            self.config["githash"] = 'n/a'
+
         # load quilt pattern
         self.quilt_pattern = read_file(self.config["quilt"])
 
@@ -149,6 +159,7 @@ class QuiltingRoom(object):
             "last_post"     : "",                            # url of previous post
             "last_title"    : "",                            # title of last post
             "disable_last"  : "disabled",                    # set if first post
+            "githash"       : self.config["githash"],        # set the last commit hash from a git repo
             # content page variables (intended to be overriden)
             # -----------------------------------------------------------------------------------
             "name"          : self.config["name"],           # site/project name
@@ -601,7 +612,6 @@ class QuiltingRoom(object):
                 for (url, title, description) in all_featured
         ])
 
-
         return self
 
     #@profile
@@ -610,7 +620,7 @@ class QuiltingRoom(object):
 
         __t0 = time.time()
 
-        print QUILTHEADER % (self.source, self.config["date"]), '\n', \
+        print QUILTHEADER % (self.source, self.config["githash"], self.config["date"]), '\n', \
         'loaded patches:', '\t' + '  '.join(self.patches.keys()), '\n' \
         'loaded templates:', '\t' + '  '.join([os.path.splitext(os.path.basename(x))[0] for x in self.files["templates"]]), '\n'
 

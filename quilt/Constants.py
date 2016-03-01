@@ -150,8 +150,9 @@ SYMBOLS_RE = r'({})'.format(r'|'.join([re.escape(x) for x in SYMBOLS.keys()]))
 QUILTHEADER = """,,,,,,,
 ;#~#~#; quilt
 ;~#~#~; source : %s
-;#~#~#; time   : %s
-'''''''"""
+;#~#~#; hash   : %s
+''''''' time   : %s
+"""
 # comment put in head if config["quiltcomment"] is True
 QUILTCOMMENT = """
     -- """ + "~"*64 + """
