@@ -147,9 +147,9 @@ MULTIMATCH_RE = r'({})(.*?)\2'.format(r'|'.join([re.escape(x) for x in MD_INLINE
 SYMBOLS_RE = r'({})'.format(r'|'.join([re.escape(x) for x in SYMBOLS.keys()]))
 
 # quilting logo, yeah!
-QUILTHEADER = """,,,,,,,
-;#~#~#; quilt
-;~#~#~; source : %s
+QUILTHEADER = """,,,,,,, quilt
+;#~#~#; source : %s
+;~#~#~; branch : %s
 ;#~#~#; hash   : %s
 ''''''' time   : %s
 """
@@ -159,6 +159,7 @@ QUILTCOMMENT = """
 Page stitched together with quilt.py
 url            : %s
 quilted on     : %s
+source branch  : %s
 source hash    : %s
 stitching took : %s s%s
 """ + "~"*64 + """

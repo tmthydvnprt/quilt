@@ -328,7 +328,8 @@ class Quilter(object):
             quilt_comment = QUILTCOMMENT % (
                 self.pagevars["url"],
                 self.pagevars["date"],
-                self.pagevars["githash"],
+                self.pagevars["branch"],
+                self.pagevars["hash"],
                 math.floor(1000 * etime) / 1000,
                 pagevar_comment
             )
