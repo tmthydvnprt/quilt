@@ -147,7 +147,7 @@ MULTIMATCH_RE = r'({})(.*?)\2'.format(r'|'.join([re.escape(x) for x in MD_INLINE
 SYMBOLS_RE = r'({})'.format(r'|'.join([re.escape(x) for x in SYMBOLS.keys()]))
 
 # quilting logo, yeah!
-QUILTHEADER = """,,,,,,, quilt
+QUILTHEADER = """,,,,,,, quilt %s
 ;#~#~#; source : %s
 ;~#~#~; branch : %s
 ;#~#~#; hash   : %s

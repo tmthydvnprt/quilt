@@ -54,6 +54,7 @@ import datetime
 import PIL.Image
 import subprocess
 
+import quilt
 from quilt.Blog import Blog
 from quilt.Quilter import Quilter
 from quilt.Util import DEFAULT_CONFIG, read_file, write_file, load_files, get_file_names
@@ -83,6 +84,7 @@ class QuiltingRoom(object):
         __utc = datetime.datetime.utcnow().replace(microsecond=0)
         __delta = __date - __utc
         __hh, __mm = divmod((__delta.days * 24*60*60 + __delta.seconds + 30) // 60, 60)
+        self.config["quiltversion"] = quilt.__version__
         self.config["date"] = __date
         self.config["now"] = {
             "iso"	    : "%s%+03d:%02d" % (__date.isoformat(), __hh, __mm),
@@ -113,11 +115,28 @@ class QuiltingRoom(object):
         self.config["templates"] = os.path.join(self.source, self.config["templates"])
         self.config["correctwords"] = os.path.join(self.source, self.config["correctwords"])
 
-        # get git repo info
+        # get quilt git repo info
+        repo = os.path.join(os.path.dirname(os.path.dirname(__file__)), '.git')
+        try:
+            self.config["quilthash"] = subprocess.check_output('git -C {} rev-parse HEAD'.format(repo), shell=True).strip()
+        except:
+            self.config["quilthash"] = ''
+        try:
+            self.config["quiltbranch"] = subprocess.check_output('git -C {} rev-parse --abbrev-ref HEAD'.format(repo), shell=True).strip()
+        except:
+            self.config["quiltbranch"] = ''
+
+        # get source git repo info
         if (self.config["git"]):
             repo = os.path.join(os.path.dirname(self.source), '.git')
-            self.config["hash"] = subprocess.check_output('git -C {} rev-parse HEAD'.format(repo), shell=True).strip()
-            self.config["branch"] = subprocess.check_output('git -C {} rev-parse --abbrev-ref HEAD'.format(repo), shell=True).strip()
+            try:
+                self.config["hash"] = subprocess.check_output('git -C {} rev-parse HEAD'.format(repo), shell=True).strip()
+            except:
+                self.config["hash"] = ''
+            try:
+                self.config["branch"] = subprocess.check_output('git -C {} rev-parse --abbrev-ref HEAD'.format(repo), shell=True).strip()
+            except:
+                self.config["branch"] = ''
         else:
             self.config["hash"] = ''
             self.config["branch"] = ''
@@ -159,8 +178,11 @@ class QuiltingRoom(object):
             "last_post"     : "",                            # url of previous post
             "last_title"    : "",                            # title of last post
             "disable_last"  : "disabled",                    # set if first post
-            "branch"        : self.config["branch"],         # set the last branch name from a git repo
-            "hash"          : self.config["hash"],           # set the last commit hash from a git repo
+            "branch"        : self.config["branch"],         # the current branch if source it a git repo
+            "hash"          : self.config["hash"],           # the current commit if source is a git repo
+            "quiltversion"  : self.config["quiltversion"],   # the version of quilt being used
+            "quiltbranch"   : self.config["quiltbranch"],    # the branch of quilt being used
+            "quilthash"     : self.config["quilthash"],      # the commit of quilt being used
             # content page variables (intended to be overriden)
             # -----------------------------------------------------------------------------------
             "name"          : self.config["name"],           # site/project name
@@ -621,7 +643,13 @@ class QuiltingRoom(object):
 
         __t0 = time.time()
 
-        print QUILTHEADER % (self.source, self.config["branch"], self.config["hash"], self.config["date"]), '\n', \
+        print QUILTHEADER % (
+            '(v{}, {}, {})'.format(self.config["quiltversion"], self.config["quiltbranch"], self.config["quilthash"]),
+            self.source,
+            self.config["branch"],
+            self.config["hash"],
+            self.config["date"]
+        ), '\n', \
         'loaded patches:', '\t' + '  '.join(self.patches.keys()), '\n' \
         'loaded templates:', '\t' + '  '.join([os.path.splitext(os.path.basename(x))[0] for x in self.files["templates"]]), '\n'
 
