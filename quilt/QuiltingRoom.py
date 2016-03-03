@@ -57,7 +57,7 @@ import subprocess
 import quilt
 from quilt.Blog import Blog
 from quilt.Quilter import Quilter
-from quilt.Util import DEFAULT_CONFIG, read_file, write_file, load_files, get_file_names
+from quilt.Util import DEFAULT_CONFIG, time_since, read_file, write_file, load_files, get_file_names
 from quilt.Util import find_hrefsrc, filter_external_url, minimize_css, minimize_js, prefix_vendor_css
 from quilt.Util import path_link_list, top_sentences, get_just_words, get_keywords, spell_check, analyze_post, ProgressBar
 from quilt.Util import reverse_chronological_order, check_local_quilt, get_group, make_group_links
