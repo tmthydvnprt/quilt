@@ -7,5 +7,6 @@
     "posts"       : "news",
     "local"       : true,
     "copydate"    : 2015,
+    "git"         : "../../",
     "copyrighter" : "tmthydvnprt"
 }

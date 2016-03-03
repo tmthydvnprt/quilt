@@ -59,7 +59,7 @@ credits    :
 
 ## __MODULES__
 
-[PIL](https://www.google.com/#q=python+PIL), [bs4](https://www.google.com/#q=python+bs4), [copy](https://www.google.com/#q=python+copy), [datetime](https://www.google.com/#q=python+datetime), [fnmatch](https://www.google.com/#q=python+fnmatch), [glob](https://www.google.com/#q=python+glob), [json](https://www.google.com/#q=python+json), [os](https://www.google.com/#q=python+os), [shutil](https://www.google.com/#q=python+shutil), [time](https://www.google.com/#q=python+time)
+[PIL](https://www.google.com/#q=python+PIL), [bs4](https://www.google.com/#q=python+bs4), [copy](https://www.google.com/#q=python+copy), [datetime](https://www.google.com/#q=python+datetime), [fnmatch](https://www.google.com/#q=python+fnmatch), [glob](https://www.google.com/#q=python+glob), [json](https://www.google.com/#q=python+json), [os](https://www.google.com/#q=python+os), [quilt](https://www.google.com/#q=python+quilt), [shutil](https://www.google.com/#q=python+shutil), [subprocess](https://www.google.com/#q=python+subprocess), [time](https://www.google.com/#q=python+time)
 {: .lead}
 
 ## __CLASSES__
@@ -171,7 +171,7 @@ __CSS\_EXT\_RE__
 
 __DEFAULT\_CONFIG__
 ```
-{'copyrighter': 'you', 'buildicon': True, 'atomid': 'randomid', 'keywords': [], 'combinejs': True, 'spellcheck': True, 'patches': 'patches', 'title': 'some default title', 'quiltcomment': True, 'combinecss': True, 'priority': '0.5', 'pageobject': True, 'local': False, 'correctwords': 'correct_words.txt', 'copydate': 2015, 'vendorfycss': True, 'iconsizes': [64, 60, 76, 120, 152], 'assets': 'assets', 'categories': [], 'spellignore': ['maths', 'codehilite'], 'name': 'some name', 'posts': 'posts', 'copymd': True, 'blogname': 'quilt news', 'pagecomment': True, 'domain': 'some_name.com', 'page_ext': ['*.html', '*.md'], 'quilt': 'quilt.html', 'patchcomment': True, 'minimizecss': True, 'images': 'imgs', 'asset_ext': ['*.*'], 'buildsearch': True, 'author': 'you', 'buildatom': True, 'buildrobot': True, 'iconfile': 'icon.png', 'assetcomment': True, 'email': 'you@some_name.com', 'templates': 'templates', 'patch_ext': ['*.html'], 'buildrss': True, 'description': 'default description', 'tags': [], 'template_ext': ['*.html'], 'rssid': 'randomid', 'changefreq': 'monthly', 'pages': 'pages', 'buildindex': True, 'buildsitemap': True, 'minimizejs': True, 'buildblog': True}
+{'copyrighter': 'you', 'buildicon': True, 'atomid': 'randomid', 'keywords': [], 'git': '', 'spellcheck': True, 'patches': 'patches', 'title': 'some default title', 'quiltcomment': True, 'combinecss': True, 'priority': '0.5', 'pageobject': True, 'local': False, 'correctwords': 'correct_words.txt', 'copydate': 2016, 'vendorfycss': True, 'iconsizes': [64, 60, 76, 120, 152], 'assets': 'assets', 'categories': [], 'spellignore': ['maths', 'codehilite'], 'name': 'some name', 'posts': 'posts', 'copymd': True, 'pagecomment': True, 'domain': 'some_name.com', 'page_ext': ['*.html', '*.md'], 'quilt': 'quilt.html', 'patchcomment': True, 'blogsubtitle': 'a blogy blog', 'minimizecss': True, 'images': 'imgs', 'asset_ext': ['*'], 'buildsearch': True, 'author': 'you', 'buildatom': True, 'blogtitle': 'some blog', 'emptywarning': False, 'buildrobot': True, 'iconfile': 'icon.png', 'assetcomment': True, 'email': 'you@some_name.com', 'templates': 'templates', 'patch_ext': ['*.html'], 'buildrss': True, 'description': 'default description', 'tags': [], 'template_ext': ['*.html'], 'combinejs': True, 'rssid': 'randomid', 'changefreq': 'monthly', 'pages': 'pages', 'buildindex': True, 'buildsitemap': True, 'minimizejs': True, 'buildblog': True}
 ```
 
 __HEAD\_STRAINER__
@@ -191,11 +191,12 @@ There are no earlier posts
 
 __QUILTHEADER__
 ```
-,,,,,,,
-;#~#~#; quilt
-;~#~#~; source : %s
-;#~#~#; time   : %s
-'''''''
+,,,,,,, quilt %s
+;#~#~#; source : %s
+;~#~#~; branch : %s
+;#~#~#; hash   : %s
+''''''' time   : %s
+
 ```
 
 __ROBOTTXT__

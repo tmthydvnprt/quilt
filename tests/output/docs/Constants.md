@@ -151,6 +151,11 @@ __EXTRA\_SPACES\_RE__
 ([!{}:;>+\(\[,])\s+
 ```
 
+__EXT\_LINK__
+```
+((?:[Ff]|[Hh][Tt])[Tt][Pp][Ss]?://[^>]*)
+```
+
 __FIRST\_EMPTY\_LINE\_RE__
 ```
 \n\s*\n
@@ -158,7 +163,7 @@ __FIRST\_EMPTY\_LINE\_RE__
 
 __FIRST\_KEY\_RE__
 ```
-[A-Za-z0-9_-]+:
+[A-Za-z0-9_-]+[ \t]*:
 ```
 
 __FOUR\_ZEROS\_RE__
@@ -166,33 +171,9 @@ __FOUR\_ZEROS\_RE__
 :0 0 0 0;
 ```
 
-__GROUP__
-```
-  <li class="%s-link">
-        <h3><a href="%s">%s</a> <span class="badge">%s posts</span></h3>
-    </li>
-
-```
-
 __GROUPLINK__
 ```
-<li class="%s"><a href="%s" class="label label-success">%s</a></li>
-
-```
-
-__GROUPLIST__
-```
-<div class="container">
-    <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-            <h1>%s</h1>
-            <hr>
-            <ul class="%s list-unstyled">
-                %s
-            </ul>
-        </div>
-    </div>
-</div>
+<li class="%s"><a href="%s" class="group-link">%s</a></li>
 
 ```
 
@@ -203,6 +184,16 @@ description: %s
 author: %s
 
 
+```
+
+__GROUP\_SINGLE\_NAME__
+```
+{'featured': 'featured', 'categories': 'category', 'tags': 'tag'}
+```
+
+__GROUP\_VERBS__
+```
+{'featured': 'featured', 'categories': 'categorized in', 'tags': 'tagged with'}
 ```
 
 __JS\_HTML\_PATTERN\_RE__
@@ -217,7 +208,7 @@ __KEEP\_COMMENT\_RE__
 
 __KEY\_VALUE\_RE__
 ```
-^[ ]{0,3}(?P<key>[A-Za-z0-9_-]+):\s*(?P<value>.*)
+^[ ]{0,3}(?P<key>[A-Za-z0-9_-]+)[ \t]*:\s*(?P<value>.*)
 ```
 
 __LEADING\_ZERO\_DECIMAL\_RE__
@@ -293,6 +284,11 @@ pagevars = %s;
 </script>
 ```
 
+__PAGEVARS\_TO\_PRINT__
+```
+['author', 'categories', 'copydate', 'copyrighter', 'date', 'description', 'directory', 'disable_last', 'disable_next', 'domain', 'email', 'keywords', 'last_post', 'last_title', 'latestpostlink', 'markdownlink', 'name', 'next_post', 'next_title', 'page_path', 'relativepath', 'tags', 'title', 'url', 'post-length', 'post-characters', 'post-lines', 'post-words', 'post-symbols', 'post-numbers', 'post-diversity', 'post-sentences', 'post-questions', 'post-extlinks', 'post-intlinks', 'post-anchors', 'post-images', 'post-headers']
+```
+
 __PAGEVAR\_RE__
 ```
 {{(.*?)}}
@@ -308,60 +304,29 @@ __PLACEHOLDER\_SIZE__
 64
 ```
 
-__POST__
-```
-  <li class="post-link list-group-item">
-        <h3 class="list-group-item-heading"><a href="%s">%s</a> <span class="h4">by %s <small>on %s</small></span></h3>
-        <hr>
-        <p class="lead list-group-item-text">%s <a href="%s">&hellip;continue&hellip;</a></p>
-        <ul class="group-list list-inline">
-            <li><a href="%s">Tags:</a> </li>
-            %s
-        </ul>
-        <ul class="group-list list-inline">
-            <li><a href="%s">Categores:</a> </li>
-            %s
-        </ul>
-    </li>
-
-```
-
-__POSTLIST__
-```
-<div class="container">
-    <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-            <h1>%s</h1>
-            <hr>
-            <div class="posts list-group">
-                %s
-            </div>
-        </div>
-    </div>
-</div>
-
-```
-
 __QUILTCOMMENT__
 ```
 
-    -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    -- Page stitched together with quilt.py
-    -- url            : %s
-    -- quilted on     : %s
-    -- stitching took : %s s
-%s
-    -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Page stitched together with quilt:
+quilt          : %s
+url            : %s
+quilted on     : %s
+source branch  : %s
+source hash    : %s
+stitching took : %s s%s
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ```
 
 __QUILTHEADER__
 ```
-,,,,,,,
-;#~#~#; quilt
-;~#~#~; source : %s
-;#~#~#; time   : %s
-'''''''
+,,,,,,, quilt %s
+;#~#~#; source : %s
+;~#~#~; branch : %s
+;#~#~#; hash   : %s
+''''''' time   : %s
+
 ```
 
 __REPLACE\_TAGS__
@@ -505,6 +470,11 @@ __THREE\_ZEROS\_RE__
 :0 0 0;
 ```
 
+__TRUE\_RE__
+```
+[Tt]rue
+```
+
 __TWO\_ZEROS\_RE__
 ```
 :0 0;
@@ -513,6 +483,11 @@ __TWO\_ZEROS\_RE__
 __VALUE\_RE__
 ```
 ^[ ]{4,}(?P<value>.*)
+```
+
+__WHITESPACE\_RE__
+```
+\s
 ```
 
 __WORD\_RE__

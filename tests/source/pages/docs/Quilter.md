@@ -147,7 +147,7 @@ __FIRST\_EMPTY\_LINE\_RE__
 
 __FIRST\_KEY\_RE__
 ```
-[A-Za-z0-9_-]+:
+[A-Za-z0-9_-]+[ \t]*:
 ```
 
 __HEAD\_STRAINER__
@@ -162,12 +162,12 @@ __JS\_HTML\_PATTERN\_RE__
 
 __KEY\_VALUE\_RE__
 ```
-^[ ]{0,3}(?P<key>[A-Za-z0-9_-]+):\s*(?P<value>.*)
+^[ ]{0,3}(?P<key>[A-Za-z0-9_-]+)[ \t]*:\s*(?P<value>.*)
 ```
 
 __MD__
 ```
-<markdown.Markdown object at 0x1091bfe10>
+<markdown.Markdown object at 0x10b767590>
 ```
 
 __NO\_EMPTY\_TAGS__
@@ -183,6 +183,11 @@ pagevars = %s;
 </script>
 ```
 
+__PAGEVARS\_TO\_PRINT__
+```
+['author', 'categories', 'copydate', 'copyrighter', 'date', 'description', 'directory', 'disable_last', 'disable_next', 'domain', 'email', 'keywords', 'last_post', 'last_title', 'latestpostlink', 'markdownlink', 'name', 'next_post', 'next_title', 'page_path', 'relativepath', 'tags', 'title', 'url', 'post-length', 'post-characters', 'post-lines', 'post-words', 'post-symbols', 'post-numbers', 'post-diversity', 'post-sentences', 'post-questions', 'post-extlinks', 'post-intlinks', 'post-anchors', 'post-images', 'post-headers']
+```
+
 __PAGEVAR\_RE__
 ```
 {{(.*?)}}
@@ -196,14 +201,21 @@ quilted %s patch
 __QUILTCOMMENT__
 ```
 
-    -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    -- Page stitched together with quilt.py
-    -- url            : %s
-    -- quilted on     : %s
-    -- stitching took : %s s
-%s
-    -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Page stitched together with quilt:
+quilt          : %s
+url            : %s
+quilted on     : %s
+source branch  : %s
+source hash    : %s
+stitching took : %s s%s
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+```
+
+__TRUE\_RE__
+```
+[Tt]rue
 ```
 
 __VALUE\_RE__

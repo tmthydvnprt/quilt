@@ -5,7 +5,7 @@
     <link href="some_name.com/feed/" rel="self"/>
     <link href="some_name.com"/>
     <id>randomid</id>
-    <updated>2015-06-08T06:45:42-7:00</updated>
+    <updated>2016-03-03T05:51:20-08:00</updated>
         <entry>
         <title>HTML Entities<title>
         <link href="/Users/timothydavenport/GitHub/quilt/tests/output/news/html_entities.html"/>
@@ -26,7 +26,17 @@ quot
 "
 &quot;
 \x0022 (34)
-quotation mark (APL</summary>
+quotation mark (APL quote)
+
+
+amp
+&
+&amp;
+\x0026 (38)
+ampersand
+
+
+apos</summary>
         <content type="xhtml">
             <div xmlns="http://www.w3.org/1999/xhtml">
                 <p><div id="post">
@@ -1837,12 +1847,7 @@ quotation mark (APL</summary>
         <id>randomid</id>
         <updated>3/20/2015 10:49 pm</updated>
         <summary>
-A list of MathJax \(\LaTeX\) Command  examples. These alphabetical examples come from here. There are a lot of examples so the page may take a while to render. Symbols§
-
-
-
-\(\LaTeX\) Command
-Syntax </summary>
+A list of MathJax \(\LaTeX\) Command  examples. These alphabetical examples come from here. There are a lot of examples so the page may take a while to render.</summary>
         <content type="xhtml">
             <div xmlns="http://www.w3.org/1999/xhtml">
                 <p><div id="post">
@@ -6252,7 +6257,7 @@ Syntax </summary>
         <id>randomid</id>
         <updated>03/08/2015 1:32 pm</updated>
         <summary>
-Quilt uses Python-Markdown as it's markdown interpreter. Besides the base syntax rules of original Markdown, quilt parses extra markdown syntax. Extras includes abbreviations, attribute lists, defini</summary>
+Quilt uses Python-Markdown as it's markdown interpreter. Besides the base syntax rules of original Markdown, quilt parses extra markdown syntax. Extras includes abbreviations, attribute lists, definitions, fenced code, footnotes, tables (with escape</summary>
         <content type="xhtml">
             <div xmlns="http://www.w3.org/1999/xhtml">
                 <p><div id="post">
@@ -7085,7 +7090,7 @@ $$</span></p>
         <updated>3/1/2015 3:15 pm</updated>
         <summary>
 A python based static site html stitcher. Description
-Generate a static site via python from content-only .html and .md pages that are stitched together  along with patch (e.g. nav.html, footer.html</summary>
+Generate a static site via python from content-only .html and .md pages that are stitched together  along with patch (e.g. nav.html, footer.html) files onto a main site quilt.html file.</summary>
         <content type="xhtml">
             <div xmlns="http://www.w3.org/1999/xhtml">
                 <p><div id="post">
@@ -7121,7 +7126,9 @@ The syntax for page variable headers changed from json  to key: value plaintext.
 key
 [A-Za-z0-9_-]+ from beginning of line until :
 value
-a string per line</summary>
+a string per line, where multiline values become arrays
+notes
+key: </summary>
         <content type="xhtml">
             <div xmlns="http://www.w3.org/1999/xhtml">
                 <p><div id="post">
