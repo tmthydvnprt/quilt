@@ -625,7 +625,6 @@ class QuiltingRoom(object):
             del qultr
 
         # add "global view" of blog to pagevars
-        print all_featured
         latest_post = os.path.splitext(os.path.basename(reverse_chronological_order(self.blog.posts)[0]["url"]))[0]
         self.config["page_defaults"]["latestpostlink"] = latest_post
         self.config["page_defaults"]["all_category_list"] = make_group_links(all_categories, self.blog.posts[0], 'categories')
