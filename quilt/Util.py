@@ -509,11 +509,11 @@ def group_links(pagevars=None, name=''):
     return linklist
 
 #@profile
-def top_sentences(text='', sentence_number=4, max_chars=200):
+def top_sentences(text='', sentence_number=4, max_chars=250):
     """return top sentences or max number of words"""
 
     sents = nltk.sent_tokenize(text[:max_chars])
-    top_sents = ' '.join(sents[:sentence_number])
+    top_sents = ' '.join(sents[:(sentence_number - 1)])
     return top_sents
 
 #@profile
