@@ -177,8 +177,10 @@ class Quilter(object):
             self.patches["scripts"] = '%s\n%s' % (self.patches["scripts"], page_js)
         # add page variables to object
         if self.config["pageobject"]:
-            filtered_pagevars = {k:v for k, v in self.pagevars.items() if k in PAGEVARS_TO_PRINT}
-            page_obj = json.dumps(self.pagevars, indent=4, separators=(',', ': '), sort_keys=True)
+            filtered_pagevars = {k:str(v) for k, v in self.pagevars.items() if k in PAGEVARS_TO_PRINT}
+
+            page_obj = json.dumps(filtered_pagevars, indent=4, separators=(',', ': '), sort_keys=True)
+
             if self.config["minimizejs"]:
                 page_obj = minimize_js(page_obj)
             self.patches["scripts"] = '%s\n%s' % (PAGEOBJ % (page_obj), self.patches["scripts"])
