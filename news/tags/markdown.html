@@ -6,49 +6,44 @@
 <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <!--
-    -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    -- Page stitched together with quilt.py
-    -- url            : /Users/timothydavenport/GitHub/quilt/tests/output/news/tags/markdown.html
-    -- quilted on     : 05/13/15
-    -- stitching took : 0.02 s
-    -- quilt pagevars :
-    --             author : tmthydvnprt
-    --        categories : []
-    --     category_list : 
-    --          copydate : 2015
-    --       copyrighter : tmthydvnprt
-    --              date : 05/13/15
-    --       description : default description
-    --         directory : tags
-    --      disable_last : disabled
-    --      disable_next : disabled
-    --            domain : some_name.com
-    --             email : tmthydvnprt@users.noreply.github.com
-    --          keywords : 
-    --         last_post : 
-    --        last_title : 
-    --        latestpost : latex_support
-    --      markdownlink : /Users/timothydavenport/GitHub/quilt/tests/output/news/tags/markdown.html
-    --              name : quilt
-    --         next_post : 
-    --        next_title : 
-    --            output : /Users/timothydavenport/GitHub/quilt/tests/output/news/tags/markdown.html
-    --         page_path : 
-    --       pagecomment : True
-    --      patchcomment : True
-    --      quiltcomment : True
-    --      relativepath : ../../
-    --          rootpath : /Users/timothydavenport/GitHub/quilt/tests/output
-    --            source : /Users/timothydavenport/GitHub/quilt/tests/source/pages/news/tags/markdown.html
-    --          tag_list : 
-    --              tags : []
-    --             title : quilt
-    --               url : /Users/timothydavenport/GitHub/quilt/tests/output/news/tags/markdown.html
-    -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Page stitched together with quilt:
+quilt          : v0.1.1, make-blog-index-a-patch, 7cc332bed745c6d90a2d1572520da981ceecb033
+url            : /Users/timothydavenport/GitHub/quilt/tests/output/news/tags/markdown.html
+quilted on     : 2016-03-03 05:51:20
+source branch  : make-blog-index-a-patch
+source hash    : 7cc332bed745c6d90a2d1572520da981ceecb033
+stitching took : 0.016 s
+quilt pagevars :
+                author : tmthydvnprt
+            categories : []
+              copydate : 2015&ndash;2016
+           copyrighter : tmthydvnprt
+                  date : 2016-03-03 05:51:20
+           description : Posts tagged with Markdown
+             directory : tags
+          disable_last : disabled
+          disable_next : disabled
+                domain : some_name.com
+                 email : tmthydvnprt@users.noreply.github.com
+              keywords : 
+             last_post : 
+            last_title : 
+        latestpostlink : latex_support
+          markdownlink : /Users/timothydavenport/GitHub/quilt/tests/output/news/tags/markdown.html
+                  name : quilt
+             next_post : 
+            next_title : 
+             page_path : 
+          relativepath : ../../
+                  tags : []
+                 title : Tag > Markdown
+                   url : /Users/timothydavenport/GitHub/quilt/tests/output/news/tags/markdown.html
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -->
-<title>quilt</title>
+<title>Tag &gt; Markdown</title>
 <meta content="tmthydvnprt" name="author"/>
-<meta content="default description" name="description"/>
+<meta content="Posts tagged with Markdown" name="description"/>
 <meta content="" name="keywords"/>
 <link href="../../imgs/favicon.ico" rel="favicon"/>
 <link href="../../img/icon_60x60.png" rel="apple-touch-icon"/>
@@ -57,6 +52,7 @@
 <link href="../../img/icon_152x152.png" rel="apple-touch-icon" sizes="152x152"/>
 <link href="../../css/bootstrap_colorful_quilt.css" rel="stylesheet" type="text/css"/></head>
 <body>
+<!-- directory quilt -->
 <!--quilted nav patch-->
 <nav class="navbar navbar-default navbar-fixed-top" id="nav">
 <div class="container">
@@ -114,14 +110,22 @@
 </div>
 </nav>
 <!--quilted page patch-->
-<div class="container" id="page">
+<div class="container-fluid" id="page">
 <div class="row">
-<div class="col-sm-8 col-sm-offset-2">
-<h1>Markdown Posts</h1>
-<hr/>
-<div class="posts list-group">
-<li class="post-link list-group-item">
-<h3 class="list-group-item-heading"><a alt="HTML Entities" href="../html_entities.html" title="HTML Entities">HTML Entities</a> <span class="h4">by tim <small>on 3/18/2015 5:46 am</small></span></h3>
+<div class="jumbotron" id="postinfo" markdown="1">
+<div class="row">
+<div class="col-xs-9">
+<h1>Markdown Tag</h1>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-8 col-sm-offset-1">
+<!--quilted post_list patch-->
+<div class="post-list list-group" id="post_list">
+<li class="post-item list-group-item">
+<h3 class="list-group-item-heading"><a alt="HTML Entities" href="url" title="HTML Entities">HTML Entities</a> <span class="h4">by tim <small>on 3/18/2015 5:46 am</small></span></h3>
 <hr/>
 <p class="lead list-group-item-text">
 This list of html entities is for reference and testing of entity handling. Name
@@ -137,35 +141,50 @@ quot
 "
 "
 \x0022 (34)
-quotation mark (APL <a alt="&hellip;continue&hellip;" href="../html_entities.html" title="&hellip;continue&hellip;">&hellip;continue&hellip;</a></p>
+quotation mark (APL quote)
+
+
+amp
+&amp;
+&amp;
+\x0026 (38)
+ampersand
+
+
+apos <a alt="&hellip;continue&hellip;" href="url" title="&hellip;continue&hellip;">&hellip;continue&hellip;</a></p>
 <ul class="group-list list-inline">
 <li><a alt="Tags:" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/tags/index.html" title="Tags:">Tags:</a> </li>
-<li class="tags"><a alt="markdown" class="label label-success" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/tags/markdown.html" title="markdown">markdown</a></li>
-<li class="tags"><a alt="html" class="label label-success" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/tags/html.html" title="html">html</a></li>
-<li class="tags"><a alt="entities" class="label label-success" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/tags/entities.html" title="entities">entities</a></li>
-<li class="tags"><a alt="BeautifulSoup" class="label label-success" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/tags/BeautifulSoup.html" title="BeautifulSoup">BeautifulSoup</a></li>
+<li class="tags"><a alt="markdown" class="group-link" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/tags/markdown.html" title="markdown">markdown</a></li>
+<li class="tags"><a alt="html" class="group-link" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/tags/html.html" title="html">html</a></li>
+<li class="tags"><a alt="entities" class="group-link" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/tags/entities.html" title="entities">entities</a></li>
+<li class="tags"><a alt="BeautifulSoup" class="group-link" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/tags/BeautifulSoup.html" title="BeautifulSoup">BeautifulSoup</a></li>
 </ul>
 <ul class="group-list list-inline">
-<li><a alt="Categores:" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/categories/index.html" title="Categores:">Categores:</a> </li>
-<li class="categories"><a alt="example" class="label label-success" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/categories/example.html" title="example">example</a></li>
+<li><a alt="Categories:" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/categories/index.html" title="Categories:">Categories:</a> </li>
+<li class="categories"><a alt="example" class="group-link" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/categories/example.html" title="example">example</a></li>
 </ul>
 </li>
-<li class="post-link list-group-item">
-<h3 class="list-group-item-heading"><a alt="Quilt's Markdown Syntax" href="../markdown_syntax.html" title="Quilt's Markdown Syntax">Quilt's Markdown Syntax</a> <span class="h4">by tim <small>on 03/08/2015 1:32 pm</small></span></h3>
+<li class="post-item list-group-item">
+<h3 class="list-group-item-heading"><a alt="Quilt's Markdown Syntax" href="url" title="Quilt's Markdown Syntax">Quilt's Markdown Syntax</a> <span class="h4">by tim <small>on 03/08/2015 1:32 pm</small></span></h3>
 <hr/>
 <p class="lead list-group-item-text">
-Quilt uses Python-Markdown as it's markdown interpreter. Besides the base syntax rules of original Markdown, quilt parses extra markdown syntax. <a alt="&hellip;continue&hellip;" href="../markdown_syntax.html" title="&hellip;continue&hellip;">&hellip;continue&hellip;</a></p>
+Quilt uses Python-Markdown as it's markdown interpreter. Besides the base syntax rules of original Markdown, quilt parses extra markdown syntax. Extras includes abbreviations, attribute lists, definitions, fenced code, footnotes, tables (with escape <a alt="&hellip;continue&hellip;" href="url" title="&hellip;continue&hellip;">&hellip;continue&hellip;</a></p>
 <ul class="group-list list-inline">
 <li><a alt="Tags:" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/tags/index.html" title="Tags:">Tags:</a> </li>
-<li class="tags"><a alt="github-flavored-markdown" class="label label-success" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/tags/github-flavored-markdown.html" title="github-flavored-markdown">github-flavored-markdown</a></li>
-<li class="tags"><a alt="markdown" class="label label-success" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/tags/markdown.html" title="markdown">markdown</a></li>
-<li class="tags"><a alt="syntax" class="label label-success" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/tags/syntax.html" title="syntax">syntax</a></li>
+<li class="tags"><a alt="github-flavored-markdown" class="group-link" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/tags/github-flavored-markdown.html" title="github-flavored-markdown">github-flavored-markdown</a></li>
+<li class="tags"><a alt="markdown" class="group-link" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/tags/markdown.html" title="markdown">markdown</a></li>
+<li class="tags"><a alt="syntax" class="group-link" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/tags/syntax.html" title="syntax">syntax</a></li>
 </ul>
 <ul class="group-list list-inline">
-<li><a alt="Categores:" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/categories/index.html" title="Categores:">Categores:</a> </li>
-<li class="categories"><a alt="example" class="label label-success" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/categories/example.html" title="example">example</a></li>
+<li><a alt="Categories:" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/categories/index.html" title="Categories:">Categories:</a> </li>
+<li class="categories"><a alt="example" class="group-link" href="/Users/timothydavenport/GitHub/quilt/tests/output/news/categories/example.html" title="example">example</a></li>
 </ul>
 </li>
+</div>
+<hr/>
+</div>
+<div class="col-sm-3">
+<div class="well">
 </div>
 </div>
 </div>
@@ -176,13 +195,13 @@ Quilt uses Python-Markdown as it's markdown interpreter. Besides the base syntax
 <hr/>
 <div class="clearfix">
 <p class="pull-left">quilt: python based static site html stitcher.</p>
-<p class="pull-right">2015 &copy; <a alt="tmthydvnprt" href="#" title="tmthydvnprt">tmthydvnprt</a></p>
+<p class="pull-right">2015&ndash;2016 &copy; <a alt="tmthydvnprt" href="#" title="tmthydvnprt">tmthydvnprt</a></p>
 </div>
 </div>
 </footer>
 <!--quilted scripts patch-->
 <script id="scripts" rel="javascript" type="text/javascript">
-pagevars = { "author":"tmthydvnprt", "categories":[], "copydate":2015, "copyrighter":"tmthydvnprt", "date":"05/13/15", "description":"default description", "directory":"tags", "disable_last":"disabled", "disable_next":"disabled", "domain":"some_name.com", "email":"tmthydvnprt@users.noreply.github.com", "keywords":"", "last_post":"", "last_title":"", "latestpost":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/news/tags/markdown.html", "name":"quilt", "next_post":"", "next_title":"", "output":"/Users/timothydavenport/GitHub/quilt/tests/output/news/tags/markdown.html", "page_path":"", "pagecomment":true, "patchcomment":true, "quiltcomment":true, "relativepath":"../../", "rootpath":"/Users/timothydavenport/GitHub/quilt/tests/output", "source":"/Users/timothydavenport/GitHub/quilt/tests/source/pages/news/tags/markdown.html", "tags":[], "title":"quilt", "url":"/Users/timothydavenport/GitHub/quilt/tests/output/news/tags/markdown.html" };
+pagevars = { "author":"tmthydvnprt", "categories":"[]", "copydate":"2015&ndash;2016", "copyrighter":"tmthydvnprt", "date":"2016-03-03 05:51:20", "description":"Posts tagged with Markdown", "directory":"tags", "disable_last":"disabled", "disable_next":"disabled", "domain":"some_name.com", "email":"tmthydvnprt@users.noreply.github.com", "keywords":"", "last_post":"", "last_title":"", "latestpostlink":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/news/tags/markdown.html", "name":"quilt", "next_post":"", "next_title":"", "page_path":"", "relativepath":"../../", "tags":"[]", "title":"Tag > Markdown", "url":"/Users/timothydavenport/GitHub/quilt/tests/output/news/tags/markdown.html" };
 </script>
 <script rel="javascript" src="../../js/jquery-1.11.2.min_bootstrap.min_typeahead.bundle.min_quilt.js" type="text/javascript"></script>
 <script rel="javascript" type="text/x-mathjax-config">MathJax.Hub.Config({ showMathMenu:false, imageFont:null, MathEvents:{ hover:256 }, jax:["input/TeX","output/HTML-CSS", "output/CommonHTML"], extensions:["tex2jax.js", "CHTML-preview.js"], TeX:{ extensions:["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"], autoNumber:"AMS" } });</script>

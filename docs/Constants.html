@@ -6,43 +6,40 @@
 <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <!--
-    -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    -- Page stitched together with quilt.py
-    -- url            : /Users/timothydavenport/GitHub/quilt/tests/output/docs/Constants.html
-    -- quilted on     : 05/13/15
-    -- stitching took : 0.121 s
-    -- quilt pagevars :
-    --            author : markdoc.py
-    --       categories : []
-    --         copydate : 2015
-    --      copyrighter : tmthydvnprt
-    --             date : 05/13/15
-    --      description : Formatable strings and default objects, maybe a list or two.
-    --        directory : docs
-    --     disable_last : disabled
-    --     disable_next : disabled
-    --           domain : some_name.com
-    --            email : tmthydvnprt@users.noreply.github.com
-    --         keywords : 
-    --        last_post : 
-    --       last_title : 
-    --       latestpost : latex_support
-    --     markdownlink : /Users/timothydavenport/GitHub/quilt/tests/output/docs/Constants.md
-    --             name : quilt
-    --        next_post : 
-    --       next_title : 
-    --           output : /Users/timothydavenport/GitHub/quilt/tests/output/docs/Constants.html
-    --        page_path : 
-    --      pagecomment : True
-    --     patchcomment : True
-    --     quiltcomment : True
-    --     relativepath : ../
-    --         rootpath : /Users/timothydavenport/GitHub/quilt/tests/output
-    --           source : /Users/timothydavenport/GitHub/quilt/tests/source/pages/docs/Constants.md
-    --             tags : []
-    --            title : quilt docs: Constants
-    --              url : /Users/timothydavenport/GitHub/quilt/tests/output/docs/Constants.html
-    -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Page stitched together with quilt:
+quilt          : v0.1.1, make-blog-index-a-patch, 7cc332bed745c6d90a2d1572520da981ceecb033
+url            : /Users/timothydavenport/GitHub/quilt/tests/output/docs/Constants.html
+quilted on     : 2016-03-03 05:51:20
+source branch  : make-blog-index-a-patch
+source hash    : 7cc332bed745c6d90a2d1572520da981ceecb033
+stitching took : 0.07 s
+quilt pagevars :
+                author : markdoc.py
+            categories : []
+              copydate : 2015&ndash;2016
+           copyrighter : tmthydvnprt
+                  date : 2016-03-03 05:51:20
+           description : Formatable strings and default objects, maybe a list or two.
+             directory : docs
+          disable_last : disabled
+          disable_next : disabled
+                domain : some_name.com
+                 email : tmthydvnprt@users.noreply.github.com
+              keywords : 
+             last_post : 
+            last_title : 
+        latestpostlink : latex_support
+          markdownlink : /Users/timothydavenport/GitHub/quilt/tests/output/docs/Constants.md
+                  name : quilt
+             next_post : 
+            next_title : 
+             page_path : 
+          relativepath : ../
+                  tags : []
+                 title : quilt docs: Constants
+                   url : /Users/timothydavenport/GitHub/quilt/tests/output/docs/Constants.html
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -->
 <title>quilt docs: Constants</title>
 <meta content="markdoc.py" name="author"/>
@@ -227,40 +224,31 @@ credits    :</p>
 <p><strong>EXTRA_SPACES_RE</strong></p>
 <div class="codehilite"><pre>([!{}:;&gt;+\(\[,])\s+
 </pre></div>
+<p><strong>EXT_LINK</strong></p>
+<div class="codehilite"><pre>((?:[Ff]|[Hh][Tt])[Tt][Pp][Ss]?://[^&gt;]*)
+</pre></div>
 <p><strong>FIRST_EMPTY_LINE_RE</strong></p>
 <div class="codehilite"><pre>\n\s*\n
 </pre></div>
 <p><strong>FIRST_KEY_RE</strong></p>
-<div class="codehilite"><pre>[A-Za-z0-9_-]+:
+<div class="codehilite"><pre>[A-Za-z0-9_-]+[ \t]*:
 </pre></div>
 <p><strong>FOUR_ZEROS_RE</strong></p>
 <div class="codehilite"><pre>:0 0 0 0;
 </pre></div>
-<p><strong>GROUP</strong></p>
-<div class="codehilite"><pre>  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"%s-link"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;h3&gt;&lt;a</span> <span class="na">href=</span><span class="s">"%s"</span><span class="nt">&gt;</span>%s<span class="nt">&lt;/a&gt;</span> <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge"</span><span class="nt">&gt;</span>%s posts<span class="nt">&lt;/span&gt;&lt;/h3&gt;</span>
-    <span class="nt">&lt;/li&gt;</span>
-</pre></div>
 <p><strong>GROUPLINK</strong></p>
-<div class="codehilite"><pre><span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"%s"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"%s"</span> <span class="na">class=</span><span class="s">"label label-success"</span><span class="nt">&gt;</span>%s<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-</pre></div>
-<p><strong>GROUPLIST</strong></p>
-<div class="codehilite"><pre><span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">"container"</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">"row"</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">"col-sm-8 col-sm-offset-2"</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="nf">%s</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">hr</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">ul</span> <span class="n">class</span><span class="o">=</span><span class="s">"%s list-unstyled"</span><span class="o">&gt;</span>
-                <span class="nf">%s</span>
-            <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
-        <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"%s"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"%s"</span> <span class="na">class=</span><span class="s">"group-link"</span><span class="nt">&gt;</span>%s<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
 </pre></div>
 <p><strong>GROUPVARS</strong></p>
 <div class="codehilite"><pre>title: %s
 description: %s
 author: %s
+</pre></div>
+<p><strong>GROUP_SINGLE_NAME</strong></p>
+<div class="codehilite"><pre>{'featured': 'featured', 'categories': 'category', 'tags': 'tag'}
+</pre></div>
+<p><strong>GROUP_VERBS</strong></p>
+<div class="codehilite"><pre>{'featured': 'featured', 'categories': 'categorized in', 'tags': 'tagged with'}
 </pre></div>
 <p><strong>JS_HTML_PATTERN_RE</strong></p>
 <div class="codehilite"><pre>(&gt;tpircs/&lt;.*&gt;tpircs&lt;)?(.*)
@@ -269,7 +257,7 @@ author: %s
 <div class="codehilite"><pre>(/\*!.*?\*/)
 </pre></div>
 <p><strong>KEY_VALUE_RE</strong></p>
-<div class="codehilite"><pre>^[ ]{0,3}(?P&lt;key&gt;[A-Za-z0-9_-]+):\s*(?P&lt;value&gt;.*)
+<div class="codehilite"><pre>^[ ]{0,3}(?P&lt;key&gt;[A-Za-z0-9_-]+)[ \t]*:\s*(?P&lt;value&gt;.*)
 </pre></div>
 <p><strong>LEADING_ZERO_DECIMAL_RE</strong></p>
 <div class="codehilite"><pre>(:|\s)0+\.(\d+)
@@ -315,6 +303,9 @@ author: %s
 pagevars = %s;
 <span class="nt">&lt;/script&gt;</span>
 </pre></div>
+<p><strong>PAGEVARS_TO_PRINT</strong></p>
+<div class="codehilite"><pre>['author', 'categories', 'copydate', 'copyrighter', 'date', 'description', 'directory', 'disable_last', 'disable_next', 'domain', 'email', 'keywords', 'last_post', 'last_title', 'latestpostlink', 'markdownlink', 'name', 'next_post', 'next_title', 'page_path', 'relativepath', 'tags', 'title', 'url', 'post-length', 'post-characters', 'post-lines', 'post-words', 'post-symbols', 'post-numbers', 'post-diversity', 'post-sentences', 'post-questions', 'post-extlinks', 'post-intlinks', 'post-anchors', 'post-images', 'post-headers']
+</pre></div>
 <p><strong>PAGEVAR_RE</strong></p>
 <div class="codehilite"><pre><span class="cp">not found</span><span class="x"></span>
 </pre></div>
@@ -324,49 +315,23 @@ pagevars = %s;
 <p><strong>PLACEHOLDER_SIZE</strong></p>
 <div class="codehilite"><pre>64
 </pre></div>
-<p><strong>POST</strong></p>
-<div class="codehilite"><pre>  <span class="o">&lt;</span><span class="n">li</span> <span class="n">class</span><span class="o">=</span><span class="s">"post-link list-group-item"</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">h3</span> <span class="n">class</span><span class="o">=</span><span class="s">"list-group-item-heading"</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">"%s"</span><span class="o">&gt;</span><span class="nf">%s</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s">"h4"</span><span class="o">&gt;</span><span class="n">by</span> <span class="nf">%s</span> <span class="o">&lt;</span><span class="n">small</span><span class="o">&gt;</span><span class="n">on</span> <span class="nf">%s</span><span class="o">&lt;/</span><span class="n">small</span><span class="o">&gt;&lt;/</span><span class="n">span</span><span class="o">&gt;&lt;/</span><span class="n">h3</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">hr</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">p</span> <span class="n">class</span><span class="o">=</span><span class="s">"lead list-group-item-text"</span><span class="o">&gt;</span><span class="nf">%s</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">"%s"</span><span class="o">&gt;&amp;</span><span class="n">hellip</span><span class="p">;</span><span class="k">continue</span><span class="o">&amp;</span><span class="n">hellip</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">ul</span> <span class="n">class</span><span class="o">=</span><span class="s">"group-list list-inline"</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">"%s"</span><span class="o">&gt;</span><span class="nl">Tags</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-            <span class="nf">%s</span>
-        <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">ul</span> <span class="n">class</span><span class="o">=</span><span class="s">"group-list list-inline"</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">"%s"</span><span class="o">&gt;</span><span class="nl">Categores</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-            <span class="nf">%s</span>
-        <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-</pre></div>
-<p><strong>POSTLIST</strong></p>
-<div class="codehilite"><pre><span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">"container"</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">"row"</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">"col-sm-8 col-sm-offset-2"</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="nf">%s</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">hr</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">"posts list-group"</span><span class="o">&gt;</span>
-                <span class="nf">%s</span>
-            <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
-        <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
-</pre></div>
 <p><strong>QUILTCOMMENT</strong></p>
-<div class="codehilite"><pre>    <span class="o">--</span> <span class="o">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
-    <span class="o">--</span> <span class="n">Page</span> <span class="n">stitched</span> <span class="n">together</span> <span class="n">with</span> <span class="n">quilt</span><span class="p">.</span><span class="n">py</span>
-    <span class="o">--</span> <span class="nl">url</span>            <span class="p">:</span> <span class="nf">%s</span>
-    <span class="o">--</span> <span class="n">quilted</span> <span class="nl">on</span>     <span class="p">:</span> <span class="nf">%s</span>
-    <span class="o">--</span> <span class="n">stitching</span> <span class="nl">took</span> <span class="p">:</span> <span class="nf">%s</span> <span class="n">s</span>
-<span class="nf">%s</span>
-    <span class="o">--</span> <span class="o">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<div class="codehilite"><pre>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Page stitched together with quilt:
+quilt          : %s
+url            : %s
+quilted on     : %s
+source branch  : %s
+source hash    : %s
+stitching took : %s s%s
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 </pre></div>
 <p><strong>QUILTHEADER</strong></p>
-<div class="codehilite"><pre>,,,,,,,
-;#~#~#; quilt
-;~#~#~; source : %s
-;#~#~#; time   : %s
-'''''''
+<div class="codehilite"><pre>,,,,,,, quilt %s
+;#~#~#; source : %s
+;~#~#~; branch : %s
+;#~#~#; hash   : %s
+''''''' time   : %s
 </pre></div>
 <p><strong>REPLACE_TAGS</strong></p>
 <div class="codehilite"><pre>{'%%': 'br', '@@': 'i'}
@@ -469,11 +434,17 @@ Disallow:
 <p><strong>THREE_ZEROS_RE</strong></p>
 <div class="codehilite"><pre>:0 0 0;
 </pre></div>
+<p><strong>TRUE_RE</strong></p>
+<div class="codehilite"><pre>[Tt]rue
+</pre></div>
 <p><strong>TWO_ZEROS_RE</strong></p>
 <div class="codehilite"><pre>:0 0;
 </pre></div>
 <p><strong>VALUE_RE</strong></p>
 <div class="codehilite"><pre>^[ ]{4,}(?P&lt;value&gt;.*)
+</pre></div>
+<p><strong>WHITESPACE_RE</strong></p>
+<div class="codehilite"><pre>\s
 </pre></div>
 <p><strong>WORD_RE</strong></p>
 <div class="codehilite"><pre>^\w+$
@@ -494,13 +465,13 @@ Disallow:
 <hr/>
 <div class="clearfix">
 <p class="pull-left">quilt: python based static site html stitcher.</p>
-<p class="pull-right">2015 &copy; <a alt="tmthydvnprt" href="#" title="tmthydvnprt">tmthydvnprt</a></p>
+<p class="pull-right">2015&ndash;2016 &copy; <a alt="tmthydvnprt" href="#" title="tmthydvnprt">tmthydvnprt</a></p>
 </div>
 </div>
 </footer>
 <!--quilted scripts patch-->
 <script id="scripts" rel="javascript" type="text/javascript">
-pagevars = { "author":"markdoc.py", "categories":[], "copydate":2015, "copyrighter":"tmthydvnprt", "date":"05/13/15", "description":"Formatable strings and default objects, maybe a list or two.", "directory":"docs", "disable_last":"disabled", "disable_next":"disabled", "domain":"some_name.com", "email":"tmthydvnprt@users.noreply.github.com", "keywords":"", "last_post":"", "last_title":"", "latestpost":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/docs/Constants.md", "name":"quilt", "next_post":"", "next_title":"", "output":"/Users/timothydavenport/GitHub/quilt/tests/output/docs/Constants.html", "page_path":"", "pagecomment":true, "patchcomment":true, "quiltcomment":true, "relativepath":"../", "rootpath":"/Users/timothydavenport/GitHub/quilt/tests/output", "source":"/Users/timothydavenport/GitHub/quilt/tests/source/pages/docs/Constants.md", "tags":[], "title":"quilt docs:Constants", "url":"/Users/timothydavenport/GitHub/quilt/tests/output/docs/Constants.html" };
+pagevars = { "author":"markdoc.py", "categories":"[]", "copydate":"2015&ndash;2016", "copyrighter":"tmthydvnprt", "date":"2016-03-03 05:51:20", "description":"Formatable strings and default objects, maybe a list or two.", "directory":"docs", "disable_last":"disabled", "disable_next":"disabled", "domain":"some_name.com", "email":"tmthydvnprt@users.noreply.github.com", "keywords":"", "last_post":"", "last_title":"", "latestpostlink":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/docs/Constants.md", "name":"quilt", "next_post":"", "next_title":"", "page_path":"", "relativepath":"../", "tags":"[]", "title":"quilt docs:Constants", "url":"/Users/timothydavenport/GitHub/quilt/tests/output/docs/Constants.html" };
 </script>
 <script rel="javascript" src="../js/jquery-1.11.2.min_bootstrap.min_typeahead.bundle.min_quilt.js" type="text/javascript"></script>
 <script rel="javascript" type="text/x-mathjax-config">MathJax.Hub.Config({ showMathMenu:false, imageFont:null, MathEvents:{ hover:256 }, jax:["input/TeX","output/HTML-CSS", "output/CommonHTML"], extensions:["tex2jax.js", "CHTML-preview.js"], TeX:{ extensions:["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"], autoNumber:"AMS" } });</script>

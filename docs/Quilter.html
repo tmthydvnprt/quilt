@@ -6,43 +6,40 @@
 <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <!--
-    -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    -- Page stitched together with quilt.py
-    -- url            : /Users/timothydavenport/GitHub/quilt/tests/output/docs/Quilter.html
-    -- quilted on     : 05/13/15
-    -- stitching took : 0.049 s
-    -- quilt pagevars :
-    --            author : markdoc.py
-    --       categories : []
-    --         copydate : 2015
-    --      copyrighter : tmthydvnprt
-    --             date : 05/13/15
-    --      description : Object to stitch a page based on quilt
-    --        directory : docs
-    --     disable_last : disabled
-    --     disable_next : disabled
-    --           domain : some_name.com
-    --            email : tmthydvnprt@users.noreply.github.com
-    --         keywords : 
-    --        last_post : 
-    --       last_title : 
-    --       latestpost : latex_support
-    --     markdownlink : /Users/timothydavenport/GitHub/quilt/tests/output/docs/Quilter.md
-    --             name : quilt
-    --        next_post : 
-    --       next_title : 
-    --           output : /Users/timothydavenport/GitHub/quilt/tests/output/docs/Quilter.html
-    --        page_path : 
-    --      pagecomment : True
-    --     patchcomment : True
-    --     quiltcomment : True
-    --     relativepath : ../
-    --         rootpath : /Users/timothydavenport/GitHub/quilt/tests/output
-    --           source : /Users/timothydavenport/GitHub/quilt/tests/source/pages/docs/Quilter.md
-    --             tags : []
-    --            title : quilt docs: Quilter
-    --              url : /Users/timothydavenport/GitHub/quilt/tests/output/docs/Quilter.html
-    -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Page stitched together with quilt:
+quilt          : v0.1.1, make-blog-index-a-patch, 7cc332bed745c6d90a2d1572520da981ceecb033
+url            : /Users/timothydavenport/GitHub/quilt/tests/output/docs/Quilter.html
+quilted on     : 2016-03-03 05:51:20
+source branch  : make-blog-index-a-patch
+source hash    : 7cc332bed745c6d90a2d1572520da981ceecb033
+stitching took : 0.038 s
+quilt pagevars :
+                author : markdoc.py
+            categories : []
+              copydate : 2015&ndash;2016
+           copyrighter : tmthydvnprt
+                  date : 2016-03-03 05:51:20
+           description : Object to stitch a page based on quilt
+             directory : docs
+          disable_last : disabled
+          disable_next : disabled
+                domain : some_name.com
+                 email : tmthydvnprt@users.noreply.github.com
+              keywords : 
+             last_post : 
+            last_title : 
+        latestpostlink : latex_support
+          markdownlink : /Users/timothydavenport/GitHub/quilt/tests/output/docs/Quilter.md
+                  name : quilt
+             next_post : 
+            next_title : 
+             page_path : 
+          relativepath : ../
+                  tags : []
+                 title : quilt docs: Quilter
+                   url : /Users/timothydavenport/GitHub/quilt/tests/output/docs/Quilter.html
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -->
 <title>quilt docs: Quilter</title>
 <meta content="markdoc.py" name="author"/>
@@ -255,7 +252,7 @@ write it out</p>
 <div class="codehilite"><pre>\n\s*\n
 </pre></div>
 <p><strong>FIRST_KEY_RE</strong></p>
-<div class="codehilite"><pre>[A-Za-z0-9_-]+:
+<div class="codehilite"><pre>[A-Za-z0-9_-]+[ \t]*:
 </pre></div>
 <p><strong>HEAD_STRAINER</strong></p>
 <div class="codehilite"><pre>head|{}
@@ -264,10 +261,10 @@ write it out</p>
 <div class="codehilite"><pre>(&gt;tpircs/&lt;.*&gt;tpircs&lt;)?(.*)
 </pre></div>
 <p><strong>KEY_VALUE_RE</strong></p>
-<div class="codehilite"><pre>^[ ]{0,3}(?P&lt;key&gt;[A-Za-z0-9_-]+):\s*(?P&lt;value&gt;.*)
+<div class="codehilite"><pre>^[ ]{0,3}(?P&lt;key&gt;[A-Za-z0-9_-]+)[ \t]*:\s*(?P&lt;value&gt;.*)
 </pre></div>
 <p><strong>MD</strong></p>
-<div class="codehilite"><pre>&lt;markdown.Markdown object at 0x1091bfe10&gt;
+<div class="codehilite"><pre>&lt;markdown.Markdown object at 0x10b767590&gt;
 </pre></div>
 <p><strong>NO_EMPTY_TAGS</strong></p>
 <div class="codehilite"><pre>['section', 'article', 'header', 'footer', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hgroup', 'nav', 'aside', 'div', 'main', 'p', 'pre', 'bockquote', 'ol', 'ul', 'li', 'a', 'abbr', 'cite', 'code', 'b', 'strong', 'em', 's', 'q', 'small', 'samp', 'u', 'time', 'var', 'sup', 'sub', 'kdb', 'mark', 'dl', 'dt', 'dd', 'table', 'thead', 'td', 'tr', 'th', 'tbody', 'tfooter']
@@ -277,6 +274,9 @@ write it out</p>
 pagevars = %s;
 <span class="nt">&lt;/script&gt;</span>
 </pre></div>
+<p><strong>PAGEVARS_TO_PRINT</strong></p>
+<div class="codehilite"><pre>['author', 'categories', 'copydate', 'copyrighter', 'date', 'description', 'directory', 'disable_last', 'disable_next', 'domain', 'email', 'keywords', 'last_post', 'last_title', 'latestpostlink', 'markdownlink', 'name', 'next_post', 'next_title', 'page_path', 'relativepath', 'tags', 'title', 'url', 'post-length', 'post-characters', 'post-lines', 'post-words', 'post-symbols', 'post-numbers', 'post-diversity', 'post-sentences', 'post-questions', 'post-extlinks', 'post-intlinks', 'post-anchors', 'post-images', 'post-headers']
+</pre></div>
 <p><strong>PAGEVAR_RE</strong></p>
 <div class="codehilite"><pre><span class="cp">not found</span><span class="x"></span>
 </pre></div>
@@ -284,13 +284,18 @@ pagevars = %s;
 <div class="codehilite"><pre>quilted %s patch
 </pre></div>
 <p><strong>QUILTCOMMENT</strong></p>
-<div class="codehilite"><pre>    <span class="o">--</span> <span class="o">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
-    <span class="o">--</span> <span class="n">Page</span> <span class="n">stitched</span> <span class="n">together</span> <span class="n">with</span> <span class="n">quilt</span><span class="p">.</span><span class="n">py</span>
-    <span class="o">--</span> <span class="nl">url</span>            <span class="p">:</span> <span class="nf">%s</span>
-    <span class="o">--</span> <span class="n">quilted</span> <span class="nl">on</span>     <span class="p">:</span> <span class="nf">%s</span>
-    <span class="o">--</span> <span class="n">stitching</span> <span class="nl">took</span> <span class="p">:</span> <span class="nf">%s</span> <span class="n">s</span>
-<span class="nf">%s</span>
-    <span class="o">--</span> <span class="o">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<div class="codehilite"><pre>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Page stitched together with quilt:
+quilt          : %s
+url            : %s
+quilted on     : %s
+source branch  : %s
+source hash    : %s
+stitching took : %s s%s
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+</pre></div>
+<p><strong>TRUE_RE</strong></p>
+<div class="codehilite"><pre>[Tt]rue
 </pre></div>
 <p><strong>VALUE_RE</strong></p>
 <div class="codehilite"><pre>^[ ]{4,}(?P&lt;value&gt;.*)
@@ -305,13 +310,13 @@ pagevars = %s;
 <hr/>
 <div class="clearfix">
 <p class="pull-left">quilt: python based static site html stitcher.</p>
-<p class="pull-right">2015 &copy; <a alt="tmthydvnprt" href="#" title="tmthydvnprt">tmthydvnprt</a></p>
+<p class="pull-right">2015&ndash;2016 &copy; <a alt="tmthydvnprt" href="#" title="tmthydvnprt">tmthydvnprt</a></p>
 </div>
 </div>
 </footer>
 <!--quilted scripts patch-->
 <script id="scripts" rel="javascript" type="text/javascript">
-pagevars = { "author":"markdoc.py", "categories":[], "copydate":2015, "copyrighter":"tmthydvnprt", "date":"05/13/15", "description":"Object to stitch a page based on quilt", "directory":"docs", "disable_last":"disabled", "disable_next":"disabled", "domain":"some_name.com", "email":"tmthydvnprt@users.noreply.github.com", "keywords":"", "last_post":"", "last_title":"", "latestpost":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/docs/Quilter.md", "name":"quilt", "next_post":"", "next_title":"", "output":"/Users/timothydavenport/GitHub/quilt/tests/output/docs/Quilter.html", "page_path":"", "pagecomment":true, "patchcomment":true, "quiltcomment":true, "relativepath":"../", "rootpath":"/Users/timothydavenport/GitHub/quilt/tests/output", "source":"/Users/timothydavenport/GitHub/quilt/tests/source/pages/docs/Quilter.md", "tags":[], "title":"quilt docs:Quilter", "url":"/Users/timothydavenport/GitHub/quilt/tests/output/docs/Quilter.html" };
+pagevars = { "author":"markdoc.py", "categories":"[]", "copydate":"2015&ndash;2016", "copyrighter":"tmthydvnprt", "date":"2016-03-03 05:51:20", "description":"Object to stitch a page based on quilt", "directory":"docs", "disable_last":"disabled", "disable_next":"disabled", "domain":"some_name.com", "email":"tmthydvnprt@users.noreply.github.com", "keywords":"", "last_post":"", "last_title":"", "latestpostlink":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/docs/Quilter.md", "name":"quilt", "next_post":"", "next_title":"", "page_path":"", "relativepath":"../", "tags":"[]", "title":"quilt docs:Quilter", "url":"/Users/timothydavenport/GitHub/quilt/tests/output/docs/Quilter.html" };
 </script>
 <script rel="javascript" src="../js/jquery-1.11.2.min_bootstrap.min_typeahead.bundle.min_quilt.js" type="text/javascript"></script>
 <script rel="javascript" type="text/x-mathjax-config">MathJax.Hub.Config({ showMathMenu:false, imageFont:null, MathEvents:{ hover:256 }, jax:["input/TeX","output/HTML-CSS", "output/CommonHTML"], extensions:["tex2jax.js", "CHTML-preview.js"], TeX:{ extensions:["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"], autoNumber:"AMS" } });</script>
