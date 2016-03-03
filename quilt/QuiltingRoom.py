@@ -659,7 +659,7 @@ class QuiltingRoom(object):
 
         # quilt all the assets
         self.build_assets()
-        print 'quilting time: %s' % ((time.time() - __t0))
+        print 'quilting time: %s' % (time_since(__t0))
 
         # setup pages output directories
         folders = [self.ouput_path(b, self.config["pages"]) for b in self.files["pages"]]
@@ -671,65 +671,65 @@ class QuiltingRoom(object):
         # analyze all the posts
         if self.config["buildblog"]:
             self.analyze_posts()
-            print 'quilting time: %s' % ((time.time() - __t0))
+            print 'quilting time: %s' % (time_since(__t0))
 
         # quilt all the pages
         self.quilt_pages(self.files["pages"])
-        print 'quilting time: %s' % ((time.time() - __t0))
+        print 'quilting time: %s' % (time_since(__t0))
 
         # quilt all the post pages
         if self.config["buildblog"]:
             posts = reverse_chronological_order(self.blog.posts)
             self.quilt_pages([post["source"] for post in posts], posts)
-            print 'quilting time: %s' % ((time.time() - __t0))
+            print 'quilting time: %s' % (time_since(__t0))
 
         # build the posts and blog
         adds = []
         if self.config["buildblog"]:
             self.blog.generate_blog_home()
             adds.append('blog')
-            print 'quilting time: %s' % ((time.time() - __t0))
+            print 'quilting time: %s' % (time_since(__t0))
             self.blog.generate_featured()
             adds.append('featured')
-            print 'quilting time: %s' % ((time.time() - __t0))
+            print 'quilting time: %s' % (time_since(__t0))
             self.blog.generate_group_pages("tags")
             adds.append('tags')
-            print 'quilting time: %s' % ((time.time() - __t0))
+            print 'quilting time: %s' % (time_since(__t0))
             self.blog.generate_group_pages("categories")
             adds.append('categories')
-            print 'quilting time: %s' % ((time.time() - __t0))
+            print 'quilting time: %s' % (time_since(__t0))
 
         # add site files
         if self.config["buildblog"] and self.config["buildatom"]:
             adds.append('atom')
             self.blog.generate_atom()
-            print 'quilting time: %s' % ((time.time() - __t0))
+            print 'quilting time: %s' % (time_since(__t0))
         if self.config["buildblog"] and self.config["buildrss"]:
             adds.append('rss')
             self.blog.generate_rss()
-            print 'rss quilting time: %s' % ((time.time() - __t0))
+            print 'rss quilting time: %s' % (time_since(__t0))
         if self.config["buildindex"]:
             adds.append('indexes')
             self.generate_index()
-            print 'index quilting time: %s' % ((time.time() - __t0))
+            print 'index quilting time: %s' % (time_since(__t0))
         if self.config["buildrobot"]:
             adds.append('robot.txt')
             self.generate_robot()
-            print 'quilting time: %s' % ((time.time() - __t0))
+            print 'quilting time: %s' % (time_since(__t0))
         if self.config["buildsearch"]:
             adds.append('search.json')
             self.generate_search()
-            print 'search quilting time: %s' % ((time.time() - __t0))
+            print 'search quilting time: %s' % (time_since(__t0))
         if self.config["buildsitemap"]:
             adds.append('sitemap')
             self.generate_sitemap()
-            print 'quilting time: %s' % ((time.time() - __t0))
+            print 'quilting time: %s' % (time_since(__t0))
 
         print '\n\nadding:\t', ' '.join(adds)
         print '\n', 'quilting is finished!', '\n'
 
         if self.config["spellcheck"]:
             self.spellcheck()
-        print 'quilting time: %s' % ((time.time() - __t0))
+        print 'quilting time: %s' % (time_since(__t0))
 
         return self

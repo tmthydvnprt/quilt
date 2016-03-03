@@ -26,6 +26,7 @@ import sys
 import bs4
 import copy
 import nltk
+import time
 import string
 import random
 import codecs
@@ -122,6 +123,10 @@ NO_EMPTY_TAGS = [
 
 HEAD_STRAINER = bs4.SoupStrainer("head")
 BODY_STRAINER = bs4.SoupStrainer("body")
+
+def time_since(t0):
+    """returnt he time since the initial time t0"""
+    return (time.time() - t0)
 
 #@profile
 def read_file(file_path='', encoding='utf-8'):
