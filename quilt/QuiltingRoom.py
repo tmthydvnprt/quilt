@@ -128,7 +128,7 @@ class QuiltingRoom(object):
 
         # get source git repo info
         if (self.config["git"]):
-            repo = os.path.join(os.path.dirname(self.source), '.git')
+            repo = os.path.join(self.source, self.config["git"], '.git')
             try:
                 self.config["hash"] = subprocess.check_output('git -C {} rev-parse HEAD'.format(repo), shell=True).strip()
             except:

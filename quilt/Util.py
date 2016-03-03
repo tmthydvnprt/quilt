@@ -90,7 +90,7 @@ DEFAULT_CONFIG = {
     "spellcheck"  : True,                   # spell check after quilting
     "spellignore" : ["maths", "codehilite"],# classes to ignore spelling
     "emptywarning": False,                  # print empty warnings
-    "git"         : True,                   # source is a git repo (place hash in logs)
+    "git"         : "",                     # relative path to a git repo (place hash in logs)
     # file and directory names
     # -----------------------------------------------------------------------------------
     "quilt"       : "quilt.html",           # name of quilt file
