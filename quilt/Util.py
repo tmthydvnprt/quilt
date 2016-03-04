@@ -31,6 +31,7 @@ import string
 import random
 import codecs
 import fnmatch
+import hashlib
 import urlparse
 import datetime as dt
 
@@ -194,6 +195,19 @@ def get_file_names(source='', extensions=''):
                         file_names.update([os.path.join(dirpath, f)])
 
     return file_names
+
+def get_dir_hash(dir_path=''):
+    """Get the check some of each file in directory, and store in dictionary"""
+    dirhash = {}
+    # walk thru all directories and sub directories
+    for dirpath, _, files in os.walk(dir_path):
+        # loop thru all files in directory
+        for f in files:
+            fullpath = os.path.join(dirpath, f)
+            with open(fullpath, 'r') as openfile:
+                # compute hash and place in dictionary
+                dirhash[fullpath] = hashlib.sha1(openfile.read()).digest()
+    return dirhash
 
 #@profile
 def relative_path(filepath='', rootpath=''):
