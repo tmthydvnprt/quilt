@@ -49,6 +49,7 @@ import copy
 import glob
 import time
 import shutil
+import pickle
 import fnmatch
 import hashlib
 import datetime
