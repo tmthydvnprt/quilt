@@ -102,8 +102,9 @@ class QuiltingRoom(object):
         # set runtime variables
         output = output or os.path.dirname(self.source) + '/quilted_' + os.path.basename(self.source)
         self.source = source
-        self.finaloutput = output
-        self.output = output + '_' + hashlib.sha1(output + str(__date)).hexdigest()[:7]
+        # self.finaloutput = output
+        self.output = output
+        # self.output = output + '_' + hashlib.sha1(output + str(__date)).hexdigest()[:7]
 
         # read in configuration
         config_options = json.loads(read_file(os.path.join(self.source, 'config.json')))
