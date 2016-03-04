@@ -648,13 +648,13 @@ class QuiltingRoom(object):
 
         # read in last source hashes
         lastsourcehash = {}
-        sourcehash_path = os.path.join(self.config["output"], 'sourcehash.pkl')
+        sourcehash_path = os.path.join(self.output, 'sourcehash.pkl')
         if os.path.exists(sourcehash_path):
             with open(sourcehash_path, 'r') as f:
                 lastsourcehash = pickle.load(f)
 
         # calculate current source hashes
-        sourcehash = get_dir_hash(self.config["source"])
+        sourcehash = get_dir_hash(self.source)
 
         # if the source has changed
         if sourcehash != lastsourcehash:
