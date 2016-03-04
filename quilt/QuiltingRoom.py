@@ -50,6 +50,7 @@ import glob
 import time
 import shutil
 import fnmatch
+import hashlib
 import datetime
 import PIL.Image
 import subprocess
@@ -75,10 +76,6 @@ class QuiltingRoom(object):
         # default configuration
         self.config = copy.copy(DEFAULT_CONFIG)
 
-        # set runtime variables
-        self.source = source
-        self.output = output or os.path.dirname(self.source) + '/quilted_' + os.path.basename(self.source)
-
         # runtime
         __date = datetime.datetime.now().replace(microsecond=0)
         __utc = datetime.datetime.utcnow().replace(microsecond=0)
@@ -100,6 +97,12 @@ class QuiltingRoom(object):
             "isodate"   : __date.strftime('%Y-%m-%d'),
             "datetime"  : __date.strftime('%m/%d/%Y %I:%M %p')
         }
+
+        # set runtime variables
+        output = output or os.path.dirname(self.source) + '/quilted_' + os.path.basename(self.source)
+        self.source = source
+        self.finaloutput = output
+        self.output = output + '_' + hashlib.sha1(output + str(__date)).hexdigest()[:7]
 
         # read in configuration
         config_options = json.loads(read_file(os.path.join(self.source, 'config.json')))
