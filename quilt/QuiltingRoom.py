@@ -58,7 +58,7 @@ import subprocess
 import quilt
 from quilt.Blog import Blog
 from quilt.Quilter import Quilter
-from quilt.Util import DEFAULT_CONFIG, time_since, read_file, write_file, load_files, get_file_names
+from quilt.Util import DEFAULT_CONFIG, time_since, read_file, write_file, load_files, get_file_names, get_dir_hash
 from quilt.Util import find_hrefsrc, filter_external_url, minimize_css, minimize_js, prefix_vendor_css
 from quilt.Util import path_link_list, top_sentences, get_just_words, get_keywords, spell_check, analyze_post, ProgressBar
 from quilt.Util import reverse_chronological_order, check_local_quilt, get_group, make_group_links
@@ -647,98 +647,111 @@ class QuiltingRoom(object):
         __t0 = time.time()
 
         # read in last source hashes
+        lastsourcehash = {}
+        sourcehash_path = os.path.join(self.config["output"], 'sourcehash.pkl')
+        if os.path.exists(sourcehash_path):
+            with open(sourcehash_path, 'r') as f:
+                lastsourcehash = pickle.load(f)
 
         # calculate current source hashes
+        sourcehash = get_dir_hash(self.config["source"])
 
-        print QUILTHEADER % (
-            '(v{}, {}, {})'.format(self.config["quiltversion"], self.config["quiltbranch"], self.config["quilthash"]),
-            self.source,
-            self.config["branch"],
-            self.config["hash"],
-            self.config["date"]
-        ), '\n', \
-        'loaded patches:', '\t' + '  '.join(self.patches.keys()), '\n' \
-        'loaded templates:', '\t' + '  '.join([os.path.splitext(os.path.basename(x))[0] for x in self.files["templates"]]), '\n'
+        # if the source has changed
+        if sourcehash != lastsourcehash:
+            # begin quilting
+            print QUILTHEADER % (
+                '(v{}, {}, {})'.format(self.config["quiltversion"], self.config["quiltbranch"], self.config["quilthash"]),
+                self.source,
+                self.config["branch"],
+                self.config["hash"],
+                self.config["date"]
+            ), '\n', \
+            'loaded patches:', '\t' + '  '.join(self.patches.keys()), '\n' \
+            'loaded templates:', '\t' + '  '.join([os.path.splitext(os.path.basename(x))[0] for x in self.files["templates"]]), '\n'
 
-        # destroy last version
-        if os.path.isdir(self.output):
-            shutil.rmtree(self.output)
+            # destroy last version
+            if os.path.isdir(self.output):
+                shutil.rmtree(self.output)
 
-        # quilt all the assets
-        self.build_assets()
-        print 'quilting time: %s' % (time_since(__t0))
-
-        # setup pages output directories
-        folders = [self.ouput_path(b, self.config["pages"]) for b in self.files["pages"]]
-        folders += [self.ouput_path(b, self.config["pages"]) for b in self.files["posts"]]
-        for folder in folders:
-            if not os.path.isdir(folder):
-                os.makedirs(folder)
-
-        # analyze all the posts
-        if self.config["buildblog"]:
-            self.analyze_posts()
+            # quilt all the assets
+            self.build_assets()
             print 'quilting time: %s' % (time_since(__t0))
 
-        # quilt all the pages
-        self.quilt_pages(self.files["pages"])
-        print 'quilting time: %s' % (time_since(__t0))
+            # setup pages output directories
+            folders = [self.ouput_path(b, self.config["pages"]) for b in self.files["pages"]]
+            folders += [self.ouput_path(b, self.config["pages"]) for b in self.files["posts"]]
+            for folder in folders:
+                if not os.path.isdir(folder):
+                    os.makedirs(folder)
 
-        # quilt all the post pages
-        if self.config["buildblog"]:
-            posts = reverse_chronological_order(self.blog.posts)
-            self.quilt_pages([post["source"] for post in posts], posts)
-            print 'quilting time: %s' % (time_since(__t0))
+            # analyze all the posts
+            if self.config["buildblog"]:
+                self.analyze_posts()
+                print 'quilting time: %s' % (time_since(__t0))
 
-        # build the posts and blog
-        adds = []
-        if self.config["buildblog"]:
-            self.blog.generate_blog_home()
-            adds.append('blog')
-            print 'quilting time: %s' % (time_since(__t0))
-            self.blog.generate_featured()
-            adds.append('featured')
-            print 'quilting time: %s' % (time_since(__t0))
-            self.blog.generate_group_pages("tags")
-            adds.append('tags')
-            print 'quilting time: %s' % (time_since(__t0))
-            self.blog.generate_group_pages("categories")
-            adds.append('categories')
+            # quilt all the pages
+            self.quilt_pages(self.files["pages"])
             print 'quilting time: %s' % (time_since(__t0))
 
-        # add site files
-        if self.config["buildblog"] and self.config["buildatom"]:
-            adds.append('atom')
-            self.blog.generate_atom()
-            print 'quilting time: %s' % (time_since(__t0))
-        if self.config["buildblog"] and self.config["buildrss"]:
-            adds.append('rss')
-            self.blog.generate_rss()
-            print 'rss quilting time: %s' % (time_since(__t0))
-        if self.config["buildindex"]:
-            adds.append('indexes')
-            self.generate_index()
-            print 'index quilting time: %s' % (time_since(__t0))
-        if self.config["buildrobot"]:
-            adds.append('robot.txt')
-            self.generate_robot()
-            print 'quilting time: %s' % (time_since(__t0))
-        if self.config["buildsearch"]:
-            adds.append('search.json')
-            self.generate_search()
-            print 'search quilting time: %s' % (time_since(__t0))
-        if self.config["buildsitemap"]:
-            adds.append('sitemap')
-            self.generate_sitemap()
+            # quilt all the post pages
+            if self.config["buildblog"]:
+                posts = reverse_chronological_order(self.blog.posts)
+                self.quilt_pages([post["source"] for post in posts], posts)
+                print 'quilting time: %s' % (time_since(__t0))
+
+            # build the posts and blog
+            adds = []
+            if self.config["buildblog"]:
+                self.blog.generate_blog_home()
+                adds.append('blog')
+                print 'quilting time: %s' % (time_since(__t0))
+                self.blog.generate_featured()
+                adds.append('featured')
+                print 'quilting time: %s' % (time_since(__t0))
+                self.blog.generate_group_pages("tags")
+                adds.append('tags')
+                print 'quilting time: %s' % (time_since(__t0))
+                self.blog.generate_group_pages("categories")
+                adds.append('categories')
+                print 'quilting time: %s' % (time_since(__t0))
+
+            # add site files
+            if self.config["buildblog"] and self.config["buildatom"]:
+                adds.append('atom')
+                self.blog.generate_atom()
+                print 'quilting time: %s' % (time_since(__t0))
+            if self.config["buildblog"] and self.config["buildrss"]:
+                adds.append('rss')
+                self.blog.generate_rss()
+                print 'rss quilting time: %s' % (time_since(__t0))
+            if self.config["buildindex"]:
+                adds.append('indexes')
+                self.generate_index()
+                print 'index quilting time: %s' % (time_since(__t0))
+            if self.config["buildrobot"]:
+                adds.append('robot.txt')
+                self.generate_robot()
+                print 'quilting time: %s' % (time_since(__t0))
+            if self.config["buildsearch"]:
+                adds.append('search.json')
+                self.generate_search()
+                print 'search quilting time: %s' % (time_since(__t0))
+            if self.config["buildsitemap"]:
+                adds.append('sitemap')
+                self.generate_sitemap()
+                print 'quilting time: %s' % (time_since(__t0))
+
+            print '\n\nadding:\t', ' '.join(adds)
+            print '\n', 'quilting is finished!', '\n'
+
+            if self.config["spellcheck"]:
+                self.spellcheck()
             print 'quilting time: %s' % (time_since(__t0))
 
-        print '\n\nadding:\t', ' '.join(adds)
-        print '\n', 'quilting is finished!', '\n'
-
-        if self.config["spellcheck"]:
-            self.spellcheck()
-        print 'quilting time: %s' % (time_since(__t0))
-
-        # write out current source hashes
+            # write out current source hashes
+            with open(sourcehash_path, 'w') as f:
+                pickle.dump(sourcehash, f)
+        else:
+            print 'Source files have not changed. Nothing to quilt.'
 
         return self
