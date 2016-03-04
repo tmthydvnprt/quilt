@@ -658,18 +658,19 @@ class QuiltingRoom(object):
         # calculate current source hashes
         sourcehash = get_dir_hash(self.source)
 
+        # begin quilting
+        print QUILTHEADER % (
+            '(v{}, {}, {})'.format(self.config["quiltversion"], self.config["quiltbranch"], self.config["quilthash"]),
+            self.source,
+            self.config["branch"],
+            self.config["hash"],
+            self.config["date"]
+        ), '\n', \
+        'loaded patches:', '\t' + '  '.join(self.patches.keys()), '\n' \
+        'loaded templates:', '\t' + '  '.join([os.path.splitext(os.path.basename(x))[0] for x in self.files["templates"]]), '\n'
+
         # if the source has changed
         if sourcehash != lastsourcehash:
-            # begin quilting
-            print QUILTHEADER % (
-                '(v{}, {}, {})'.format(self.config["quiltversion"], self.config["quiltbranch"], self.config["quilthash"]),
-                self.source,
-                self.config["branch"],
-                self.config["hash"],
-                self.config["date"]
-            ), '\n', \
-            'loaded patches:', '\t' + '  '.join(self.patches.keys()), '\n' \
-            'loaded templates:', '\t' + '  '.join([os.path.splitext(os.path.basename(x))[0] for x in self.files["templates"]]), '\n'
 
             # destroy last version
             if os.path.isdir(self.output):
@@ -754,6 +755,6 @@ class QuiltingRoom(object):
             with open(sourcehash_path, 'w') as f:
                 pickle.dump(sourcehash, f)
         else:
-            print 'Source files have not changed. Nothing to quilt.'
+            print '\nSource files have not changed. Nothing to quilt.'
 
         return self
