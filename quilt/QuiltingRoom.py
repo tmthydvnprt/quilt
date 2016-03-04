@@ -643,7 +643,12 @@ class QuiltingRoom(object):
     def quilt(self):
         """quilt the site"""
 
+        # get current time
         __t0 = time.time()
+
+        # read in last source hashes
+
+        # calculate current source hashes
 
         print QUILTHEADER % (
             '(v{}, {}, {})'.format(self.config["quiltversion"], self.config["quiltbranch"], self.config["quilthash"]),
@@ -733,5 +738,7 @@ class QuiltingRoom(object):
         if self.config["spellcheck"]:
             self.spellcheck()
         print 'quilting time: %s' % (time_since(__t0))
+
+        # write out current source hashes
 
         return self
