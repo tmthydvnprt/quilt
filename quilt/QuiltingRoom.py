@@ -758,7 +758,7 @@ class QuiltingRoom(object):
         )
 
         # if the source has changed, begin quilting
-        if True:#sourcehash != lastsourcehash:
+        if sourcehash != lastsourcehash:
 
             # copy last output version
             if os.path.isdir(self.lastoutput):
