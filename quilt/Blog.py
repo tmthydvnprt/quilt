@@ -178,7 +178,7 @@ class Blog(object):
         """generate tag or category page"""
 
         singular_name = GROUP_SINGLE_NAME[name]
-        verb =  GROUP_VERBS[name]
+        verb = GROUP_VERBS[name]
 
         # make group folder
         os.makedirs(os.path.join(self.config["posts"], name).replace(self.config["pages"], self.output))

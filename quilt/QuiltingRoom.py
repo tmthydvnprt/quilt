@@ -61,7 +61,7 @@ from quilt.Blog import Blog
 from quilt.Quilter import Quilter
 from quilt.Util import DEFAULT_CONFIG, time_since, read_file, write_file, load_files, get_file_names, recursive_glob, get_dir_hash
 from quilt.Util import find_hrefsrc, filter_external_url, minimize_css, minimize_js, prefix_vendor_css
-from quilt.Util import path_link_list, top_sentences, get_just_words, get_keywords, spell_check, analyze_post, ProgressBar
+from quilt.Util import path_link_list, get_just_words, get_keywords, spell_check, analyze_post, ProgressBar
 from quilt.Util import reverse_chronological_order, check_local_quilt, get_group, make_group_links
 from quilt.Util import  HEAD_STRAINER, BODY_STRAINER
 from quilt.Constants import QUILTHEADER, ASSETCOMMENT, ROBOTTXT, SITEMAPINDEX, SITEMAP, SITEMAPURL, SITEMAP_IGNORE
@@ -75,6 +75,11 @@ class QuiltingRoom(object):
         """setup the quilting room"""
 
         # default configuration
+        self.fileschanged = {}
+        self.quiltchanged = False
+        self.patcheschanged = False
+        self.templateschanged = False
+        self.assetschanged = False
         self.config = copy.copy(DEFAULT_CONFIG)
 
         # runtime
@@ -100,7 +105,7 @@ class QuiltingRoom(object):
         }
 
         # set runtime variables
-        output = output or os.path.dirname(self.source) + '/quilted_' + os.path.basename(self.source)
+        output = output or os.path.dirname(source) + '/quilted_' + os.path.basename(source)
         self.source = source
         self.output = output
         self.lastoutput = output + '_temp' #+ hashlib.sha1(output + str(__date)).hexdigest()[:7]
@@ -131,7 +136,7 @@ class QuiltingRoom(object):
             self.config["quiltbranch"] = ''
 
         # get source git repo info
-        if (self.config["git"]):
+        if self.config["git"]:
             repo = os.path.join(self.source, self.config["git"], '.git')
             try:
                 self.config["hash"] = subprocess.check_output('git -C {} rev-parse HEAD'.format(repo), shell=True).strip()
@@ -633,10 +638,10 @@ class QuiltingRoom(object):
                 page_text = read_file(page)
 
                 # check for directory quilt and directory patches?
-                quilt, patches = check_local_quilt(page, self.quilt_pattern, self.patches, self.config)
+                quilt_pattern, patches = check_local_quilt(page, self.quilt_pattern, self.patches, self.config)
 
                 # stitch the page together
-                qultr = Quilter(page, quilt, patches, page_text, self.config)
+                qultr = Quilter(page, quilt_pattern, patches, page_text, self.config)
 
                 if post_data:
                     qultr.pagevars["page_path"] = path_link_list(page.replace(self.config["pages"], ''), post_data[i]["title"])
@@ -676,10 +681,10 @@ class QuiltingRoom(object):
             page_text = read_file(page)
 
             # check for directory quilt and directory patches?
-            quilt, patches = check_local_quilt(page, self.quilt_pattern, self.patches, self.config)
+            quilt_pattern, patches = check_local_quilt(page, self.quilt_pattern, self.patches, self.config)
 
             # stitch the page together
-            qultr = Quilter(page, quilt, patches, page_text, self.config)
+            qultr = Quilter(page, quilt_pattern, patches, page_text, self.config)
             qultr.stitch()
 
             # keep track of the post
@@ -707,7 +712,7 @@ class QuiltingRoom(object):
         self.config["page_defaults"]["all_tag_list"] = make_group_links(all_tags, self.blog.posts[0], 'tags')
         self.config["page_defaults"]["all_featured_list"] = '\n'.join([
             '<li><h5><a href="%s">%s</a><br><small>%s</small></h5></li>' % (url, title, description)
-                for (url, title, description) in all_featured
+            for (url, title, description) in all_featured
         ])
 
         return self
