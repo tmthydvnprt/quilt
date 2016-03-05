@@ -64,7 +64,7 @@ from quilt.Util import find_hrefsrc, filter_external_url, minimize_css, minimize
 from quilt.Util import path_link_list, get_just_words, get_keywords, spell_check, analyze_post, ProgressBar
 from quilt.Util import reverse_chronological_order, check_local_quilt, get_group, make_group_links
 from quilt.Util import  HEAD_STRAINER, BODY_STRAINER
-from quilt.Constants import QUILTHEADER, ASSETCOMMENT, ROBOTTXT, SITEMAPINDEX, SITEMAP, SITEMAPURL, SITEMAP_IGNORE
+from quilt.Constants import QUILTHEADER, ASSETCOMMENT, ROBOTTXT, SITEMAPINDEX, SITEMAP, SITEMAPURL, SITEMAP_IGNORE, INDEX_DIR_IGNORE
 from quilt.Constants import NO_NEW_POSTS, NO_OLD_POSTS, CSS_EXT_RE, ROOT_LEVEL_JS_EXT_RE
 
 class QuiltingRoom(object):
@@ -403,16 +403,17 @@ class QuiltingRoom(object):
         # if any source affecting index changed, redo anyway
         if any([self.quiltchanged, self.patcheschanged, self.templateschanged, self.assetschanged]):
             no_index_dirs = no_index_dirs + [xd for xd, _, xf in os.walk(self.output) if len(fnmatch.filter(xf, 'index.html')) > 0]
-        # handle special case
+        # handle special mathjax case
         no_index_dirs = [x for x in no_index_dirs if 'mathjax' not in x]
 
         # add blank index.html to those directories
         for no_index_dir in no_index_dirs:
             page = os.path.join(no_index_dir, "index.html")
             equivalent_source = page.replace(self.output, self.config["pages"])
+            directory = os.path.basename(os.path.dirname(page))
 
             # make sure a 'real' index does not exist in equivalent source path
-            if not os.path.exists(equivalent_source):
+            if not os.path.exists(equivalent_source) and directory not in INDEX_DIR_IGNORE:
 
                 # process page
                 overrides = {
