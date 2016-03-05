@@ -1,6 +1,6 @@
-/*! 
+/*!
  * quilt.css
- * Used for project site and css file example, but NOT needed to use quilt 
+ * Used for project site and css file example, but NOT needed to use quilt
  * Copyright 2015 Timothy Davenport; Licensed MIT
  */
 html {
@@ -63,11 +63,11 @@ li.dir::before {
     margin: 2px;
     padding: 0px;
     height: 19px;
-    width:19px; 
+    width:19px;
     background-image: url(../imgs/folder.svg);
 }
 li.file::before {
-    width:16px; 
+    width:16px;
     background-image: url(../imgs/file.svg);
 }
 .readme-panel {
@@ -130,8 +130,8 @@ footer hr {
     border-top-right-radius: 2px;
 }
 .codezwj {
-    margin-left: -4px; 
-    margin-right: -4px; 
+    margin-left: -4px;
+    margin-right: -4px;
 }
 .abbr {
     border-bottom: 3px dotted #777 !important;
@@ -214,14 +214,14 @@ ins {
     z-index:1000;
 }
 .markdown-link:hover {
-    left: 0px;    
+    left: 0px;
     background: #2196f3;
     border-right: 3px solid #addbff;
     color: #eee;
 }
 
-input[type="checkbox"]::after, 
-.checkbox input[type="checkbox"]::after, 
+input[type="checkbox"]::after,
+.checkbox input[type="checkbox"]::after,
 .checkbox-inline input[type="checkbox"]::after {
     content: "x";
     line-height: 0.8;
@@ -229,8 +229,8 @@ input[type="checkbox"]::after,
     font-size: 16px;
     padding-left: 3px;
 }
-input[type="checkbox"]:checked::after, 
-.checkbox input[type="checkbox"]:checked::after, 
+input[type="checkbox"]:checked::after,
+.checkbox input[type="checkbox"]:checked::after,
 .checkbox-inline input[type="checkbox"]:checked::after {
     content: "x";
 }

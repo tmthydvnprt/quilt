@@ -62,19 +62,19 @@ Headings are specified by levels of hashes (`#`). Alternate Headings for H1 and 
 ###### H6
 ```
 
-H1 alternate 
+H1 alternate
 ============
 
 ```{.example}
-H1 alternate 
+H1 alternate
 ============
 ```
 
-H2 alternate 
+H2 alternate
 ------------
 
 ```{.example}
-H2 alternate 
+H2 alternate
 ------------
 ```
 
@@ -85,8 +85,8 @@ Here is one line of **text** _showing_ `inline` styling. Besides italic, bold, a
 
 *italics* with single astrisks (`*`) or underscores (`_`)
 **bold** with double astrisks (`**`) or underscores (`__`)
-***underlines*** with triple astrisks (`***`) or underscores (`___`) 
-~~strikethroughs~~ with double tildes (`~~`) 
+***underlines*** with triple astrisks (`***`) or underscores (`___`)
+~~strikethroughs~~ with double tildes (`~~`)
 ^superscript^ with carets (`^`)
 ~subscript~ with single tildes (`~`)
 --delete-- with double hyphens (`--`)
@@ -107,8 +107,8 @@ Here is one line of **text** _showing_ `inline` styling. Besides italic, bold, a
 
 *italics* with single astrisks (`*`) or underscores (`_`)
 **bold** with double astrisks (`**`) or underscores (`__`)
-***underlines*** with triple astrisks (`***`) or underscores (`___`) 
-~~strikethroughs~~ with double tildes (`~~`) 
+***underlines*** with triple astrisks (`***`) or underscores (`___`)
+~~strikethroughs~~ with double tildes (`~~`)
 ^superscript^ with carets (`^`)
 ~subscript~ with single tildes (`~`)
 --delete-- with double hyphens (`--`)
@@ -126,13 +126,13 @@ inline μ†ℱ ╋ℯ╳╋ (`μ†ℱ ╋ℯ╳╋`)
 ```
 
 Multiple lines next to each other will be combined into one paragraph.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
 Lines with a blank line between them will become two paragraphs. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ```{.example}
 Multiple lines next to each other will be combined into one paragraph.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
 Lines with a blank line between them will become two paragraphs. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 ```
@@ -159,8 +159,8 @@ Please not that multiple_underscores_in_a_string will not produce italics (this 
 Please not that multiple_underscores_in_a_string will not produce italics (this is helpful for filenames!).
 ```
 
-> Blockquote paragraphs can 
-> be created with a greater than 
+> Blockquote paragraphs can
+> be created with a greater than
 > sign (`>`) before each line.
 > > Even nested
 > > blockquotes.
@@ -169,8 +169,8 @@ Please not that multiple_underscores_in_a_string will not produce italics (this 
 > ---blockquote examples from """the quilt site"""---
 
 ```{.example}
-> Blockquote paragraphs can 
-> be created with a greater than 
+> Blockquote paragraphs can
+> be created with a greater than
 > sign (`>`) before each line.
 > > Even nested
 > > blockquotes.
@@ -181,12 +181,12 @@ Please not that multiple_underscores_in_a_string will not produce italics (this 
 
 Abbreviations can be used with an inline abbr and an astrisk squared bracket colon (`*[ ]:`) definition somewhere else in the document.
 
-*[abbr]: an abbreviation of abbreviation 
+*[abbr]: an abbreviation of abbreviation
 
 ```{.example}
 Abbreviations can be used with an inline abbr and an astrisk squared bracket colon (`*[ ]:`) definition somewhere else in the document.
 
-*[abbr]: an abbreviation of abbreviation 
+*[abbr]: an abbreviation of abbreviation
 ```
 
 ### Lists
@@ -243,7 +243,7 @@ Lists can also have some block level styles too (requires item to be indented), 
 -   blockquotes
 
     > blockquotes in a list
-    
+
 -   code blocks need two indents
 
         code inside a list
@@ -252,20 +252,20 @@ Lists can also have some block level styles too (requires item to be indented), 
 -   blockquotes
 
     > blockquotes in a list
-    
+
 -   code blocks need two indents
 
         code inside a list
 ```
 
-Markers can be switched from unordered/ordered to create two lists 
+Markers can be switched from unordered/ordered to create two lists
 
 1. first
 2. ordered
 3. list
 
 - followed
-- by 
+- by
 * one
 * ordered
 * lists
@@ -276,7 +276,7 @@ Markers can be switched from unordered/ordered to create two lists
 3. list
 
 - followed
-- by 
+- by
 * one
 * ordered
 * lists
@@ -285,22 +285,22 @@ Markers can be switched from unordered/ordered to create two lists
 Lists may be nested with indentation
 
 1. an ordered list
-2. that contains 
+2. that contains
     * an unordered list
     * that contains
         1. an ordered list
 3. a list may also contain
-    - [ ] checkbox 
+    - [ ] checkbox
     - [x] lists
 
 ```{.example}
 1. an ordered list
-2. that contains 
+2. that contains
     * an unordered list
     * that contains
         1. an ordered list
 3. a list may also contain
-    - [ ] checkbox 
+    - [ ] checkbox
     - [x] lists
 ```
 
@@ -354,25 +354,25 @@ Inline code is styled with `backticks` (`` ` ``).
 Inline code is styled with `backticks` (`` ` ``).
 ```
 
-    A code block is 
+    A code block is
     specified by indenting
     each line using
     (4 spaces or a tab)
 
 ```{.example}
-    A code block is 
+    A code block is
     specified by indenting
     each line using
     (4 spaces or a tab)
 ```
 
-A non-indented code block with syntax highlighting may also be specified using *fenced* code where pre formated code is wrapped by three backticks (`` ``` ``) or three tildes (`~~~`) and an optional first line defining the language 
+A non-indented code block with syntax highlighting may also be specified using *fenced* code where pre formated code is wrapped by three backticks (`` ``` ``) or three tildes (`~~~`) and an optional first line defining the language
 ```python
 def add(a, b):
     """add a and b together"""
-    
+
     c = a + b
-    
+
     return c
 ```
 
@@ -400,7 +400,7 @@ astrisks
 
 hyphens
 
---- 
+---
 - - -
 
 underscores
@@ -416,7 +416,7 @@ astrisks
 
 hyphens
 
---- 
+---
 - - -
 
 underscores
@@ -524,13 +524,13 @@ Definition List
 ### Footnotes
 **************
 
-Footnotes can by defined with a square bracket caret number (`[^1]`) [^1] and a `[^1]:` reference somewhere else in the document.  The final location of the footnotes may be set with the `///`@@`footnotes`@@`///` [^2] 
+Footnotes can by defined with a square bracket caret number (`[^1]`) [^1] and a `[^1]:` reference somewhere else in the document.  The final location of the footnotes may be set with the `///`@@`footnotes`@@`///` [^2]
 
 [^1]: these are kind of like reference style links
 [^2]: otherwise it will be appended to the end of the document.
 
 ```{.example}
-Footnotes can by defined with a square bracket caret number (`[^1]`) [^1] and a `[^1]:` reference somewhere else in the document.  The final location of the footnotes may be set with the `///`@@`footnotes`@@`///` [^2] 
+Footnotes can by defined with a square bracket caret number (`[^1]`) [^1] and a `[^1]:` reference somewhere else in the document.  The final location of the footnotes may be set with the `///`@@`footnotes`@@`///` [^2]
 
 [^1]: these are kind of like reference style links
 [^2]: otherwise it will be appended to the end of the document.
@@ -544,7 +544,7 @@ Footnotes can by defined with a square bracket caret number (`[^1]`) [^1] and a 
 ### HTML Capabilities
 *********************
 
-Span-level inline HTML <span style="font-size:32px;">*can*</span> be inserted at any point. 
+Span-level inline HTML <span style="font-size:32px;">*can*</span> be inserted at any point.
 Markdown may be used inside span-level inline HTML.
 
 <div class="panel panel-primary">
@@ -558,7 +558,7 @@ Markdown may be used inside span-level inline HTML.
 </div>
 
 ```{.example}
-Span-level inline HTML <span style="font-size:32px;">*can*</span> be inserted at any point. 
+Span-level inline HTML <span style="font-size:32px;">*can*</span> be inserted at any point.
 Markdown may be used inside span-level inline HTML.
 
 <div class="panel panel-primary">
@@ -682,7 +682,7 @@ A Rogers-Ramanujan Identity
 {: .lead}
 
 $$
-    1 +  \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots = 
+    1 +  \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots =
     \prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})},
     \quad\quad \text{for $|q|<1$}.
 $$
@@ -694,7 +694,7 @@ $$
     \begin{align}
     \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} & = \frac{4\pi}{c}\vec{\mathbf{j}} \\   \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
     \nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
-    \nabla \cdot \vec{\mathbf{B}} & = 0 
+    \nabla \cdot \vec{\mathbf{B}} & = 0
     \end{align}
 $$
 
@@ -703,7 +703,7 @@ In-line Mathematics
 
 Finally, while display equations look good for a page of samples, the ability to mix math and text in a paragraph is also important.  This expression \(\sqrt{3x-1}+(1+x)^2\) is an example of an inline equation.  As you see, MathJax equations can be used this way as well, without unduly disturbing the spacing between lines.
 
-More examples 
+More examples
 {: .lead}
 
 $$k_{n+1} = n^2 + k_n^2 - k_{n-1}$$
@@ -772,7 +772,7 @@ A Rogers-Ramanujan Identity
 {: .lead}
 
 $$
-    1 +  \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots = 
+    1 +  \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots =
     \prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})},
     \quad\quad \text{for $|q|<1$}.
 $$
@@ -784,7 +784,7 @@ $$
     \begin{align}
     \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} & = \frac{4\pi}{c}\vec{\mathbf{j}} \\   \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
     \nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
-    \nabla \cdot \vec{\mathbf{B}} & = 0 
+    \nabla \cdot \vec{\mathbf{B}} & = 0
     \end{align}
 $$
 
@@ -793,7 +793,7 @@ In-line Mathematics
 
 Finally, while display equations look good for a page of samples, the ability to mix math and text in a paragraph is also important.  This expression $$\sqrt{3x-1}+(1+x)^2$$ is an example of an inline equation.  As you see, MathJax equations can be used this way as well, without unduly disturbing the spacing between lines.
 
-More examples 
+More examples
 {: .lead}
 
 $$k_{n+1} = n^2 + k_n^2 - k_{n-1}$$

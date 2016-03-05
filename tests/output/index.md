@@ -1,91 +1,137 @@
-title: quilt
-description: a python based static site html code stitcher
-
-<div class="jumbotron">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-6 col-sm-4 text-center">
-                <h2><code>,,,,,,,<br>;#~#~#;<br>;~#~#~;<br>;#~#~#;<br>'''''''</code></h2>
-            </div>
-            <div class="col-xs-6 col-sm-4">
-                <h2><br></h2>
-                <h1>{{name}}</h1>
-                <p>A <code>python</code> based static site <code>html</code> <em>stitcher</em>.</p>
-            </div>
-            <div class="col-sm-4 hidden-xs">
-                <ul>
-                    <li class="dir"><code>site_files/</code><br/>
-                        <ul>
-                            <li class="file"><code>config.json</code><br/></li>
-                            <li class="file"><code>quilt.html</code><br/></li>
-                            <li class="dir"><code>assets/</code><br/>
-                                <ul class="list-inline keeppad">
-                                    <li class="dir"><code>css/</code><br/></li>
-                                    <li class="dir"><code>js/</code><br/></li>
-                                    <li class="dir"><code>imgs/</code><br/></li>
-                                </ul>
-                            </li>
-                            <li class="dir"><code>pages/</code><br/>
-                                <ul class="list-inline keeppad">
-                                    <li class="file"><code>index.html</code><br/></li>
-                                    <li class="dir"><code>posts/</code><br/></li>
-                                    <li class="file"><span class="symbol">&hellip;</span><br/></li>
-                                </ul>
-                            </li>
-                            <li class="dir"><code>patches/</code><br/>
-                                <ul class="list-inline keeppad">
-                                    <li class="file"><code>head.html</code><br/></li>
-                                    <li class="file"><code>nav.html</code><br/></li>
-                                    <li class="file"><code>scripts.html</code><br/></li>
-                                    <li class="file"><span class="symbol">&hellip;</span><br/></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<!--quilted head patch-->
+<head>
+<meta charset="utf-8"/>
+<meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Page stitched together with quilt:
+quilt          : v0.1.1, only-quilt-diffs, 8d9fcf11dbc716cde6963c7c6b4f9b5ccd8bbc4c
+url            : some_name.com/index.html
+quilted on     : 2016-03-05 10:42:20
+source branch  : only-quilt-diffs
+source hash    : 8d9fcf11dbc716cde6963c7c6b4f9b5ccd8bbc4c
+stitching took : 0.014 s
+quilt pagevars :
+                author : tmthydvnprt
+            categories : []
+              copydate : 2015&ndash;2016
+           copyrighter : tmthydvnprt
+                  date : 2016-03-05 10:42:20
+           description : blank index page of output directory
+             directory : output
+          disable_last : disabled
+          disable_next : disabled
+                domain : some_name.com
+                 email : tmthydvnprt@users.noreply.github.com
+              keywords : i,n,d,e,x
+             last_post : 
+            last_title : 
+        latestpostlink : latex_support
+          markdownlink : /Users/timothydavenport/GitHub/quilt/tests/output/index.html
+                  name : quilt
+             next_post : 
+            next_title : 
+             page_path : 
+          relativepath : 
+                  tags : []
+                 title : output directory index
+                   url : some_name.com/index.html
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+<title>output directory index</title>
+<meta content="tmthydvnprt" name="author"/>
+<meta content="blank index page of output directory" name="description"/>
+<meta content="i,n,d,e,x" name="keywords"/>
+<link href="imgs/favicon.ico" rel="favicon"/>
+<link href="img/icon_60x60.png" rel="apple-touch-icon"/>
+<link href="img/icon_76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+<link href="img/icon_120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="img/icon_152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="css/bootstrap_colorful_quilt.css" rel="stylesheet" type="text/css"/></head>
+<body>
+<!--quilted nav patch-->
+<nav class="navbar navbar-default navbar-fixed-top" id="nav">
 <div class="container">
-    <div class="row">
-        <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-            <h2>What is quilt? <small> &mdash; <em>another</em> static site generator</small></h2>
-            <p class="lead">Generate a static site via <code>python</code> from content-only <code>html</code> and <code>markdown</code> pages that are <em>stitched</em> together along with patch <small>(e.g. <code>nav.html</code>, <code>footer.html</code>)</small> files onto a main site <code>quilt.html</code> file.</p>
-            <h3>Why? <small>cause there's a bunch of <strong>other</strong> static site generators already!</small></h3>
-            <h5>Because I wanted...</h5>
-            <ol class="list-inline">
-                <li>1. specific features</li>
-                <li>2. something I didn't see in others</li>
-                <li>3. to improve python fluency</li>
-                <li>4. homegrown customization</li>
-            </ol>
-            <h2>Notable features</h2>
-            <ul class="checklist">
-                <li><input checked="" type="checkbox">focus on page content, site features (head, navbar, footer) are written &amp; stored separately</li>
-                <li><input checked="" type="checkbox">write content in <mark><code>html</code> or <code>markdown</code></mark></li>
-                <li><input checked="" type="checkbox">extensible markdown for custom needs</li>
-                <li><input checked="" type="checkbox"><mark>\(\LaTeX\) Support</mark></li>
-                <li><input checked="" type="checkbox">unique template overrides in each directory</li>
-                <li><input checked="" type="checkbox">automatically fill <code>alt</code>/<code>img</code> attributes, and remove empty tags</li>
-                <li><input checked="" type="checkbox">automatically vendorize, minimize, &amp; combine <code>css</code> and <code>js</code> files</li>
-                <li><input checked="" type="checkbox">automatically create certain files (<code>robot.txt</code>, <code>sitemap.xml</code>, multiple sized favicons, etc.)</li>
-                <li><input checked="" type="checkbox">provide some dynamic <em>blogy</em> abilities (reverse chronology, tags, categories)</li>
-                <li><input checked="" type="checkbox">create atom/rss feeds</li>
-                <li><input checked="" type="checkbox">index the text of final site for searching (e.g. with <a href="https://twitter.github.io/typeahead.js/" target="_blank"><code>typeahead</code></a>)</li>
-                <li><input type="checkbox"><mark>potential for <a href="http://www.nltk.org" target="_blank"><code>nltk</code></a> integration</mark></li>
-                <li><input checked="" type="checkbox">spell checking</li>
-                <li><input type="checkbox"><mark>parallel processing</mark></li>
-                <li><input type="checkbox"><em>any ideas?</em></li>
-                <li><input type="checkbox"></li>
-            </ul>
-            <p>Check out all the features and what's coming up on the <a href="features_todo.html">features+todo</a> page.</p>
-            <h2>Want an example?</h2>
-            <div class="alert alert-success">
-                <p>This site was <em>stitched</em> with quilt!  Download or inspect the source.</p>
-            </div>
-            <h2>Want to learn more?</h2>
-            <p class="lead">Get an overview on the <a href="readme.html">about(readme)</a> page, or read the full <a href="docs/index.html">documentation</a>.</p>
-        </div>        
-    </div>
+<div class="navbar-header">
+<button aria-controls="navbar" aria-expanded="false" class="navbar-toggle collapsed" data-target="#navbar" data-toggle="collapse" type="button">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a alt="home" href="index.html" title="quilt">
+<ul class="logo list-unstyled">
+<li><code>,,,,,,,</code></li>
+<li><code>;#~#~#;</code></li>
+<li><code>;~#~#~;</code></li>
+<li><code>;#~#~#;</code></li>
+<li><code>'''''''</code></li>
+</ul>
+</a>
+<a alt="home" class="navbar-brand" href="index.html" title="quilt">quilt</a>
 </div>
+<div class="navbar-collapse collapse" id="navbar">
+<ul class="nav navbar-nav navbar-left">
+<li><a alt="about(readme)" href="readme.html" title="about(readme)">about(readme)</a></li>
+<li><a alt="features+todo" href="features_todo.html" title="features+todo">features+todo</a></li>
+<li class="dropdown">
+<a alt="docs" class="dropdown-toggle" data-toggle="dropdown" href="docs/index.html" title="docs">docs<span class="caret"></span></a>
+<ul class="dropdown-menu" role="menu">
+<li><a alt="index" href="docs/index.html" title="index"><strong>index</strong></a></li>
+<li><a alt="__init__" href="docs/__init__.html" title="__init__">__init__</a></li>
+<li><a alt="QuiltingRoom" href="docs/QuiltingRoom.html" title="QuiltingRoom">QuiltingRoom</a></li>
+<li><a alt="Quilter" href="docs/Quilter.html" title="Quilter">Quilter</a></li>
+<li><a alt="Util" href="docs/Util.html" title="Util">Util</a></li>
+<li><a alt="Constants" href="docs/Constants.html" title="Constants">Constants</a></li>
+<li><a alt="Blog" href="docs/Blog.html" title="Blog">Blog</a></li>
+<li><a alt="Markdown" href="docs/Markdown.html" title="Markdown">Markdown</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a alt="news" class="dropdown-toggle" data-toggle="dropdown" href="news/index.html" title="news">news<span class="caret"></span></a>
+<ul class="dropdown-menu" role="menu">
+<li><a alt="news" href="news/index.html" title="news"><strong>news</strong></a></li>
+<li><a alt="latest post" href="news/latex_support.html" title="latest post">latest post</a></li>
+<li><a alt="categories" href="news/categories/index.html" title="categories">categories</a></li>
+<li><a alt="tags" href="news/tags/index.html" title="tags">tags</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="nav-search">
+<form class="search navbar-form">
+<input class="form-control typeahead" placeholder="Search for..." type="text"/>
+</form>
+</div>
+</div>
+</nav>
+<!--quilted page patch-->
+<div class="container text-center" id="page">
+<h2><br/></h2>
+<h2>Index page of the <code>output/</code> directory.</h2>
+<h3>This page was intentionally left blank.</h3>
+<h3><small>Nothing to see here, move along.</small></h3>
+</div>
+<!--quilted footer patch-->
+<footer id="footer">
+<div class="container">
+<hr/>
+<div class="clearfix">
+<p class="pull-left">quilt: python based static site html stitcher.</p>
+<p class="pull-right">2015&ndash;2016 &copy; <a alt="tmthydvnprt" href="#" title="tmthydvnprt">tmthydvnprt</a></p>
+</div>
+</div>
+</footer>
+<!--quilted scripts patch-->
+<script id="scripts" rel="javascript" type="text/javascript">
+pagevars = { "author":"tmthydvnprt", "categories":"[]", "copydate":"2015&ndash;2016", "copyrighter":"tmthydvnprt", "date":"2016-03-05 10:42:20", "description":"blank index page of output directory", "directory":"output", "disable_last":"disabled", "disable_next":"disabled", "domain":"some_name.com", "email":"tmthydvnprt@users.noreply.github.com", "keywords":"i,n,d,e,x", "last_post":"", "last_title":"", "latestpostlink":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/index.html", "name":"quilt", "next_post":"", "next_title":"", "page_path":"", "relativepath":"", "tags":"[]", "title":"output directory index", "url":"some_name.com/index.html" };
+</script>
+<script rel="javascript" src="js/jquery-1.11.2.min_bootstrap.min_typeahead.bundle.min_quilt.js" type="text/javascript"></script>
+<script rel="javascript" type="text/x-mathjax-config">MathJax.Hub.Config({ showMathMenu:false, imageFont:null, MathEvents:{ hover:256 }, jax:["input/TeX","output/HTML-CSS", "output/CommonHTML"], extensions:["tex2jax.js", "CHTML-preview.js"], TeX:{ extensions:["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"], autoNumber:"AMS" } });</script>
+<script rel="javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full" type="text/javascript"></script>
+<script rel="javascript" src="js/mathjax/MathJax.js?config=TeX-AMS_HTML-full" type="text/javascript"></script>
+</body>
+</html>
