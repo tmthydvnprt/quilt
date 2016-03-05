@@ -196,6 +196,16 @@ def get_file_names(source='', extensions=''):
 
     return file_names
 
+def recursive_glob(source=''):
+    """get all file names matching"""
+
+    file_names = set()
+    for dirpath, _, files in os.walk(source):
+        for f in files:
+            file_names.update([os.path.join(dirpath, f)])
+
+    return file_names
+
 def get_dir_hash(dir_path=''):
     """Get the check some of each file in directory, and store in dictionary"""
     dirhash = {}

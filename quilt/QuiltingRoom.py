@@ -59,12 +59,12 @@ import subprocess
 import quilt
 from quilt.Blog import Blog
 from quilt.Quilter import Quilter
-from quilt.Util import DEFAULT_CONFIG, time_since, read_file, write_file, load_files, get_file_names, get_dir_hash
+from quilt.Util import DEFAULT_CONFIG, time_since, read_file, write_file, load_files, get_file_names, recursive_glob, get_dir_hash
 from quilt.Util import find_hrefsrc, filter_external_url, minimize_css, minimize_js, prefix_vendor_css
 from quilt.Util import path_link_list, top_sentences, get_just_words, get_keywords, spell_check, analyze_post, ProgressBar
 from quilt.Util import reverse_chronological_order, check_local_quilt, get_group, make_group_links
 from quilt.Util import  HEAD_STRAINER, BODY_STRAINER
-from quilt.Constants import QUILTHEADER, ASSETCOMMENT, ROBOTTXT, SITEMAPINDEX, SITEMAP, SITEMAPURL
+from quilt.Constants import QUILTHEADER, ASSETCOMMENT, ROBOTTXT, SITEMAPINDEX, SITEMAP, SITEMAPURL, SITEMAP_IGNORE
 from quilt.Constants import NO_NEW_POSTS, NO_OLD_POSTS, CSS_EXT_RE, ROOT_LEVEL_JS_EXT_RE
 
 class QuiltingRoom(object):
@@ -102,9 +102,8 @@ class QuiltingRoom(object):
         # set runtime variables
         output = output or os.path.dirname(self.source) + '/quilted_' + os.path.basename(self.source)
         self.source = source
-        # self.finaloutput = output
         self.output = output
-        # self.output = output + '_' + hashlib.sha1(output + str(__date)).hexdigest()[:7]
+        self.lastoutput = output + '_temp' #+ hashlib.sha1(output + str(__date)).hexdigest()[:7]
 
         # read in configuration
         config_options = json.loads(read_file(os.path.join(self.source, 'config.json')))
@@ -237,26 +236,30 @@ class QuiltingRoom(object):
         icon_file = os.path.join(self.config["assets"], self.config["images"], self.config['iconfile'])
         imgs_path = os.path.join(self.output, self.config["images"])
 
-        if os.path.exists(icon_file):
-            print 'creating icons from:\t', icon_file
-            print 'creating icons in:\t', imgs_path, '\n'
-            # create favicon from icon
-            icon_img = PIL.Image.open(icon_file)
-            default_size = self.config["iconsizes"][0]
-            png_info = icon_img.info
-            width, _ = icon_img.size
-            ico = icon_img.resize((default_size, default_size), PIL.Image.ANTIALIAS)
-            ico.save(os.path.join(imgs_path, 'favicon.png'), **png_info)
-            os.rename(os.path.join(imgs_path, 'favicon.png'), os.path.join(imgs_path, 'favicon.ico'))
+        if self.fileschanged[icon_file]:
+            if os.path.exists(icon_file):
+                print 'creating icons from:\t', icon_file
+                print 'creating icons in:\t', imgs_path, '\n'
+                # create favicon from icon
+                icon_img = PIL.Image.open(icon_file)
+                default_size = self.config["iconsizes"][0]
+                png_info = icon_img.info
+                width, _ = icon_img.size
+                ico = icon_img.resize((default_size, default_size), PIL.Image.ANTIALIAS)
+                ico.save(os.path.join(imgs_path, 'favicon.png'), **png_info)
+                os.rename(os.path.join(imgs_path, 'favicon.png'), os.path.join(imgs_path, 'favicon.ico'))
 
-            # create multiple size
-            for size in self.config["iconsizes"]:
-                filt = PIL.Image.BICUBIC if size > width else PIL.Image.ANTIALIAS
-                img = icon_img.resize((size, size), filt)
-                fname, ext = os.path.splitext(self.config['iconfile'])
-                img.save(os.path.join(imgs_path, '%s_%sx%s%s' % (fname, str(size), str(size), ext)), **png_info)
-        else:
-            print 'creating icons from :\t', 'missing icon file, could not create', '\n'
+                # create multiple size
+                for size in self.config["iconsizes"]:
+                    filt = PIL.Image.BICUBIC if size > width else PIL.Image.ANTIALIAS
+                    img = icon_img.resize((size, size), filt)
+                    fname, ext = os.path.splitext(self.config['iconfile'])
+                    img.save(os.path.join(imgs_path, '%s_%sx%s%s' % (fname, str(size), str(size), ext)), **png_info)
+            else:
+                print 'creating icons from :\t', 'missing icon file, could not create', '\n'
+        # else:
+        #     print icon_file
+
         return self
 
     #@profile
@@ -304,27 +307,32 @@ class QuiltingRoom(object):
         """combine css or js source files"""
         file_type = os.path.splitext(source_name)[1]
         combined_source = []
-        for source_file in sources:
-            # read source
-            source = read_file(source_file.replace("{{relativepath}}", self.config["assets"]+'/'))
-            # prefix css
-            if file_type == '.css' and self.config["vendorfycss"]:
-                source = prefix_vendor_css(source)
-            # minimize css or js
-            if '.min' not in source_file:
-                if file_type == '.css' and self.config["minimizecss"]:
-                    source = minimize_css(source)
-                if file_type == '.js' and self.config["minimizejs"]:
-                    source = minimize_js(source)
+        sources = [x.replace("{{relativepath}}", self.config["assets"]+'/') for x in sources]
+        if any([self.fileschanged[x] for x in sources]):
+            for source_file in sources:
+                # read source
+                source = read_file()
+                # prefix css
+                if file_type == '.css' and self.config["vendorfycss"]:
+                    source = prefix_vendor_css(source)
+                # minimize css or js
+                if '.min' not in source_file:
+                    if file_type == '.css' and self.config["minimizecss"]:
+                        source = minimize_css(source)
+                    if file_type == '.js' and self.config["minimizejs"]:
+                        source = minimize_js(source)
 
-            # append comment and append source to combined file
-            if self.config["assetcomment"]:
-                combined_source.append(ASSETCOMMENT % (os.path.basename(source_file), self.config["now"]["iso"]))
-            combined_source.append(source)
+                # append comment and append source to combined file
+                if self.config["assetcomment"]:
+                    combined_source.append(ASSETCOMMENT % (os.path.basename(source_file), self.config["now"]["iso"]))
+                combined_source.append(source)
 
-        # dump it to disk
-        combined_src = '\n'.join(combined_source).strip()
-        write_file(os.path.join(self.output, source_name), combined_src.encode('utf-8'))
+            # dump it to disk
+            combined_src = '\n'.join(combined_source).strip()
+            write_file(os.path.join(self.output, source_name), combined_src.encode('utf-8'))
+
+        # else:
+        #     print sources
 
         return self
 
@@ -387,6 +395,10 @@ class QuiltingRoom(object):
 
         # get list of no-index directories
         no_index_dirs = [xd for xd, _, xf in os.walk(self.output) if len(fnmatch.filter(xf, 'index.html')) == 0]
+        # if any source affecting index changed, redo anyway
+        if any([self.quiltchanged, self.patcheschanged, self.templateschanged, self.assetschanged]):
+            no_index_dirs = no_index_dirs + [xd for xd, _, xf in os.walk(self.output) if len(fnmatch.filter(xf, 'index.html')) > 0]
+        # handle special case
         no_index_dirs = [x for x in no_index_dirs if 'mathjax' not in x]
 
         # add blank index.html to those directories
@@ -419,24 +431,51 @@ class QuiltingRoom(object):
         output_locs = []
         for dirpath, _, files in os.walk(self.output):
             for outputfile in files:
-                loc = os.path.join(dirpath, outputfile).replace(self.output, self.config["domain"])
-                output_locs.append(loc)
+                # if not internal file
+                if outputfile not in SITEMAP_IGNORE:
+                    loc = os.path.join(dirpath, outputfile).replace(self.output, self.config["domain"])
+                    stat = os.stat(os.path.join(dirpath, outputfile))
+                    modtime = datetime.datetime.fromtimestamp(stat.st_mtime).isoformat()
+                    output_locs.append((loc, modtime))
 
         # add to sitemap
         sitemapurls = [SITEMAPURL % (
             'http://' + output_loc,
-            self.config["now"]["iso"],
+            modtime,
             self.config["changefreq"],
             self.config["priority"]
-        ) for output_loc in output_locs]
+        ) for output_loc, modtime in output_locs]
 
-        # output sitemap & sitemap index
+        # output sitemap
         sitemap = SITEMAP % ("".join(sitemapurls))
+        sitemap_file = os.path.join(self.output, "sitemap.xml")
+
+        if os.path.exists(sitemap_file):
+            # write to temp file to see if content is different
+            sitemap_file_temp = os.path.join(self.output, 'sitemap_temp.xml')
+            write_file(sitemap_file_temp, sitemap)
+            # check content
+            with open(sitemap_file, 'r') as f:
+                sitemap_hash = hashlib.sha1(f.read()).digest()
+            with open(sitemap_file_temp, 'r') as f:
+                sitemap_hash_temp = hashlib.sha1(f.read()).digest()
+            # if contect is the same, keep the old file
+            if sitemap_hash == sitemap_hash_temp:
+                os.remove(sitemap_file_temp)
+            # if content is different, rename the new file
+            else:
+                shutil.copy2(sitemap_file_temp, sitemap_file)
+                os.remove(sitemap_file_temp)
+        else:
+            write_file(sitemap_file, sitemap)
+
+        # create sitemapindex
+        stat = os.stat(sitemap_file)
+        modtime = datetime.datetime.fromtimestamp(stat.st_mtime).isoformat()
         sitemapindex = SITEMAPINDEX % (
             'http://' + os.path.join(self.config["domain"], "sitemap.xml"),
-            self.config["now"]["iso"]
+            modtime
         )
-        write_file(os.path.join(self.output, "sitemap.xml"), sitemap)
         write_file(os.path.join(self.output, "sitemapindex.xml"), sitemapindex)
 
         return self
@@ -445,8 +484,9 @@ class QuiltingRoom(object):
     def generate_robot(self):
         """generate robot.txt in root"""
 
-        robot = ROBOTTXT % ('http://' + self.config["domain"])
-        write_file(os.path.join(self.output, 'robots.txt'), robot)
+        if self.fileschanged[self.source + '/config.json']:
+            robot = ROBOTTXT % ('http://' + self.config["domain"])
+            write_file(os.path.join(self.output, 'robots.txt'), robot)
 
         return self
 
@@ -479,8 +519,27 @@ class QuiltingRoom(object):
             word_url_list.extend([(word, page_url) for word in words])
 
         # create keyword json
-        search = json.dumps([{'val':k[0], 'url':k[1]} for k in word_url_list])
-        write_file(os.path.join(self.output, 'search.json'), search)
+        search = json.dumps([{'val':k[0], 'url':k[1]} for k in word_url_list], sort_keys=True, indent=4, separators=(',', ': '))
+
+        search_file = os.path.join(self.output, 'search.json')
+        if os.path.exists(search_file):
+            # write to temp file to see if content is different
+            search_file_temp = os.path.join(self.output, 'search_temp.json')
+            write_file(search_file_temp, search)
+            # check content
+            with open(search_file, 'r') as f:
+                search_hash = hashlib.sha1(f.read()).digest()
+            with open(search_file_temp, 'r') as f:
+                search_hash_temp = hashlib.sha1(f.read()).digest()
+            # if contect is the same, keep the old file
+            if search_hash == search_hash_temp:
+                os.remove(search_file_temp)
+            # if content is different, rename the new file
+            else:
+                shutil.copy2(search_file_temp, search_file)
+                os.remove(search_file_temp)
+        else:
+            write_file(search_file, search)
 
         return self
 
@@ -559,31 +618,43 @@ class QuiltingRoom(object):
         # quilt all the pages
         for i, page in enumerate(pages):
 
-            progbar.animate(i + 1)
+            localpatches = glob.glob(os.path.join(os.path.dirname(page), 'patches', '*'))
+            localquilt = glob.glob(os.path.join(os.path.dirname(page), 'quilt.html'))
 
-            # read page
-            page_text = read_file(page)
+            localpatcheschanged = any([self.fileschanged[x] for x in localpatches])
+            localquiltchanged = any([self.fileschanged[x] for x in localquilt])
 
-            # check for directory quilt and directory patches?
-            quilt, patches = check_local_quilt(page, self.quilt_pattern, self.patches, self.config)
+            # if the any of the source files have changed
+            if self.fileschanged[page] or any([self.quiltchanged, self.patcheschanged, self.templateschanged, self.assetschanged]) or any([localquiltchanged, localpatcheschanged]):
 
-            # stitch the page together
-            qultr = Quilter(page, quilt, patches, page_text, self.config)
+                progbar.animate(i + 1)
 
-            if post_data:
-                qultr.pagevars["page_path"] = path_link_list(page.replace(self.config["pages"], ''), post_data[i]["title"])
-                qultr.pagevars["next_post"] = post_data[i-1]["url"] if i > 0 else "#"
-                qultr.pagevars["next_title"] = post_data[i-1]["title"] if i > 0 else NO_NEW_POSTS
-                qultr.pagevars["disable_next"] = "" if i > 0 else "disabled"
-                qultr.pagevars["last_post"] = post_data[i+1]["url"] if i < len(post_data)-1 else "#"
-                qultr.pagevars["last_title"] = post_data[i+1]["title"] if i < len(post_data)-1 else NO_OLD_POSTS
-                qultr.pagevars["disable_last"] = "" if i < len(post_data)-1 else "disabled"
+                # read page
+                page_text = read_file(page)
 
-            qultr.stitch()
-            qultr.clean_html()
-            qultr.remove_empty()
-            qultr.write()
-            del qultr
+                # check for directory quilt and directory patches?
+                quilt, patches = check_local_quilt(page, self.quilt_pattern, self.patches, self.config)
+
+                # stitch the page together
+                qultr = Quilter(page, quilt, patches, page_text, self.config)
+
+                if post_data:
+                    qultr.pagevars["page_path"] = path_link_list(page.replace(self.config["pages"], ''), post_data[i]["title"])
+                    qultr.pagevars["next_post"] = post_data[i-1]["url"] if i > 0 else "#"
+                    qultr.pagevars["next_title"] = post_data[i-1]["title"] if i > 0 else NO_NEW_POSTS
+                    qultr.pagevars["disable_next"] = "" if i > 0 else "disabled"
+                    qultr.pagevars["last_post"] = post_data[i+1]["url"] if i < len(post_data)-1 else "#"
+                    qultr.pagevars["last_title"] = post_data[i+1]["title"] if i < len(post_data)-1 else NO_OLD_POSTS
+                    qultr.pagevars["disable_last"] = "" if i < len(post_data)-1 else "disabled"
+
+                qultr.stitch()
+                qultr.clean_html()
+                qultr.remove_empty()
+                qultr.write()
+                del qultr
+
+            # else:
+            #     print page
 
     #@profile
     def analyze_posts(self):
@@ -668,6 +739,10 @@ class QuiltingRoom(object):
             elif sourcehash[k] != lastsourcehash[k]:
                 self.fileschanged[k] = True
 
+        # copy changed files over into blog ojbect
+        if self.config["buildblog"]:
+            self.blog.fileschanged = self.fileschanged
+
         # display console output
         print QUILTHEADER % (
             '(v{}, {}, {})'.format(self.config["quiltversion"], self.config["quiltbranch"], self.config["quilthash"]),
@@ -678,9 +753,15 @@ class QuiltingRoom(object):
         )
 
         # if the source has changed, begin quilting
-        if sourcehash != lastsourcehash:
+        if True:#sourcehash != lastsourcehash:
 
-            # destroy last version
+            # copy last output version
+            if os.path.isdir(self.lastoutput):
+                shutil.rmtree(self.lastoutput)
+            if os.path.isdir(self.output):
+                shutil.copytree(self.output, self.lastoutput)
+
+            # destroy last output version
             if os.path.isdir(self.output):
                 shutil.rmtree(self.output)
 
@@ -688,6 +769,13 @@ class QuiltingRoom(object):
             print '\n', \
             'loaded patches:', '\t' + '  '.join(self.patches.keys()), '\n' \
             'loaded templates:', '\t' + '  '.join([os.path.splitext(os.path.basename(x))[0] for x in self.files["templates"]]), '\n'
+
+            # did quilt change?
+            self.quiltchanged = self.fileschanged[self.config["quilt"]]
+            # did patches, templates or assets change?
+            self.patcheschanged = any([self.fileschanged[x] for x in glob.glob(os.path.join(self.config["patches"], '*'))])
+            self.templateschanged = any([self.fileschanged[x] for x in self.files["templates"]])
+            self.assetschanged = any([self.fileschanged[x] for x in self.files["assets"]])
 
             # quilt all the assets
             self.build_assets()
@@ -731,7 +819,7 @@ class QuiltingRoom(object):
                 adds.append('categories')
                 print 'quilting time: %s' % (time_since(__t0))
 
-            # add site files
+            # add blog feeds
             if self.config["buildblog"] and self.config["buildatom"]:
                 adds.append('atom')
                 self.blog.generate_atom()
@@ -740,6 +828,24 @@ class QuiltingRoom(object):
                 adds.append('rss')
                 self.blog.generate_rss()
                 print 'rss quilting time: %s' % (time_since(__t0))
+
+            # merge unchanged files from last output into the current output
+            # determine which files to keep from last run
+            old = {x.replace(self.lastoutput+'/', '') for x in recursive_glob(self.lastoutput)}
+            new = {x.replace(self.output+'/', '') for x in recursive_glob(self.output)}
+            keep = old.difference(new)
+            # copy files over
+            for f in keep:
+                src = os.path.join(self.lastoutput, f)
+                dst = os.path.join(self.output, os.path.dirname(f))
+                if not os.path.isdir(dst):
+                    os.makedirs(dst)
+                shutil.copy2(src, dst)
+            # remove last output
+            if os.path.isdir(self.lastoutput):
+                shutil.rmtree(self.lastoutput)
+
+            # add site files
             if self.config["buildindex"]:
                 adds.append('indexes')
                 self.generate_index()

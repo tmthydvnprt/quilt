@@ -132,6 +132,8 @@ SYMBOLS = {
     '(<>)'      : '%sharr;',
     '(oo)'      : '%sinfin;'
 }
+# ignore these files when building sitemap
+SITEMAP_IGNORE = {'sourcehash.pkl', 'sitemapindex.xml', 'sitemap.xml'}
 
 # match [x], [X] or [ ] in list item for checkbox
 CHECKBOX_RE = r'<li>\[([ Xx])\]'
