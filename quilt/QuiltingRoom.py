@@ -658,23 +658,26 @@ class QuiltingRoom(object):
         # calculate current source hashes
         sourcehash = get_dir_hash(self.source)
 
-        # begin quilting
+        # display console output
         print QUILTHEADER % (
             '(v{}, {}, {})'.format(self.config["quiltversion"], self.config["quiltbranch"], self.config["quilthash"]),
             self.source,
             self.config["branch"],
             self.config["hash"],
             self.config["date"]
-        ), '\n', \
-        'loaded patches:', '\t' + '  '.join(self.patches.keys()), '\n' \
-        'loaded templates:', '\t' + '  '.join([os.path.splitext(os.path.basename(x))[0] for x in self.files["templates"]]), '\n'
+        )
 
-        # if the source has changed
+        # if the source has changed, begin quilting
         if sourcehash != lastsourcehash:
 
             # destroy last version
             if os.path.isdir(self.output):
                 shutil.rmtree(self.output)
+
+            # dislpay loaded patches and templates
+            print '\n', \
+            'loaded patches:', '\t' + '  '.join(self.patches.keys()), '\n' \
+            'loaded templates:', '\t' + '  '.join([os.path.splitext(os.path.basename(x))[0] for x in self.files["templates"]]), '\n'
 
             # quilt all the assets
             self.build_assets()
