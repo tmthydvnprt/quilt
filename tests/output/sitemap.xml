@@ -68,7 +68,7 @@
     </url>
     <url>
         <loc>http://some_name.com/search.json</loc>
-        <lastmod>2016-03-05T11:04:50</lastmod>
+        <lastmod>2016-03-05T11:57:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
@@ -158,25 +158,25 @@
     </url>
     <url>
         <loc>http://some_name.com/docs/Markdown.html</loc>
-        <lastmod>2016-03-05T11:04:48</lastmod>
+        <lastmod>2016-03-05T11:56:59</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>http://some_name.com/docs/Markdown.md</loc>
-        <lastmod>2016-03-05T11:04:48</lastmod>
+        <lastmod>2016-03-05T11:56:59</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>http://some_name.com/docs/Quilter.html</loc>
-        <lastmod>2016-03-05T11:04:48</lastmod>
+        <lastmod>2016-03-05T11:56:58</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>http://some_name.com/docs/Quilter.md</loc>
-        <lastmod>2016-03-05T11:04:48</lastmod>
+        <lastmod>2016-03-05T11:56:58</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
