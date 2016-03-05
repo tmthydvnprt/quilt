@@ -68,7 +68,7 @@
     </url>
     <url>
         <loc>http://some_name.com/search.json</loc>
-        <lastmod>2016-03-05T10:42:31</lastmod>
+        <lastmod>2016-03-05T11:04:50</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
@@ -134,13 +134,13 @@
     </url>
     <url>
         <loc>http://some_name.com/docs/Constants.html</loc>
-        <lastmod>2016-03-05T10:42:25</lastmod>
+        <lastmod>2016-03-05T11:04:49</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>http://some_name.com/docs/Constants.md</loc>
-        <lastmod>2016-03-05T10:42:25</lastmod>
+        <lastmod>2016-03-05T11:04:49</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
@@ -158,37 +158,37 @@
     </url>
     <url>
         <loc>http://some_name.com/docs/Markdown.html</loc>
-        <lastmod>2016-03-05T10:42:25</lastmod>
+        <lastmod>2016-03-05T11:04:48</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>http://some_name.com/docs/Markdown.md</loc>
-        <lastmod>2016-03-05T10:42:25</lastmod>
+        <lastmod>2016-03-05T11:04:48</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>http://some_name.com/docs/Quilter.html</loc>
-        <lastmod>2016-03-05T10:42:24</lastmod>
+        <lastmod>2016-03-05T11:04:48</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>http://some_name.com/docs/Quilter.md</loc>
-        <lastmod>2016-03-05T10:42:24</lastmod>
+        <lastmod>2016-03-05T11:04:48</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>http://some_name.com/docs/QuiltingRoom.html</loc>
-        <lastmod>2016-03-05T10:42:25</lastmod>
+        <lastmod>2016-03-05T11:04:49</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>http://some_name.com/docs/QuiltingRoom.md</loc>
-        <lastmod>2016-03-05T10:42:25</lastmod>
+        <lastmod>2016-03-05T11:04:49</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
@@ -206,13 +206,13 @@
     </url>
     <url>
         <loc>http://some_name.com/docs/Util.html</loc>
-        <lastmod>2016-03-05T10:42:24</lastmod>
+        <lastmod>2016-03-05T11:04:48</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>http://some_name.com/docs/Util.md</loc>
-        <lastmod>2016-03-05T10:42:24</lastmod>
+        <lastmod>2016-03-05T11:04:48</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>

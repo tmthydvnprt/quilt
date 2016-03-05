@@ -38,7 +38,7 @@ credits    :
 
 ## __MODULES__
 
-[bs4](https://www.google.com/#q=python+bs4), [codecs](https://www.google.com/#q=python+codecs), [copy](https://www.google.com/#q=python+copy), [dt](https://www.google.com/#q=python+dt), [fnmatch](https://www.google.com/#q=python+fnmatch), [nltk](https://www.google.com/#q=python+nltk), [os](https://www.google.com/#q=python+os), [random](https://www.google.com/#q=python+random), [string](https://www.google.com/#q=python+string), [sys](https://www.google.com/#q=python+sys), [time](https://www.google.com/#q=python+time), [urlparse](https://www.google.com/#q=python+urlparse)
+[bs4](https://www.google.com/#q=python+bs4), [codecs](https://www.google.com/#q=python+codecs), [copy](https://www.google.com/#q=python+copy), [dt](https://www.google.com/#q=python+dt), [fnmatch](https://www.google.com/#q=python+fnmatch), [hashlib](https://www.google.com/#q=python+hashlib), [nltk](https://www.google.com/#q=python+nltk), [os](https://www.google.com/#q=python+os), [random](https://www.google.com/#q=python+random), [string](https://www.google.com/#q=python+string), [sys](https://www.google.com/#q=python+sys), [time](https://www.google.com/#q=python+time), [urlparse](https://www.google.com/#q=python+urlparse)
 {: .lead}
 
 ## __FUNCTIONS__
@@ -63,6 +63,10 @@ def __find\_hrefsrc__(_soup, tag\_name='', re\_pattern=None_'):
 {: .lead}
 > search a soup for pattern in href or src of tag
 
+def __get\_dir\_hash__(_dir\_path=''_'):
+{: .lead}
+> Get the check some of each file in directory, and store in dictionary
+
 def __get\_file\_names__(_source='', extensions=''_'):
 {: .lead}
 > get all file names matching
@@ -83,7 +87,7 @@ def __group\_links__(_pagevars=None, name=''_'):
 {: .lead}
 > place tag and category links
 
-def __handlebar\_replace__(_string='', variables=None_'):
+def __handlebar\_replace__(_template\_string='', variables=None_'):
 {: .lead}
 > replace variables
 
@@ -123,6 +127,10 @@ def __read\_file__(_file\_path='', encoding='utf-8'_'):
 {: .lead}
 > read a file into a string. assumes utf-8 encoding.
 
+def __recursive\_glob__(_source=''_'):
+{: .lead}
+> get all file names matching
+
 def __relative\_path__(_filepath='', rootpath=''_'):
 {: .lead}
 > get relative path between a root and file
@@ -139,11 +147,11 @@ def __summarize\_text__(_text='', sentence\_number=4_'):
 {: .lead}
 > summarizes a text
 
-def __time\_since__(_t0_'):
+def __time\_since__(_initial\_time_'):
 {: .lead}
-> returnt he time since the initial time t0
+> return the time since the initial time t0
 
-def __top\_sentences__(_text='', sentence\_number=4, max\_chars=200_'):
+def __top\_sentences__(_text='', sentence\_number=4, max\_chars=250_'):
 {: .lead}
 > return top sentences or max number of words
 

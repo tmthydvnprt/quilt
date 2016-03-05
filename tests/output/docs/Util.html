@@ -8,18 +8,18 @@
 <!--
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Page stitched together with quilt:
-quilt          : v0.1.1, only-quilt-diffs, 8d9fcf11dbc716cde6963c7c6b4f9b5ccd8bbc4c
+quilt          : v0.1.1, only-quilt-diffs, eaf93b56dd5cf1c47bb6c354723277935a4c4a4e
 url            : some_name.com/docs/Util.html
-quilted on     : 2016-03-05 10:42:20
+quilted on     : 2016-03-05 11:04:45
 source branch  : only-quilt-diffs
-source hash    : 8d9fcf11dbc716cde6963c7c6b4f9b5ccd8bbc4c
+source hash    : eaf93b56dd5cf1c47bb6c354723277935a4c4a4e
 stitching took : 0.058 s
 quilt pagevars :
                 author : markdoc.py
             categories : []
               copydate : 2015&ndash;2016
            copyrighter : tmthydvnprt
-                  date : 2016-03-05 10:42:20
+                  date : 2016-03-05 11:04:45
            description : Utility functions
              directory : docs
           disable_last : disabled
@@ -156,7 +156,7 @@ license    : MIT<br/>
 copyright  : Copyright 2015, quilt<br/>
 credits    :</p>
 <h2 id="modules"><strong>MODULES</strong><a alt="&sect;" class="headerlink" href="#modules" title="Permanent link">&sect;</a></h2>
-<p class="lead"><a alt="bs4" href="https://www.google.com/#q=python+bs4" title="bs4">bs4</a>, <a alt="codecs" href="https://www.google.com/#q=python+codecs" title="codecs">codecs</a>, <a alt="copy" href="https://www.google.com/#q=python+copy" title="copy">copy</a>, <a alt="dt" href="https://www.google.com/#q=python+dt" title="dt">dt</a>, <a alt="fnmatch" href="https://www.google.com/#q=python+fnmatch" title="fnmatch">fnmatch</a>, <a alt="nltk" href="https://www.google.com/#q=python+nltk" title="nltk">nltk</a>, <a alt="os" href="https://www.google.com/#q=python+os" title="os">os</a>, <a alt="random" href="https://www.google.com/#q=python+random" title="random">random</a>, <a alt="string" href="https://www.google.com/#q=python+string" title="string">string</a>, <a alt="sys" href="https://www.google.com/#q=python+sys" title="sys">sys</a>, <a alt="time" href="https://www.google.com/#q=python+time" title="time">time</a>, <a alt="urlparse" href="https://www.google.com/#q=python+urlparse" title="urlparse">urlparse</a><br/></p>
+<p class="lead"><a alt="bs4" href="https://www.google.com/#q=python+bs4" title="bs4">bs4</a>, <a alt="codecs" href="https://www.google.com/#q=python+codecs" title="codecs">codecs</a>, <a alt="copy" href="https://www.google.com/#q=python+copy" title="copy">copy</a>, <a alt="dt" href="https://www.google.com/#q=python+dt" title="dt">dt</a>, <a alt="fnmatch" href="https://www.google.com/#q=python+fnmatch" title="fnmatch">fnmatch</a>, <a alt="hashlib" href="https://www.google.com/#q=python+hashlib" title="hashlib">hashlib</a>, <a alt="nltk" href="https://www.google.com/#q=python+nltk" title="nltk">nltk</a>, <a alt="os" href="https://www.google.com/#q=python+os" title="os">os</a>, <a alt="random" href="https://www.google.com/#q=python+random" title="random">random</a>, <a alt="string" href="https://www.google.com/#q=python+string" title="string">string</a>, <a alt="sys" href="https://www.google.com/#q=python+sys" title="sys">sys</a>, <a alt="time" href="https://www.google.com/#q=python+time" title="time">time</a>, <a alt="urlparse" href="https://www.google.com/#q=python+urlparse" title="urlparse">urlparse</a><br/></p>
 <h2 id="functions"><strong>FUNCTIONS</strong><a alt="&sect;" class="headerlink" href="#functions" title="Permanent link">&sect;</a></h2>
 <p class="lead">def <strong>analyze_post</strong>(<em>soup=None, domain=''</em>'):<br/></p>
 <blockquote>
@@ -178,6 +178,10 @@ credits    :</p>
 <blockquote>
 <p>search a soup for pattern in href or src of tag</p>
 </blockquote>
+<p class="lead">def <strong>get_dir_hash</strong>(<em>dir_path=''</em>'):<br/></p>
+<blockquote>
+<p>Get the check some of each file in directory, and store in dictionary</p>
+</blockquote>
 <p class="lead">def <strong>get_file_names</strong>(<em>source='', extensions=''</em>'):<br/></p>
 <blockquote>
 <p>get all file names matching</p>
@@ -198,7 +202,7 @@ credits    :</p>
 <blockquote>
 <p>place tag and category links</p>
 </blockquote>
-<p class="lead">def <strong>handlebar_replace</strong>(<em>string='', variables=None</em>'):<br/></p>
+<p class="lead">def <strong>handlebar_replace</strong>(<em>template_string='', variables=None</em>'):<br/></p>
 <blockquote>
 <p>replace variables</p>
 </blockquote>
@@ -238,6 +242,10 @@ credits    :</p>
 <blockquote>
 <p>read a file into a string. assumes utf-8 encoding.</p>
 </blockquote>
+<p class="lead">def <strong>recursive_glob</strong>(<em>source=''</em>'):<br/></p>
+<blockquote>
+<p>get all file names matching</p>
+</blockquote>
 <p class="lead">def <strong>relative_path</strong>(<em>filepath='', rootpath=''</em>'):<br/></p>
 <blockquote>
 <p>get relative path between a root and file</p>
@@ -254,11 +262,11 @@ credits    :</p>
 <blockquote>
 <p>summarizes a text</p>
 </blockquote>
-<p class="lead">def <strong>time_since</strong>(<em>t0</em>'):<br/></p>
+<p class="lead">def <strong>time_since</strong>(<em>initial_time</em>'):<br/></p>
 <blockquote>
-<p>returnt he time since the initial time t0</p>
+<p>return the time since the initial time t0</p>
 </blockquote>
-<p class="lead">def <strong>top_sentences</strong>(<em>text='', sentence_number=4, max_chars=200</em>'):<br/></p>
+<p class="lead">def <strong>top_sentences</strong>(<em>text='', sentence_number=4, max_chars=250</em>'):<br/></p>
 <blockquote>
 <p>return top sentences or max number of words</p>
 </blockquote>
@@ -443,7 +451,7 @@ increment progress</p>
 </footer>
 <!--quilted scripts patch-->
 <script id="scripts" rel="javascript" type="text/javascript">
-pagevars = { "author":"markdoc.py", "categories":"[]", "copydate":"2015&ndash;2016", "copyrighter":"tmthydvnprt", "date":"2016-03-05 10:42:20", "description":"Utility functions", "directory":"docs", "disable_last":"disabled", "disable_next":"disabled", "domain":"some_name.com", "email":"tmthydvnprt@users.noreply.github.com", "keywords":"", "last_post":"", "last_title":"", "latestpostlink":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/docs/Util.md", "name":"quilt", "next_post":"", "next_title":"", "page_path":"", "relativepath":"../", "tags":"[]", "title":"quilt docs:Util", "url":"some_name.com/docs/Util.html" };
+pagevars = { "author":"markdoc.py", "categories":"[]", "copydate":"2015&ndash;2016", "copyrighter":"tmthydvnprt", "date":"2016-03-05 11:04:45", "description":"Utility functions", "directory":"docs", "disable_last":"disabled", "disable_next":"disabled", "domain":"some_name.com", "email":"tmthydvnprt@users.noreply.github.com", "keywords":"", "last_post":"", "last_title":"", "latestpostlink":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/docs/Util.md", "name":"quilt", "next_post":"", "next_title":"", "page_path":"", "relativepath":"../", "tags":"[]", "title":"quilt docs:Util", "url":"some_name.com/docs/Util.html" };
 </script>
 <script rel="javascript" src="../js/jquery-1.11.2.min_bootstrap.min_typeahead.bundle.min_quilt.js" type="text/javascript"></script>
 <script rel="javascript" type="text/x-mathjax-config">MathJax.Hub.Config({ showMathMenu:false, imageFont:null, MathEvents:{ hover:256 }, jax:["input/TeX","output/HTML-CSS", "output/CommonHTML"], extensions:["tex2jax.js", "CHTML-preview.js"], TeX:{ extensions:["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"], autoNumber:"AMS" } });</script>

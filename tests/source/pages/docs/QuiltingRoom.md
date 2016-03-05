@@ -59,7 +59,7 @@ credits    :
 
 ## __MODULES__
 
-[PIL](https://www.google.com/#q=python+PIL), [bs4](https://www.google.com/#q=python+bs4), [copy](https://www.google.com/#q=python+copy), [datetime](https://www.google.com/#q=python+datetime), [fnmatch](https://www.google.com/#q=python+fnmatch), [glob](https://www.google.com/#q=python+glob), [json](https://www.google.com/#q=python+json), [os](https://www.google.com/#q=python+os), [quilt](https://www.google.com/#q=python+quilt), [shutil](https://www.google.com/#q=python+shutil), [subprocess](https://www.google.com/#q=python+subprocess), [time](https://www.google.com/#q=python+time)
+[PIL](https://www.google.com/#q=python+PIL), [bs4](https://www.google.com/#q=python+bs4), [copy](https://www.google.com/#q=python+copy), [datetime](https://www.google.com/#q=python+datetime), [fnmatch](https://www.google.com/#q=python+fnmatch), [glob](https://www.google.com/#q=python+glob), [hashlib](https://www.google.com/#q=python+hashlib), [json](https://www.google.com/#q=python+json), [os](https://www.google.com/#q=python+os), [pickle](https://www.google.com/#q=python+pickle), [quilt](https://www.google.com/#q=python+quilt), [shutil](https://www.google.com/#q=python+shutil), [subprocess](https://www.google.com/#q=python+subprocess), [time](https://www.google.com/#q=python+time)
 {: .lead}
 
 ## __CLASSES__
@@ -244,5 +244,10 @@ __SITEMAPURL__
         <priority>%s</priority>
     </url>
 
+```
+
+__SITEMAP\_IGNORE__
+```
+set(['sitemapindex.xml', 'sourcehash.pkl', 'sitemap.xml'])
 ```
 
