@@ -409,22 +409,26 @@ class QuiltingRoom(object):
         # add blank index.html to those directories
         for no_index_dir in no_index_dirs:
             page = os.path.join(no_index_dir, "index.html")
+            equivalent_source = page.replace(self.output, self.config["pages"])
 
-            # process page
-            overrides = {
-                "title" : "%s directory index" % (os.path.basename(no_index_dir)),
-                "directory" : os.path.basename(no_index_dir),
-                "description" : "blank index page of %s directory" % (os.path.basename(no_index_dir)),
-                "keywords" : "index"
-            }
+            # make sure a 'real' index does not exist in equivalent source path
+            if not os.path.exists(equivalent_source):
 
-            # stitch the page together
-            qultr = Quilter(page, self.quilt_pattern, self.patches, self.patches["index"], self.config, overrides)
-            qultr.stitch()
-            qultr.clean_html()
-            qultr.remove_empty()
-            qultr.write()
-            del qultr
+                # process page
+                overrides = {
+                    "title" : "%s directory index" % (os.path.basename(no_index_dir)),
+                    "directory" : os.path.basename(no_index_dir),
+                    "description" : "blank index page of %s directory" % (os.path.basename(no_index_dir)),
+                    "keywords" : "index"
+                }
+
+                # stitch the page together
+                qultr = Quilter(page, self.quilt_pattern, self.patches, self.patches["index"], self.config, overrides)
+                qultr.stitch()
+                qultr.clean_html()
+                qultr.remove_empty()
+                qultr.write()
+                del qultr
 
         return self
 
@@ -524,7 +528,7 @@ class QuiltingRoom(object):
             word_url_list.extend([(word, page_url) for word in words])
 
         # create keyword json
-        search = json.dumps([{'val':k[0], 'url':k[1]} for k in word_url_list], sort_keys=True, indent=4, separators=(',', ': '))
+        search = json.dumps([{'val':k[0], 'url':k[1]} for k in word_url_list])
 
         search_file = os.path.join(self.output, 'search.json')
         if os.path.exists(search_file):
