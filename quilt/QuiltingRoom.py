@@ -316,7 +316,7 @@ class QuiltingRoom(object):
         if any([self.fileschanged[x] for x in sources]):
             for source_file in sources:
                 # read source
-                source = read_file()
+                source = read_file(source_file)
                 # prefix css
                 if file_type == '.css' and self.config["vendorfycss"]:
                     source = prefix_vendor_css(source)
