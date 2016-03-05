@@ -657,6 +657,16 @@ class QuiltingRoom(object):
 
         # calculate current source hashes
         sourcehash = get_dir_hash(self.source)
+        # assume no files changed for the moment
+        self.fileschanged = {k: False for k in sourcehash.keys()}
+        # create boolean of change status for each file
+        for k in self.fileschanged.keys():
+            # if the file is new
+            if k not in lastsourcehash:
+                self.fileschanged[k] = True
+            # if the file is old but with new checksum
+            elif sourcehash[k] != lastsourcehash[k]:
+                self.fileschanged[k] = True
 
         # display console output
         print QUILTHEADER % (
