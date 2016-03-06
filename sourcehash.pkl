@@ -117,7 +117,7 @@ S'9\xcdF\x1c\xe4+biF\x8f\xcc\x85Jz\xd9wvag\xe3'
 p58
 sS'/Users/timothydavenport/GitHub/quilt/tests/source/pages/docs/Quilter.md'
 p59
-S'c=w\xff\x0f\x95\xa6\x02\xd7\xca\x83\xf6\xbb\xd9q\x15\xf7\xf0d\x81'
+S'\x95\x95\x8dzQ$\xc8{-\xdf\xfc\x13\xe24B+,\xd1\xcb\x0c'
 p60
 sS'/Users/timothydavenport/GitHub/quilt/tests/source/patches/footer.html'
 p61
@@ -149,7 +149,7 @@ S'?=@\xd9\xf9\xf3\xee\xa7\xd3\x8c\xc40\xe7\xc3{\xa9S\x97\x91%'
 p74
 sS'/Users/timothydavenport/GitHub/quilt/tests/source/pages/docs/Markdown.md'
 p75
-S'}\xd0}V\x9d\xc8\xd7\x9bwS\xdd\xb1\x86c\xe2\xcc\xb2\xcc\xa4\x8d'
+S'\xadP^\xe2Q~\xd0\xa2\xc6\xfc\xfd6\x98r\xae+\xb1\xe5\x88\xe3'
 p76
 sS'/Users/timothydavenport/GitHub/quilt/tests/source/patches/scripts.html'
 p77
