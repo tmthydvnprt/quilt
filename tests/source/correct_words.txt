@@ -1,4 +1,7 @@
 timothydavenport
+juxtapy
+unittest
+testcase
 correct_words
 pylint
 codehilite
@@ -48,6 +51,7 @@ changefreq
 atomid
 copymd
 pagevar
+generatesite
 quilted_site_files
 Lorem
 ipsum

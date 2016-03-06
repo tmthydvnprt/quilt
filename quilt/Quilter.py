@@ -43,9 +43,9 @@ import math
 import shutil
 from collections import defaultdict
 
-from quilt.Constants import JS_HTML_PATTERN_RE, FIRST_KEY_RE, FIRST_EMPTY_LINE_RE, KEY_VALUE_RE, VALUE_RE
+from quilt.Constants import JS_HTML_PATTERN_RE, FIRST_KEY_RE, FIRST_EMPTY_LINE_RE, KEY_VALUE_RE, VALUE_RE, TRUE_RE
 from quilt.Constants import PAGEVAR_RE, ESCAPED_PAGEVAR_RE
-from quilt.Constants import PATCHCOMMENT, QUILTCOMMENT, PAGEOBJ, DOTSTAR_RE
+from quilt.Constants import PATCHCOMMENT, QUILTCOMMENT, PAGEOBJ, DOTSTAR_RE, PAGEVARS_TO_PRINT
 from quilt.Util import write_file, relative_path, group_links, minimize_js, NO_EMPTY_TAGS
 from quilt.Util import  HEAD_STRAINER, BODY_STRAINER#, a_strainer, link_strainer, script_strainer, table_strainer, img_strainer
 from quilt.Markdown import MD
@@ -101,9 +101,10 @@ class Quilter(object):
 
         # set pagevars, handling some special cases
         self.pagevars = copy.deepcopy(self.config["page_defaults"])
+
         self.pagevars.update({
             "rootpath" : self.config["output"],
-            "relativepath" : relative_path(page_file, self.config["pages"]),
+            "relativepath" : relative_path(page_file.replace(self.config["pages"], self.config["output"]).replace('.md', '.html'), self.config["output"]),
             "source" : page_file,
             "output" : page_file.replace(self.config["pages"], self.config["output"]).replace('.md', '.html'),
             "markdownlink" : page_file.replace(self.config["pages"], self.config["output"]),
@@ -112,7 +113,7 @@ class Quilter(object):
         if self.config["local"]:
             self.pagevars["url"] = self.pagevars["output"]
         else:
-            self.pagevars["url"] = self.pagevars["output"].replace(self.pagevars["rootpath"], self.pagevars["domain"])
+            self.pagevars["url"] = self.pagevars["output"].replace(self.pagevars["rootpath"], 'http://'+self.pagevars["domain"])
 
         # update pagevars
         if overrides:
@@ -176,7 +177,10 @@ class Quilter(object):
             self.patches["scripts"] = '%s\n%s' % (self.patches["scripts"], page_js)
         # add page variables to object
         if self.config["pageobject"]:
-            page_obj = json.dumps(self.pagevars, indent=4, separators=(',', ': '), sort_keys=True)
+            filtered_pagevars = {k:str(v) for k, v in self.pagevars.items() if k in PAGEVARS_TO_PRINT}
+
+            page_obj = json.dumps(filtered_pagevars, indent=4, separators=(',', ': '), sort_keys=True)
+
             if self.config["minimizejs"]:
                 page_obj = minimize_js(page_obj)
             self.patches["scripts"] = '%s\n%s' % (PAGEOBJ % (page_obj), self.patches["scripts"])
@@ -201,7 +205,7 @@ class Quilter(object):
         patch_tags = self.soup.find_all("patch")
         while len(patch_tags) > 0:
             for patch in patch_tags:
-                if patch["id"] in self.patches:
+                if patch["id"] in self.patches and self.patches[patch["id"]]:
 
                     if patch["id"] == "scripts":
                         patch_soup = bs4.BeautifulSoup(
@@ -268,6 +272,15 @@ class Quilter(object):
             write_file(add_suffix(DEBUG_FILE, 'replacing_vars'), html)
 
         if self.post:
+            if 'featured' in self.pagevars.keys() and TRUE_RE.match(self.pagevars["featured"]):
+                self.pagevars["featured"] = True
+            else:
+                self.pagevars["featured"] = False
+            if self.pagevars["featured"]:
+                dirname = os.path.join(os.path.dirname(self.pagevars["url"]), 'featured', 'index.html')
+                self.pagevars["featured_label"] = '<a href="' + dirname + '" class="featured group-link">featured</a>'
+            else:
+                self.pagevars["featured_label"] = ''
             self.pagevars["tag_list"] = group_links(self.pagevars, "tags")
             self.pagevars["category_list"] = group_links(self.pagevars, "categories")
 
@@ -279,7 +292,7 @@ class Quilter(object):
                     variable = self.pagevars[page_var]
                     if isinstance(variable, list):
                         variable = ','.join(variable)
-                    html = html.replace(pagevar_brace, str(variable))
+                    html = html.replace(pagevar_brace, unicode(variable).encode('utf8'))
                 else:
                     html = html.replace(pagevar_brace, "not found")
             # check for new page variables (see if variable had nested variable)
@@ -308,16 +321,19 @@ class Quilter(object):
         if self.pagevars["pagecomment"]:
             max_key_len = str(max([len(x) for x in self.pagevars.keys()])+1)
             keyval_line = '{{:>{}}} : {{}}'.format(max_key_len)
-            keyvalpair = [keyval_line.format(k, v) for k, v in sorted(self.pagevars.items())]
-            pagevar_comment = '    -- quilt pagevars :\n    --     %s' % ('\n    --    '.join(keyvalpair))
+            keyvalpair = [keyval_line.format(k, v) for k, v in sorted(self.pagevars.items()) if k in PAGEVARS_TO_PRINT]
+            pagevar_comment = '\nquilt pagevars :\n    %s' % ('\n    '.join(keyvalpair))
         else:
             pagevar_comment = ''
 
         if self.pagevars["quiltcomment"]:
             quilt_comment = QUILTCOMMENT % (
+                'v{}, {}, {}'.format(self.pagevars["quiltversion"], self.pagevars["quiltbranch"], self.pagevars["quilthash"]),
                 self.pagevars["url"],
                 self.pagevars["date"],
-                math.floor(1000*etime)/1000,
+                self.pagevars["branch"],
+                self.pagevars["hash"],
+                math.floor(1000 * etime) / 1000,
                 pagevar_comment
             )
         else:
@@ -346,8 +362,9 @@ class Quilter(object):
             for tag in self.soup.body.findAll(tag_name):
                 if not tag.contents:
                     if tag.attrs.get("id") or tag.attrs.get("class"):
-                        print 'warning: empty tag on page', self.pagevars["url"].replace(self.pagevars["domain"], '')
-                        print 'id =', tag.attrs.get("id"), 'class =', tag.attrs.get("class")
+                        if self.config["emptywarning"]:
+                            print 'warning: empty tag on page', self.pagevars["url"].replace(self.pagevars["domain"], '')
+                            print 'id =', tag.attrs.get("id"), 'class =', tag.attrs.get("class")
                     else:
                         tag.decompose()
         return self

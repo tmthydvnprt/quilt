@@ -38,10 +38,14 @@ credits    :
 
 ## __MODULES__
 
-[bs4](https://www.google.com/#q=python+bs4), [codecs](https://www.google.com/#q=python+codecs), [copy](https://www.google.com/#q=python+copy), [dt](https://www.google.com/#q=python+dt), [fnmatch](https://www.google.com/#q=python+fnmatch), [nltk](https://www.google.com/#q=python+nltk), [os](https://www.google.com/#q=python+os), [random](https://www.google.com/#q=python+random), [string](https://www.google.com/#q=python+string), [sys](https://www.google.com/#q=python+sys), [urlparse](https://www.google.com/#q=python+urlparse)
+[bs4](https://www.google.com/#q=python+bs4), [codecs](https://www.google.com/#q=python+codecs), [copy](https://www.google.com/#q=python+copy), [dt](https://www.google.com/#q=python+dt), [fnmatch](https://www.google.com/#q=python+fnmatch), [hashlib](https://www.google.com/#q=python+hashlib), [nltk](https://www.google.com/#q=python+nltk), [os](https://www.google.com/#q=python+os), [random](https://www.google.com/#q=python+random), [string](https://www.google.com/#q=python+string), [sys](https://www.google.com/#q=python+sys), [time](https://www.google.com/#q=python+time), [urlparse](https://www.google.com/#q=python+urlparse)
 {: .lead}
 
 ## __FUNCTIONS__
+
+def __analyze\_post__(_soup=None, domain=''_'):
+{: .lead}
+> analyze text and structure of post
 
 def __check\_local\_quilt__(_page='', quilt\_pattern=None, default\_patches=None, config=None_'):
 {: .lead}
@@ -59,9 +63,17 @@ def __find\_hrefsrc__(_soup, tag\_name='', re\_pattern=None_'):
 {: .lead}
 > search a soup for pattern in href or src of tag
 
+def __get\_dir\_hash__(_dir\_path=''_'):
+{: .lead}
+> Get the check some of each file in directory, and store in dictionary
+
 def __get\_file\_names__(_source='', extensions=''_'):
 {: .lead}
 > get all file names matching
+
+def __get\_group__(_pagevars=None, name=''_'):
+{: .lead}
+> get list of tags or categories
 
 def __get\_just\_words__(_text=''_'):
 {: .lead}
@@ -75,9 +87,17 @@ def __group\_links__(_pagevars=None, name=''_'):
 {: .lead}
 > place tag and category links
 
+def __handlebar\_replace__(_template\_string='', variables=None_'):
+{: .lead}
+> replace variables
+
 def __load\_files__(_source='', extensions=''_'):
 {: .lead}
 > load all files matching
+
+def __make\_group\_links__(_groups=None, pagevars=None, name=''_'):
+{: .lead}
+> make link list out of group set or list
 
 def __minimize\_css__(_css=''_'):
 {: .lead}
@@ -107,6 +127,10 @@ def __read\_file__(_file\_path='', encoding='utf-8'_'):
 {: .lead}
 > read a file into a string. assumes utf-8 encoding.
 
+def __recursive\_glob__(_source=''_'):
+{: .lead}
+> get all file names matching
+
 def __relative\_path__(_filepath='', rootpath=''_'):
 {: .lead}
 > get relative path between a root and file
@@ -123,7 +147,11 @@ def __summarize\_text__(_text='', sentence\_number=4_'):
 {: .lead}
 > summarizes a text
 
-def __top\_sentences__(_text='', sentence\_number=4, max\_chars=200_'):
+def __time\_since__(_initial\_time_'):
+{: .lead}
+> return the time since the initial time t0
+
+def __top\_sentences__(_text='', sentence\_number=4, max\_chars=250_'):
 {: .lead}
 > return top sentences or max number of words
 
@@ -225,7 +253,7 @@ __CLEAN\_SELECTORS\_RE__
 
 __DEFAULT\_CONFIG__
 ```
-{'copyrighter': 'you', 'buildicon': True, 'atomid': 'randomid', 'keywords': [], 'combinejs': True, 'spellcheck': True, 'patches': 'patches', 'title': 'some default title', 'quiltcomment': True, 'combinecss': True, 'priority': '0.5', 'pageobject': True, 'local': False, 'correctwords': 'correct_words.txt', 'copydate': 2015, 'vendorfycss': True, 'iconsizes': [64, 60, 76, 120, 152], 'assets': 'assets', 'categories': [], 'spellignore': ['maths', 'codehilite'], 'name': 'some name', 'posts': 'posts', 'copymd': True, 'blogname': 'quilt news', 'pagecomment': True, 'domain': 'some_name.com', 'page_ext': ['*.html', '*.md'], 'quilt': 'quilt.html', 'patchcomment': True, 'minimizecss': True, 'images': 'imgs', 'asset_ext': ['*.*'], 'buildsearch': True, 'author': 'you', 'buildatom': True, 'buildrobot': True, 'iconfile': 'icon.png', 'assetcomment': True, 'email': 'you@some_name.com', 'templates': 'templates', 'patch_ext': ['*.html'], 'buildrss': True, 'description': 'default description', 'tags': [], 'template_ext': ['*.html'], 'rssid': 'randomid', 'changefreq': 'monthly', 'pages': 'pages', 'buildindex': True, 'buildsitemap': True, 'minimizejs': True, 'buildblog': True}
+{'copyrighter': 'you', 'buildicon': True, 'atomid': 'randomid', 'keywords': [], 'git': '', 'spellcheck': True, 'patches': 'patches', 'title': 'some default title', 'quiltcomment': True, 'combinecss': True, 'priority': '0.5', 'pageobject': True, 'local': False, 'correctwords': 'correct_words.txt', 'copydate': 2016, 'vendorfycss': True, 'iconsizes': [64, 60, 76, 120, 152], 'assets': 'assets', 'categories': [], 'spellignore': ['maths', 'codehilite'], 'name': 'some name', 'posts': 'posts', 'copymd': True, 'pagecomment': True, 'domain': 'some_name.com', 'page_ext': ['*.html', '*.md'], 'quilt': 'quilt.html', 'patchcomment': True, 'blogsubtitle': 'a blogy blog', 'minimizecss': True, 'images': 'imgs', 'asset_ext': ['*'], 'buildsearch': True, 'author': 'you', 'buildatom': True, 'blogtitle': 'some blog', 'emptywarning': False, 'buildrobot': True, 'iconfile': 'icon.png', 'assetcomment': True, 'email': 'you@some_name.com', 'templates': 'templates', 'patch_ext': ['*.html'], 'buildrss': True, 'description': 'default description', 'tags': [], 'template_ext': ['*.html'], 'combinejs': True, 'rssid': 'randomid', 'changefreq': 'monthly', 'pages': 'pages', 'buildindex': True, 'buildsitemap': True, 'minimizejs': True, 'buildblog': True}
 ```
 
 __EMPTY\_BRACES\_RE__
@@ -238,6 +266,11 @@ __EXTRA\_SPACES\_RE__
 ([!{}:;>+\(\[,])\s+
 ```
 
+__EXT\_LINK__
+```
+((?:[Ff]|[Hh][Tt])[Tt][Pp][Ss]?://[^>]*)
+```
+
 __FOUR\_ZEROS\_RE__
 ```
 :0 0 0 0;
@@ -245,7 +278,7 @@ __FOUR\_ZEROS\_RE__
 
 __GROUPLINK__
 ```
-<li class="%s"><a href="%s" class="label label-success">%s</a></li>
+<li class="%s"><a href="%s" class="group-link">%s</a></li>
 
 ```
 
@@ -311,7 +344,7 @@ __PLACEHOLDER\_SIZE__
 
 __PREFIXES__
 ```
-['transform', 'transition', 'animation', 'perspective', 'padding-start', 'padding-end']
+['transform', 'transition', 'animation', 'perspective', 'perspective-origin', 'padding-start', 'padding-end']
 ```
 
 __SELECTORCOLON\_RE__
@@ -352,6 +385,11 @@ __TWO\_ZEROS\_RE__
 __VENDORS__
 ```
 ['-webkit-', '-moz-', '-ms-', '-o-']
+```
+
+__WHITESPACE\_RE__
+```
+\s
 ```
 
 __WORD\_RE__

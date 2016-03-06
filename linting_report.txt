@@ -1,16 +1,39 @@
 
 Quilt Linting Report
-2015-05-13 07:10:12 -0700
+2016-03-05 17:37:40 -0800
 =========================================
 
+************* Module quilt.Blog
+R:179, 4: Too many local variables (17/16) (too-many-locals)
 ************* Module quilt.Quilter
+C:107, 0: Line too long (154/128) (line-too-long)
 R: 89, 0: Too many instance attributes (9/8) (too-many-instance-attributes)
-R:352, 4: Too many branches (22/16) (too-many-branches)
+R:373, 4: Too many branches (22/16) (too-many-branches)
+************* Module quilt.QuiltingRoom
+C: 62, 0: Line too long (130/128) (line-too-long)
+C: 67, 0: Line too long (132/128) (line-too-long)
+C:134, 0: Line too long (138/128) (line-too-long)
+C:146, 0: Line too long (137/128) (line-too-long)
+C:214, 0: Line too long (149/128) (line-too-long)
+C:405, 0: Line too long (131/128) (line-too-long)
+C:638, 0: Line too long (180/128) (line-too-long)
+C:780, 0: Line too long (132/128) (line-too-long)
+R: 70, 0: Too many instance attributes (13/8) (too-many-instance-attributes)
+W:131, 8: No exception type(s) specified (bare-except)
+W:135, 8: No exception type(s) specified (bare-except)
+W:143,12: No exception type(s) specified (bare-except)
+W:147,12: No exception type(s) specified (bare-except)
+R: 74, 4: Too many statements (65/64) (too-many-statements)
+R:437, 4: Too many local variables (18/16) (too-many-locals)
+R:670, 4: Too many local variables (17/16) (too-many-locals)
+R:725, 4: Too many local variables (19/16) (too-many-locals)
+R:725, 4: Too many branches (25/16) (too-many-branches)
+R:725, 4: Too many statements (100/64) (too-many-statements)
 ************* Module quilt.Util
 R:  1, 0: Similar lines in 3 files
-==quilt.Blog:101
-==quilt.Blog:157
-==quilt.QuiltingRoom:351
+==quilt.Blog:112
+==quilt.Blog:266
+==quilt.QuiltingRoom:427
             qultr.stitch()
             qultr.clean_html()
             qultr.remove_empty()
@@ -20,40 +43,42 @@ R:  1, 0: Similar lines in 3 files
         return self
 
     #@profile (duplicate-code)
-R:  1, 0: Similar lines in 2 files
-==quilt.Blog:142
-==quilt.QuiltingRoom:528
-            qultr.stitch()
-            qultr.clean_html()
-            qultr.remove_empty()
-            qultr.write()
-            del qultr
+R:  1, 0: Similar lines in 3 files
+==quilt.Blog:171
+==quilt.Blog:227
+==quilt.QuiltingRoom:659
+                qultr.stitch()
+                qultr.clean_html()
+                qultr.remove_empty()
+                qultr.write()
+                del qultr
 
-    #@profile (duplicate-code)
-R:  1, 0: Similar lines in 2 files
-==quilt.Blog:142
-==quilt.QuiltingRoom:351
-            qultr.stitch()
-            qultr.clean_html()
-            qultr.remove_empty()
-            qultr.write()
-            del qultr
+            # else: (duplicate-code)
+R:  1, 0: Similar lines in 3 files
+==quilt.Blog:171
+==quilt.Blog:227
+==quilt.QuiltingRoom:427
+                qultr.stitch()
+                qultr.clean_html()
+                qultr.remove_empty()
+                qultr.write()
+                del qultr
  (duplicate-code)
 R:  1, 0: Similar lines in 3 files
-==quilt.Blog:101
-==quilt.Blog:157
-==quilt.QuiltingRoom:528
-        qultr.stitch()
-        qultr.clean_html()
-        qultr.remove_empty()
-        qultr.write()
-        del qultr
+==quilt.Blog:112
+==quilt.Blog:266
+==quilt.QuiltingRoom:659
+            qultr.stitch()
+            qultr.clean_html()
+            qultr.remove_empty()
+            qultr.write()
+            del qultr
  (duplicate-code)
 
 
 Report
 ======
-1099 statements analysed.
+1344 statements analysed.
 
 Statistics by type
 ------------------
@@ -65,9 +90,9 @@ Statistics by type
 +---------+-------+-----------+-----------+------------+---------+
 |class    |16     |16         |=          |100.00      |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
-|method   |50     |50         |=          |100.00      |0.00     |
+|method   |51     |51         |=          |100.00      |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
-|function |32     |32         |=          |100.00      |0.00     |
+|function |39     |39         |=          |100.00      |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
 
 
@@ -85,7 +110,7 @@ External dependencies
       \-postprocessors (quilt.Markdown)
       \-util (quilt.Markdown)
     nltk (quilt.Constants,quilt.Util)
-    quilt 
+    quilt (quilt.QuiltingRoom)
       \-Blog (quilt.QuiltingRoom)
       \-Constants (quilt.Blog,quilt.Markdown,quilt.Util,quilt.Quilter,quilt.QuiltingRoom)
       \-Markdown (quilt.Quilter)
@@ -100,13 +125,13 @@ Raw metrics
 +----------+-------+------+---------+-----------+
 |type      |number |%     |previous |difference |
 +==========+=======+======+=========+===========+
-|code      |1347   |61.39 |1347     |=          |
+|code      |1614   |61.93 |1611     |+3.00      |
 +----------+-------+------+---------+-----------+
-|docstring |523    |23.84 |523      |=          |
+|docstring |590    |22.64 |590      |=          |
 +----------+-------+------+---------+-----------+
-|comment   |232    |10.57 |232      |=          |
+|comment   |287    |11.01 |287      |=          |
 +----------+-------+------+---------+-----------+
-|empty     |92     |4.19  |92       |=          |
+|empty     |115    |4.41  |115      |=          |
 +----------+-------+------+---------+-----------+
 
 
@@ -117,9 +142,9 @@ Duplication
 +-------------------------+------+---------+-----------+
 |                         |now   |previous |difference |
 +=========================+======+=========+===========+
-|nb duplicated lines      |43    |43       |=          |
+|nb duplicated lines      |56    |56       |=          |
 +-------------------------+------+---------+-----------+
-|percent duplicated lines |1.717 |1.717    |=          |
+|percent duplicated lines |1.870 |1.872    |-0.00      |
 +-------------------------+------+---------+-----------+
 
 
@@ -130,11 +155,11 @@ Messages by category
 +-----------+-------+---------+-----------+
 |type       |number |previous |difference |
 +===========+=======+=========+===========+
-|convention |0      |0        |=          |
+|convention |9      |8        |+1.00      |
 +-----------+-------+---------+-----------+
-|refactor   |6      |6        |=          |
+|refactor   |14     |14       |=          |
 +-----------+-------+---------+-----------+
-|warning    |0      |0        |=          |
+|warning    |4      |4        |=          |
 +-----------+-------+---------+-----------+
 |error      |0      |0        |=          |
 +-----------+-------+---------+-----------+
@@ -144,11 +169,15 @@ Messages by category
 % errors / warnings by module
 -----------------------------
 
-+--------------+------+--------+---------+-----------+
-|module        |error |warning |refactor |convention |
-+==============+======+========+=========+===========+
-|quilt.Quilter |0.00  |0.00    |33.33    |0.00       |
-+--------------+------+--------+---------+-----------+
++-------------------+------+--------+---------+-----------+
+|module             |error |warning |refactor |convention |
++===================+======+========+=========+===========+
+|quilt.QuiltingRoom |0.00  |100.00  |50.00    |88.89      |
++-------------------+------+--------+---------+-----------+
+|quilt.Quilter      |0.00  |0.00    |14.29    |11.11      |
++-------------------+------+--------+---------+-----------+
+|quilt.Blog         |0.00  |0.00    |7.14     |0.00       |
++-------------------+------+--------+---------+-----------+
 
 
 
@@ -158,22 +187,30 @@ Messages
 +-----------------------------+------------+
 |message id                   |occurrences |
 +=============================+============+
+|line-too-long                |9           |
++-----------------------------+------------+
+|too-many-locals              |4           |
++-----------------------------+------------+
 |duplicate-code               |4           |
 +-----------------------------+------------+
-|too-many-instance-attributes |1           |
+|bare-except                  |4           |
 +-----------------------------+------------+
-|too-many-branches            |1           |
+|too-many-statements          |2           |
++-----------------------------+------------+
+|too-many-instance-attributes |2           |
++-----------------------------+------------+
+|too-many-branches            |2           |
 +-----------------------------+------------+
 
 
 
 Global evaluation
 -----------------
-Your code has been rated at 9.95/10 (previous run: 9.95/10, +0.00)
+Your code has been rated at 9.80/10 (previous run: 9.81/10, -0.01)
 
 
 Tests Linting Report
-2015-05-13 07:10:19 -0700
+2016-03-05 17:37:49 -0800
 =========================================
 
 

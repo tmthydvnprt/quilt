@@ -1,10 +1,10 @@
 /*!
  * quilt.js
- * Used for project site and js file example, but NOT needed to use quilt 
+ * Used for project site and js file example, but NOT needed to use quilt
  * Copyright 2015 Timothy Davenport; Licensed MIT
  */
 $(document).ready(function(){
-    
+
     /* create Bloodhound searching object */
     var word_search = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.obj.whitespace('val'),
@@ -36,10 +36,10 @@ $(document).ready(function(){
     });
 
 
-    
-    
 
-    
+
+
+
     /*! smooth scrolling by CSS-Tricks, https://css-tricks.com/snippets/jquery/smooth-scrolling/ */
     $(function() {
         $('a[href*=#]:not([href=#])').click(function() {

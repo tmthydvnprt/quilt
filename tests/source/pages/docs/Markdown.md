@@ -254,12 +254,12 @@ __MATHS\_RE__
 
 __MD__
 ```
-<markdown.Markdown object at 0x1093b9850>
+<markdown.Markdown object at 0x109caddd0>
 ```
 
 __MD\_EXT__
 ```
-['markdown.extensions.extra', 'markdown.extensions.nl2br', 'markdown.extensions.sane_lists', 'markdown.extensions.codehilite', 'markdown.extensions.wikilinks', 'markdown.extensions.toc', <Markdown.ChecklistExtension object at 0x1093b9690>, <Markdown.CustomSpanExtension object at 0x1093b9710>, <Markdown.ReplaceTagsExtension object at 0x1093b9750>, 'markdown.extensions.footnotes', <Markdown.SymbolExtension object at 0x1093b9790>, <Markdown.MultiExtension object at 0x1093b97d0>, <Markdown.MathExtension object at 0x1093b9810>]
+['markdown.extensions.extra', 'markdown.extensions.nl2br', 'markdown.extensions.sane_lists', 'markdown.extensions.codehilite', 'markdown.extensions.wikilinks', 'markdown.extensions.toc', <Markdown.ChecklistExtension object at 0x109cadc10>, <Markdown.CustomSpanExtension object at 0x109cadc90>, <Markdown.ReplaceTagsExtension object at 0x109cadcd0>, 'markdown.extensions.footnotes', <Markdown.SymbolExtension object at 0x109cadd10>, <Markdown.MultiExtension object at 0x109cadd50>, <Markdown.MathExtension object at 0x109cadd90>]
 ```
 
 __MD\_EXT\_CONFIG__

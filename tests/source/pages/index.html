@@ -50,7 +50,7 @@ description: a python based static site html code stitcher
 <div class="container">
     <div class="row">
         <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-            <h2>What is quilt? <small> &mdash; <em>another</em> static site generator</small></h2>
+            <h2>What is Quilt? <small> &mdash; <em>another</em> static site generator</small></h2>
             <p class="lead">Generate a static site via <code>python</code> from content-only <code>html</code> and <code>markdown</code> pages that are <em>stitched</em> together along with patch <small>(e.g. <code>nav.html</code>, <code>footer.html</code>)</small> files onto a main site <code>quilt.html</code> file.</p>
             <h3>Why? <small>cause there's a bunch of <strong>other</strong> static site generators already!</small></h3>
             <h5>Because I wanted...</h5>
@@ -86,6 +86,6 @@ description: a python based static site html code stitcher
             </div>
             <h2>Want to learn more?</h2>
             <p class="lead">Get an overview on the <a href="readme.html">about(readme)</a> page, or read the full <a href="docs/index.html">documentation</a>.</p>
-        </div>        
+        </div>
     </div>
 </div>

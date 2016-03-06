@@ -6,54 +6,51 @@
 <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <!--
-    -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    -- Page stitched together with quilt.py
-    -- url            : /Users/timothydavenport/GitHub/quilt/tests/output/docs/Blog.html
-    -- quilted on     : 05/13/15
-    -- stitching took : 0.09 s
-    -- quilt pagevars :
-    --            author : markdoc.py
-    --       categories : []
-    --         copydate : 2015
-    --      copyrighter : tmthydvnprt
-    --             date : 05/13/15
-    --      description : Provide blog capabilities for static site
-    --        directory : docs
-    --     disable_last : disabled
-    --     disable_next : disabled
-    --           domain : some_name.com
-    --            email : tmthydvnprt@users.noreply.github.com
-    --         keywords : 
-    --        last_post : 
-    --       last_title : 
-    --       latestpost : latex_support
-    --     markdownlink : /Users/timothydavenport/GitHub/quilt/tests/output/docs/Blog.md
-    --             name : quilt
-    --        next_post : 
-    --       next_title : 
-    --           output : /Users/timothydavenport/GitHub/quilt/tests/output/docs/Blog.html
-    --        page_path : 
-    --      pagecomment : True
-    --     patchcomment : True
-    --     quiltcomment : True
-    --     relativepath : ../
-    --         rootpath : /Users/timothydavenport/GitHub/quilt/tests/output
-    --           source : /Users/timothydavenport/GitHub/quilt/tests/source/pages/docs/Blog.md
-    --             tags : []
-    --            title : quilt docs: Blog
-    --              url : /Users/timothydavenport/GitHub/quilt/tests/output/docs/Blog.html
-    -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Page stitched together with quilt:
+quilt          : v0.1.1, templating, beb44fc2c5ef5d7d564b23eccfca457f42f0cf37
+url            : http://tmthydvnprt.github.io/quilt/docs/Blog.html
+quilted on     : 2016-03-05 19:30:24
+source branch  : templating
+source hash    : beb44fc2c5ef5d7d564b23eccfca457f42f0cf37
+stitching took : 0.053 s
+quilt pagevars :
+                author : markdoc.py
+            categories : []
+              copydate : 2015&ndash;2016
+           copyrighter : tmthydvnprt
+                  date : 2016-03-05 19:30:24
+           description : Provide blog capabilities for static site
+             directory : docs
+          disable_last : disabled
+          disable_next : disabled
+                domain : tmthydvnprt.github.io/quilt
+                 email : tim@tmthydvnprt.com
+              keywords : python,static,html,site,generator
+             last_post : 
+            last_title : 
+        latestpostlink : latex_support
+          markdownlink : /Users/timothydavenport/GitHub/quilt/tests/output/docs/Blog.md
+                  name : quilt
+             next_post : 
+            next_title : 
+             page_path : 
+          relativepath : ../
+                  tags : []
+                 title : quilt docs: Blog
+                   url : http://tmthydvnprt.github.io/quilt/docs/Blog.html
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -->
 <title>quilt docs: Blog</title>
 <meta content="markdoc.py" name="author"/>
 <meta content="Provide blog capabilities for static site" name="description"/>
-<meta content="" name="keywords"/>
+<meta content="python,static,html,site,generator" name="keywords"/>
 <link href="../imgs/favicon.ico" rel="favicon"/>
 <link href="../img/icon_60x60.png" rel="apple-touch-icon"/>
 <link href="../img/icon_76x76.png" rel="apple-touch-icon" sizes="76x76"/>
 <link href="../img/icon_120x120.png" rel="apple-touch-icon" sizes="120x120"/>
 <link href="../img/icon_152x152.png" rel="apple-touch-icon" sizes="152x152"/>
-<link href="../css/bootstrap_colorful_quilt.css" rel="stylesheet" type="text/css"/></head>
+<link href="../css/bootstrap_font-awesome.min_colorful_quilt.css" rel="stylesheet" type="text/css"/></head>
 <body>
 <!--quilted nav patch-->
 <nav class="navbar navbar-default navbar-fixed-top" id="nav">
@@ -75,6 +72,7 @@
 </ul>
 </a>
 <a alt="home" class="navbar-brand" href="../index.html" title="quilt">quilt</a>
+<a alt="repo" class="navbar-brand" href="https://github.com/tmthydvnprt/quilt" title=""><i class="fa fa-github-square"></i></a>
 </div>
 <div class="navbar-collapse collapse" id="navbar">
 <ul class="nav navbar-nav navbar-left">
@@ -171,7 +169,7 @@ credits    :</p>
 <h2 id="modules"><strong>MODULES</strong><a alt="&sect;" class="headerlink" href="#modules" title="Permanent link">&sect;</a></h2>
 <p class="lead"><a alt="os" href="https://www.google.com/#q=python+os" title="os">os</a><br/></p>
 <h2 id="functions"><strong>FUNCTIONS</strong><a alt="&sect;" class="headerlink" href="#functions" title="Permanent link">&sect;</a></h2>
-<p class="lead">def <strong>create_post_list</strong>(<em>name, posts=None, offset=''</em>'):<br/></p>
+<p class="lead">def <strong>create_post_list</strong>(<em>posts=None, post_list_template='', offset=''</em>'):<br/></p>
 <blockquote>
 <p>create list html from posts</p>
 </blockquote>
@@ -202,6 +200,10 @@ create group dictionary</p>
 <p class="lead">def <strong>generate_blog_home</strong>(<em>self</em>'):<br/></p>
 <blockquote>
 <p>generate blog index page</p>
+</blockquote>
+<p class="lead">def <strong>generate_featured</strong>(<em>self</em>'):<br/></p>
+<blockquote>
+<p>generate featured posts</p>
 </blockquote>
 <p class="lead">def <strong>generate_group_pages</strong>(<em>self, name=''</em>'):<br/></p>
 <blockquote>
@@ -249,56 +251,16 @@ create group dictionary</p>
     <span class="nf">%s</span>
 <span class="o">&lt;/</span><span class="n">feed</span><span class="o">&gt;</span>
 </pre></div>
-<p><strong>GROUP</strong></p>
-<div class="codehilite"><pre>  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"%s-link"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;h3&gt;&lt;a</span> <span class="na">href=</span><span class="s">"%s"</span><span class="nt">&gt;</span>%s<span class="nt">&lt;/a&gt;</span> <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge"</span><span class="nt">&gt;</span>%s posts<span class="nt">&lt;/span&gt;&lt;/h3&gt;</span>
-    <span class="nt">&lt;/li&gt;</span>
-</pre></div>
-<p><strong>GROUPLIST</strong></p>
-<div class="codehilite"><pre><span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">"container"</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">"row"</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">"col-sm-8 col-sm-offset-2"</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="nf">%s</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">hr</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">ul</span> <span class="n">class</span><span class="o">=</span><span class="s">"%s list-unstyled"</span><span class="o">&gt;</span>
-                <span class="nf">%s</span>
-            <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
-        <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
-</pre></div>
 <p><strong>GROUPVARS</strong></p>
 <div class="codehilite"><pre>title: %s
 description: %s
 author: %s
 </pre></div>
-<p><strong>POST</strong></p>
-<div class="codehilite"><pre>  <span class="o">&lt;</span><span class="n">li</span> <span class="n">class</span><span class="o">=</span><span class="s">"post-link list-group-item"</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">h3</span> <span class="n">class</span><span class="o">=</span><span class="s">"list-group-item-heading"</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">"%s"</span><span class="o">&gt;</span><span class="nf">%s</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s">"h4"</span><span class="o">&gt;</span><span class="n">by</span> <span class="nf">%s</span> <span class="o">&lt;</span><span class="n">small</span><span class="o">&gt;</span><span class="n">on</span> <span class="nf">%s</span><span class="o">&lt;/</span><span class="n">small</span><span class="o">&gt;&lt;/</span><span class="n">span</span><span class="o">&gt;&lt;/</span><span class="n">h3</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">hr</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">p</span> <span class="n">class</span><span class="o">=</span><span class="s">"lead list-group-item-text"</span><span class="o">&gt;</span><span class="nf">%s</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">"%s"</span><span class="o">&gt;&amp;</span><span class="n">hellip</span><span class="p">;</span><span class="k">continue</span><span class="o">&amp;</span><span class="n">hellip</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">ul</span> <span class="n">class</span><span class="o">=</span><span class="s">"group-list list-inline"</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">"%s"</span><span class="o">&gt;</span><span class="nl">Tags</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-            <span class="nf">%s</span>
-        <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">ul</span> <span class="n">class</span><span class="o">=</span><span class="s">"group-list list-inline"</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">"%s"</span><span class="o">&gt;</span><span class="nl">Categores</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-            <span class="nf">%s</span>
-        <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+<p><strong>GROUP_SINGLE_NAME</strong></p>
+<div class="codehilite"><pre>{'featured': 'featured', 'categories': 'category', 'tags': 'tag'}
 </pre></div>
-<p><strong>POSTLIST</strong></p>
-<div class="codehilite"><pre><span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">"container"</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">"row"</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">"col-sm-8 col-sm-offset-2"</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="nf">%s</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">hr</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">"posts list-group"</span><span class="o">&gt;</span>
-                <span class="nf">%s</span>
-            <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
-        <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+<p><strong>GROUP_VERBS</strong></p>
+<div class="codehilite"><pre>{'featured': 'featured', 'categories': 'categorized in', 'tags': 'tagged with'}
 </pre></div>
 <p><strong>RSSITEM</strong></p>
 <div class="codehilite"><pre>   <span class="nt">&lt;item&gt;</span>
@@ -335,13 +297,13 @@ author: %s
 <hr/>
 <div class="clearfix">
 <p class="pull-left">quilt: python based static site html stitcher.</p>
-<p class="pull-right">2015 &copy; <a alt="tmthydvnprt" href="#" title="tmthydvnprt">tmthydvnprt</a></p>
+<p class="pull-right">2015&ndash;2016 &copy; <a alt="tmthydvnprt" href="https://github.com/tmthydvnprt" title="tmthydvnprt">tmthydvnprt</a></p>
 </div>
 </div>
 </footer>
 <!--quilted scripts patch-->
 <script id="scripts" rel="javascript" type="text/javascript">
-pagevars = { "author":"markdoc.py", "categories":[], "copydate":2015, "copyrighter":"tmthydvnprt", "date":"05/13/15", "description":"Provide blog capabilities for static site", "directory":"docs", "disable_last":"disabled", "disable_next":"disabled", "domain":"some_name.com", "email":"tmthydvnprt@users.noreply.github.com", "keywords":"", "last_post":"", "last_title":"", "latestpost":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/docs/Blog.md", "name":"quilt", "next_post":"", "next_title":"", "output":"/Users/timothydavenport/GitHub/quilt/tests/output/docs/Blog.html", "page_path":"", "pagecomment":true, "patchcomment":true, "quiltcomment":true, "relativepath":"../", "rootpath":"/Users/timothydavenport/GitHub/quilt/tests/output", "source":"/Users/timothydavenport/GitHub/quilt/tests/source/pages/docs/Blog.md", "tags":[], "title":"quilt docs:Blog", "url":"/Users/timothydavenport/GitHub/quilt/tests/output/docs/Blog.html" };
+pagevars = { "author":"markdoc.py", "categories":"[]", "copydate":"2015&ndash;2016", "copyrighter":"tmthydvnprt", "date":"2016-03-05 19:30:24", "description":"Provide blog capabilities for static site", "directory":"docs", "disable_last":"disabled", "disable_next":"disabled", "domain":"tmthydvnprt.github.io/quilt", "email":"tim@tmthydvnprt.com", "keywords":"python,static,html,site,generator", "last_post":"", "last_title":"", "latestpostlink":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/docs/Blog.md", "name":"quilt", "next_post":"", "next_title":"", "page_path":"", "relativepath":"../", "tags":"[]", "title":"quilt docs:Blog", "url":"http://tmthydvnprt.github.io/quilt/docs/Blog.html" };
 </script>
 <script rel="javascript" src="../js/jquery-1.11.2.min_bootstrap.min_typeahead.bundle.min_quilt.js" type="text/javascript"></script>
 <script rel="javascript" type="text/x-mathjax-config">MathJax.Hub.Config({ showMathMenu:false, imageFont:null, MathEvents:{ hover:256 }, jax:["input/TeX","output/HTML-CSS", "output/CommonHTML"], extensions:["tex2jax.js", "CHTML-preview.js"], TeX:{ extensions:["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"], autoNumber:"AMS" } });</script>

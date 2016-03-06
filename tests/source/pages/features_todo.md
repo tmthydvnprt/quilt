@@ -20,6 +20,7 @@ _Questionable_ todos are marked with <small>==???==</small>.
 - [ ] w3 validator
 - [ ] pass user site vars (from `config.json`) to page vars
 - [ ] <small>==???==</small> warnings for unused files `css`, `js`, maybe `html`
+- [ ] generate blank site
 - [ ]
 
 ###QuiltingRoom class ---(site\-level)---
@@ -44,11 +45,11 @@ _Questionable_ todos are marked with <small>==???==</small>.
 - [x] build keyword search index for whole site search (e.g. with `typeahead`)
 - [ ] <small>==dev==</small> relative/root path handling
 - [x] favicon image creator (with multiple sizes)
-- [x] spell checking 
+- [x] spell checking
     - [x] user specific correct word list `correct_words.txt`
     - [ ] suggest words for *errors*
 - [ ] generate `404.html` page if not found
-- [ ] 
+- [ ]
 
 ###Blog class ---(blog\-level)---
 *****************************************

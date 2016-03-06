@@ -49,7 +49,7 @@ credits    :
 
 ## __FUNCTIONS__
 
-def __create\_post\_list__(_name, posts=None, offset=''_'):
+def __create\_post\_list__(_posts=None, post\_list\_template='', offset=''_'):
 {: .lead}
 > create list html from posts
 
@@ -85,6 +85,10 @@ __builtin__.object
 > def __generate\_blog\_home__(_self_'):
 > {: .lead}
 > > generate blog index page
+> 
+> def __generate\_featured__(_self_'):
+> {: .lead}
+> > generate featured posts
 > 
 > def __generate\_group\_pages__(_self, name=''_'):
 > {: .lead}
@@ -137,30 +141,6 @@ __ATOMXML__
 </feed>
 ```
 
-__GROUP__
-```
-  <li class="%s-link">
-        <h3><a href="%s">%s</a> <span class="badge">%s posts</span></h3>
-    </li>
-
-```
-
-__GROUPLIST__
-```
-<div class="container">
-    <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-            <h1>%s</h1>
-            <hr>
-            <ul class="%s list-unstyled">
-                %s
-            </ul>
-        </div>
-    </div>
-</div>
-
-```
-
 __GROUPVARS__
 ```
 title: %s
@@ -170,38 +150,14 @@ author: %s
 
 ```
 
-__POST__
+__GROUP\_SINGLE\_NAME__
 ```
-  <li class="post-link list-group-item">
-        <h3 class="list-group-item-heading"><a href="%s">%s</a> <span class="h4">by %s <small>on %s</small></span></h3>
-        <hr>
-        <p class="lead list-group-item-text">%s <a href="%s">&hellip;continue&hellip;</a></p>
-        <ul class="group-list list-inline">
-            <li><a href="%s">Tags:</a> </li>
-            %s
-        </ul>
-        <ul class="group-list list-inline">
-            <li><a href="%s">Categores:</a> </li>
-            %s
-        </ul>
-    </li>
-
+{'featured': 'featured', 'categories': 'category', 'tags': 'tag'}
 ```
 
-__POSTLIST__
+__GROUP\_VERBS__
 ```
-<div class="container">
-    <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-            <h1>%s</h1>
-            <hr>
-            <div class="posts list-group">
-                %s
-            </div>
-        </div>
-    </div>
-</div>
-
+{'featured': 'featured', 'categories': 'categorized in', 'tags': 'tagged with'}
 ```
 
 __RSSITEM__

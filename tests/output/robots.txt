@@ -1,5 +1,5 @@
 # Sitemap location
-Sitemap: http://some_name.com/sitemap.xml
+Sitemap: http://tmthydvnprt.github.io/quilt/sitemap.xml
 
 # Allow crawling of all content
 User-agent: *
