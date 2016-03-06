@@ -2,15 +2,15 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>quilt Feed</title>
     <subtitle>/Users/timothydavenport/GitHub/quilt/tests/source/pages/news</subtitle>
-    <link href="some_name.com/feed/" rel="self"/>
-    <link href="some_name.com"/>
-    <id>randomid</id>
-    <updated>2016-03-05T11:59:56-08:00</updated>
+    <link href="tmthydvnprt.github.io/quilt/feed/" rel="self"/>
+    <link href="tmthydvnprt.github.io/quilt"/>
+    <id>1234567890</id>
+    <updated>2016-03-05T16:17:45-08:00</updated>
         <entry>
         <title>HTML Entities<title>
-        <link href="some_name.com/news/html_entities.html"/>
-        <link rel="alternate" type="text/html" href="some_name.com/news/html_entities.html"/>
-        <id>randomid</id>
+        <link href="tmthydvnprt.github.io/quilt/news/html_entities.html"/>
+        <link rel="alternate" type="text/html" href="tmthydvnprt.github.io/quilt/news/html_entities.html"/>
+        <id>1234567890</id>
         <updated>3/18/2015 5:46 am</updated>
         <summary>
 This list of html entities is for reference and testing of entity handling. Name
@@ -1837,14 +1837,14 @@ apos</summary>
         </content>
         <author>
             <name>tim</name>
-            <email>tmthydvnprt@users.noreply.github.com</email>
+            <email>tim@tmthydvnprt.com</email>
         </author>
     </entry>
     <entry>
         <title>\(\LaTeX\) Support<title>
-        <link href="some_name.com/news/latex_support.html"/>
-        <link rel="alternate" type="text/html" href="some_name.com/news/latex_support.html"/>
-        <id>randomid</id>
+        <link href="tmthydvnprt.github.io/quilt/news/latex_support.html"/>
+        <link rel="alternate" type="text/html" href="tmthydvnprt.github.io/quilt/news/latex_support.html"/>
+        <id>1234567890</id>
         <updated>3/20/2015 10:49 pm</updated>
         <summary>
 A list of MathJax \(\LaTeX\) Command  examples. These alphabetical examples come from here. There are a lot of examples so the page may take a while to render.</summary>
@@ -6247,14 +6247,14 @@ A list of MathJax \(\LaTeX\) Command  examples. These alphabetical examples come
         </content>
         <author>
             <name>tim</name>
-            <email>tmthydvnprt@users.noreply.github.com</email>
+            <email>tim@tmthydvnprt.com</email>
         </author>
     </entry>
     <entry>
         <title>Quilt's Markdown Syntax<title>
-        <link href="some_name.com/news/markdown_syntax.html"/>
-        <link rel="alternate" type="text/html" href="some_name.com/news/markdown_syntax.html"/>
-        <id>randomid</id>
+        <link href="tmthydvnprt.github.io/quilt/news/markdown_syntax.html"/>
+        <link rel="alternate" type="text/html" href="tmthydvnprt.github.io/quilt/news/markdown_syntax.html"/>
+        <id>1234567890</id>
         <updated>03/08/2015 1:32 pm</updated>
         <summary>
 Quilt uses Python-Markdown as it's markdown interpreter. Besides the base syntax rules of original Markdown, quilt parses extra markdown syntax. Extras includes abbreviations, attribute lists, definitions, fenced code, footnotes, tables (with escape</summary>
@@ -7079,14 +7079,14 @@ $$</span></p>
         </content>
         <author>
             <name>tim</name>
-            <email>tmthydvnprt@users.noreply.github.com</email>
+            <email>tim@tmthydvnprt.com</email>
         </author>
     </entry>
     <entry>
         <title>Quilt: A python based static site html stitcher.<title>
-        <link href="some_name.com/news/quilt_a_python_based_static_site_html_stitcher.html"/>
-        <link rel="alternate" type="text/html" href="some_name.com/news/quilt_a_python_based_static_site_html_stitcher.html"/>
-        <id>randomid</id>
+        <link href="tmthydvnprt.github.io/quilt/news/quilt_a_python_based_static_site_html_stitcher.html"/>
+        <link rel="alternate" type="text/html" href="tmthydvnprt.github.io/quilt/news/quilt_a_python_based_static_site_html_stitcher.html"/>
+        <id>1234567890</id>
         <updated>3/1/2015 3:15 pm</updated>
         <summary>
 A python based static site html stitcher. Description
@@ -7111,14 +7111,14 @@ Generate a static site via python from content-only .html and .md pages that are
         </content>
         <author>
             <name>tim</name>
-            <email>tmthydvnprt@users.noreply.github.com</email>
+            <email>tim@tmthydvnprt.com</email>
         </author>
     </entry>
     <entry>
         <title>Page Variable Change<title>
-        <link href="some_name.com/news/page_variable_change.html"/>
-        <link rel="alternate" type="text/html" href="some_name.com/news/page_variable_change.html"/>
-        <id>randomid</id>
+        <link href="tmthydvnprt.github.io/quilt/news/page_variable_change.html"/>
+        <link rel="alternate" type="text/html" href="tmthydvnprt.github.io/quilt/news/page_variable_change.html"/>
+        <id>1234567890</id>
         <updated>3/9/2015 8:31 am</updated>
         <summary>
 The syntax for page variable headers changed from json  to key: value plaintext. The method follows MultiMarkdown's metadata
@@ -7156,7 +7156,7 @@ key: </summary>
         </content>
         <author>
             <name>tim</name>
-            <email>tmthydvnprt@users.noreply.github.com</email>
+            <email>tim@tmthydvnprt.com</email>
         </author>
     </entry>
 
