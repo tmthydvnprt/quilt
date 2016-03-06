@@ -521,7 +521,7 @@ def get_group(pagevars=None, name=''):
 def make_group_links(groups=None, pagevars=None, name=''):
     """make link list out of group set or list"""
     dirname = os.path.join(os.path.dirname(pagevars["url"]), name)
-    linklist = '\n'.join([GROUPLINK % (name, os.path.join(dirname, "%s.html" % (x)), x) for x in groups])
+    linklist = '\n'.join([GROUPLINK % (name, os.path.join(dirname, "%s.html" % x.lower()), x) for x in groups])
     return linklist
 
 def group_links(pagevars=None, name=''):
