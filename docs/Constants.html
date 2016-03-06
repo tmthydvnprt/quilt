@@ -8,18 +8,18 @@
 <!--
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Page stitched together with quilt:
-quilt          : v0.1.1, master, ae48b971c30b65c7d2295029f89a392691f31e8d
+quilt          : v0.1.1, master, e1b8343b8b4e014ebbbed8d7bc2e44ce28929c5d
 url            : http://tmthydvnprt.github.io/quilt/docs/Constants.html
-quilted on     : 2016-03-05 19:47:13
+quilted on     : 2016-03-06 02:59:48
 source branch  : master
-source hash    : ae48b971c30b65c7d2295029f89a392691f31e8d
-stitching took : 0.073 s
+source hash    : e1b8343b8b4e014ebbbed8d7bc2e44ce28929c5d
+stitching took : 0.077 s
 quilt pagevars :
                 author : markdoc.py
             categories : []
               copydate : 2015&ndash;2016
            copyrighter : tmthydvnprt
-                  date : 2016-03-05 19:47:13
+                  date : 2016-03-06 02:59:48
            description : Formatable strings and default objects, maybe a list or two.
              directory : docs
           disable_last : disabled
@@ -237,6 +237,12 @@ credits    :</p>
 <p><strong>FOUR_ZEROS_RE</strong></p>
 <div class="codehilite"><pre>:0 0 0 0;
 </pre></div>
+<p><strong>GIT_BRANCH_CMD</strong></p>
+<div class="codehilite"><pre>git -C {} rev-parse --abbrev-ref HEAD
+</pre></div>
+<p><strong>GIT_HASH_CMD</strong></p>
+<div class="codehilite"><pre>git -C {} rev-parse HEAD
+</pre></div>
 <p><strong>GROUPLINK</strong></p>
 <div class="codehilite"><pre><span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"%s"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"%s"</span> <span class="na">class=</span><span class="s">"group-link"</span><span class="nt">&gt;</span>%s<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
 </pre></div>
@@ -250,9 +256,6 @@ author: %s
 </pre></div>
 <p><strong>GROUP_VERBS</strong></p>
 <div class="codehilite"><pre>{'featured': 'featured', 'categories': 'categorized in', 'tags': 'tagged with'}
-</pre></div>
-<p><strong>INDEX_DIR_IGNORE</strong></p>
-<div class="codehilite"><pre>set(['categories', 'tags'])
 </pre></div>
 <p><strong>JS_HTML_PATTERN_RE</strong></p>
 <div class="codehilite"><pre>(&gt;tpircs/&lt;.*&gt;tpircs&lt;)?(.*)
@@ -478,7 +481,7 @@ Disallow:
 </footer>
 <!--quilted scripts patch-->
 <script id="scripts" rel="javascript" type="text/javascript">
-pagevars = { "author":"markdoc.py", "categories":"[]", "copydate":"2015&ndash;2016", "copyrighter":"tmthydvnprt", "date":"2016-03-05 19:47:13", "description":"Formatable strings and default objects, maybe a list or two.", "directory":"docs", "disable_last":"disabled", "disable_next":"disabled", "domain":"tmthydvnprt.github.io/quilt", "email":"tim@tmthydvnprt.com", "keywords":"python,static,html,site,generator", "last_post":"", "last_title":"", "latestpostlink":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/docs/Constants.md", "name":"quilt", "next_post":"", "next_title":"", "page_path":"", "relativepath":"../", "tags":"[]", "title":"quilt docs:Constants", "url":"http://tmthydvnprt.github.io/quilt/docs/Constants.html" };
+pagevars = { "author":"markdoc.py", "categories":"[]", "copydate":"2015&ndash;2016", "copyrighter":"tmthydvnprt", "date":"2016-03-06 02:59:48", "description":"Formatable strings and default objects, maybe a list or two.", "directory":"docs", "disable_last":"disabled", "disable_next":"disabled", "domain":"tmthydvnprt.github.io/quilt", "email":"tim@tmthydvnprt.com", "keywords":"python,static,html,site,generator", "last_post":"", "last_title":"", "latestpostlink":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/docs/Constants.md", "name":"quilt", "next_post":"", "next_title":"", "page_path":"", "relativepath":"../", "tags":"[]", "title":"quilt docs:Constants", "url":"http://tmthydvnprt.github.io/quilt/docs/Constants.html" };
 </script>
 <script rel="javascript" src="../js/jquery-1.11.2.min_bootstrap.min_typeahead.bundle.min_quilt.js" type="text/javascript"></script>
 <script rel="javascript" type="text/x-mathjax-config">MathJax.Hub.Config({ showMathMenu:false, imageFont:null, MathEvents:{ hover:256 }, jax:["input/TeX","output/HTML-CSS", "output/CommonHTML"], extensions:["tex2jax.js", "CHTML-preview.js"], TeX:{ extensions:["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"], autoNumber:"AMS" } });</script>

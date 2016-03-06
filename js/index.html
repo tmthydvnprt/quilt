@@ -8,25 +8,25 @@
 <!--
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Page stitched together with quilt:
-quilt          : v0.1.1, master, ae48b971c30b65c7d2295029f89a392691f31e8d
+quilt          : v0.1.1, master, e1b8343b8b4e014ebbbed8d7bc2e44ce28929c5d
 url            : http://tmthydvnprt.github.io/quilt/js/index.html
-quilted on     : 2016-03-05 19:47:13
+quilted on     : 2016-03-06 02:59:48
 source branch  : master
-source hash    : ae48b971c30b65c7d2295029f89a392691f31e8d
-stitching took : 0.014 s
+source hash    : e1b8343b8b4e014ebbbed8d7bc2e44ce28929c5d
+stitching took : 0.013 s
 quilt pagevars :
                 author : tmthydvnprt
             categories : []
               copydate : 2015&ndash;2016
            copyrighter : tmthydvnprt
-                  date : 2016-03-05 19:47:13
+                  date : 2016-03-06 02:59:48
            description : blank index page of js directory
              directory : js
           disable_last : disabled
           disable_next : disabled
                 domain : tmthydvnprt.github.io/quilt
                  email : tim@tmthydvnprt.com
-              keywords : i,n,d,e,x
+              keywords : i,n,d,e,x,,, ,j,s
              last_post : 
             last_title : 
         latestpostlink : latex_support
@@ -44,7 +44,7 @@ quilt pagevars :
 <title>js directory index</title>
 <meta content="tmthydvnprt" name="author"/>
 <meta content="blank index page of js directory" name="description"/>
-<meta content="i,n,d,e,x" name="keywords"/>
+<meta content="i,n,d,e,x,,, ,j,s" name="keywords"/>
 <link href="../imgs/favicon.ico" rel="favicon"/>
 <link href="../img/icon_60x60.png" rel="apple-touch-icon"/>
 <link href="../img/icon_76x76.png" rel="apple-touch-icon" sizes="76x76"/>
@@ -128,7 +128,7 @@ quilt pagevars :
 </footer>
 <!--quilted scripts patch-->
 <script id="scripts" rel="javascript" type="text/javascript">
-pagevars = { "author":"tmthydvnprt", "categories":"[]", "copydate":"2015&ndash;2016", "copyrighter":"tmthydvnprt", "date":"2016-03-05 19:47:13", "description":"blank index page of js directory", "directory":"js", "disable_last":"disabled", "disable_next":"disabled", "domain":"tmthydvnprt.github.io/quilt", "email":"tim@tmthydvnprt.com", "keywords":"i,n,d,e,x", "last_post":"", "last_title":"", "latestpostlink":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/js/index.html", "name":"quilt", "next_post":"", "next_title":"", "page_path":"", "relativepath":"../", "tags":"[]", "title":"js directory index", "url":"http://tmthydvnprt.github.io/quilt/js/index.html" };
+pagevars = { "author":"tmthydvnprt", "categories":"[]", "copydate":"2015&ndash;2016", "copyrighter":"tmthydvnprt", "date":"2016-03-06 02:59:48", "description":"blank index page of js directory", "directory":"js", "disable_last":"disabled", "disable_next":"disabled", "domain":"tmthydvnprt.github.io/quilt", "email":"tim@tmthydvnprt.com", "keywords":"i,n,d,e,x,,, ,j,s", "last_post":"", "last_title":"", "latestpostlink":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/js/index.html", "name":"quilt", "next_post":"", "next_title":"", "page_path":"", "relativepath":"../", "tags":"[]", "title":"js directory index", "url":"http://tmthydvnprt.github.io/quilt/js/index.html" };
 </script>
 <script rel="javascript" src="../js/jquery-1.11.2.min_bootstrap.min_typeahead.bundle.min_quilt.js" type="text/javascript"></script>
 <script rel="javascript" type="text/x-mathjax-config">MathJax.Hub.Config({ showMathMenu:false, imageFont:null, MathEvents:{ hover:256 }, jax:["input/TeX","output/HTML-CSS", "output/CommonHTML"], extensions:["tex2jax.js", "CHTML-preview.js"], TeX:{ extensions:["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"], autoNumber:"AMS" } });</script>
