@@ -9,19 +9,19 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Page stitched together with quilt:
 quilt          : v0.1.1, templating, beb44fc2c5ef5d7d564b23eccfca457f42f0cf37
-url            : http://tmthydvnprt.github.io/quilt/css/index.html
+url            : http://tmthydvnprt.github.io/quilt/fonts/index.html
 quilted on     : 2016-03-05 19:30:24
 source branch  : templating
 source hash    : beb44fc2c5ef5d7d564b23eccfca457f42f0cf37
-stitching took : 0.014 s
+stitching took : 0.013 s
 quilt pagevars :
                 author : tmthydvnprt
             categories : []
               copydate : 2015&ndash;2016
            copyrighter : tmthydvnprt
                   date : 2016-03-05 19:30:24
-           description : blank index page of css directory
-             directory : css
+           description : blank index page of fonts directory
+             directory : fonts
           disable_last : disabled
           disable_next : disabled
                 domain : tmthydvnprt.github.io/quilt
@@ -30,20 +30,20 @@ quilt pagevars :
              last_post : 
             last_title : 
         latestpostlink : latex_support
-          markdownlink : /Users/timothydavenport/GitHub/quilt/tests/output/css/index.html
+          markdownlink : /Users/timothydavenport/GitHub/quilt/tests/output/fonts/index.html
                   name : quilt
              next_post : 
             next_title : 
              page_path : 
           relativepath : ../
                   tags : []
-                 title : css directory index
-                   url : http://tmthydvnprt.github.io/quilt/css/index.html
+                 title : fonts directory index
+                   url : http://tmthydvnprt.github.io/quilt/fonts/index.html
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -->
-<title>css directory index</title>
+<title>fonts directory index</title>
 <meta content="tmthydvnprt" name="author"/>
-<meta content="blank index page of css directory" name="description"/>
+<meta content="blank index page of fonts directory" name="description"/>
 <meta content="i,n,d,e,x" name="keywords"/>
 <link href="../imgs/favicon.ico" rel="favicon"/>
 <link href="../img/icon_60x60.png" rel="apple-touch-icon"/>
@@ -112,7 +112,7 @@ quilt pagevars :
 <!--quilted page patch-->
 <div class="container text-center" id="page">
 <h2><br/></h2>
-<h2>Index page of the <code>css/</code> directory.</h2>
+<h2>Index page of the <code>fonts/</code> directory.</h2>
 <h3>This page was intentionally left blank.</h3>
 <h3><small>Nothing to see here, move along.</small></h3>
 </div>
@@ -128,7 +128,7 @@ quilt pagevars :
 </footer>
 <!--quilted scripts patch-->
 <script id="scripts" rel="javascript" type="text/javascript">
-pagevars = { "author":"tmthydvnprt", "categories":"[]", "copydate":"2015&ndash;2016", "copyrighter":"tmthydvnprt", "date":"2016-03-05 19:30:24", "description":"blank index page of css directory", "directory":"css", "disable_last":"disabled", "disable_next":"disabled", "domain":"tmthydvnprt.github.io/quilt", "email":"tim@tmthydvnprt.com", "keywords":"i,n,d,e,x", "last_post":"", "last_title":"", "latestpostlink":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/css/index.html", "name":"quilt", "next_post":"", "next_title":"", "page_path":"", "relativepath":"../", "tags":"[]", "title":"css directory index", "url":"http://tmthydvnprt.github.io/quilt/css/index.html" };
+pagevars = { "author":"tmthydvnprt", "categories":"[]", "copydate":"2015&ndash;2016", "copyrighter":"tmthydvnprt", "date":"2016-03-05 19:30:24", "description":"blank index page of fonts directory", "directory":"fonts", "disable_last":"disabled", "disable_next":"disabled", "domain":"tmthydvnprt.github.io/quilt", "email":"tim@tmthydvnprt.com", "keywords":"i,n,d,e,x", "last_post":"", "last_title":"", "latestpostlink":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/fonts/index.html", "name":"quilt", "next_post":"", "next_title":"", "page_path":"", "relativepath":"../", "tags":"[]", "title":"fonts directory index", "url":"http://tmthydvnprt.github.io/quilt/fonts/index.html" };
 </script>
 <script rel="javascript" src="../js/jquery-1.11.2.min_bootstrap.min_typeahead.bundle.min_quilt.js" type="text/javascript"></script>
 <script rel="javascript" type="text/x-mathjax-config">MathJax.Hub.Config({ showMathMenu:false, imageFont:null, MathEvents:{ hover:256 }, jax:["input/TeX","output/HTML-CSS", "output/CommonHTML"], extensions:["tex2jax.js", "CHTML-preview.js"], TeX:{ extensions:["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"], autoNumber:"AMS" } });</script>
