@@ -4,7 +4,7 @@ author: markdoc.py
 
 <ul class="breadcrumb">
 <li><a href="index.html">quilt</a></li>
-<li><a href="Markdown.html">Markdown</a></li>
+<li><a href="markdown.html">Markdown</a></li>
 </ul>
 ****************************************************************************************************************
 [TOC]
@@ -254,12 +254,12 @@ __MATHS\_RE__
 
 __MD__
 ```
-<markdown.Markdown object at 0x10839bed0>
+<markdown.Markdown object at 0x109c9aed0>
 ```
 
 __MD\_EXT__
 ```
-['markdown.extensions.extra', 'markdown.extensions.nl2br', 'markdown.extensions.sane_lists', 'markdown.extensions.codehilite', 'markdown.extensions.wikilinks', 'markdown.extensions.toc', <Markdown.ChecklistExtension object at 0x10839bd10>, <Markdown.CustomSpanExtension object at 0x10839bd90>, <Markdown.ReplaceTagsExtension object at 0x10839bdd0>, 'markdown.extensions.footnotes', <Markdown.SymbolExtension object at 0x10839be10>, <Markdown.MultiExtension object at 0x10839be50>, <Markdown.MathExtension object at 0x10839be90>]
+['markdown.extensions.extra', 'markdown.extensions.nl2br', 'markdown.extensions.sane_lists', 'markdown.extensions.codehilite', 'markdown.extensions.wikilinks', 'markdown.extensions.toc', <Markdown.ChecklistExtension object at 0x109c9ad10>, <Markdown.CustomSpanExtension object at 0x109c9ad90>, <Markdown.ReplaceTagsExtension object at 0x109c9add0>, 'markdown.extensions.footnotes', <Markdown.SymbolExtension object at 0x109c9ae10>, <Markdown.MultiExtension object at 0x109c9ae50>, <Markdown.MathExtension object at 0x109c9ae90>]
 ```
 
 __MD\_EXT\_CONFIG__

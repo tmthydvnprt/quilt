@@ -4,7 +4,7 @@ author: markdoc.py
 
 <ul class="breadcrumb">
 <li><a href="index.html">quilt</a></li>
-<li><a href="Constants.html">Constants</a></li>
+<li><a href="constants.html">Constants</a></li>
 </ul>
 ****************************************************************************************************************
 [TOC]
