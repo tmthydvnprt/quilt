@@ -113,7 +113,7 @@ class Quilter(object):
         if self.config["local"]:
             self.pagevars["url"] = self.pagevars["output"]
         else:
-            self.pagevars["url"] = self.pagevars["output"].replace(self.pagevars["rootpath"], self.pagevars["domain"])
+            self.pagevars["url"] = self.pagevars["output"].replace(self.pagevars["rootpath"], 'http://'+self.pagevars["domain"])
 
         # update pagevars
         if overrides:
