@@ -1,12 +1,21 @@
 {
     "name"        : "quilt",
-    "url"         : "quilt.com",
+    "domain"      : "tmthydvnprt.github.io/quilt",
+    "title"       : "quilt",
     "author"      : "tmthydvnprt",
-    "email"       : "tmthydvnprt@users.noreply.github.com",
+    "email"       : "tim@tmthydvnprt.com",
     "github"      : "https://github.com/tmthydvnprt",
+    "description" : "a python based static site html code stitcher",
+    "keywords"    : ["python", "static", "html", "site", "generator"],
+    "changefreq"  : "monthly",
+    "priority"    : "0.5",
     "posts"       : "news",
-    "local"       : false,
+    "blogtitle"   : "quilt news",
+    "blogsubtitle": "new things happening with quilt",
+    "atomid"      : "1234567890",
+    "rssid"       : "1234567890",
     "copydate"    : 2015,
     "git"         : "../../",
-    "copyrighter" : "tmthydvnprt"
+    "copyrighter" : "tmthydvnprt",
+    "local"       : false
 }
