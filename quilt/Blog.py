@@ -89,7 +89,6 @@ class Blog(object):
 
             # stitch blog home page
             page = os.path.join(self.config["posts"], "index.html")
-            print page
 
             # check for directory quilt and directory patches?
             quilt, patches = check_local_quilt(page, self.quilt_pattern, self.patches, self.config)
