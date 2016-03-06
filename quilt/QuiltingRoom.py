@@ -513,7 +513,7 @@ class QuiltingRoom(object):
             for outputfile in files:
                 if outputfile.endswith(match):
                     file_loc = os.path.join(dirpath, outputfile)
-                    file_url = file_loc if self.config["local"] else file_loc.replace(self.output, self.config["domain"])
+                    file_url = file_loc if self.config["local"] else file_loc.replace(self.output, 'http://'+self.config["domain"])
                     output_locs.append((file_loc, file_url))
         return output_locs
 
