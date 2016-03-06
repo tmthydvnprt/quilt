@@ -700,7 +700,6 @@ class QuiltingRoom(object):
             post.update(post_data)
 
             # keep track of groups
-
             if 'featured' in post.keys() and post['featured']:
                 all_featured.update([(post['url'], post['title'], post['description'])])
             all_tags.update(get_group(post, 'tags'))
