@@ -8,18 +8,18 @@
 <!--
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Page stitched together with quilt:
-quilt          : v0.1.1, master, d659d5a36b75725d006dce875ce5ed68e44c7a7d
+quilt          : v0.1.1, master, ae48b971c30b65c7d2295029f89a392691f31e8d
 url            : http://tmthydvnprt.github.io/quilt/news/featured/index.html
-quilted on     : 2016-03-05 19:43:44
+quilted on     : 2016-03-05 19:47:13
 source branch  : master
-source hash    : d659d5a36b75725d006dce875ce5ed68e44c7a7d
-stitching took : 0.013 s
+source hash    : ae48b971c30b65c7d2295029f89a392691f31e8d
+stitching took : 0.017 s
 quilt pagevars :
                 author : tmthydvnprt
             categories : []
               copydate : 2015&ndash;2016
            copyrighter : tmthydvnprt
-                  date : 2016-03-05 19:43:44
+                  date : 2016-03-05 19:47:13
            description : blank index page of featured directory
              directory : featured
           disable_last : disabled
@@ -128,7 +128,7 @@ quilt pagevars :
 </footer>
 <!--quilted scripts patch-->
 <script id="scripts" rel="javascript" type="text/javascript">
-pagevars = { "author":"tmthydvnprt", "categories":"[]", "copydate":"2015&ndash;2016", "copyrighter":"tmthydvnprt", "date":"2016-03-05 19:43:44", "description":"blank index page of featured directory", "directory":"featured", "disable_last":"disabled", "disable_next":"disabled", "domain":"tmthydvnprt.github.io/quilt", "email":"tim@tmthydvnprt.com", "keywords":"i,n,d,e,x", "last_post":"", "last_title":"", "latestpostlink":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/news/featured/index.html", "name":"quilt", "next_post":"", "next_title":"", "page_path":"", "relativepath":"../../", "tags":"[]", "title":"featured directory index", "url":"http://tmthydvnprt.github.io/quilt/news/featured/index.html" };
+pagevars = { "author":"tmthydvnprt", "categories":"[]", "copydate":"2015&ndash;2016", "copyrighter":"tmthydvnprt", "date":"2016-03-05 19:47:13", "description":"blank index page of featured directory", "directory":"featured", "disable_last":"disabled", "disable_next":"disabled", "domain":"tmthydvnprt.github.io/quilt", "email":"tim@tmthydvnprt.com", "keywords":"i,n,d,e,x", "last_post":"", "last_title":"", "latestpostlink":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/news/featured/index.html", "name":"quilt", "next_post":"", "next_title":"", "page_path":"", "relativepath":"../../", "tags":"[]", "title":"featured directory index", "url":"http://tmthydvnprt.github.io/quilt/news/featured/index.html" };
 </script>
 <script rel="javascript" src="../../js/jquery-1.11.2.min_bootstrap.min_typeahead.bundle.min_quilt.js" type="text/javascript"></script>
 <script rel="javascript" type="text/x-mathjax-config">MathJax.Hub.Config({ showMathMenu:false, imageFont:null, MathEvents:{ hover:256 }, jax:["input/TeX","output/HTML-CSS", "output/CommonHTML"], extensions:["tex2jax.js", "CHTML-preview.js"], TeX:{ extensions:["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"], autoNumber:"AMS" } });</script>
