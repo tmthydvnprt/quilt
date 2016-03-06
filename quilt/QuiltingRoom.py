@@ -59,13 +59,13 @@ import subprocess
 import quilt
 from quilt.Blog import Blog
 from quilt.Quilter import Quilter
-from quilt.Util import DEFAULT_CONFIG, time_since, read_file, write_file, load_files, get_file_names, recursive_glob, get_dir_hash
-from quilt.Util import find_hrefsrc, filter_external_url, minimize_css, minimize_js, prefix_vendor_css
+from quilt.Util import DEFAULT_CONFIG, time_since, read_file, write_file, load_files, get_file_names, recursive_glob
+from quilt.Util import get_dir_hash, find_hrefsrc, filter_external_url, minimize_css, minimize_js, prefix_vendor_css
 from quilt.Util import path_link_list, get_just_words, get_keywords, spell_check, analyze_post, ProgressBar
 from quilt.Util import reverse_chronological_order, check_local_quilt, get_group, make_group_links
-from quilt.Util import  HEAD_STRAINER, BODY_STRAINER
+from quilt.Util import HEAD_STRAINER, BODY_STRAINER
 from quilt.Constants import QUILTHEADER, ASSETCOMMENT, ROBOTTXT, SITEMAPINDEX, SITEMAP, SITEMAPURL, SITEMAP_IGNORE
-from quilt.Constants import NO_NEW_POSTS, NO_OLD_POSTS, CSS_EXT_RE, ROOT_LEVEL_JS_EXT_RE
+from quilt.Constants import NO_NEW_POSTS, NO_OLD_POSTS, CSS_EXT_RE, ROOT_LEVEL_JS_EXT_RE, GIT_HASH_CMD, GIT_BRANCH_CMD
 
 class QuiltingRoom(object):
     """the quilting room"""
@@ -128,11 +128,11 @@ class QuiltingRoom(object):
         # get quilt git repo info
         repo = os.path.join(os.path.dirname(os.path.dirname(__file__)), '.git')
         try:
-            self.config["quilthash"] = subprocess.check_output('git -C {} rev-parse HEAD'.format(repo), shell=True).strip()
+            self.config["quilthash"] = subprocess.check_output(GIT_HASH_CMD.format(repo), shell=True).strip()
         except:
             self.config["quilthash"] = ''
         try:
-            self.config["quiltbranch"] = subprocess.check_output('git -C {} rev-parse --abbrev-ref HEAD'.format(repo), shell=True).strip()
+            self.config["quiltbranch"] = subprocess.check_output(GIT_BRANCH_CMD.format(repo), shell=True).strip()
         except:
             self.config["quiltbranch"] = ''
 
@@ -140,11 +140,11 @@ class QuiltingRoom(object):
         if self.config["git"]:
             repo = os.path.join(self.source, self.config["git"], '.git')
             try:
-                self.config["hash"] = subprocess.check_output('git -C {} rev-parse HEAD'.format(repo), shell=True).strip()
+                self.config["hash"] = subprocess.check_output(GIT_HASH_CMD.format(repo), shell=True).strip()
             except:
                 self.config["hash"] = ''
             try:
-                self.config["branch"] = subprocess.check_output('git -C {} rev-parse --abbrev-ref HEAD'.format(repo), shell=True).strip()
+                self.config["branch"] = subprocess.check_output(GIT_BRANCH_CMD.format(repo), shell=True).strip()
             except:
                 self.config["branch"] = ''
         else:
@@ -212,7 +212,9 @@ class QuiltingRoom(object):
 
         # extend copyright date
         if self.config["page_defaults"]["copydate"] < int(self.config["now"]["yearlong"]):
-            self.config["page_defaults"]["copydate"] = '{}&ndash;{}'.format(self.config["page_defaults"]["copydate"], self.config["now"]["yearlong"])
+            self.config["page_defaults"]["copydate"] = '{}&ndash;{}'.format(
+                self.config["page_defaults"]["copydate"], self.config["now"]["yearlong"]
+            )
 
         # add user variables (keys not found in DEFAULT_CONFIG)
         for key, val in self.config.items():
@@ -522,7 +524,10 @@ class QuiltingRoom(object):
             for outputfile in files:
                 if outputfile.endswith(match):
                     file_loc = os.path.join(dirpath, outputfile)
-                    file_url = file_loc if self.config["local"] else file_loc.replace(self.output, 'http://'+self.config["domain"])
+                    if self.config["local"]:
+                        file_url = file_loc
+                    else:
+                        file_url = file_loc.replace(self.output, 'http://'+self.config["domain"])
                     output_locs.append((file_loc, file_url))
         return output_locs
 
@@ -647,8 +652,12 @@ class QuiltingRoom(object):
             localpatcheschanged = any([self.fileschanged[x] for x in localpatches])
             localquiltchanged = any([self.fileschanged[x] for x in localquilt])
 
+            # see if there was a resource that would make a 'global' change
+            resourcechange = any([self.quiltchanged, self.patcheschanged, self.templateschanged, self.assetschanged])
+            localchange = any([localquiltchanged, localpatcheschanged])
+
             # if the any of the source files have changed
-            if self.fileschanged[page] or any([self.quiltchanged, self.patcheschanged, self.templateschanged, self.assetschanged]) or any([localquiltchanged, localpatcheschanged]):
+            if self.fileschanged[page] or resourcechange or localchange:
 
                 progbar.animate(i + 1)
 
@@ -788,9 +797,9 @@ class QuiltingRoom(object):
                 shutil.rmtree(self.output)
 
             # dislpay loaded patches and templates
-            print '\n', \
-            'loaded patches:', '\t' + '  '.join(self.patches.keys()), '\n' \
-            'loaded templates:', '\t' + '  '.join([os.path.splitext(os.path.basename(x))[0] for x in self.files["templates"]]), '\n'
+            display_patches = '  '.join(self.patches.keys())
+            display_templates = '  '.join([os.path.splitext(os.path.basename(x))[0] for x in self.files["templates"]])
+            print '\n', 'loaded patches:', '\t' + display_patches, '\n', 'loaded templates:', '\t' + display_templates, '\n'
 
             # did quilt change?
             self.quiltchanged = self.fileschanged[self.config["quilt"]]

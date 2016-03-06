@@ -171,6 +171,16 @@ __FOUR\_ZEROS\_RE__
 :0 0 0 0;
 ```
 
+__GIT\_BRANCH\_CMD__
+```
+git -C {} rev-parse --abbrev-ref HEAD
+```
+
+__GIT\_HASH\_CMD__
+```
+git -C {} rev-parse HEAD
+```
+
 __GROUPLINK__
 ```
 <li class="%s"><a href="%s" class="group-link">%s</a></li>
@@ -194,11 +204,6 @@ __GROUP\_SINGLE\_NAME__
 __GROUP\_VERBS__
 ```
 {'featured': 'featured', 'categories': 'categorized in', 'tags': 'tagged with'}
-```
-
-__INDEX\_DIR\_IGNORE__
-```
-set(['categories', 'tags'])
 ```
 
 __JS\_HTML\_PATTERN\_RE__

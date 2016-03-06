@@ -174,14 +174,19 @@ __DEFAULT\_CONFIG__
 {'copyrighter': 'you', 'buildicon': True, 'atomid': 'randomid', 'keywords': [], 'git': '', 'spellcheck': True, 'patches': 'patches', 'title': 'some default title', 'quiltcomment': True, 'combinecss': True, 'priority': '0.5', 'pageobject': True, 'local': False, 'correctwords': 'correct_words.txt', 'copydate': 2016, 'vendorfycss': True, 'iconsizes': [64, 60, 76, 120, 152], 'assets': 'assets', 'categories': [], 'spellignore': ['maths', 'codehilite'], 'name': 'some name', 'posts': 'posts', 'copymd': True, 'pagecomment': True, 'domain': 'some_name.com', 'page_ext': ['*.html', '*.md'], 'quilt': 'quilt.html', 'patchcomment': True, 'blogsubtitle': 'a blogy blog', 'minimizecss': True, 'images': 'imgs', 'asset_ext': ['*'], 'buildsearch': True, 'author': 'you', 'buildatom': True, 'blogtitle': 'some blog', 'emptywarning': False, 'buildrobot': True, 'iconfile': 'icon.png', 'assetcomment': True, 'email': 'you@some_name.com', 'templates': 'templates', 'patch_ext': ['*.html'], 'buildrss': True, 'description': 'default description', 'tags': [], 'template_ext': ['*.html'], 'combinejs': True, 'rssid': 'randomid', 'changefreq': 'monthly', 'pages': 'pages', 'buildindex': True, 'buildsitemap': True, 'minimizejs': True, 'buildblog': True}
 ```
 
+__GIT\_BRANCH\_CMD__
+```
+git -C {} rev-parse --abbrev-ref HEAD
+```
+
+__GIT\_HASH\_CMD__
+```
+git -C {} rev-parse HEAD
+```
+
 __HEAD\_STRAINER__
 ```
 head|{}
-```
-
-__INDEX\_DIR\_IGNORE__
-```
-set(['categories', 'tags'])
 ```
 
 __NO\_NEW\_POSTS__

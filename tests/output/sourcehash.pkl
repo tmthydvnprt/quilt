@@ -37,11 +37,11 @@ S"\xb6\x00\xabw\xa5\xaf6\xebBDPo\x10\xe4'\xd5!`\x19Y"
 p18
 sS'/Users/timothydavenport/GitHub/quilt/tests/source/pages/docs/Constants.md'
 p19
-S'\xed2\xd3\x96j\x9e\xa2\xb7%\x19i>\x84\xb9\xe7\xb8)Cz('
+S'\xccJ\xb0\xe7TK\xa6S\\\x88X\xa8+a4\xd6-Z\xc3\x05'
 p20
 sS'/Users/timothydavenport/GitHub/quilt/tests/source/pages/docs/__init__.md'
 p21
-S'\xadVR\xb9DC\x06\xf7\xb41N/\xb4\xcf\x9b\xfc\x93\x936"'
+S'\x8b$\x95k\xd1m>\x99\xb9\xccr6\xf6\xd8\xf5zH\xb9Y\xbb'
 p22
 sS'/Users/timothydavenport/GitHub/quilt/tests/source/assets/fonts/fontawesome-webfont.woff2'
 p23
@@ -129,7 +129,7 @@ S'9\xcdF\x1c\xe4+biF\x8f\xcc\x85Jz\xd9wvag\xe3'
 p64
 sS'/Users/timothydavenport/GitHub/quilt/tests/source/pages/docs/Quilter.md'
 p65
-S'\x95\x95\x8dzQ$\xc8{-\xdf\xfc\x13\xe24B+,\xd1\xcb\x0c'
+S'u\x0fl\x9a\xf4\x13\xae}\x06NI\x914W\xa4\x89e.\x86\xa6'
 p66
 sS'/Users/timothydavenport/GitHub/quilt/tests/source/patches/footer.html'
 p67
@@ -157,7 +157,7 @@ S'\x90\x88\x14;\x19\x97\x97y\xb2\x11l\xef8\xb6a\xf7-\x98.\x19'
 p78
 sS'/Users/timothydavenport/GitHub/quilt/tests/source/pages/docs/QuiltingRoom.md'
 p79
-S'\x05p\xe2G\xb2\t\xbd\x12\xd0\xaa2A\xdd\n"\xb1\xd8\xf5f\xe6'
+S'\xfdX?\xd8\x87bjaPe\xb6jz\xf7\x9bm\xa1\x9aV\x94'
 p80
 sS'/Users/timothydavenport/GitHub/quilt/tests/source/pages/news/patches/post_list.html'
 p81
@@ -173,7 +173,7 @@ S'?=@\xd9\xf9\xf3\xee\xa7\xd3\x8c\xc40\xe7\xc3{\xa9S\x97\x91%'
 p86
 sS'/Users/timothydavenport/GitHub/quilt/tests/source/pages/docs/Markdown.md'
 p87
-S'\xadP^\xe2Q~\xd0\xa2\xc6\xfc\xfd6\x98r\xae+\xb1\xe5\x88\xe3'
+S"\xf3\xa0\xe6`kwR,@0\xfb\xa0\xea\xa8\x86V'\x91\x94C"
 p88
 sS'/Users/timothydavenport/GitHub/quilt/tests/source/patches/scripts.html'
 p89

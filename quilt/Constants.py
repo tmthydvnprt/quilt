@@ -146,7 +146,9 @@ MATHS_RE = r'(\$\$|\\\(|\\\[)(.+?)(\$\$|\\\)|\\\])'
 MULTIMATCH_RE = r'({})(.*?)\2'.format(r'|'.join([re.escape(x) for x in MD_INLINE_TAGS.keys()]))
 # match for symbols
 SYMBOLS_RE = r'({})'.format(r'|'.join([re.escape(x) for x in SYMBOLS.keys()]))
-
+# constant git commands
+GIT_HASH_CMD = 'git -C {} rev-parse HEAD'
+GIT_BRANCH_CMD = 'git -C {} rev-parse --abbrev-ref HEAD'
 # quilting logo, yeah!
 QUILTHEADER = """,,,,,,, quilt %s
 ;#~#~#; source : %s
