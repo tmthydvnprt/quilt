@@ -26,10 +26,12 @@ import sys
 import bs4
 import copy
 import nltk
+import time
 import string
 import random
 import codecs
 import fnmatch
+import hashlib
 import urlparse
 import datetime as dt
 
@@ -40,7 +42,7 @@ from quilt.Constants import CLEAN_SELECTORS_RE, CLEAN_SELECTORS2_RE, SELECTORCOL
 from quilt.Constants import MEDIA_RE, EXTRA_SPACES_RE, MISSING_SEMICOLON_RE, ZERO_UNITS_RE, FOUR_ZEROS_RE
 from quilt.Constants import THREE_ZEROS_RE, TWO_ZEROS_RE, BG_ZERO_RE, LEADING_ZERO_DECIMAL_RE
 from quilt.Constants import MORE_THAN_ONE_SEMICOLON_RE, SEMICOLON_CLOSE_BRACE_RE, EMPTY_BRACES_RE
-from quilt.Constants import GROUPLINK, WORD_RE
+from quilt.Constants import GROUPLINK, WORD_RE, WHITESPACE_RE, EXT_LINK
 
 # default config, overridden by config.json in source directory
 DEFAULT_CONFIG = {
@@ -57,7 +59,8 @@ DEFAULT_CONFIG = {
     "tags"        : [],                     # page tags
     "changefreq"  : "monthly",              # sitemap changefreq
     "priority"    : "0.5",                  # sitemap priority
-    "blogname"    : "quilt news",           # atom id
+    "blogtitle"   : "some blog",            # name of blog
+    "blogsubtitle": "a blogy blog",         # subtitle or description for blog
     "atomid"      : "randomid",             # atom id
     "rssid"       : "randomid",             # rss id
     "copydate"    : dt.datetime.now().year, # copyright dates (auto extend to now)
@@ -88,6 +91,7 @@ DEFAULT_CONFIG = {
     "spellcheck"  : True,                   # spell check after quilting
     "spellignore" : ["maths", "codehilite"],# classes to ignore spelling
     "emptywarning": False,                  # print empty warnings
+    "git"         : "",                     # relative path to a git repo (place hash in logs)
     # file and directory names
     # -----------------------------------------------------------------------------------
     "quilt"       : "quilt.html",           # name of quilt file
@@ -104,7 +108,7 @@ DEFAULT_CONFIG = {
     "patch_ext"   : ["*.html"],             # allowable patch extension
     "page_ext"    : ["*.html", "*.md"],     # allowable page extension
     "template_ext": ["*.html"],             # allowable template extension
-    "asset_ext"   : ["*.*"]                 # allowable resource extension
+    "asset_ext"   : ["*"]                   # allowable resource extension
 }
 
 VENDORS = ['-webkit-', '-moz-', '-ms-', '-o-']
@@ -120,6 +124,10 @@ NO_EMPTY_TAGS = [
 
 HEAD_STRAINER = bs4.SoupStrainer("head")
 BODY_STRAINER = bs4.SoupStrainer("body")
+
+def time_since(initial_time):
+    """return the time since the initial time t0"""
+    return time.time() - initial_time
 
 #@profile
 def read_file(file_path='', encoding='utf-8'):
@@ -187,6 +195,29 @@ def get_file_names(source='', extensions=''):
                         file_names.update([os.path.join(dirpath, f)])
 
     return file_names
+
+def recursive_glob(source=''):
+    """get all file names matching"""
+
+    file_names = set()
+    for dirpath, _, files in os.walk(source):
+        for f in files:
+            file_names.update([os.path.join(dirpath, f)])
+
+    return file_names
+
+def get_dir_hash(dir_path=''):
+    """Get the check some of each file in directory, and store in dictionary"""
+    dirhash = {}
+    # walk thru all directories and sub directories
+    for dirpath, _, files in os.walk(dir_path):
+        # loop thru all files in directory
+        for f in files:
+            fullpath = os.path.join(dirpath, f)
+            with open(fullpath, 'r') as openfile:
+                # compute hash and place in dictionary
+                dirhash[fullpath] = hashlib.sha1(openfile.read()).digest()
+    return dirhash
 
 #@profile
 def relative_path(filepath='', rootpath=''):
@@ -483,21 +514,30 @@ def prefix_vendor_css(css=''):
         return unparse_css_blocks(vendorfy_css(parse_css_blocks(css)))
 
 #@profile
+def get_group(pagevars=None, name=''):
+    """get list of tags or categories"""
+    return pagevars[name] if isinstance(pagevars[name], list) else [pagevars[name]] if pagevars[name] else []
+
+def make_group_links(groups=None, pagevars=None, name=''):
+    """make link list out of group set or list"""
+    dirname = os.path.join(os.path.dirname(pagevars["url"]), name)
+    linklist = '\n'.join([GROUPLINK % (name, os.path.join(dirname, "%s.html" % x.lower()), x) for x in groups])
+    return linklist
+
 def group_links(pagevars=None, name=''):
     """place tag and category links"""
     linklist = ''
     if pagevars[name]:
-        groups = pagevars[name] if isinstance(pagevars[name], list) else [pagevars[name]]
-        dirname = os.path.join(os.path.dirname(pagevars["url"]), name)
-        linklist = '\n'.join([GROUPLINK % (name, os.path.join(dirname, "%s.html" % (x)), x) for x in groups])
+        groups = get_group(pagevars, name)
+        linklist = make_group_links(groups, pagevars, name)
     return linklist
 
 #@profile
-def top_sentences(text='', sentence_number=4, max_chars=200):
+def top_sentences(text='', sentence_number=4, max_chars=250):
     """return top sentences or max number of words"""
 
     sents = nltk.sent_tokenize(text[:max_chars])
-    top_sents = ' '.join(sents[:sentence_number])
+    top_sents = ' '.join(sents[:(sentence_number - 1)])
     return top_sents
 
 #@profile
@@ -557,6 +597,60 @@ def spell_check(text='', correct_words=None):
     word_errors = check_words.difference(correct_words)
 
     return word_errors
+
+def analyze_post(soup=None, domain=''):
+    """analyze text and structure of post"""
+
+    post_text = soup.get_text()
+
+    wordpunct = nltk.wordpunct_tokenize(post_text)
+    sents = nltk.sent_tokenize(post_text)
+    alpha_words = [x for x in wordpunct if x.isalpha()]
+
+    # determine where link goes
+    links = {'ext' : 0, 'int' : 0, 'anchor' : 0}
+    for a in soup.find_all('a'):
+        if a['href'].startswith('#'):
+            links['anchor'] += 1
+        elif EXT_LINK.match(a['href']) and domain not in a['href']:
+            links['ext'] += 1
+        else:
+            links['int'] += 1
+
+    data = {
+        'post-length'     : len(post_text),
+        'post-characters' : len(WHITESPACE_RE.sub('', post_text)),
+        'post-lines'      : post_text.count('\n'),
+        'post-words'      : len(alpha_words),
+        'post-unique'     : len(set(alpha_words)),
+        'post-symbols'    : len([x for x in wordpunct if not (x.isalpha() or x.isdigit())]),
+        'post-numbers'    : len([x for x in wordpunct if x.isdigit()]),
+        'post-diversity'  : 100.0 * float(len(set(alpha_words))) / float(len(alpha_words)),
+        'post-sentences'  : len(sents),
+        'post-questions'  : post_text.count('?'),
+        'summary'         : top_sentences(post_text, 4),
+        'content'         : soup,
+        'post-extlinks'   : links['ext'],
+        'post-intlinks'   : links['int'],
+        'post-anchors'    : links['anchor'],
+        'post-quotes'     : len(soup.find_all(['blockquote'])),
+        'post-images'     : len(soup.find_all(['img', 'svg'])),
+        'post-headers'    : len(soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])),
+    }
+
+    return data
+
+def handlebar_replace(template_string='', variables=None):
+    """ replace variables """
+
+    for key, val in variables.items():
+        x_brace = "{{%s}}" % (key)
+        if isinstance(val, float):
+            template_string = template_string.replace(x_brace, '%.2f' % val)
+        else:
+            template_string = template_string.replace(x_brace, unicode(val))
+
+    return template_string
 
 class ProgressBar(object):
     """implements a comand-line progress bar"""

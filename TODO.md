@@ -14,8 +14,11 @@ Functionallity
 
 - [x] create warning for removing empty elements with id or class
 - [ ] make warnings supressable
-- [ ] add `featured.html` for blog
-- [ ] make blog index page oriented
+- [x] add featured group for blog
+- [x] make blog index patch oriented
+- [x] make blog category/categories patch oriented
+- [x] make blog tag/tags patch oriented
+- [x] gather data for each group
 
 Error Handling
 --------------
@@ -29,12 +32,10 @@ Robust Regex
 
 - [x] allow whitespace in pagevars:
 
-      turn 
+      turn
         FIRST_KEY_RE = re.compile(r'[A-Za-z0-9_-]+:')
         KEY_VALUE_RE = re.compile(r'^[ ]{0,3}(?P<key>[A-Za-z0-9_-]+):\s*(?P<value>.*)')
-      
-      into 
+
+      into
         FIRST_KEY_RE = re.compile(r'[A-Za-z0-9_-]+[ \t]*:')
         KEY_VALUE_RE = re.compile(r'^[ ]{0,3}(?P<key>[A-Za-z0-9_-]+)[ \t]*:\s*(?P<value>.*)')
-
-      

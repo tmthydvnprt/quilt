@@ -3,16 +3,16 @@
     <channel>
         <title>quilt Feed</title>
         <description>/Users/timothydavenport/GitHub/quilt/tests/source/pages/news</description>
-        <link>some_name.com</link>
-        <id>randomid</id>
+        <link>tmthydvnprt.github.io/quilt</link>
+        <id>1234567890</id>
         <language>en-us</language>
-        <lastBuildDate>2015-06-06T06:29:56-7:00</lastBuildDate>
-        <pubDate>2015-06-06T06:29:56-7:00</pubDate>
+        <lastBuildDate>2016-03-05T18:10:49-08:00</lastBuildDate>
+        <pubDate>2016-03-05T18:10:49-08:00</pubDate>
         <managingEditor>tmthydvnprt</managingEditor>
            <item>
         <title>HTML Entities</title>
-        <link>/Users/timothydavenport/GitHub/quilt/tests/output/news/html_entities.html</link>
-        <guid>randomid</guid>
+        <link>http://tmthydvnprt.github.io/quilt/news/html_entities.html</link>
+        <guid>1234567890</guid>
         <pubDate>3/18/2015 5:46 am</pubDate>
         <description>
 This list of html entities is for reference and testing of entity handling. Name
@@ -28,37 +28,47 @@ quot
 "
 &quot;
 \x0022 (34)
-quotation mark (APL</description>
+quotation mark (APL quote)
+
+
+amp
+&
+&amp;
+\x0026 (38)
+ampersand
+
+
+apos</description>
     </item>
    <item>
         <title>\(\LaTeX\) Support</title>
-        <link>/Users/timothydavenport/GitHub/quilt/tests/output/news/latex_support.html</link>
-        <guid>randomid</guid>
+        <link>http://tmthydvnprt.github.io/quilt/news/latex_support.html</link>
+        <guid>1234567890</guid>
         <pubDate>3/20/2015 10:49 pm</pubDate>
         <description>
-A list of MathJax \(\LaTeX\) Command  examples. These alphabetical examples come from here.</description>
+A list of MathJax \(\LaTeX\) Command  examples. These alphabetical examples come from here. There are a lot of examples so the page may take a while to render.</description>
     </item>
    <item>
         <title>Quilt's Markdown Syntax</title>
-        <link>/Users/timothydavenport/GitHub/quilt/tests/output/news/markdown_syntax.html</link>
-        <guid>randomid</guid>
+        <link>http://tmthydvnprt.github.io/quilt/news/markdown_syntax.html</link>
+        <guid>1234567890</guid>
         <pubDate>03/08/2015 1:32 pm</pubDate>
         <description>
-Quilt uses Python-Markdown as it's markdown interpreter. Besides the base syntax rules of original Markdown, quilt parses extra markdown syntax.</description>
+Quilt uses Python-Markdown as it's markdown interpreter. Besides the base syntax rules of original Markdown, quilt parses extra markdown syntax. Extras includes abbreviations, attribute lists, definitions, fenced code, footnotes, tables (with escape</description>
     </item>
    <item>
         <title>Quilt: A python based static site html stitcher.</title>
-        <link>/Users/timothydavenport/GitHub/quilt/tests/output/news/quilt_a_python_based_static_site_html_stitcher.html</link>
-        <guid>randomid</guid>
+        <link>http://tmthydvnprt.github.io/quilt/news/quilt_a_python_based_static_site_html_stitcher.html</link>
+        <guid>1234567890</guid>
         <pubDate>3/1/2015 3:15 pm</pubDate>
         <description>
 A python based static site html stitcher. Description
-Generate a static site via python from content-only .html and .md pages that are stitched together  along with patch (e.g.</description>
+Generate a static site via python from content-only .html and .md pages that are stitched together  along with patch (e.g. nav.html, footer.html) files onto a main site quilt.html file.</description>
     </item>
    <item>
         <title>Page Variable Change</title>
-        <link>/Users/timothydavenport/GitHub/quilt/tests/output/news/page_variable_change.html</link>
-        <guid>randomid</guid>
+        <link>http://tmthydvnprt.github.io/quilt/news/page_variable_change.html</link>
+        <guid>1234567890</guid>
         <pubDate>3/9/2015 8:31 am</pubDate>
         <description>
 The syntax for page variable headers changed from json  to key: value plaintext. The method follows MultiMarkdown's metadata
@@ -66,7 +76,9 @@ The syntax for page variable headers changed from json  to key: value plaintext.
 key
 [A-Za-z0-9_-]+ from beginning of line until :
 value
-a string per line</description>
+a string per line, where multiline values become arrays
+notes
+key: </description>
     </item>
 
     </channel>

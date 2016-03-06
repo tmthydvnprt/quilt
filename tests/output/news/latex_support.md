@@ -129,7 +129,7 @@ A list of [MathJax](https://www.mathjax.org) \(\LaTeX\) Command  examples.  Thes
 `\approxeq`          | `$$\approxeq$$`                                                       | $$\approxeq$$
 `\arccos`            | `$$\arccos$$`                                                         | $$\arccos$$
 `\arcsin`            | `$$\arcsin$$`                                                         | $$\arcsin$$
-`\arctan`            | `$$\arctan$$`                                                         | $$\arctan$$ 
+`\arctan`            | `$$\arctan$$`                                                         | $$\arctan$$
 `\arg`               | `$$\arg$$`                                                            | $$\arg$$
 `\array`             | `$$\array{ a & b+1 \cr c+1 & d }$$`                                   | $$\array{ a & b+1 \cr c+1 & d }$$
 `\arrowvert`         | `$$\arrowvert$$`                                                      | $$\arrowvert$$
@@ -453,24 +453,24 @@ Come on. what is the deal.
 `\intercal`         | `$$\intercal$$`                                                        | $$\intercal$$
 `\iota`             | `$$\iota$$`                                                            | $$\iota$$
 `\it`               | `$$\it$$`                                                              | $$\it$$
- 
-### J 
- 
+
+### J
+
 \(\LaTeX\) Command  | Syntax Examples                                                        | `MathJax.js` Output
 --------------------|------------------------------------------------------------------------|--------------------------------------
 `\Join`             | `$$\Join$$`                                                            | $$\Join$$
- 
-### K 
- 
+
+### K
+
 \(\LaTeX\) Command  | Syntax Examples                                                        | `MathJax.js` Output
 --------------------|------------------------------------------------------------------------|--------------------------------------
 `\kappa`            | `$$\kappa$$`                                                           | $$\kappa$$
 `\ker`              | `$$\ker$$`                                                             | $$\ker$$
 `\kern`             | `$$\|\kern 2ex\|\kern 2em\|\kern 2pt\|$$`                              | $$\|\kern 2ex\|\kern 2em\|\kern 2pt\|$$
 &nbsp;              | `$$\rm I\kern-2.5pt R$$`                                               | $$\rm I\kern-2.5pt R$$
- 
-### L 
- 
+
+### L
+
 \(\LaTeX\) Command     | Syntax Examples                                                     | `MathJax.js` Output
 -----------------------|---------------------------------------------------------------------|--------------------------------------
 `\Lambda`              | `$$\Lambda$$`                                                       | $$\Lambda$$
@@ -651,7 +651,7 @@ Come on. what is the deal.
 `\nvDash`           | `$$\nvDash$$`                                                          | $$\nvDash$$
 `\nvdash`           | `$$\nvdash$$`                                                          | $$\nvdash$$
 `\nwarrow`          | `$$\nwarrow$$`                                                         | $$\nwarrow$$
-                    
+
 ### O
 
 \(\LaTeX\) Command    | Syntax Examples                                                      | `MathJax.js` Output
@@ -953,15 +953,15 @@ Come on. what is the deal.
 `\xi`                  | `$$\xi$$`                                                            | $$\xi$$
 `\xrightarrow`         | `$$\xrightarrow ab$$`                                                | $$\xrightarrow ab$$
 `\xleftarrow`          | `$$\xleftarrow{\text{see equation (1)}}$$`                           | $$\xleftarrow{\text{see equation (1)}}$$
-   
+
 ### Y   
-   
+
 \(\LaTeX\) Command     | Syntax Examples                                                      | `MathJax.js` Output
 -----------------------|----------------------------------------------------------------------|--------------------------------------
 `\yen`                 | `$$\yen$$`                                                           | $$\yen$$
-   
+
 ### Z   
-   
+
 \(\LaTeX\) Command     | Syntax Examples                                                      | `MathJax.js` Output
 -----------------------|----------------------------------------------------------------------|--------------------------------------
 `\zet`                 | `$$\zeta$$`                                                          | $$\zeta$$

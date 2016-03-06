@@ -42,6 +42,9 @@ JS_HTML_PATTERN_RE = re.compile(r'(>tpircs/<.*>tpircs<)?(.*)', re.DOTALL)
 KEY_VALUE_RE = re.compile(r'^[ ]{0,3}(?P<key>[A-Za-z0-9_-]+)[ \t]*:\s*(?P<value>.*)')
 VALUE_RE = re.compile(r'^[ ]{4,}(?P<value>.*)')
 
+# compiled regex for finding true
+TRUE_RE = re.compile(r'[Tt]rue')
+
 # compiled "handlebar" pagevars
 PAGEVAR_RE = re.compile(r'{{(.*?)}}')
 ESCAPED_PAGEVAR_RE = re.compile(r'{ {(.*?)}}')
@@ -76,6 +79,10 @@ LEADING_ZERO_DECIMAL_RE = re.compile(r'(:|\s)0+\.(\d+)')
 MORE_THAN_ONE_SEMICOLON_RE = re.compile(r';;+')
 SEMICOLON_CLOSE_BRACE_RE = re.compile(r';}')
 EMPTY_BRACES_RE = re.compile(r'[^}]+{}')
+
+# compiled regex for text analysis
+WHITESPACE_RE = re.compile(r'\s')
+EXT_LINK = re.compile(r'((?:[Ff]|[Hh][Tt])[Tt][Pp][Ss]?://[^>]*)')
 
 # tags for markdown inline match
 MD_INLINE_TAGS = {
@@ -125,7 +132,10 @@ SYMBOLS = {
     '(<>)'      : '%sharr;',
     '(oo)'      : '%sinfin;'
 }
-
+# ignore these files when building sitemap
+SITEMAP_IGNORE = {'sourcehash.pkl', 'sitemapindex.xml', 'sitemap.xml'}
+# ignore this directories when filling empty directories
+INDEX_DIR_IGNORE = {'categories', 'tags'}
 # match [x], [X] or [ ] in list item for checkbox
 CHECKBOX_RE = r'<li>\[([ Xx])\]'
 # match !! class | text !!
@@ -140,20 +150,23 @@ MULTIMATCH_RE = r'({})(.*?)\2'.format(r'|'.join([re.escape(x) for x in MD_INLINE
 SYMBOLS_RE = r'({})'.format(r'|'.join([re.escape(x) for x in SYMBOLS.keys()]))
 
 # quilting logo, yeah!
-QUILTHEADER = """,,,,,,,
-;#~#~#; quilt
-;~#~#~; source : %s
-;#~#~#; time   : %s
-'''''''"""
+QUILTHEADER = """,,,,,,, quilt %s
+;#~#~#; source : %s
+;~#~#~; branch : %s
+;#~#~#; hash   : %s
+''''''' time   : %s
+"""
 # comment put in head if config["quiltcomment"] is True
 QUILTCOMMENT = """
-    -- """ + "~"*64 + """
-    -- Page stitched together with quilt.py
-    -- url            : %s
-    -- quilted on     : %s
-    -- stitching took : %s s
-%s
-    -- """ + "~"*64 + """
+""" + "~"*64 + """
+Page stitched together with quilt:
+quilt          : %s
+url            : %s
+quilted on     : %s
+source branch  : %s
+source hash    : %s
+stitching took : %s s%s
+""" + "~"*64 + """
 """
 # comment put between asset source if config["assetcomment"] is True
 ASSETCOMMENT = """/*!
@@ -168,6 +181,45 @@ PAGEOBJ = """
 <script>
 pagevars = %s;
 </script>"""
+
+PAGEVARS_TO_PRINT = '''author
+categories
+copydate
+copyrighter
+date
+description
+directory
+disable_last
+disable_next
+domain
+email
+keywords
+last_post
+last_title
+latestpostlink
+markdownlink
+name
+next_post
+next_title
+page_path
+relativepath
+tags
+title
+url
+post-length
+post-characters
+post-lines
+post-words
+post-symbols
+post-numbers
+post-diversity
+post-sentences
+post-questions
+post-extlinks
+post-intlinks
+post-anchors
+post-images
+post-headers'''.split('\n')
 
 # size of random placeholder for minimize code
 PLACEHOLDER_SIZE = 64
@@ -244,52 +296,10 @@ RSSITEM = """   <item>
     </item>
 """
 # post link strings
-POSTLIST = """<div class="container">
-    <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-            <h1>%s</h1>
-            <hr>
-            <div class="posts list-group">
-                %s
-            </div>
-        </div>
-    </div>
-</div>
-"""
-POST = """  <li class="post-link list-group-item">
-        <h3 class="list-group-item-heading"><a href="%s">%s</a> <span class="h4">by %s <small>on %s</small></span></h3>
-        <hr>
-        <p class="lead list-group-item-text">%s <a href="%s">&hellip;continue&hellip;</a></p>
-        <ul class="group-list list-inline">
-            <li><a href="%s">Tags:</a> </li>
-            %s
-        </ul>
-        <ul class="group-list list-inline">
-            <li><a href="%s">Categores:</a> </li>
-            %s
-        </ul>
-    </li>
-"""
 NO_NEW_POSTS = "There are no newer posts"
 NO_OLD_POSTS = "There are no earlier posts"
-# post link strings
-GROUPLIST = """<div class="container">
-    <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-            <h1>%s</h1>
-            <hr>
-            <ul class="%s list-unstyled">
-                %s
-            </ul>
-        </div>
-    </div>
-</div>
-"""
-GROUP = """  <li class="%s-link">
-        <h3><a href="%s">%s</a> <span class="badge">%s posts</span></h3>
-    </li>
-"""
-GROUPLINK = """<li class="%s"><a href="%s" class="label label-success">%s</a></li>
+
+GROUPLINK = """<li class="%s"><a href="%s" class="group-link">%s</a></li>
 """
 TAG_CATEGORY = """<div class="container">
     <div class="row">
@@ -306,6 +316,17 @@ description: %s
 author: %s
 
 """
+GROUP_SINGLE_NAME = {
+    'tags'      : 'tag',
+    'categories': 'category',
+    'featured'  : 'featured'
+}
+GROUP_VERBS = {
+    'tags'      : 'tagged with',
+    'categories': 'categorized in',
+    'featured'  : 'featured'
+}
+
 # robot.txt string
 ROBOTTXT = """# Sitemap location
 Sitemap: %s/sitemap.xml

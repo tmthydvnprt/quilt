@@ -51,6 +51,7 @@ changefreq
 atomid
 copymd
 pagevar
+generatesite
 quilted_site_files
 Lorem
 ipsum
