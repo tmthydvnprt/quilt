@@ -4,7 +4,7 @@ author: markdoc.py
 
 <ul class="breadcrumb">
 <li><a href="index.html">quilt</a></li>
-<li><a href="QuiltingRoom.html">QuiltingRoom</a></li>
+<li><a href="quiltingroom.html">QuiltingRoom</a></li>
 </ul>
 ****************************************************************************************************************
 [TOC]

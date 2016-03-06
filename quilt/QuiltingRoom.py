@@ -409,6 +409,8 @@ class QuiltingRoom(object):
         # if any source affecting index changed, redo anyway
         if any([self.quiltchanged, self.patcheschanged, self.templateschanged, self.assetschanged]):
             has_index_dirs = {xd for xd, _, xf in os.walk(self.output) if len(fnmatch.filter(xf, 'index.html')) > 0}
+        else:
+            has_index_dirs = set()
 
         # get index in source files
         source_has_index_dirs = {xd for xd, _, xf in os.walk(self.source) if len(fnmatch.filter(xf, 'index.*')) > 0}
