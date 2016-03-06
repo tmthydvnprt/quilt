@@ -196,6 +196,11 @@ __GROUP\_VERBS__
 {'featured': 'featured', 'categories': 'categorized in', 'tags': 'tagged with'}
 ```
 
+__INDEX\_DIR\_IGNORE__
+```
+set(['categories', 'tags'])
+```
+
 __JS\_HTML\_PATTERN\_RE__
 ```
 (>tpircs/<.*>tpircs<)?(.*)
@@ -424,6 +429,11 @@ __SITEMAPURL__
         <priority>%s</priority>
     </url>
 
+```
+
+__SITEMAP\_IGNORE__
+```
+set(['sitemapindex.xml', 'sourcehash.pkl', 'sitemap.xml'])
 ```
 
 __SPACED\_COLON\_RE__

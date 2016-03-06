@@ -71,6 +71,7 @@ class Blog(object):
         self.quilt_pattern = quilt_pattern
         self.patches = patches
         self.posts = []
+        self.fileschanged = {}
 
     #@profile
     def append(self, post=None):
@@ -83,33 +84,37 @@ class Blog(object):
     def generate_blog_home(self):
         """generate blog index page"""
 
-        # stitch blog home page
-        page = os.path.join(self.config["posts"], "index.html")
+        # only redo index if any post has changed
+        if any([self.fileschanged[x["source"]] for x in self.posts]):
 
-        # check for directory quilt and directory patches?
-        quilt, patches = check_local_quilt(page, self.quilt_pattern, self.patches, self.config)
+            # stitch blog home page
+            page = os.path.join(self.config["posts"], "index.html")
+            print page
 
-        # use index patch as starting point
-        page_html = GROUPVARS % (
-            self.name,
-            self.name,
-            self.config["author"]
-        )
-        page_html += patches["index"]
+            # check for directory quilt and directory patches?
+            quilt, patches = check_local_quilt(page, self.quilt_pattern, self.patches, self.config)
 
-        # stitch the page together
-        qultr = Quilter(page, quilt, patches, page_html, self.config)
+            # use index patch as starting point
+            page_html = GROUPVARS % (
+                self.name,
+                self.name,
+                self.config["author"]
+            )
+            page_html += patches["index"]
 
-        # update pagevars with special blog variables
-        qultr.pagevars["latest_post"] = reverse_chronological_order(self.posts)[0]["content"]
-        # generate reverse chronological order of first x posts
-        qultr.pagevars["postitems"] = create_post_list(reverse_chronological_order(self.posts), patches['post_item'])
+            # stitch the page together
+            qultr = Quilter(page, quilt, patches, page_html, self.config)
 
-        qultr.stitch()
-        qultr.clean_html()
-        qultr.remove_empty()
-        qultr.write()
-        del qultr
+            # update pagevars with special blog variables
+            qultr.pagevars["latest_post"] = reverse_chronological_order(self.posts)[0]["content"]
+            # generate reverse chronological order of first x posts
+            qultr.pagevars["postitems"] = create_post_list(reverse_chronological_order(self.posts), patches['post_item'])
+
+            qultr.stitch()
+            qultr.clean_html()
+            qultr.remove_empty()
+            qultr.write()
+            del qultr
 
         return self
 
@@ -119,10 +124,9 @@ class Blog(object):
 
         groups = defaultdict(list)
         for post in self.posts:
-            if name in post.keys():
+            post_groups = []
+            if self.fileschanged[post["source"]] and name in post.keys():
                 post_groups = post[name] if isinstance(post[name], list) else [post[name]]
-            else:
-                post_groups = []
             for group in post_groups:
                 groups[group].append(post)
         return groups
@@ -130,51 +134,53 @@ class Blog(object):
     def generate_featured(self):
         """generate featured posts"""
 
-        name = 'featured'
+        # only redo featured if any post has changed
+        if any([self.fileschanged[x["source"]] for x in self.posts]):
+            name = 'featured'
 
-        # make group folder
-        os.makedirs(os.path.join(self.config["posts"], name).replace(self.config["pages"], self.output))
+            # make group folder
+            os.makedirs(os.path.join(self.config["posts"], name).replace(self.config["pages"], self.output))
 
-        # create group -> page look up table
-        groups = self.group_by(name)
+            # create group -> page look up table
+            groups = self.group_by(name)
 
-        group = name
-        posts = groups[True]
+            group = name
+            posts = groups[True]
 
-        # stitch blog home page
-        page = os.path.join(self.config["posts"], name, "index.html")
+            # stitch blog home page
+            page = os.path.join(self.config["posts"], name, "index.html")
 
-        # check for directory quilt and directory patches?
-        quilt, patches = check_local_quilt(os.path.dirname(page), self.quilt_pattern, self.patches, self.config)
+            # check for directory quilt and directory patches?
+            quilt, patches = check_local_quilt(os.path.dirname(page), self.quilt_pattern, self.patches, self.config)
 
-        # use category or tag patch as page
-        page_html = GROUPVARS % (
-            'Featured Posts',
-            'Cherry Picked Posts',
-            self.config["author"]
-        )
-        page_html += patches['group']
+            # use category or tag patch as page
+            page_html = GROUPVARS % (
+                'Featured Posts',
+                'Cherry Picked Posts',
+                self.config["author"]
+            )
+            page_html += patches['group']
 
-        # stitch the page together
-        qultr = Quilter(page, quilt, patches, page_html, self.config)
+            # stitch the page together
+            qultr = Quilter(page, quilt, patches, page_html, self.config)
 
-        # update pagevars with list of group posts
-        qultr.pagevars["postitems"] = create_post_list(reverse_chronological_order(posts), patches['post_item'], '../')
-        qultr.pagevars["group"] = ''
-        qultr.pagevars["grouptype"] = group.title()
+            # update pagevars with list of group posts
+            qultr.pagevars["postitems"] = create_post_list(reverse_chronological_order(posts), patches['post_item'], '../')
+            qultr.pagevars["group"] = ''
+            qultr.pagevars["grouptype"] = group.title()
 
-        qultr.stitch()
-        qultr.clean_html()
-        qultr.remove_empty()
-        qultr.write()
-        del qultr
+            qultr.stitch()
+            qultr.clean_html()
+            qultr.remove_empty()
+            qultr.write()
+            del qultr
 
     #@profile
     def generate_group_pages(self, name=''):
         """generate tag or category page"""
 
         singular_name = GROUP_SINGLE_NAME[name]
-        verb =  GROUP_VERBS[name]
+        verb = GROUP_VERBS[name]
 
         # make group folder
         os.makedirs(os.path.join(self.config["posts"], name).replace(self.config["pages"], self.output))
@@ -197,7 +203,7 @@ class Blog(object):
                             group_reduce_data[group][postvar] = 0
                         group_reduce_data[group][postvar] += post[postvar]
 
-            # stitch blog home page
+            # stitch group page
             page = os.path.join(self.config["posts"], name, "%s.html" % group.lower())
 
             # check for directory quilt and directory patches?
@@ -226,42 +232,43 @@ class Blog(object):
             del qultr
 
         # stitch group home page
-        page = os.path.join(self.config["posts"], name, "index.html")
+        if groups:
+            page = os.path.join(self.config["posts"], name, "index.html")
 
-        # check for directory quilt and directory patches?
-        quilt, patches = check_local_quilt(os.path.dirname(page), self.quilt_pattern, self.patches, self.config)
+            # check for directory quilt and directory patches?
+            quilt, patches = check_local_quilt(os.path.dirname(page), self.quilt_pattern, self.patches, self.config)
 
-        # use categories or tags patch as page
-        page_html = GROUPVARS % (
-            name.title(),
-            name.title(),
-            self.config["author"]
-        )
-        page_html += patches['groups']
+            # use categories or tags patch as page
+            page_html = GROUPVARS % (
+                name.title(),
+                name.title(),
+                self.config["author"]
+            )
+            page_html += patches['groups']
 
-        # stitch the page together
-        qultr = Quilter(page, quilt, patches, page_html, self.config)
+            # stitch the page together
+            qultr = Quilter(page, quilt, patches, page_html, self.config)
 
-        # update pagevars with list of groups
-        groupitems = []
-        for group, posts in groups.items():
-            groupvars = {
-                'grouptype' : name.title(),
-                'grouplink' : "%s.html" % group.lower(),
-                'group'     : group.title(),
-                'post-count': len(posts)
-            }
-            groupvars.update(group_reduce_data[group])
-            groupitems.append(handlebar_replace(patches['group_item'], groupvars))
+            # update pagevars with list of groups
+            groupitems = []
+            for group, posts in groups.items():
+                groupvars = {
+                    'grouptype' : name.title(),
+                    'grouplink' : "%s.html" % group.lower(),
+                    'group'     : group.title(),
+                    'post-count': len(posts)
+                }
+                groupvars.update(group_reduce_data[group])
+                groupitems.append(handlebar_replace(patches['group_item'], groupvars))
 
-        qultr.pagevars["grouptype"] = name.title()
-        qultr.pagevars["groupitems"] = '\n'.join(groupitems)
+            qultr.pagevars["grouptype"] = name.title()
+            qultr.pagevars["groupitems"] = '\n'.join(groupitems)
 
-        qultr.stitch()
-        qultr.clean_html()
-        qultr.remove_empty()
-        qultr.write()
-        del qultr
+            qultr.stitch()
+            qultr.clean_html()
+            qultr.remove_empty()
+            qultr.write()
+            del qultr
 
         return self
 
@@ -269,38 +276,40 @@ class Blog(object):
     def generate_atom(self):
         """generate atom xml"""
 
-        # generate an atom entry for each blog page
-        entries = [ATOMENTRY % (
-            post['title'],
-            post['url'],
-            post['url'],
-            self.config['atomid'],
-            post['date'],
-            post['summary'], #.encode('utf8'),
-            post['content'], #.encode('utf8'),
-            post['author'],
-            post['email']
-        ) for post in self.posts]
+        # only redo atom if any post has changed
+        if any([self.fileschanged[x["source"]] for x in self.posts]):
+            # generate an atom entry for each blog page
+            entries = [ATOMENTRY % (
+                post['title'],
+                post['url'],
+                post['url'],
+                self.config['atomid'],
+                post['date'],
+                post['summary'], #.encode('utf8'),
+                post['content'], #.encode('utf8'),
+                post['author'],
+                post['email']
+            ) for post in self.posts]
 
-        # generate the atom xml file
-        atom_xml = (ATOMXML % (
-            self.config["name"],
-            self.config["posts"],
-            self.config["domain"],
-            self.config["domain"],
-            self.config["atomid"],
-            self.config["now"]["iso"],
-            ''.join(entries)
-        )).encode('utf8')
+            # generate the atom xml file
+            atom_xml = (ATOMXML % (
+                self.config["name"],
+                self.config["posts"],
+                self.config["domain"],
+                self.config["domain"],
+                self.config["atomid"],
+                self.config["now"]["iso"],
+                ''.join(entries)
+            )).encode('utf8')
 
-        feed_path = os.path.join(self.output, 'feed')
-        # make feed/ if need be
-        if not os.path.exists(feed_path):
-            os.makedirs(feed_path)
+            feed_path = os.path.join(self.output, 'feed')
+            # make feed/ if need be
+            if not os.path.exists(feed_path):
+                os.makedirs(feed_path)
 
-        # output new atom files
-        write_file(os.path.join(feed_path, 'atom.xml'), atom_xml)
-        write_file(os.path.join(feed_path, 'feed.atom'), atom_xml)
+            # output new atom files
+            write_file(os.path.join(feed_path, 'atom.xml'), atom_xml)
+            write_file(os.path.join(feed_path, 'feed.atom'), atom_xml)
 
         return self
 
@@ -308,34 +317,36 @@ class Blog(object):
     def generate_rss(self):
         """geneate rss xml"""
 
-        # generate an rss item for each blog page
-        items = [RSSITEM % (
-            post['title'],
-            post['url'],
-            self.config['atomid'],
-            post['date'],
-            post['summary'], #.encode('utf8')
-        ) for post in self.posts]
+        # only redo rss if any post has changed
+        if any([self.fileschanged[x["source"]] for x in self.posts]):
+            # generate an rss item for each blog page
+            items = [RSSITEM % (
+                post['title'],
+                post['url'],
+                self.config['atomid'],
+                post['date'],
+                post['summary'], #.encode('utf8')
+            ) for post in self.posts]
 
-        # generate the rss xml file
-        rss_xml = (RSSXML % (
-            self.config['name'],
-            self.config['posts'],
-            self.config['domain'],
-            self.config['rssid'],
-            self.config["now"]["iso"],
-            self.config["now"]["iso"],
-            self.config['author'],
-            ''.join(items)
-        )).encode('utf8')
+            # generate the rss xml file
+            rss_xml = (RSSXML % (
+                self.config['name'],
+                self.config['posts'],
+                self.config['domain'],
+                self.config['rssid'],
+                self.config["now"]["iso"],
+                self.config["now"]["iso"],
+                self.config['author'],
+                ''.join(items)
+            )).encode('utf8')
 
-        feed_path = os.path.join(self.output, 'feed')
-        # make feed/ if need be
-        if not os.path.exists(feed_path):
-            os.makedirs(feed_path)
+            feed_path = os.path.join(self.output, 'feed')
+            # make feed/ if need be
+            if not os.path.exists(feed_path):
+                os.makedirs(feed_path)
 
-        # output new atom files
-        write_file(os.path.join(feed_path, 'rss.xml'), rss_xml)
-        write_file(os.path.join(feed_path, 'feed.rss'), rss_xml)
+            # output new atom files
+            write_file(os.path.join(feed_path, 'rss.xml'), rss_xml)
+            write_file(os.path.join(feed_path, 'feed.rss'), rss_xml)
 
         return self

@@ -426,6 +426,11 @@ __SITEMAPURL__
 
 ```
 
+__SITEMAP\_IGNORE__
+```
+set(['sitemapindex.xml', 'sourcehash.pkl', 'sitemap.xml'])
+```
+
 __SPACED\_COLON\_RE__
 ```
  ?: ?

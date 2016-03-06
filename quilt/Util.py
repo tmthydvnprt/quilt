@@ -31,6 +31,7 @@ import string
 import random
 import codecs
 import fnmatch
+import hashlib
 import urlparse
 import datetime as dt
 
@@ -124,9 +125,9 @@ NO_EMPTY_TAGS = [
 HEAD_STRAINER = bs4.SoupStrainer("head")
 BODY_STRAINER = bs4.SoupStrainer("body")
 
-def time_since(t0):
-    """returnt he time since the initial time t0"""
-    return (time.time() - t0)
+def time_since(initial_time):
+    """return the time since the initial time t0"""
+    return time.time() - initial_time
 
 #@profile
 def read_file(file_path='', encoding='utf-8'):
@@ -194,6 +195,29 @@ def get_file_names(source='', extensions=''):
                         file_names.update([os.path.join(dirpath, f)])
 
     return file_names
+
+def recursive_glob(source=''):
+    """get all file names matching"""
+
+    file_names = set()
+    for dirpath, _, files in os.walk(source):
+        for f in files:
+            file_names.update([os.path.join(dirpath, f)])
+
+    return file_names
+
+def get_dir_hash(dir_path=''):
+    """Get the check some of each file in directory, and store in dictionary"""
+    dirhash = {}
+    # walk thru all directories and sub directories
+    for dirpath, _, files in os.walk(dir_path):
+        # loop thru all files in directory
+        for f in files:
+            fullpath = os.path.join(dirpath, f)
+            with open(fullpath, 'r') as openfile:
+                # compute hash and place in dictionary
+                dirhash[fullpath] = hashlib.sha1(openfile.read()).digest()
+    return dirhash
 
 #@profile
 def relative_path(filepath='', rootpath=''):
@@ -584,7 +608,7 @@ def analyze_post(soup=None, domain=''):
     alpha_words = [x for x in wordpunct if x.isalpha()]
 
     # determine where link goes
-    links = { 'ext' : 0, 'int' : 0, 'anchor' : 0 }
+    links = {'ext' : 0, 'int' : 0, 'anchor' : 0}
     for a in soup.find_all('a'):
         if a['href'].startswith('#'):
             links['anchor'] += 1
@@ -616,17 +640,17 @@ def analyze_post(soup=None, domain=''):
 
     return data
 
-def handlebar_replace(string='', variables=None):
+def handlebar_replace(template_string='', variables=None):
     """ replace variables """
 
     for key, val in variables.items():
         x_brace = "{{%s}}" % (key)
         if isinstance(val, float):
-            string = string.replace(x_brace, '%.2f' % val)
+            template_string = template_string.replace(x_brace, '%.2f' % val)
         else:
-            string = string.replace(x_brace, unicode(val))
+            template_string = template_string.replace(x_brace, unicode(val))
 
-    return string
+    return template_string
 
 class ProgressBar(object):
     """implements a comand-line progress bar"""

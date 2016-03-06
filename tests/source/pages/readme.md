@@ -155,48 +155,48 @@ Used to _*quilt*_ a whole site together.
 </div><div class="panel-body" markdown="4">
 
 - `quilted_site_files/`
-{: .dir} 
-    - `index.html` 
+{: .dir}
+    - `index.html`
     {: .file}    
     - `about.html`
     {: .file}    
     - `blog/`
     {: .dir}    
-        - `post1.html` 
+        - `post1.html`
         {: .file}        
-        - `post2.html` 
+        - `post2.html`
         {: .file}        
         - ...    
         {: .file}    
-    - `sitemap.xml` 
+    - `sitemap.xml`
     {: .file}    
-    - `sitemapindex.xml` 
+    - `sitemapindex.xml`
     {: .file}    
     - ...  
     {: .file}  
-    - `css/` 
+    - `css/`
     {: .dir}        
-        - `site.css` 
+        - `site.css`
         {: .file}        
-        - `bootstrap.css` 
+        - `bootstrap.css`
         {: .file}        
         - ...    
         {: .file}
-    - `js/` 
+    - `js/`
     {: .dir}        
-        - `site.js` 
+        - `site.js`
         {: .file}        
-        - `jquery.js` 
+        - `jquery.js`
         {: .file}        
         - ...   
         {: .file}  
     - `imgs/`
     {: .dir}         
-        - `favicon.png` 
+        - `favicon.png`
         {: .file}        
-        - `icon.png` 
+        - `icon.png`
         {: .file}    
-    - `fonts/` 
+    - `fonts/`
     {: .dir}        
         - ...
         {: .file}
@@ -330,7 +330,7 @@ page_defaults = {
     "disable_next" : "disabled",               # set if last post
     "last_post"    : "",                       # url of previous post
     "last_title"   : "",                       # title of last post
-    "disable_last" : "disabled",               # set if first post 
+    "disable_last" : "disabled",               # set if first post
     # content page variables (intended to be overriden)
     # -----------------------------------------------------------------------------------
     "name"         : config["name"],           # site/project name
