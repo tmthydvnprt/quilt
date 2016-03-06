@@ -8,18 +8,18 @@
 <!--
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Page stitched together with quilt:
-quilt          : v0.1.1, make-blog-index-a-patch, d44803f96f2fcba9d994304589eb91f062c8b4eb
+quilt          : v0.1.1, make-blog-index-a-patch, 84cbfd8080f9b0f914679a6c3a76cc488ef34b56
 url            : http://tmthydvnprt.github.io/quilt/feed/index.html
-quilted on     : 2016-03-05 17:14:22
+quilted on     : 2016-03-05 17:22:14
 source branch  : make-blog-index-a-patch
-source hash    : d44803f96f2fcba9d994304589eb91f062c8b4eb
+source hash    : 84cbfd8080f9b0f914679a6c3a76cc488ef34b56
 stitching took : 0.015 s
 quilt pagevars :
                 author : tmthydvnprt
             categories : []
               copydate : 2015&ndash;2016
            copyrighter : tmthydvnprt
-                  date : 2016-03-05 17:14:22
+                  date : 2016-03-05 17:22:14
            description : blank index page of feed directory
              directory : feed
           disable_last : disabled
@@ -127,7 +127,7 @@ quilt pagevars :
 </footer>
 <!--quilted scripts patch-->
 <script id="scripts" rel="javascript" type="text/javascript">
-pagevars = { "author":"tmthydvnprt", "categories":"[]", "copydate":"2015&ndash;2016", "copyrighter":"tmthydvnprt", "date":"2016-03-05 17:14:22", "description":"blank index page of feed directory", "directory":"feed", "disable_last":"disabled", "disable_next":"disabled", "domain":"tmthydvnprt.github.io/quilt", "email":"tim@tmthydvnprt.com", "keywords":"i,n,d,e,x", "last_post":"", "last_title":"", "latestpostlink":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/feed/index.html", "name":"quilt", "next_post":"", "next_title":"", "page_path":"", "relativepath":"../", "tags":"[]", "title":"feed directory index", "url":"http://tmthydvnprt.github.io/quilt/feed/index.html" };
+pagevars = { "author":"tmthydvnprt", "categories":"[]", "copydate":"2015&ndash;2016", "copyrighter":"tmthydvnprt", "date":"2016-03-05 17:22:14", "description":"blank index page of feed directory", "directory":"feed", "disable_last":"disabled", "disable_next":"disabled", "domain":"tmthydvnprt.github.io/quilt", "email":"tim@tmthydvnprt.com", "keywords":"i,n,d,e,x", "last_post":"", "last_title":"", "latestpostlink":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/feed/index.html", "name":"quilt", "next_post":"", "next_title":"", "page_path":"", "relativepath":"../", "tags":"[]", "title":"feed directory index", "url":"http://tmthydvnprt.github.io/quilt/feed/index.html" };
 </script>
 <script rel="javascript" src="../js/jquery-1.11.2.min_bootstrap.min_typeahead.bundle.min_quilt.js" type="text/javascript"></script>
 <script rel="javascript" type="text/x-mathjax-config">MathJax.Hub.Config({ showMathMenu:false, imageFont:null, MathEvents:{ hover:256 }, jax:["input/TeX","output/HTML-CSS", "output/CommonHTML"], extensions:["tex2jax.js", "CHTML-preview.js"], TeX:{ extensions:["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"], autoNumber:"AMS" } });</script>
