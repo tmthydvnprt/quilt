@@ -407,7 +407,8 @@ class QuiltingRoom(object):
         # handle special mathjax case
         no_index_dirs = [x for x in no_index_dirs if 'mathjax' not in x]
         # set up places to not index
-        ignore_indexes = INDEX_DIR_IGNORE.update(self.config["posts"])
+        ignore_indexes = INDEX_DIR_IGNORE
+        ignore_indexes.update(os.path.basename(self.config["posts"]))
 
         # add blank index.html to those directories
         for no_index_dir in no_index_dirs:
