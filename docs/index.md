@@ -7,25 +7,25 @@ author: pydoc_markdown.py
 A `python` based static site `html` _stitcher_.
 {: .lead}
 ### Package Contents:
-### [\_\_init\_\_](\_\_init\_\_.html)
+### [\_\_init\_\_](init.html)
 package module 
 {: .lead}
-### [QuiltingRoom](QuiltingRoom.html)
+### [QuiltingRoom](quiltingroom.html)
 Main module to quilt a static site by stitching html page together
 {: .lead}
-### [Quilter](Quilter.html)
+### [Quilter](quilter.html)
 Object to stitch a page based on quilt
 {: .lead}
-### [Blog](Blog.html)
+### [Blog](blog.html)
 Provide blog capabilities for static site
 {: .lead}
-### [Util](Util.html)
+### [Util](util.html)
 Utility functions
 {: .lead}
-### [Constants](Constants.html)
+### [Constants](constants.html)
 Formatable strings and default objects, maybe a list or two.
 {: .lead}
-### [Markdown](Markdown.html)
+### [Markdown](markdown.html)
 Custom Markdown Extensions
 {: .lead}
 
