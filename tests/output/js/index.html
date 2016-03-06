@@ -8,18 +8,18 @@
 <!--
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Page stitched together with quilt:
-quilt          : v0.1.1, master, 960bac8e55dc0de7a06a2b1fc8ed8a6492f487f0
+quilt          : v0.1.1, master, 742b76e606f3c8a2123ee0d1cf67fb73ddfcb619
 url            : http://tmthydvnprt.github.io/quilt/js/index.html
-quilted on     : 2016-03-06 03:37:42
+quilted on     : 2016-03-06 03:45:18
 source branch  : master
-source hash    : 960bac8e55dc0de7a06a2b1fc8ed8a6492f487f0
-stitching took : 0.015 s
+source hash    : 742b76e606f3c8a2123ee0d1cf67fb73ddfcb619
+stitching took : 0.013 s
 quilt pagevars :
                 author : tmthydvnprt
             categories : []
               copydate : 2015&ndash;2016
            copyrighter : tmthydvnprt
-                  date : 2016-03-06 03:37:42
+                  date : 2016-03-06 03:45:18
            description : blank index page of js directory
              directory : js
           disable_last : disabled
@@ -30,7 +30,7 @@ quilt pagevars :
              last_post : 
             last_title : 
         latestpostlink : latex_support
-          markdownlink : /Users/timothydavenport/GitHub/quilt/tests/output/js/index.html
+          markdownlink : index.html
                   name : quilt
              next_post : 
             next_title : 
@@ -128,7 +128,7 @@ quilt pagevars :
 </footer>
 <!--quilted scripts patch-->
 <script id="scripts" rel="javascript" type="text/javascript">
-pagevars = { "author":"tmthydvnprt", "categories":"[]", "copydate":"2015&ndash;2016", "copyrighter":"tmthydvnprt", "date":"2016-03-06 03:37:42", "description":"blank index page of js directory", "directory":"js", "disable_last":"disabled", "disable_next":"disabled", "domain":"tmthydvnprt.github.io/quilt", "email":"tim@tmthydvnprt.com", "keywords":"i,n,d,e,x,,, ,j,s", "last_post":"", "last_title":"", "latestpostlink":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/js/index.html", "name":"quilt", "next_post":"", "next_title":"", "page_path":"", "relativepath":"../", "tags":"[]", "title":"js directory index", "url":"http://tmthydvnprt.github.io/quilt/js/index.html" };
+pagevars = { "author":"tmthydvnprt", "categories":"[]", "copydate":"2015&ndash;2016", "copyrighter":"tmthydvnprt", "date":"2016-03-06 03:45:18", "description":"blank index page of js directory", "directory":"js", "disable_last":"disabled", "disable_next":"disabled", "domain":"tmthydvnprt.github.io/quilt", "email":"tim@tmthydvnprt.com", "keywords":"i,n,d,e,x,,, ,j,s", "last_post":"", "last_title":"", "latestpostlink":"latex_support", "markdownlink":"index.html", "name":"quilt", "next_post":"", "next_title":"", "page_path":"", "relativepath":"../", "tags":"[]", "title":"js directory index", "url":"http://tmthydvnprt.github.io/quilt/js/index.html" };
 </script>
 <script rel="javascript" src="../js/jquery-1.11.2.min_bootstrap.min_typeahead.bundle.min_quilt.js" type="text/javascript"></script>
 <script rel="javascript" type="text/x-mathjax-config">MathJax.Hub.Config({ showMathMenu:false, imageFont:null, MathEvents:{ hover:256 }, jax:["input/TeX","output/HTML-CSS", "output/CommonHTML"], extensions:["tex2jax.js", "CHTML-preview.js"], TeX:{ extensions:["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"], autoNumber:"AMS" } });</script>
