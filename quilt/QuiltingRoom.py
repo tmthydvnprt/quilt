@@ -71,10 +71,11 @@ class QuiltingRoom(object):
     """the quilting room"""
 
     #@profile
-    def __init__(self, source='', output=''):
+    def __init__(self, source='', output='', forcequilt=False):
         """setup the quilting room"""
 
         # default configuration
+        self.forcequilt = forcequilt
         self.fileschanged = {}
         self.quiltchanged = False
         self.patcheschanged = False
@@ -405,6 +406,8 @@ class QuiltingRoom(object):
             no_index_dirs = no_index_dirs + [xd for xd, _, xf in os.walk(self.output) if len(fnmatch.filter(xf, 'index.html')) > 0]
         # handle special mathjax case
         no_index_dirs = [x for x in no_index_dirs if 'mathjax' not in x]
+        # set up places to not index
+        ignore_indexes = INDEX_DIR_IGNORE.update(self.config["posts"])
 
         # add blank index.html to those directories
         for no_index_dir in no_index_dirs:
@@ -413,7 +416,7 @@ class QuiltingRoom(object):
             directory = os.path.basename(os.path.dirname(page))
 
             # make sure a 'real' index does not exist in equivalent source path
-            if not os.path.exists(equivalent_source) and directory not in INDEX_DIR_IGNORE:
+            if not os.path.exists(equivalent_source) and directory not in ignore_indexes:
 
                 # process page
                 overrides = {
@@ -762,7 +765,7 @@ class QuiltingRoom(object):
         )
 
         # if the source has changed, begin quilting
-        if sourcehash != lastsourcehash:
+        if sourcehash != lastsourcehash or self.forcequilt:
 
             # copy last output version
             if os.path.isdir(self.lastoutput):
