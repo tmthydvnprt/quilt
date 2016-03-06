@@ -9,19 +9,19 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Page stitched together with quilt:
 quilt          : v0.1.1, make-blog-index-a-patch, fe998045a8008e8eeacc07f09ffaa8863c0880ae
-url            : http://tmthydvnprt.github.io/quilt/docs/index.html
+url            : http://tmthydvnprt.github.io/quilt/imgs/index.html
 quilted on     : 2016-03-05 18:00:11
 source branch  : make-blog-index-a-patch
 source hash    : fe998045a8008e8eeacc07f09ffaa8863c0880ae
-stitching took : 0.012 s
+stitching took : 0.013 s
 quilt pagevars :
                 author : tmthydvnprt
             categories : []
               copydate : 2015&ndash;2016
            copyrighter : tmthydvnprt
                   date : 2016-03-05 18:00:11
-           description : blank index page of docs directory
-             directory : docs
+           description : blank index page of imgs directory
+             directory : imgs
           disable_last : disabled
           disable_next : disabled
                 domain : tmthydvnprt.github.io/quilt
@@ -30,20 +30,20 @@ quilt pagevars :
              last_post : 
             last_title : 
         latestpostlink : latex_support
-          markdownlink : /Users/timothydavenport/GitHub/quilt/tests/output/docs/index.html
+          markdownlink : /Users/timothydavenport/GitHub/quilt/tests/output/imgs/index.html
                   name : quilt
              next_post : 
             next_title : 
              page_path : 
           relativepath : ../
                   tags : []
-                 title : docs directory index
-                   url : http://tmthydvnprt.github.io/quilt/docs/index.html
+                 title : imgs directory index
+                   url : http://tmthydvnprt.github.io/quilt/imgs/index.html
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -->
-<title>docs directory index</title>
+<title>imgs directory index</title>
 <meta content="tmthydvnprt" name="author"/>
-<meta content="blank index page of docs directory" name="description"/>
+<meta content="blank index page of imgs directory" name="description"/>
 <meta content="i,n,d,e,x" name="keywords"/>
 <link href="../imgs/favicon.ico" rel="favicon"/>
 <link href="../img/icon_60x60.png" rel="apple-touch-icon"/>
@@ -111,7 +111,7 @@ quilt pagevars :
 <!--quilted page patch-->
 <div class="container text-center" id="page">
 <h2><br/></h2>
-<h2>Index page of the <code>docs/</code> directory.</h2>
+<h2>Index page of the <code>imgs/</code> directory.</h2>
 <h3>This page was intentionally left blank.</h3>
 <h3><small>Nothing to see here, move along.</small></h3>
 </div>
@@ -127,7 +127,7 @@ quilt pagevars :
 </footer>
 <!--quilted scripts patch-->
 <script id="scripts" rel="javascript" type="text/javascript">
-pagevars = { "author":"tmthydvnprt", "categories":"[]", "copydate":"2015&ndash;2016", "copyrighter":"tmthydvnprt", "date":"2016-03-05 18:00:11", "description":"blank index page of docs directory", "directory":"docs", "disable_last":"disabled", "disable_next":"disabled", "domain":"tmthydvnprt.github.io/quilt", "email":"tim@tmthydvnprt.com", "keywords":"i,n,d,e,x", "last_post":"", "last_title":"", "latestpostlink":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/docs/index.html", "name":"quilt", "next_post":"", "next_title":"", "page_path":"", "relativepath":"../", "tags":"[]", "title":"docs directory index", "url":"http://tmthydvnprt.github.io/quilt/docs/index.html" };
+pagevars = { "author":"tmthydvnprt", "categories":"[]", "copydate":"2015&ndash;2016", "copyrighter":"tmthydvnprt", "date":"2016-03-05 18:00:11", "description":"blank index page of imgs directory", "directory":"imgs", "disable_last":"disabled", "disable_next":"disabled", "domain":"tmthydvnprt.github.io/quilt", "email":"tim@tmthydvnprt.com", "keywords":"i,n,d,e,x", "last_post":"", "last_title":"", "latestpostlink":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/imgs/index.html", "name":"quilt", "next_post":"", "next_title":"", "page_path":"", "relativepath":"../", "tags":"[]", "title":"imgs directory index", "url":"http://tmthydvnprt.github.io/quilt/imgs/index.html" };
 </script>
 <script rel="javascript" src="../js/jquery-1.11.2.min_bootstrap.min_typeahead.bundle.min_quilt.js" type="text/javascript"></script>
 <script rel="javascript" type="text/x-mathjax-config">MathJax.Hub.Config({ showMathMenu:false, imageFont:null, MathEvents:{ hover:256 }, jax:["input/TeX","output/HTML-CSS", "output/CommonHTML"], extensions:["tex2jax.js", "CHTML-preview.js"], TeX:{ extensions:["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"], autoNumber:"AMS" } });</script>
