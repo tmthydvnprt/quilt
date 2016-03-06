@@ -134,8 +134,6 @@ SYMBOLS = {
 }
 # ignore these files when building sitemap
 SITEMAP_IGNORE = {'sourcehash.pkl', 'sitemapindex.xml', 'sitemap.xml'}
-# ignore this directories when filling empty directories
-INDEX_DIR_IGNORE = {'categories', 'tags'}
 # match [x], [X] or [ ] in list item for checkbox
 CHECKBOX_RE = r'<li>\[([ Xx])\]'
 # match !! class | text !!

@@ -196,11 +196,6 @@ __GROUP\_VERBS__
 {'featured': 'featured', 'categories': 'categorized in', 'tags': 'tagged with'}
 ```
 
-__INDEX\_DIR\_IGNORE__
-```
-set(['categories', 'tags'])
-```
-
 __JS\_HTML\_PATTERN\_RE__
 ```
 (>tpircs/<.*>tpircs<)?(.*)

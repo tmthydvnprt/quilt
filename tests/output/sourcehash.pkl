@@ -41,7 +41,7 @@ S'\xed2\xd3\x96j\x9e\xa2\xb7%\x19i>\x84\xb9\xe7\xb8)Cz('
 p20
 sS'/Users/timothydavenport/GitHub/quilt/tests/source/pages/docs/__init__.md'
 p21
-S'\x8b$\x95k\xd1m>\x99\xb9\xccr6\xf6\xd8\xf5zH\xb9Y\xbb'
+S'\xadVR\xb9DC\x06\xf7\xb41N/\xb4\xcf\x9b\xfc\x93\x936"'
 p22
 sS'/Users/timothydavenport/GitHub/quilt/tests/source/assets/fonts/fontawesome-webfont.woff2'
 p23

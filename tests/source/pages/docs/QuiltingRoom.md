@@ -179,11 +179,6 @@ __HEAD\_STRAINER__
 head|{}
 ```
 
-__INDEX\_DIR\_IGNORE__
-```
-set(['categories', 'tags'])
-```
-
 __NO\_NEW\_POSTS__
 ```
 There are no newer posts

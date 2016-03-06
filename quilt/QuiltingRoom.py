@@ -64,7 +64,7 @@ from quilt.Util import find_hrefsrc, filter_external_url, minimize_css, minimize
 from quilt.Util import path_link_list, get_just_words, get_keywords, spell_check, analyze_post, ProgressBar
 from quilt.Util import reverse_chronological_order, check_local_quilt, get_group, make_group_links
 from quilt.Util import  HEAD_STRAINER, BODY_STRAINER
-from quilt.Constants import QUILTHEADER, ASSETCOMMENT, ROBOTTXT, SITEMAPINDEX, SITEMAP, SITEMAPURL, SITEMAP_IGNORE, INDEX_DIR_IGNORE
+from quilt.Constants import QUILTHEADER, ASSETCOMMENT, ROBOTTXT, SITEMAPINDEX, SITEMAP, SITEMAPURL, SITEMAP_IGNORE
 from quilt.Constants import NO_NEW_POSTS, NO_OLD_POSTS, CSS_EXT_RE, ROOT_LEVEL_JS_EXT_RE
 
 class QuiltingRoom(object):
@@ -400,40 +400,49 @@ class QuiltingRoom(object):
         """search for directories without index.html"""
 
         # get list of no-index directories
-        no_index_dirs = [xd for xd, _, xf in os.walk(self.output) if len(fnmatch.filter(xf, 'index.html')) == 0]
+        no_index_dirs = {xd for xd, _, xf in os.walk(self.output) if len(fnmatch.filter(xf, 'index.html')) == 0}
+        # handle special mathjax case
+        no_index_dirs = {x for x in no_index_dirs if 'mathjax' not in x}
+
         # if any source affecting index changed, redo anyway
         if any([self.quiltchanged, self.patcheschanged, self.templateschanged, self.assetschanged]):
-            no_index_dirs = no_index_dirs + [xd for xd, _, xf in os.walk(self.output) if len(fnmatch.filter(xf, 'index.html')) > 0]
-        # handle special mathjax case
-        no_index_dirs = [x for x in no_index_dirs if 'mathjax' not in x]
+            has_index_dirs = {xd for xd, _, xf in os.walk(self.output) if len(fnmatch.filter(xf, 'index.html')) > 0}
+
+        # get index in source files
+        source_has_index_dirs = {xd for xd, _, xf in os.walk(self.source) if len(fnmatch.filter(xf, 'index.*')) > 0}
+        source_has_index_dirs = {x.replace(self.config["pages"], self.output) for x in source_has_index_dirs}
+
         # set up places to not index
-        ignore_indexes = INDEX_DIR_IGNORE
-        ignore_indexes.add(os.path.basename(self.config["posts"]))
+        blog_dir = self.config["posts"].replace(self.config["pages"], self.output)
+        ignore_indexes = {
+            blog_dir,
+            os.path.join(blog_dir, 'featured'),
+            os.path.join(blog_dir, 'categories'),
+            os.path.join(blog_dir, 'tags')
+        }
+
+        # determine which index files are 'real'
+        auto_gen_index = (no_index_dirs | has_index_dirs) - source_has_index_dirs - ignore_indexes
 
         # add blank index.html to those directories
-        for no_index_dir in no_index_dirs:
-            page = os.path.join(no_index_dir, "index.html")
-            equivalent_source = page.replace(self.output, self.config["pages"])
-            directory = os.path.basename(os.path.dirname(page))
+        for auto_gen_dir in auto_gen_index:
+            page = os.path.join(auto_gen_dir, "index.html")
+            index_name = os.path.basename(auto_gen_dir)
+            # process page
+            overrides = {
+                "title" : "%s directory index" % index_name,
+                "directory" : index_name,
+                "description" : "blank index page of %s directory" % index_name,
+                "keywords" : "index, %s" % index_name
+            }
 
-            # make sure a 'real' index does not exist in equivalent source path
-            if not os.path.exists(equivalent_source) and directory not in ignore_indexes:
-
-                # process page
-                overrides = {
-                    "title" : "%s directory index" % (os.path.basename(no_index_dir)),
-                    "directory" : os.path.basename(no_index_dir),
-                    "description" : "blank index page of %s directory" % (os.path.basename(no_index_dir)),
-                    "keywords" : "index"
-                }
-
-                # stitch the page together
-                qultr = Quilter(page, self.quilt_pattern, self.patches, self.patches["index"], self.config, overrides)
-                qultr.stitch()
-                qultr.clean_html()
-                qultr.remove_empty()
-                qultr.write()
-                del qultr
+            # stitch the page together
+            qultr = Quilter(page, self.quilt_pattern, self.patches, self.patches["index"], self.config, overrides)
+            qultr.stitch()
+            qultr.clean_html()
+            qultr.remove_empty()
+            qultr.write()
+            del qultr
 
         return self
 

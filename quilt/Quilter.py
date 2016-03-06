@@ -104,7 +104,9 @@ class Quilter(object):
 
         self.pagevars.update({
             "rootpath" : self.config["output"],
-            "relativepath" : relative_path(page_file.replace(self.config["pages"], self.config["output"]).replace('.md', '.html'), self.config["output"]),
+            "relativepath" : relative_path(
+                page_file.replace(self.config["pages"], self.config["output"]).replace('.md', '.html'), self.config["output"]
+            ),
             "source" : page_file,
             "output" : page_file.replace(self.config["pages"], self.config["output"]).replace('.md', '.html'),
             "markdownlink" : page_file.replace(self.config["pages"], self.config["output"]),
