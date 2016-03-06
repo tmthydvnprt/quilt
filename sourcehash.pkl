@@ -181,7 +181,7 @@ S'\x04\xac\xac\x91\x8a\xbe\xb3\xc5\x1b<\xec]\x14v\xa2.l\xd4\x04;'
 p90
 sS'/Users/timothydavenport/GitHub/quilt/tests/source/pages/news/patches/post_item.html'
 p91
-S"\xb1\xca\xdc\xd0\xbb'\x9d\x0c\xd5\xf2E\xfb\x80+\x04\xd9h{\xc4\xc9"
+S'\xf6\x99\x11~3%K\x9e{\x06jJ,7~\x19\xf1a"s'
 p92
 sS'/Users/timothydavenport/GitHub/quilt/tests/source/pages/news/page_variable_change.md'
 p93

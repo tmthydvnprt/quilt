@@ -5,11 +5,11 @@
     <link href="tmthydvnprt.github.io/quilt/feed/" rel="self"/>
     <link href="tmthydvnprt.github.io/quilt"/>
     <id>1234567890</id>
-    <updated>2016-03-05T16:17:45-08:00</updated>
+    <updated>2016-03-05T17:04:09-08:00</updated>
         <entry>
         <title>HTML Entities<title>
-        <link href="tmthydvnprt.github.io/quilt/news/html_entities.html"/>
-        <link rel="alternate" type="text/html" href="tmthydvnprt.github.io/quilt/news/html_entities.html"/>
+        <link href="http://tmthydvnprt.github.io/quilt/news/html_entities.html"/>
+        <link rel="alternate" type="text/html" href="http://tmthydvnprt.github.io/quilt/news/html_entities.html"/>
         <id>1234567890</id>
         <updated>3/18/2015 5:46 am</updated>
         <summary>
@@ -1842,8 +1842,8 @@ apos</summary>
     </entry>
     <entry>
         <title>\(\LaTeX\) Support<title>
-        <link href="tmthydvnprt.github.io/quilt/news/latex_support.html"/>
-        <link rel="alternate" type="text/html" href="tmthydvnprt.github.io/quilt/news/latex_support.html"/>
+        <link href="http://tmthydvnprt.github.io/quilt/news/latex_support.html"/>
+        <link rel="alternate" type="text/html" href="http://tmthydvnprt.github.io/quilt/news/latex_support.html"/>
         <id>1234567890</id>
         <updated>3/20/2015 10:49 pm</updated>
         <summary>
@@ -6252,8 +6252,8 @@ A list of MathJax \(\LaTeX\) Command  examples. These alphabetical examples come
     </entry>
     <entry>
         <title>Quilt's Markdown Syntax<title>
-        <link href="tmthydvnprt.github.io/quilt/news/markdown_syntax.html"/>
-        <link rel="alternate" type="text/html" href="tmthydvnprt.github.io/quilt/news/markdown_syntax.html"/>
+        <link href="http://tmthydvnprt.github.io/quilt/news/markdown_syntax.html"/>
+        <link rel="alternate" type="text/html" href="http://tmthydvnprt.github.io/quilt/news/markdown_syntax.html"/>
         <id>1234567890</id>
         <updated>03/08/2015 1:32 pm</updated>
         <summary>
@@ -7084,8 +7084,8 @@ $$</span></p>
     </entry>
     <entry>
         <title>Quilt: A python based static site html stitcher.<title>
-        <link href="tmthydvnprt.github.io/quilt/news/quilt_a_python_based_static_site_html_stitcher.html"/>
-        <link rel="alternate" type="text/html" href="tmthydvnprt.github.io/quilt/news/quilt_a_python_based_static_site_html_stitcher.html"/>
+        <link href="http://tmthydvnprt.github.io/quilt/news/quilt_a_python_based_static_site_html_stitcher.html"/>
+        <link rel="alternate" type="text/html" href="http://tmthydvnprt.github.io/quilt/news/quilt_a_python_based_static_site_html_stitcher.html"/>
         <id>1234567890</id>
         <updated>3/1/2015 3:15 pm</updated>
         <summary>
@@ -7116,8 +7116,8 @@ Generate a static site via python from content-only .html and .md pages that are
     </entry>
     <entry>
         <title>Page Variable Change<title>
-        <link href="tmthydvnprt.github.io/quilt/news/page_variable_change.html"/>
-        <link rel="alternate" type="text/html" href="tmthydvnprt.github.io/quilt/news/page_variable_change.html"/>
+        <link href="http://tmthydvnprt.github.io/quilt/news/page_variable_change.html"/>
+        <link rel="alternate" type="text/html" href="http://tmthydvnprt.github.io/quilt/news/page_variable_change.html"/>
         <id>1234567890</id>
         <updated>3/9/2015 8:31 am</updated>
         <summary>
