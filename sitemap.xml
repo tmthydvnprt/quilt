@@ -1,542 +1,530 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>http://some_name.com/404.html</loc>
-        <lastmod>2016-03-05T12:00:01</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/404.html</loc>
+        <lastmod>2016-03-05T16:17:50</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/404.md</loc>
-        <lastmod>2016-03-05T12:00:01</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/404.md</loc>
+        <lastmod>2016-03-05T16:17:50</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/features_todo.html</loc>
-        <lastmod>2016-03-05T11:59:59</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/features_todo.html</loc>
+        <lastmod>2016-03-05T16:17:48</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/features_todo.md</loc>
-        <lastmod>2016-03-05T11:59:59</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/features_todo.md</loc>
+        <lastmod>2016-03-05T16:17:48</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/glossary.html</loc>
-        <lastmod>2016-03-05T12:00:02</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/glossary.html</loc>
+        <lastmod>2016-03-05T16:17:50</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/glossary.md</loc>
-        <lastmod>2016-03-05T12:00:02</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/glossary.md</loc>
+        <lastmod>2016-03-05T16:17:50</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/index.html</loc>
-        <lastmod>2016-03-05T12:00:00</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/index.html</loc>
+        <lastmod>2016-03-05T16:17:49</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/index.md</loc>
-        <lastmod>2016-03-05T12:00:00</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/index.md</loc>
+        <lastmod>2016-03-05T16:17:49</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/readme.html</loc>
-        <lastmod>2016-03-05T12:00:00</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/readme.html</loc>
+        <lastmod>2016-03-05T16:17:49</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/readme.md</loc>
-        <lastmod>2016-03-05T12:00:00</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/readme.md</loc>
+        <lastmod>2016-03-05T16:17:49</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/robots.txt</loc>
-        <lastmod>2016-03-05T12:00:07</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/robots.txt</loc>
+        <lastmod>2016-03-05T16:17:55</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/search.json</loc>
-        <lastmod>2016-03-05T12:00:08</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/search.json</loc>
+        <lastmod>2016-03-05T16:17:56</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/css/bootstrap.css</loc>
-        <lastmod>2016-03-05T11:58:08</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/css/bootstrap.css</loc>
+        <lastmod>2016-03-05T12:01:01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/css/bootstrap_colorful_quilt.css</loc>
-        <lastmod>2016-03-05T11:59:56</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/css/bootstrap_colorful_quilt.css</loc>
+        <lastmod>2016-03-05T16:17:45</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/css/colorful.css</loc>
-        <lastmod>2016-03-05T11:58:08</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/css/colorful.css</loc>
+        <lastmod>2016-03-05T12:01:01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/css/index.html</loc>
-        <lastmod>2016-03-05T12:00:06</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/css/index.html</loc>
+        <lastmod>2016-03-05T16:17:55</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/css/index.md</loc>
-        <lastmod>2016-03-05T12:00:06</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/css/index.md</loc>
+        <lastmod>2016-03-05T16:17:55</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/css/quilt.css</loc>
-        <lastmod>2016-03-05T11:58:08</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/css/quilt.css</loc>
+        <lastmod>2016-03-05T12:01:01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/docs/__init__.html</loc>
-        <lastmod>2016-03-05T11:59:59</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/docs/__init__.html</loc>
+        <lastmod>2016-03-05T16:17:48</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/docs/__init__.md</loc>
-        <lastmod>2016-03-05T11:59:59</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/docs/__init__.md</loc>
+        <lastmod>2016-03-05T16:17:48</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/docs/Blog.html</loc>
-        <lastmod>2016-03-05T12:00:00</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/docs/Blog.html</loc>
+        <lastmod>2016-03-05T16:17:49</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/docs/Blog.md</loc>
-        <lastmod>2016-03-05T12:00:00</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/docs/Blog.md</loc>
+        <lastmod>2016-03-05T16:17:49</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/docs/Constants.html</loc>
-        <lastmod>2016-03-05T12:00:01</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/docs/Constants.html</loc>
+        <lastmod>2016-03-05T16:17:50</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/docs/Constants.md</loc>
-        <lastmod>2016-03-05T12:00:01</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/docs/Constants.md</loc>
+        <lastmod>2016-03-05T16:17:50</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/docs/index.html</loc>
-        <lastmod>2016-03-05T12:00:07</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/docs/index.html</loc>
+        <lastmod>2016-03-05T16:17:55</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/docs/index.md</loc>
-        <lastmod>2016-03-05T12:00:07</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/docs/index.md</loc>
+        <lastmod>2016-03-05T16:17:55</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/docs/Markdown.html</loc>
-        <lastmod>2016-03-05T12:00:01</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/docs/Markdown.html</loc>
+        <lastmod>2016-03-05T16:17:50</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/docs/Markdown.md</loc>
-        <lastmod>2016-03-05T12:00:01</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/docs/Markdown.md</loc>
+        <lastmod>2016-03-05T16:17:50</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/docs/Quilter.html</loc>
-        <lastmod>2016-03-05T12:00:00</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/docs/Quilter.html</loc>
+        <lastmod>2016-03-05T16:17:49</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/docs/Quilter.md</loc>
-        <lastmod>2016-03-05T12:00:00</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/docs/Quilter.md</loc>
+        <lastmod>2016-03-05T16:17:49</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/docs/QuiltingRoom.html</loc>
-        <lastmod>2016-03-05T12:00:02</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/docs/QuiltingRoom.html</loc>
+        <lastmod>2016-03-05T16:17:50</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/docs/QuiltingRoom.md</loc>
-        <lastmod>2016-03-05T12:00:02</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/docs/QuiltingRoom.md</loc>
+        <lastmod>2016-03-05T16:17:50</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/docs/test.html</loc>
-        <lastmod>2016-03-05T12:00:00</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/docs/test.html</loc>
+        <lastmod>2016-03-05T16:17:49</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/docs/test.md</loc>
-        <lastmod>2016-03-05T12:00:00</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/docs/test.md</loc>
+        <lastmod>2016-03-05T16:17:49</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/docs/Util.html</loc>
-        <lastmod>2016-03-05T12:00:00</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/docs/Util.html</loc>
+        <lastmod>2016-03-05T16:17:50</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/docs/Util.md</loc>
-        <lastmod>2016-03-05T12:00:00</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/docs/Util.md</loc>
+        <lastmod>2016-03-05T16:17:50</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/feed/atom.xml</loc>
-        <lastmod>2016-03-05T12:00:06</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/feed/atom.xml</loc>
+        <lastmod>2016-03-05T16:17:55</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/feed/feed.atom</loc>
-        <lastmod>2016-03-05T12:00:06</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/feed/feed.atom</loc>
+        <lastmod>2016-03-05T16:17:55</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/feed/feed.rss</loc>
-        <lastmod>2016-03-05T12:00:06</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/feed/feed.rss</loc>
+        <lastmod>2016-03-05T16:17:55</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/feed/index.html</loc>
-        <lastmod>2016-03-05T12:00:06</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/feed/index.html</loc>
+        <lastmod>2016-03-05T16:17:55</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/feed/index.md</loc>
-        <lastmod>2016-03-05T12:00:06</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/feed/index.md</loc>
+        <lastmod>2016-03-05T16:17:55</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/feed/rss.xml</loc>
-        <lastmod>2016-03-05T12:00:06</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/feed/rss.xml</loc>
+        <lastmod>2016-03-05T16:17:55</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/imgs/favicon.ico</loc>
-        <lastmod>2016-03-05T11:59:56</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/imgs/favicon.ico</loc>
+        <lastmod>2016-03-05T16:17:45</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/imgs/file.svg</loc>
-        <lastmod>2016-03-05T11:58:08</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/imgs/file.svg</loc>
+        <lastmod>2016-03-05T12:01:01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/imgs/folder.svg</loc>
-        <lastmod>2016-03-05T11:58:08</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/imgs/folder.svg</loc>
+        <lastmod>2016-03-05T12:01:01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/imgs/icon.png</loc>
-        <lastmod>2016-03-05T11:58:08</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/imgs/icon.png</loc>
+        <lastmod>2016-03-05T12:01:01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/imgs/icon_120x120.png</loc>
-        <lastmod>2016-03-05T11:59:56</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/imgs/icon_120x120.png</loc>
+        <lastmod>2016-03-05T16:17:45</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/imgs/icon_152x152.png</loc>
-        <lastmod>2016-03-05T11:59:56</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/imgs/icon_152x152.png</loc>
+        <lastmod>2016-03-05T16:17:45</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/imgs/icon_60x60.png</loc>
-        <lastmod>2016-03-05T11:59:56</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/imgs/icon_60x60.png</loc>
+        <lastmod>2016-03-05T16:17:45</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/imgs/icon_64x64.png</loc>
-        <lastmod>2016-03-05T11:59:56</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/imgs/icon_64x64.png</loc>
+        <lastmod>2016-03-05T16:17:45</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/imgs/icon_76x76.png</loc>
-        <lastmod>2016-03-05T11:59:56</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/imgs/icon_76x76.png</loc>
+        <lastmod>2016-03-05T16:17:45</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/imgs/index.html</loc>
-        <lastmod>2016-03-05T12:00:06</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/imgs/index.html</loc>
+        <lastmod>2016-03-05T16:17:55</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/imgs/index.md</loc>
-        <lastmod>2016-03-05T12:00:06</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/imgs/index.md</loc>
+        <lastmod>2016-03-05T16:17:55</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/js/bootstrap.min.js</loc>
-        <lastmod>2016-03-05T11:58:08</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/js/bootstrap.min.js</loc>
+        <lastmod>2016-03-05T12:01:01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/js/index.html</loc>
-        <lastmod>2016-03-05T12:00:06</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/js/index.html</loc>
+        <lastmod>2016-03-05T16:17:55</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/js/index.md</loc>
-        <lastmod>2016-03-05T12:00:06</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/js/index.md</loc>
+        <lastmod>2016-03-05T16:17:55</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/js/jquery-1.11.2.min.js</loc>
-        <lastmod>2016-03-05T11:58:08</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/js/jquery-1.11.2.min.js</loc>
+        <lastmod>2016-03-05T12:01:01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/js/jquery-1.11.2.min_bootstrap.min_typeahead.bundle.min_quilt.js</loc>
-        <lastmod>2016-03-05T11:59:56</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/js/jquery-1.11.2.min_bootstrap.min_typeahead.bundle.min_quilt.js</loc>
+        <lastmod>2016-03-05T16:17:45</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/js/quilt.js</loc>
-        <lastmod>2016-03-05T11:58:08</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/js/quilt.js</loc>
+        <lastmod>2016-03-05T12:01:01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/js/typeahead.bundle.min.js</loc>
-        <lastmod>2016-03-05T11:58:08</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/js/typeahead.bundle.min.js</loc>
+        <lastmod>2016-03-05T12:01:01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/news/html_entities.html</loc>
-        <lastmod>2016-03-05T12:00:04</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/news/html_entities.html</loc>
+        <lastmod>2016-03-05T16:17:52</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/news/html_entities.md</loc>
-        <lastmod>2016-03-05T12:00:04</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/news/html_entities.md</loc>
+        <lastmod>2016-03-05T16:17:52</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/news/index.html</loc>
-        <lastmod>2016-03-05T12:00:07</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/news/index.html</loc>
+        <lastmod>2016-03-05T16:17:55</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/news/index.md</loc>
-        <lastmod>2016-03-05T12:00:07</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/news/index.md</loc>
+        <lastmod>2016-03-05T16:17:55</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/news/latex_support.html</loc>
-        <lastmod>2016-03-05T12:00:03</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/news/latex_support.html</loc>
+        <lastmod>2016-03-05T16:17:52</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/news/latex_support.md</loc>
-        <lastmod>2016-03-05T12:00:03</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/news/latex_support.md</loc>
+        <lastmod>2016-03-05T16:17:52</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/news/markdown_syntax.html</loc>
-        <lastmod>2016-03-05T12:00:04</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/news/markdown_syntax.html</loc>
+        <lastmod>2016-03-05T16:17:53</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/news/markdown_syntax.md</loc>
-        <lastmod>2016-03-05T12:00:04</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/news/markdown_syntax.md</loc>
+        <lastmod>2016-03-05T16:17:53</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/news/page_variable_change.html</loc>
-        <lastmod>2016-03-05T12:00:04</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/news/page_variable_change.html</loc>
+        <lastmod>2016-03-05T16:17:52</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/news/page_variable_change.md</loc>
-        <lastmod>2016-03-05T12:00:04</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/news/page_variable_change.md</loc>
+        <lastmod>2016-03-05T16:17:52</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/news/quilt_a_python_based_static_site_html_stitcher.html</loc>
-        <lastmod>2016-03-05T12:00:04</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/news/quilt_a_python_based_static_site_html_stitcher.html</loc>
+        <lastmod>2016-03-05T16:17:53</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/news/quilt_a_python_based_static_site_html_stitcher.md</loc>
-        <lastmod>2016-03-05T12:00:04</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/news/quilt_a_python_based_static_site_html_stitcher.md</loc>
+        <lastmod>2016-03-05T16:17:53</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/news/categories/example.html</loc>
-        <lastmod>2016-03-05T12:00:06</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/news/categories/example.html</loc>
+        <lastmod>2016-03-05T16:17:55</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/news/categories/index.html</loc>
-        <lastmod>2016-03-05T12:00:07</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/news/categories/index.html</loc>
+        <lastmod>2016-03-05T16:17:55</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/news/categories/index.md</loc>
-        <lastmod>2016-03-05T12:00:07</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/news/categories/release.html</loc>
+        <lastmod>2016-03-05T16:17:54</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/news/categories/release.html</loc>
-        <lastmod>2016-03-05T12:00:06</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/news/featured/index.html</loc>
+        <lastmod>2016-03-05T16:17:55</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/news/featured/index.html</loc>
-        <lastmod>2016-03-05T12:00:07</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/news/featured/index.md</loc>
+        <lastmod>2016-03-05T16:17:55</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/news/featured/index.md</loc>
-        <lastmod>2016-03-05T12:00:07</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/news/tags/beautifulsoup.html</loc>
+        <lastmod>2016-03-05T16:17:54</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/news/tags/beautifulsoup.html</loc>
-        <lastmod>2016-03-05T12:00:06</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/news/tags/entities.html</loc>
+        <lastmod>2016-03-05T16:17:54</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/news/tags/entities.html</loc>
-        <lastmod>2016-03-05T12:00:06</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/news/tags/github-flavored-markdown.html</loc>
+        <lastmod>2016-03-05T16:17:54</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/news/tags/github-flavored-markdown.html</loc>
-        <lastmod>2016-03-05T12:00:05</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/news/tags/html.html</loc>
+        <lastmod>2016-03-05T16:17:54</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/news/tags/html.html</loc>
-        <lastmod>2016-03-05T12:00:06</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/news/tags/index.html</loc>
+        <lastmod>2016-03-05T16:17:54</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/news/tags/index.html</loc>
-        <lastmod>2016-03-05T12:00:07</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/news/tags/latex.html</loc>
+        <lastmod>2016-03-05T16:17:54</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/news/tags/index.md</loc>
-        <lastmod>2016-03-05T12:00:07</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/news/tags/markdown.html</loc>
+        <lastmod>2016-03-05T16:17:54</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/news/tags/latex.html</loc>
-        <lastmod>2016-03-05T12:00:05</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/news/tags/python.html</loc>
+        <lastmod>2016-03-05T16:17:54</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/news/tags/markdown.html</loc>
-        <lastmod>2016-03-05T12:00:05</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/news/tags/quilt.html</loc>
+        <lastmod>2016-03-05T16:17:54</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/news/tags/python.html</loc>
-        <lastmod>2016-03-05T12:00:06</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/news/tags/release.html</loc>
+        <lastmod>2016-03-05T16:17:54</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://some_name.com/news/tags/quilt.html</loc>
-        <lastmod>2016-03-05T12:00:06</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>http://some_name.com/news/tags/release.html</loc>
-        <lastmod>2016-03-05T12:00:06</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>http://some_name.com/news/tags/syntax.html</loc>
-        <lastmod>2016-03-05T12:00:06</lastmod>
+        <loc>http://tmthydvnprt.github.io/quilt/news/tags/syntax.html</loc>
+        <lastmod>2016-03-05T16:17:54</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>

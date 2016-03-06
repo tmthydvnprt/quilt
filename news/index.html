@@ -8,24 +8,24 @@
 <!--
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Page stitched together with quilt:
-quilt          : v0.1.1, only-quilt-diffs, c34452a0c6e3d98bdf4b62fd4c37a2eceb1a42dc
-url            : some_name.com/news/index.html
-quilted on     : 2016-03-05 11:59:56
-source branch  : only-quilt-diffs
-source hash    : c34452a0c6e3d98bdf4b62fd4c37a2eceb1a42dc
+quilt          : v0.1.1, make-blog-index-a-patch, 2cd6e047dbaf75ce6c370c13e4cd3b14620f2ff6
+url            : tmthydvnprt.github.io/quilt/news/index.html
+quilted on     : 2016-03-05 16:17:45
+source branch  : make-blog-index-a-patch
+source hash    : 2cd6e047dbaf75ce6c370c13e4cd3b14620f2ff6
 stitching took : 0.013 s
 quilt pagevars :
                 author : tmthydvnprt
             categories : []
               copydate : 2015&ndash;2016
            copyrighter : tmthydvnprt
-                  date : 2016-03-05 11:59:56
+                  date : 2016-03-05 16:17:45
            description : blank index page of news directory
              directory : news
           disable_last : disabled
           disable_next : disabled
-                domain : some_name.com
-                 email : tmthydvnprt@users.noreply.github.com
+                domain : tmthydvnprt.github.io/quilt
+                 email : tim@tmthydvnprt.com
               keywords : i,n,d,e,x
              last_post : 
             last_title : 
@@ -38,7 +38,7 @@ quilt pagevars :
           relativepath : ../
                   tags : []
                  title : news directory index
-                   url : some_name.com/news/index.html
+                   url : tmthydvnprt.github.io/quilt/news/index.html
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -->
 <title>news directory index</title>
@@ -127,7 +127,7 @@ quilt pagevars :
 </footer>
 <!--quilted scripts patch-->
 <script id="scripts" rel="javascript" type="text/javascript">
-pagevars = { "author":"tmthydvnprt", "categories":"[]", "copydate":"2015&ndash;2016", "copyrighter":"tmthydvnprt", "date":"2016-03-05 11:59:56", "description":"blank index page of news directory", "directory":"news", "disable_last":"disabled", "disable_next":"disabled", "domain":"some_name.com", "email":"tmthydvnprt@users.noreply.github.com", "keywords":"i,n,d,e,x", "last_post":"", "last_title":"", "latestpostlink":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/news/index.html", "name":"quilt", "next_post":"", "next_title":"", "page_path":"", "relativepath":"../", "tags":"[]", "title":"news directory index", "url":"some_name.com/news/index.html" };
+pagevars = { "author":"tmthydvnprt", "categories":"[]", "copydate":"2015&ndash;2016", "copyrighter":"tmthydvnprt", "date":"2016-03-05 16:17:45", "description":"blank index page of news directory", "directory":"news", "disable_last":"disabled", "disable_next":"disabled", "domain":"tmthydvnprt.github.io/quilt", "email":"tim@tmthydvnprt.com", "keywords":"i,n,d,e,x", "last_post":"", "last_title":"", "latestpostlink":"latex_support", "markdownlink":"/Users/timothydavenport/GitHub/quilt/tests/output/news/index.html", "name":"quilt", "next_post":"", "next_title":"", "page_path":"", "relativepath":"../", "tags":"[]", "title":"news directory index", "url":"tmthydvnprt.github.io/quilt/news/index.html" };
 </script>
 <script rel="javascript" src="../js/jquery-1.11.2.min_bootstrap.min_typeahead.bundle.min_quilt.js" type="text/javascript"></script>
 <script rel="javascript" type="text/x-mathjax-config">MathJax.Hub.Config({ showMathMenu:false, imageFont:null, MathEvents:{ hover:256 }, jax:["input/TeX","output/HTML-CSS", "output/CommonHTML"], extensions:["tex2jax.js", "CHTML-preview.js"], TeX:{ extensions:["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"], autoNumber:"AMS" } });</script>
