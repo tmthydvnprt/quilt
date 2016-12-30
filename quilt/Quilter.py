@@ -455,7 +455,7 @@ class Quilter(object):
 
         page_string = self.soup.prettify(formatter='html') if pretty else self.soup.encode('utf-8', formatter='html')
         write_file(self.pagevars["output"], page_string)
-        if self.config["copymd"] and os.path.isfile(self.pagevars["source"]):
+        if self.config["copymd"] and os.path.isfile(self.pagevars["source"]) and self.pagevars["source"].endswith(".md"):
             shutil.copyfile(self.pagevars["source"], self.pagevars["output"].replace('.html', '.md'))
 
         return self
